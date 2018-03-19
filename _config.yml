@@ -1,0 +1,119 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: ESON
+subtitle: Daily Notes
+#description: machine learning, NLP, deep learning, 机器学习，深度学习，强化学习，java，python
+#description: 吾常终日而思，不如须臾之所学也。吾尝跂而望矣，不如登高之博见也。 
+#description: 吾尝终日不食,终夜不寝,以思,无益,不如学也 --《论语》 
+description: 学而不思则罔，思而不学则殆
+keywords: "机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON"
+author:  Eson Xu
+language: zh-CN
+timezone:
+
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://blog.eson.org
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  #- demos/games/**
+  - demos/ckeditor/js/**
+  #- "_posts/README.md"
+  - "**/README.md"
+  - "*/README.md"
+  - "404.html"
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: baidu_url_submitter
+- type: git
+  repo: git@github.com:xu-song/xu-song.github.io.git
+  branch: master
+- type: git
+  repo: git@git.coding.net:xu-song/xu-song.coding.me.git
+  branch: master
+
+
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+
+
+baidu_url_submit:
+  count: 3 ## 提交最新的一个链接
+  host: blog.eson.org ## 在百度站长平台中注册的域名
+  token: hOraXsrU6jl6Pifg ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里

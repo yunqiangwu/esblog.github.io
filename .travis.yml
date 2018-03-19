@@ -1,0 +1,20 @@
+language: node_js
+
+sudo: false
+
+# S: Build Lifecycle
+install:
+  - npm install --production
+before_script:
+  - hexo clean
+script:
+  - hexo g
+after_script:
+  - cd dist
+  - git init
+  - git config user.name "xu-song"
+  - git config user.email "eson.org@gmail.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+# E: Build LifeCycle
