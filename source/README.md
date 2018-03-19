@@ -5,14 +5,14 @@
 
 This repo is for deployment only. Click the following links to `Dev Repository` and `Demo Site`.
 
-- [ ] [Dev Repository](https://github.com/xsung/blog-dev/) 
-- [x] [Deployed Repository](https://github.com/xu-song/xu-song.github.io/)  deployed by Hexo from `Dev Repository`
-- [ ] [Demo Site](http://xusong.vip) host the `Deployed Repository` 
+- [ ] [Dev Repository](https://github.com/xu-song/xu-song.github.io/tree/dev) 
+- [x] [Deployed Site](https://github.com/xu-song/xu-song.github.io/)  deployed by Hexo from `Dev Repository`
+- [ ] [Demo Site](http://blog.eson.org) host the `Deployed Repository` 
 
 
 
 e.g
-You can edit the README file in [Dev Repo](https://github.com/xsung/blog-dev/blob/master/source/README.md)
+You can edit the README file in [Dev Repo](https://github.com/xu-song/xu-song.github.io/tree/dev/source/README.md)
 
 ## Hexo Render
 
