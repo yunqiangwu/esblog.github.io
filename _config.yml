@@ -97,7 +97,7 @@ search:
 deploy:
 - type: baidu_url_submitter
 - type: git
-  repo: git@github.com:xu-song/xu-song.github.io.git
+  repo: git@github.com:esblog/esblog.github.io.git
   branch: master
 - type: git
   repo: git@git.coding.net:xu-song/xu-song.coding.me.git
