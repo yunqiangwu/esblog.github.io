@@ -29,6 +29,17 @@ java python
 记录的文章多了，不易查找，遂开个gitbook模块。用于把平时的文章汇总。
 
 
+
+## 点点滴滴
+
+吉祥物：松鼠
+爱好：宅，跑步
+
+看的书：
+星座：
+
+
+
 ## contact 
 eson.org@gmail.com
 

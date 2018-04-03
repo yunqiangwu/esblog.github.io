@@ -3,13 +3,13 @@
 	url = https://github.com/hexojs/hexo-theme-landscape.git
 [submodule "themes/next"]
 	path = themes/next
-	url = git@github.com:xsung/hexo-theme-next.git
+	url = git@github.com:esblog/hexo-theme-next.git
 [submodule "source/games/2048"]
 	path = source/games/2048
-	url = git@github.com:xsung/2048.git
+	url = git@github.com:esblog/2048.git
 [submodule "source/_posts"]
 	path = source/_posts
-	url = git@github.com:xsung/_posts.git
+	url = git@github.com:esblog/_posts.git
 [submodule "source/images/raw"]
         path = source/images/raw
-        url = git@github.com:xsung/raw.git
+        url = git@github.com:esblog/raw.git
