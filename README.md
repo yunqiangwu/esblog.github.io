@@ -2,15 +2,15 @@
 
 This repo is for development. Click the following links to `Deployed Repository` and `Web Site`
 
-- [x] [Dev Repository](https://github.com/xsung/blog-dev/) 
-- [ ] [Deployed Repository](https://github.com/xu-song/xu-song.github.io/) is deployed by Hexo from `Dev Repository`
-- [ ] [Demo Site](http://xusong.vip) hosts the `Deployed Repository` 
+- [x] [Dev Repository](https://github.com/ESblog/esblog.github.io/tree/dev) 
+- [ ] [Deployed Repository](https://github.com/ESblog/esblog.github.io/tree/master) is deployed by Hexo from `Dev Repository`
+- [ ] [Demo Site](https://blog.eson.org) hosts site
 
 ## Setup & Deploy
 
 
 ```bash
-$ git clone --recursive git@github.com:xsung/blog-dev.git blog
+$ git clone -b dev --recursive git@github.com:esblog/esblog.github.io.git blog-dev
 $ npm install hexo --save  # install node_modules dependency
 $ hexo s
 $ hexo d
@@ -19,13 +19,9 @@ $ hexo d
 ## Submodule
 
 - [posts](../../../_posts)
-- games
-  - [2048](../../../2048)
-- demos
-  - [todo](../../../demos)
 - themes
   - [NexT](../../../hexo-theme-next)
-
+- [images](../../../raw)
 
 
 ## Contribute
@@ -54,7 +50,7 @@ $ git pull --recurse-submodules
 
 ```
 
-### Merge with latest submodules (all forked branch)(optional)
+### Update from remote themes (all forked branch)(optional)
 **themes**
 goto [NexT](../../../hexo-theme-next)
 
@@ -71,8 +67,8 @@ merge with Mater Branch
 
 
 ## Miscellaneous
-- [TODO List](https://github.com/xsung/blog-dev/issues/1)
-- [Setup Blog with Proper Way](http://xusong.vip/2018/01/30/web/blog-framework/nodejs-hexo/Hexo%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/)
+- [TODO List](https://github.com/ESblog/esblog.github.io/issues/2)
+- [Setup Blog with Proper Way](https://blog.eson.org/pub/d3c1b8ca/)
 
 
 
