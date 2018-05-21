@@ -8,5 +8,4 @@ Disallow: /css/
 Disallow: /lib/
 
 Sitemap: https://blog.eson.org/sitemap.xml
-Sitemap: https://blog.eson.org/baidusitemap.xml
 

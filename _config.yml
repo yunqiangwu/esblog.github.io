@@ -10,7 +10,7 @@ subtitle: Daily Notes
 #description: 吾尝终日不食,终夜不寝,以思,无益,不如学也 --《论语》 
 description: 学而不思则罔，思而不学则殆
 keywords: "机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON"
-author:  Eson Xu
+author: ESON
 language: zh-CN
 timezone:
 
@@ -128,3 +128,7 @@ baidu_url_submit:
   host: blog.eson.org ## 在百度站长平台中注册的域名
   token: hOraXsrU6jl6Pifg ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
+tagInstagram:
+  captioned: true 
+  width: 50%
