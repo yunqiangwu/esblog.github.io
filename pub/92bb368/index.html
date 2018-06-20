@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="emtKuCBSwP_Lnea7aB-7zRLW9DcVrzBUJlbMxRP_VrY" />
+
+
+
+  <meta name="msvalidate.01" content="D07545095E3B3DED99406636136B159E" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-song.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-song.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo-song.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="综述官方收录插件：hexo.io/plugins/ 我现在的博客，采用的是hexo-abbrlink + hexo-auto-category插件。  前者生成路径无关的hash作为URL，比较鲁棒。后者提供依赖路径的category，既自动生成category，又能方便在浏览器端定位到日志的文件路径。 可视化插件 fancy box大赞 chart相关，很多插件    博客管理插件博客分类(ca">
+<meta name="keywords" content="hexo,plugin,hexo-auto-category">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Hexo插件系列】Hexo 插件推荐">
+<meta property="og:url" content="https://blog.eson.org/pub/92bb368/index.html">
+<meta property="og:site_name" content="ESON">
+<meta property="og:description" content="综述官方收录插件：hexo.io/plugins/ 我现在的博客，采用的是hexo-abbrlink + hexo-auto-category插件。  前者生成路径无关的hash作为URL，比较鲁棒。后者提供依赖路径的category，既自动生成category，又能方便在浏览器端定位到日志的文件路径。 可视化插件 fancy box大赞 chart相关，很多插件    博客管理插件博客分类(ca">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-20T11:22:09.011Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【Hexo插件系列】Hexo 插件推荐">
+<meta name="twitter:description" content="综述官方收录插件：hexo.io/plugins/ 我现在的博客，采用的是hexo-abbrlink + hexo-auto-category插件。  前者生成路径无关的hash作为URL，比较鲁棒。后者提供依赖路径的category，既自动生成category，又能方便在浏览器端定位到日志的文件路径。 可视化插件 fancy box大赞 chart相关，很多插件    博客管理插件博客分类(ca">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.eson.org/pub/92bb368/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>【Hexo插件系列】Hexo 插件推荐 | ESON</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115875587-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115875587-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4144ca6f2a9b60f1feea7806f82aa6d0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ESON</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Daily Notes</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />站内搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/92bb368/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">【Hexo插件系列】Hexo 插件推荐
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-31 00:00:00" itemprop="dateCreated datePublished" datetime="2018-03-31T00:00:00+08:00">2018-03-31</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/" itemprop="url" rel="index"><span itemprop="name">blog-framework</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/nodejs-hexo/" itemprop="url" rel="index"><span itemprop="name">nodejs-hexo</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/nodejs-hexo/plugin/" itemprop="url" rel="index"><span itemprop="name">plugin</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+             title="阅读次数" >
+            <i class="fa fa-eye"></i>
+            
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h1><p>官方收录插件：<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">hexo.io/plugins/</a></p>
+<p>我现在的博客，采用的是<code>hexo-abbrlink</code> + <code>hexo-auto-category</code>插件。  前者生成<code>路径无关</code>的hash作为URL，比较鲁棒。后者提供<code>依赖路径</code>的category，既自动生成category，又能方便在浏览器端<code>定位到日志的文件路径</code>。</p>
+<h1 id="可视化插件"><a href="#可视化插件" class="headerlink" title="可视化插件"></a>可视化插件</h1><ul>
+<li>fancy box大赞</li>
+<li>chart相关，很多插件<!--
+echart(来自百度   ) - hexo-tag-echarts3  
+d3 -
+-->
+</li>
+</ul>
+<!--
+- tag cloud：hexo-tag-cloud  hexo-d3cloudtag
+-->
+<h1 id="博客管理插件"><a href="#博客管理插件" class="headerlink" title="博客管理插件"></a>博客管理插件</h1><h2 id="博客分类-category-自动管理"><a href="#博客分类-category-自动管理" class="headerlink" title="博客分类(category)自动管理"></a>博客分类(category)自动管理</h2><p><a href="https://github.com/xu-song/hexo-auto-category" target="_blank" rel="noopener">hexo-auto-category</a></p>
+<p>根据日志(Markdown文件)所在目录层级自动分类。用户只需要把日志按照目录的方式组织，该插件就会在日志头部自动生成category标签。</p>
+<p>既方便管理日志，又省去了人工维护<code>categories</code>标签的麻烦。</p>
+<!--
+发现自己貌似重新造了个轮子 hexo-directory-category
+-->
+<h2 id="markdown文件的引用"><a href="#markdown文件的引用" class="headerlink" title="markdown文件的引用"></a>markdown文件的引用</h2><p><a href="https://github.com/tea3/hexo-include-markdown" target="_blank" rel="noopener">hexo-include-markdown</a> 避免了多个博客写重复的内容。</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="section">## include sample</span></span><br><span class="line"></span><br><span class="line">Please load another markdown file with the following code.</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- md template.md --&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h1 id="SEO插件"><a href="#SEO插件" class="headerlink" title="SEO插件"></a>SEO插件</h1><h2 id="永久链接-permalink-插件-hexo-abbrlink"><a href="#永久链接-permalink-插件-hexo-abbrlink" class="headerlink" title="永久链接(permalink)插件 - hexo-abbrlink"></a>永久链接(permalink)插件 - hexo-abbrlink</h2><p>URL的设计尽量做到以下几点：</p>
+<ul>
+<li>不变性/鲁棒性：<code>date&gt;title&gt;path&gt;content</code>，即内容更新最频繁，标题和日期变动较少。<ul>
+<li><del>path</del>，<del>content</del> 这俩被pass了</li>
+</ul>
+</li>
+<li>唯一性：<code>content path title date</code> 唯一性都挺好</li>
+<li>长度要短 &amp; 容量要大：<ul>
+<li><del>content</del></li>
+</ul>
+</li>
+</ul>
+<p>Hexo默认采用 date+path作为URL，唯一性很好，但是鲁棒性就比较差（对于我）。像我就经常改变文件的路径，对文件重新归纳整理，这样会造成批量URL变动，严重影响SEO。</p>
+<h2 id="重复网页-权威链接-hexo-auto-canonical"><a href="#重复网页-权威链接-hexo-auto-canonical" class="headerlink" title="重复网页 权威链接 - hexo-auto-canonical"></a>重复网页 权威链接 - hexo-auto-canonical</h2><p>据估计，网上有10%-30%的URL是内容相同但URL不一样的不规范化网址。</p>
+<p>解决，做301重定向</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo.extend.helper.register(<span class="string">'autoCanonical'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">config, page</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> base_url = config.url;</span><br><span class="line">  <span class="keyword">if</span> (config.url.charAt(config.url.length - <span class="number">1</span>) !== <span class="string">'/'</span>) base_url += <span class="string">'/'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="string">'&lt;link rel="canonical" href="'</span> + base_url + page.canonical_path.replace(<span class="string">'index.html'</span>, <span class="string">''</span>).toLowerCase() + <span class="string">'"/&gt;'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>什么鬼？这么简单？</p>
+<h2 id="hexo-autonofollow"><a href="#hexo-autonofollow" class="headerlink" title="hexo-autonofollow"></a>hexo-autonofollow</h2><p>Add rel=”external nofollow” to all external links, SEO friendly.<br>Add target=”_blank”, Open external links in new window or tab</p>
+<h2 id="baidu-SEO-相关插件"><a href="#baidu-SEO-相关插件" class="headerlink" title="baidu SEO 相关插件"></a>baidu SEO 相关插件</h2><p>反正我一直没搞定百度。难道是因为网站没备案？</p>
+<h1 id="推荐系统插件"><a href="#推荐系统插件" class="headerlink" title="推荐系统插件"></a>推荐系统插件</h1><ul>
+<li><a href="https://github.com/tea3/hexo-related-popular-posts" target="_blank" rel="noopener">hexo-related-popular-posts</a><br>采用的相似tag作为推荐标准，需要自己合理设置日志的tag</li>
+</ul>
+<h1 id="内容扩展插件"><a href="#内容扩展插件" class="headerlink" title="内容扩展插件"></a>内容扩展插件</h1><h2 id="Instagram扩展"><a href="#Instagram扩展" class="headerlink" title="Instagram扩展"></a>Instagram扩展</h2><p>instagram提供内嵌脚本，只不过有点长，直接贴到markdown也还将就。</p>
+<p><a href="https://github.com/tea3/hexo-tag-instagram" target="_blank" rel="noopener">hexo-tag-instagram</a></p>
+<p>示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% instagram https:<span class="comment">//www.instagram.com/p/Bg71nq4HuAU/ %&#125;</span></span><br></pre></td></tr></table></figure></p>
+<div class="instagram-wrapper"><blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-version="7" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px auto; padding:0; width:99.375%; width:-webkit-calc(50%- 2px); width:calc(50% - 2px);"><div style="padding:8px;"> <div style=" background:#F8F8F8; line-height:0; margin-top:40px; padding:50.0% 0; text-align:center; width:100%;"> <div style=" background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAMUExURczMzPf399fX1+bm5mzY9AMAAADiSURBVDjLvZXbEsMgCES5/P8/t9FuRVCRmU73JWlzosgSIIZURCjo/ad+EQJJB4Hv8BFt+IDpQoCx1wjOSBFhh2XssxEIYn3ulI/6MNReE07UIWJEv8UEOWDS88LY97kqyTliJKKtuYBbruAyVh5wOHiXmpi5we58Ek028czwyuQdLKPG1Bkb4NnM+VeAnfHqn1k4+GPT6uGQcvu2h2OVuIf/gWUFyy8OWEpdyZSa3aVCqpVoVvzZZ2VTnn2wU8qzVjDDetO90GSy9mVLqtgYSy231MxrY6I2gGqjrTY0L8fxCxfCBbhWrsYYAAAAAElFTkSuQmCC); display:block; height:44px; margin:0 auto -44px; position:relative; top:-22px; width:44px;"></div></div><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/Bg71nq4HuAU/" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank"></a></p></div></blockquote></div><script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+<h2 id="facebook扩展"><a href="#facebook扩展" class="headerlink" title="facebook扩展"></a>facebook扩展</h2><h2 id="hexo-tag-bilibili"><a href="#hexo-tag-bilibili" class="headerlink" title="hexo-tag-bilibili"></a>hexo-tag-bilibili</h2><h2 id="youtube"><a href="#youtube" class="headerlink" title="youtube"></a>youtube</h2><div class="video-container"><iframe src="//www.youtube.com/embed/video_id" frameborder="0" allowfullscreen></iframe></div>
+<p><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/tag-plugins.html</a></p>
+<h2 id="twitter扩展"><a href="#twitter扩展" class="headerlink" title="twitter扩展"></a>twitter扩展</h2><p><a href="https://github.com/tea3/hexo-tag-twitter" target="_blank" rel="noopener">hexo-tag-twitter</a></p>
+<p>示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% twitter https:<span class="comment">//twitter.com/realDonaldTrump/status/976891486510907393 %&#125;</span></span><br></pre></td></tr></table></figure></p>
+<div class="twitter-wrapper"><blockquote class="twitter-tweet"><a href="https://twitter.com/realDonaldTrump/status/976891486510907393" target="_blank" rel="noopener"></a></blockquote></div><script async defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="微博扩展"><a href="#微博扩展" class="headerlink" title="微博扩展"></a>微博扩展</h2><h2 id="flickr扩展"><a href="#flickr扩展" class="headerlink" title="flickr扩展"></a>flickr扩展</h2><p>貌似直接<code>&lt;img&gt;</code>标签就能搞定</p>
+<h2 id="soundcloud扩展"><a href="#soundcloud扩展" class="headerlink" title="soundcloud扩展"></a>soundcloud扩展</h2><p>hexo-tag-soundcloud</p>
+<div class="soundcloud-wrapper"><iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Frich-the-kid%2Fplug-walk-1&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe></div>
+<h2 id="代码扩展"><a href="#代码扩展" class="headerlink" title="代码扩展"></a>代码扩展</h2><p>gist提供内嵌脚本</p>
+<h1 id="加速-amp-优化"><a href="#加速-amp-优化" class="headerlink" title="加速 &amp; 优化"></a>加速 &amp; 优化</h1><ul>
+<li>cdn：hexo-cdnify</li>
+<li>minify: hexo-all-minifier</li>
+<li>hexo-asset-pipeline</li>
+</ul>
+<h1 id="前端加密类："><a href="#前端加密类：" class="headerlink" title="前端加密类："></a>前端加密类：</h1><p>hexo-encrypt.  </p>
+<p>hexo-blog-encrypt  <a href="http://edolphin.site/2016/05/31/encrypt-post/" target="_blank" rel="noopener">原理见博客</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var content = CryptoJS.AES.decrypt(document.getElementById(&quot;encrypt-blog&quot;).innerHTML.trim(), pass);</span><br></pre></td></tr></table></figure>
+<!--
+#无聊鸡肋类
+插件无关类(功能独立，无须作为hexo插件)：hexo-beautify
+
+# Hexo博客推荐
+- https://photo-tea.com  很赞，虽然看不懂写的是什么。[Github](https://github.com/tea3/)
+- https://blog.zthxxx.me/
+-->
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ESON</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.eson.org/pub/92bb368/" title="【Hexo插件系列】Hexo 插件推荐">https://blog.eson.org/pub/92bb368/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/plugin/" rel="tag"># plugin</a>
+          
+            <a href="/tags/hexo-auto-category/" rel="tag"># hexo-auto-category</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pub/5a499450/" rel="next" title="【Angular系列】 Angular 2 入门">
+                <i class="fa fa-chevron-left"></i> 【Angular系列】 Angular 2 入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/7b5bc9fe/" rel="prev" title="关于Monkey Patch猴子补丁">
+                关于Monkey Patch猴子补丁 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="ESON" />
+            
+              <p class="site-author-name" itemprop="name">ESON</p>
+              <p class="site-description motion-element" itemprop="description">学而不思则罔，思而不学则殆</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">132</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">112</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">120</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xu-song" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xusong.vip@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=373453180&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/xusong666" target="_blank" title="FB Page" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#综述"><span class="nav-number">1.</span> <span class="nav-text">综述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#可视化插件"><span class="nav-number">2.</span> <span class="nav-text">可视化插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#博客管理插件"><span class="nav-number">3.</span> <span class="nav-text">博客管理插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客分类-category-自动管理"><span class="nav-number">3.1.</span> <span class="nav-text">博客分类(category)自动管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#markdown文件的引用"><span class="nav-number">3.2.</span> <span class="nav-text">markdown文件的引用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SEO插件"><span class="nav-number">4.</span> <span class="nav-text">SEO插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#永久链接-permalink-插件-hexo-abbrlink"><span class="nav-number">4.1.</span> <span class="nav-text">永久链接(permalink)插件 - hexo-abbrlink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复网页-权威链接-hexo-auto-canonical"><span class="nav-number">4.2.</span> <span class="nav-text">重复网页 权威链接 - hexo-auto-canonical</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-autonofollow"><span class="nav-number">4.3.</span> <span class="nav-text">hexo-autonofollow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#baidu-SEO-相关插件"><span class="nav-number">4.4.</span> <span class="nav-text">baidu SEO 相关插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推荐系统插件"><span class="nav-number">5.</span> <span class="nav-text">推荐系统插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内容扩展插件"><span class="nav-number">6.</span> <span class="nav-text">内容扩展插件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instagram扩展"><span class="nav-number">6.1.</span> <span class="nav-text">Instagram扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#facebook扩展"><span class="nav-number">6.2.</span> <span class="nav-text">facebook扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-tag-bilibili"><span class="nav-number">6.3.</span> <span class="nav-text">hexo-tag-bilibili</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#youtube"><span class="nav-number">6.4.</span> <span class="nav-text">youtube</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#twitter扩展"><span class="nav-number">6.5.</span> <span class="nav-text">twitter扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微博扩展"><span class="nav-number">6.6.</span> <span class="nav-text">微博扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flickr扩展"><span class="nav-number">6.7.</span> <span class="nav-text">flickr扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#soundcloud扩展"><span class="nav-number">6.8.</span> <span class="nav-text">soundcloud扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码扩展"><span class="nav-number">6.9.</span> <span class="nav-text">代码扩展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加速-amp-优化"><span class="nav-number">7.</span> <span class="nav-text">加速 &amp; 优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端加密类："><span class="nav-number">8.</span> <span class="nav-text">前端加密类：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ESON</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a> and <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>Github Pages</b></a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://blog.eson.org/pub/92bb368/';
+        this.page.identifier = 'pub/92bb368/';
+        this.page.title = '【Hexo插件系列】Hexo 插件推荐';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Eson.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.2.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>

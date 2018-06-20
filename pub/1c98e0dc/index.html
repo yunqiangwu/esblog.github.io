@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="emtKuCBSwP_Lnea7aB-7zRLW9DcVrzBUJlbMxRP_VrY" />
+
+
+
+  <meta name="msvalidate.01" content="D07545095E3B3DED99406636136B159E" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-song.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-song.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo-song.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="架构 Object.java(rt.jar) 调用 jdk的native方法(Object.c)。 native方法 调用hotspot jvm的方法(jvm.cpp)。  Object.java java source版本：oracle 1.7  Object 还有隐形的构造函数.new Object();new Object[int]; // 在ArrayList的构造函数中用到了 疑问： 为">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java系列 - Object">
+<meta property="og:url" content="https://blog.eson.org/pub/1c98e0dc/index.html">
+<meta property="og:site_name" content="ESON">
+<meta property="og:description" content="架构 Object.java(rt.jar) 调用 jdk的native方法(Object.c)。 native方法 调用hotspot jvm的方法(jvm.cpp)。  Object.java java source版本：oracle 1.7  Object 还有隐形的构造函数.new Object();new Object[int]; // 在ArrayList的构造函数中用到了 疑问： 为">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-20T11:22:08.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java系列 - Object">
+<meta name="twitter:description" content="架构 Object.java(rt.jar) 调用 jdk的native方法(Object.c)。 native方法 调用hotspot jvm的方法(jvm.cpp)。  Object.java java source版本：oracle 1.7  Object 还有隐形的构造函数.new Object();new Object[int]; // 在ArrayList的构造函数中用到了 疑问： 为">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.eson.org/pub/1c98e0dc/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>java系列 - Object | ESON</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115875587-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115875587-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4144ca6f2a9b60f1feea7806f82aa6d0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ESON</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Daily Notes</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />站内搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/1c98e0dc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">java系列 - Object
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-02T00:00:00+08:00">2017-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-06-20 19:22:08" itemprop="dateModified" datetime="2018-06-20T19:22:08+08:00">2018-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/" itemprop="url" rel="index"><span itemprop="name">programing</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/" itemprop="url" rel="index"><span itemprop="name">jdk</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/" itemprop="url" rel="index"><span itemprop="name">rt</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/lang/" itemprop="url" rel="index"><span itemprop="name">lang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+             title="阅读次数" >
+            <i class="fa fa-eye"></i>
+            
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><ul>
+<li>Object.java(rt.jar) 调用 jdk的native方法(Object.c)。</li>
+<li>native方法 调用hotspot jvm的方法(jvm.cpp)。</li>
+</ul>
+<h2 id="Object-java"><a href="#Object-java" class="headerlink" title="Object.java"></a>Object.java</h2><ul>
+<li>java source版本：oracle 1.7</li>
+</ul>
+<p>Object 还有隐形的构造函数.<br>new Object();<br>new Object[int]; // 在ArrayList的构造函数中用到了</p>
+<p>疑问：</p>
+<h3 id="为什么Object-java中看不到构造函数"><a href="#为什么Object-java中看不到构造函数" class="headerlink" title="为什么Object.java中看不到构造函数"></a>为什么Object.java中看不到构造函数</h3><p>编译器为它生成了构造函数</p>
+<h3 id="为什么在stack-trace中看不到调用Object"><a href="#为什么在stack-trace中看不到调用Object" class="headerlink" title="为什么在stack trace中看不到调用Object."></a>为什么在stack trace中看不到调用Object.<init></init></h3><p>有7个native方法。</p>
+<ul>
+<li>private static native void registerNatives();</li>
+<li>protected native Object clone() throws CloneNotSupportedException;</li>
+<li>public final native Class&lt;?&gt; getClass();</li>
+<li>public native int hashCode();</li>
+<li>public final native void notify();</li>
+<li>public final native void notifyAll();</li>
+<li>public final native void wait(long timeout) throws InterruptedException;</li>
+</ul>
+<ul>
+<li>但是构造函数是怎样实现的呢？(见jvm目录的init.md)</li>
+</ul>
+<p>由于Object类中有JNI方法调用，按照JNI的规则，应当生成JNI 的头文件。<br>在此目录下执行javah -jni java.lang.Object 指令，将生成一个java_lang_Object.h头文件(自动生成的header，没什么意义)</p>
+<h2 id="Object-c"><a href="#Object-c" class="headerlink" title="Object.c"></a>Object.c</h2><ul>
+<li>source版本：openjdk-7-fcs-src-b147-27_jun_2011</li>
+<li>路径: openjdk\jdk\src\share\native\java\lang\Object.c</li>
+<li>没有Object.h</li>
+</ul>
+<p>Object.c</p>
+<pre><code>/*-
+ *      Implementation of class Object
+ *
+ *      former threadruntime.c, Sun Sep 22 12:09:39 1991
+ */
+
+#include &lt;stdio.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;limits.h&gt;
+
+#include &quot;jni.h&quot;
+#include &quot;jni_util.h&quot;
+#include &quot;jvm.h&quot;
+
+#include &quot;java_lang_Object.h&quot;
+
+// JVM_这些函数是在jvm.c中实现的
+static JNINativeMethod methods[] = {
+    {&quot;hashCode&quot;,    &quot;()I&quot;,                    (void *)&amp;JVM_IHashCode},  //  返回int
+    {&quot;wait&quot;,        &quot;(J)V&quot;,                   (void *)&amp;JVM_MonitorWait}, // 返回void，参数是long
+    {&quot;notify&quot;,      &quot;()V&quot;,                    (void *)&amp;JVM_MonitorNotify},  // 返回void
+    {&quot;notifyAll&quot;,   &quot;()V&quot;,                    (void *)&amp;JVM_MonitorNotifyAll}, // 返回void
+    {&quot;clone&quot;,       &quot;()Ljava/lang/Object;&quot;,   (void *)&amp;JVM_Clone}, // 返回Ojbect
+};
+
+JNIEXPORT void JNICALL
+Java_java_lang_Object_registerNatives(JNIEnv *env, jclass cls)
+{
+    (*env)-&gt;RegisterNatives(env, cls,
+                            methods, sizeof(methods)/sizeof(methods[0]));
+}
+
+JNIEXPORT jclass JNICALL
+Java_java_lang_Object_getClass(JNIEnv *env, jobject this)
+{
+    if (this == NULL) {
+        JNU_ThrowNullPointerException(env, NULL);
+        return 0;
+    } else {
+        return (*env)-&gt;GetObjectClass(env, this);
+    }
+}
+</code></pre><p>其中JNINativeMethod的结构体如下:</p>
+<pre><code>typedef struct {
+    char *name; // Java中函数的名字
+    char *signature; // signature 方法签名，描述了函数的参数和返回值
+    void *fnPtr;  // native实现的函数指针，指向C函数
+} JNINativeMethod;
+</code></pre><h2 id="跟踪-hashcode"><a href="#跟踪-hashcode" class="headerlink" title="跟踪 hashcode"></a>跟踪 hashcode</h2><pre><code>// jvm.h 路径: openjdk\hotspot\src\share\vm\prims\jvm.h
+JNIEXPORT jint JNICALL
+JVM_IHashCode(JNIEnv *env, jobject obj);
+
+
+// jvm.cpp 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
+JVM_ENTRY(jint, JVM_IHashCode(JNIEnv* env, jobject handle))
+  JVMWrapper(&quot;JVM_IHashCode&quot;);
+  // as implemented in the classic virtual machine; return 0 if object is NULL
+  return handle == NULL ? 0 : ObjectSynchronizer::FastHashCode (THREAD, JNIHandles::resolve_non_null(handle)) ;
+JVM_END
+</code></pre><p>FastHashCode才是真正计算hashcode的代码</p>
+<h3 id="FastHashCode"><a href="#FastHashCode" class="headerlink" title="FastHashCode"></a>FastHashCode</h3><p>这是hashCode()的具体实现</p>
+<pre><code>// 路径: openjdk\hotspot\src\share\vm\runtime\synchronizer.cpp
+
+intptr_t ObjectSynchronizer::FastHashCode (Thread * Self, oop obj) {
+  if (UseBiasedLocking) {
+    // NOTE: many places throughout the JVM do not expect a safepoint
+    // to be taken here, in particular most operations on perm gen
+    // objects. However, we only ever bias Java instances and all of
+    // the call sites of identity_hash that might revoke biases have
+    // been checked to make sure they can handle a safepoint. The
+    // added check of the bias pattern is to avoid useless calls to
+    // thread-local storage.
+    if (obj-&gt;mark()-&gt;has_bias_pattern()) {
+      // Box and unbox the raw reference just in case we cause a STW safepoint.
+      Handle hobj (Self, obj) ;
+      // Relaxing assertion for bug 6320749.
+      assert (Universe::verify_in_progress() ||
+              !SafepointSynchronize::is_at_safepoint(),
+             &quot;biases should not be seen by VM thread here&quot;);
+      BiasedLocking::revoke_and_rebias(hobj, false, JavaThread::current());
+      obj = hobj() ;
+      assert(!obj-&gt;mark()-&gt;has_bias_pattern(), &quot;biases should be revoked by now&quot;);
+    }
+  }
+
+  // hashCode() is a heap mutator ...
+  // Relaxing assertion for bug 6320749.
+  assert (Universe::verify_in_progress() ||
+          !SafepointSynchronize::is_at_safepoint(), &quot;invariant&quot;) ;
+  assert (Universe::verify_in_progress() ||
+          Self-&gt;is_Java_thread() , &quot;invariant&quot;) ;
+  assert (Universe::verify_in_progress() ||
+         ((JavaThread *)Self)-&gt;thread_state() != _thread_blocked, &quot;invariant&quot;) ;
+
+  ObjectMonitor* monitor = NULL;
+  markOop temp, test;
+  intptr_t hash;
+  markOop mark = ReadStableMark (obj);
+
+  // object should remain ineligible for biased locking
+  assert (!mark-&gt;has_bias_pattern(), &quot;invariant&quot;) ;
+
+  if (mark-&gt;is_neutral()) {
+    hash = mark-&gt;hash();              // this is a normal header 对象的hashcode存储在对象头里
+    if (hash) {                       // if it has hash, just return it 注意这里有个cache，对于同一个Ojbect，第一次调用Object.hashCode将会执行实际的计算并记入cache，以后直接从cache中取出。
+      return hash;
+    }
+    hash = get_next_hash(Self, obj);  // allocate a new hash code
+    temp = mark-&gt;copy_set_hash(hash); // merge the hash code into header
+    // use (machine word version) atomic operation to install the hash
+    test = (markOop) Atomic::cmpxchg_ptr(temp, obj-&gt;mark_addr(), mark);
+    if (test == mark) {
+      return hash;
+    }
+    // If atomic operation failed, we must inflate the header
+    // into heavy weight monitor. We could add more code here
+    // for fast path, but it does not worth the complexity.
+  } else if (mark-&gt;has_monitor()) {
+    monitor = mark-&gt;monitor();
+    temp = monitor-&gt;header();
+    assert (temp-&gt;is_neutral(), &quot;invariant&quot;) ;
+    hash = temp-&gt;hash();
+    if (hash) {
+      return hash;
+    }
+    // Skip to the following code to reduce code size
+  } else if (Self-&gt;is_lock_owned((address)mark-&gt;locker())) {
+    temp = mark-&gt;displaced_mark_helper(); // this is a lightweight monitor owned
+    assert (temp-&gt;is_neutral(), &quot;invariant&quot;) ;
+    hash = temp-&gt;hash();              // by current thread, check if the displaced
+    if (hash) {                       // header contains hash code
+      return hash;
+    }
+    // WARNING:
+    //   The displaced header is strictly immutable.
+    // It can NOT be changed in ANY cases. So we have
+    // to inflate the header into heavyweight monitor
+    // even the current thread owns the lock. The reason
+    // is the BasicLock (stack slot) will be asynchronously
+    // read by other threads during the inflate() function.
+    // Any change to stack may not propagate to other threads
+    // correctly.
+  }
+
+  // Inflate the monitor to set hash code
+  monitor = ObjectSynchronizer::inflate(Self, obj);
+  // Load displaced header and check it has hash code
+  mark = monitor-&gt;header();
+  assert (mark-&gt;is_neutral(), &quot;invariant&quot;) ;
+  hash = mark-&gt;hash();  // 取出缓存
+  if (hash == 0) {
+    hash = get_next_hash(Self, obj);  // 实际计算
+    temp = mark-&gt;copy_set_hash(hash); // merge hash code into header
+    assert (temp-&gt;is_neutral(), &quot;invariant&quot;) ;
+    test = (markOop) Atomic::cmpxchg_ptr(temp, monitor, mark);
+    if (test != mark) {
+      // The only update to the header in the monitor (outside GC)
+      // is install the hash code. If someone add new usage of
+      // displaced header, please update this code
+      hash = test-&gt;hash();
+      assert (test-&gt;is_neutral(), &quot;invariant&quot;) ;
+      assert (hash != 0, &quot;Trivial unexpected object/monitor header usage.&quot;);
+    }
+  }
+  // We finally get the hash
+  return hash;
+}
+</code></pre><h3 id="get-next-hash-–-这才是核心代码"><a href="#get-next-hash-–-这才是核心代码" class="headerlink" title="get_next_hash – 这才是核心代码"></a>get_next_hash – 这才是核心代码</h3><p>又调用的get_next_hash()</p>
+<pre><code>// 路径: openjdk\hotspot\src\share\vm\runtime\synchronizer.cpp
+static inline intptr_t get_next_hash(Thread * Self, oop obj) {
+  intptr_t value = 0 ;
+  if (hashCode == 0) {
+     // This form uses an unguarded global Park-Miller RNG,
+     // so it&apos;s possible for two threads to race and generate the same RNG.
+     // On MP system we&apos;ll have lots of RW access to a global, so the
+     // mechanism induces lots of coherency traffic.
+     value = os::random() ;
+  } else
+  if (hashCode == 1) {
+     // This variation has the property of being stable (idempotent)
+     // between STW operations.  This can be useful in some of the 1-0
+     // synchronization schemes.
+     intptr_t addrBits = intptr_t(obj) &gt;&gt; 3 ;
+     value = addrBits ^ (addrBits &gt;&gt; 5) ^ GVars.stwRandom ;
+  } else
+  if (hashCode == 2) {
+     value = 1 ;            // for sensitivity testing
+  } else
+  if (hashCode == 3) {
+     value = ++GVars.hcSequence ;
+  } else
+  if (hashCode == 4) {
+     value = intptr_t(obj) ;
+  } else {
+     // Marsaglia&apos;s xor-shift scheme with thread-specific state
+     // This is probably the best overall implementation -- we&apos;ll
+     // likely make this the default in future releases.
+     unsigned t = Self-&gt;_hashStateX ;
+     t ^= (t &lt;&lt; 11) ;
+     Self-&gt;_hashStateX = Self-&gt;_hashStateY ;
+     Self-&gt;_hashStateY = Self-&gt;_hashStateZ ;
+     Self-&gt;_hashStateZ = Self-&gt;_hashStateW ;
+     unsigned v = Self-&gt;_hashStateW ;
+     v = (v ^ (v &gt;&gt; 19)) ^ (t ^ (t &gt;&gt; 8)) ;
+     Self-&gt;_hashStateW = v ;
+     value = v ;
+  }
+
+  value &amp;= markOopDesc::hash_mask;
+  if (value == 0) value = 0xBAD ;
+  assert (value != markOopDesc::no_hash, &quot;invariant&quot;) ;
+  TEVENT (hashCode: GENERATE) ;
+  return value;
+}
+</code></pre><p>hashCode()并不是简单的返回内存地址。<br>OpenJDK一共实现了5中不同的计算hash值的方法，通过<br>这段代码中hashCode进行切换。其中hashCode == 4的是直接使用地址的（前面的实验说明OpenJDK默认情况下并没有使用这种方式，或许可以通过运行/编译时参数进行选择）。</p>
+<p>###</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>前面通过JNI验证已经能够得到很显然的结论，hashCode返回的并不一定是对象的（虚拟）内存地址，具体取决于运行时库和JVM的具体实现。</p>
+<h2 id="跟踪wait"><a href="#跟踪wait" class="headerlink" title="跟踪wait"></a>跟踪wait</h2><pre><code>JNIEXPORT void JNICALL
+JVM_MonitorWait(JNIEnv *env, jobject obj, jlong ms);
+
+
+// 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
+JVM_ENTRY(void, JVM_MonitorWait(JNIEnv* env, jobject handle, jlong ms))
+  JVMWrapper(&quot;JVM_MonitorWait&quot;);
+  Handle obj(THREAD, JNIHandles::resolve_non_null(handle));
+  assert(obj-&gt;is_instance() || obj-&gt;is_array(), &quot;JVM_MonitorWait must apply to an object&quot;);
+  JavaThreadInObjectWaitState jtiows(thread, ms != 0);
+  if (JvmtiExport::should_post_monitor_wait()) {
+    JvmtiExport::post_monitor_wait((JavaThread *)THREAD, (oop)obj(), ms);
+  }
+  ObjectSynchronizer::wait(obj, ms, CHECK);
+JVM_END
+</code></pre><h2 id="跟踪notify"><a href="#跟踪notify" class="headerlink" title="跟踪notify"></a>跟踪notify</h2><pre><code>JNIEXPORT void JNICALL
+JVM_MonitorNotify(JNIEnv *env, jobject obj);
+
+
+// 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
+JVM_ENTRY(void, JVM_MonitorNotify(JNIEnv* env, jobject handle))
+  JVMWrapper(&quot;JVM_MonitorNotify&quot;);
+  Handle obj(THREAD, JNIHandles::resolve_non_null(handle));
+  assert(obj-&gt;is_instance() || obj-&gt;is_array(), &quot;JVM_MonitorNotify must apply to an object&quot;);
+  ObjectSynchronizer::notify(obj, CHECK);
+JVM_END
+</code></pre><h2 id="跟踪clone"><a href="#跟踪clone" class="headerlink" title="跟踪clone"></a>跟踪clone</h2><pre><code>JNIEXPORT jobject JNICALL
+JVM_Clone(JNIEnv *env, jobject obj);
+
+
+// 路径: openjdk\hotspot\src\share\vm\prims\jvm.cpp
+JVM_ENTRY(jobject, JVM_Clone(JNIEnv* env, jobject handle))
+  JVMWrapper(&quot;JVM_Clone&quot;);
+  Handle obj(THREAD, JNIHandles::resolve_non_null(handle));
+  const KlassHandle klass (THREAD, obj-&gt;klass());
+  JvmtiVMObjectAllocEventCollector oam;
+</code></pre><h2 id="跟踪-getClass"><a href="#跟踪-getClass" class="headerlink" title="跟踪 getClass"></a>跟踪 getClass</h2><h2 id="跟踪"><a href="#跟踪" class="headerlink" title="跟踪"></a>跟踪</h2><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/xusiwei1236/article/details/45152201" target="_blank" rel="noopener">http://blog.csdn.net/xusiwei1236/article/details/45152201</a></p>
+<h2 id="byte-code"><a href="#byte-code" class="headerlink" title="byte code"></a>byte code</h2><ul>
+<li>通过编译后的jar包(即class文件)，查看byte code.</li>
+<li>运行 javap -c java.lang.Object &gt; a.txt，得到以下的byte code</li>
+</ul>
+<p>如果执行不成功，看看是否把jdk的lib加入到了classpath:</p>
+<pre><code>Compiled from &quot;Object.java&quot;
+public class java.lang.Object {
+  public java.lang.Object();  // 什么都不干？不需要调用&lt;init&gt;吗？
+    Code:
+       0: return        
+
+  public final native java.lang.Class&lt;?&gt; getClass();
+
+  public native int hashCode();
+
+  public boolean equals(java.lang.Object);
+    Code:
+       0: aload_0       
+       1: aload_1       
+       2: if_acmpne     9
+       5: iconst_1      
+       6: goto          10
+       9: iconst_0      
+      10: ireturn       
+
+  protected native java.lang.Object clone() throws java.lang.CloneNotSupportedException;
+
+  public java.lang.String toString();
+    Code:
+       0: new           #1                  // class java/lang/StringBuilder
+       3: dup           
+       4: invokespecial #2                  // Method java/lang/StringBuilder.&quot;&lt;init&gt;&quot;:()V           // 注意这里，调用了&lt;init&gt;
+       7: aload_0       
+       8: invokevirtual #3                  // Method getClass:()Ljava/lang/Class;
+      11: invokevirtual #4                  // Method java/lang/Class.getName:()Ljava/lang/String;
+      14: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      17: ldc           #6                  // String @
+      19: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      22: aload_0       
+      23: invokevirtual #7                  // Method hashCode:()I
+      26: invokestatic  #8                  // Method java/lang/Integer.toHexString:(I)Ljava/lang/String;
+      29: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      32: invokevirtual #9                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+      35: areturn       
+
+  public final native void notify();
+
+  public final native void notifyAll();
+
+  public final native void wait(long) throws java.lang.InterruptedException;
+
+  public final void wait(long, int) throws java.lang.InterruptedException;
+    Code:
+       0: lload_1       
+       1: lconst_0      
+       2: lcmp          
+       3: ifge          16
+       6: new           #10                 // class java/lang/IllegalArgumentException
+       9: dup           
+      10: ldc           #11                 // String timeout value is negative
+      12: invokespecial #12                 // Method java/lang/IllegalArgumentException.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V
+      15: athrow        
+      16: iload_3       
+      17: iflt          26
+      20: iload_3       
+      21: ldc           #13                 // int 999999
+      23: if_icmple     36
+      26: new           #10                 // class java/lang/IllegalArgumentException
+      29: dup           
+      30: ldc           #14                 // String nanosecond timeout value out of range
+      32: invokespecial #12                 // Method java/lang/IllegalArgumentException.&quot;&lt;init&gt;&quot;:(Ljava/lang/String;)V
+      35: athrow        
+      36: iload_3       
+      37: ldc           #15                 // int 500000
+      39: if_icmpge     52
+      42: iload_3       
+      43: ifeq          56
+      46: lload_1       
+      47: lconst_0      
+      48: lcmp          
+      49: ifne          56
+      52: lload_1       
+      53: lconst_1      
+      54: ladd          
+      55: lstore_1      
+      56: aload_0       
+      57: lload_1       
+      58: invokevirtual #16                 // Method wait:(J)V
+      61: return        
+
+  public final void wait() throws java.lang.InterruptedException;
+    Code:
+       0: aload_0       
+       1: lconst_0      
+       2: invokevirtual #16                 // Method wait:(J)V
+       5: return        
+
+  protected void finalize() throws java.lang.Throwable;
+    Code:
+       0: return        
+
+  static {};
+    Code:
+       0: invokestatic  #17                 // Method registerNatives:()V
+       3: return        
+}
+</code></pre><p>C:\Program Files\java\jdk1.7.0_67\jre\lib\rt&gt;</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>object header: it’s JVM dependent， 具体参考JVM</li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="http://www.voidcn.com/blog/xusiwei1236/article/p-35249.html" target="_blank" rel="noopener">Object.hashCode()的返回值到底是不是对象内存地址</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ESON</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.eson.org/pub/1c98e0dc/" title="java系列 - Object">https://blog.eson.org/pub/1c98e0dc/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pub/e4c70599/" rel="next" title="java hotspot虚拟机 - init方法">
+                <i class="fa fa-chevron-left"></i> java hotspot虚拟机 - init方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/1b34e5ea/" rel="prev" title="java系列 - object">
+                java系列 - object <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="ESON" />
+            
+              <p class="site-author-name" itemprop="name">ESON</p>
+              <p class="site-description motion-element" itemprop="description">学而不思则罔，思而不学则殆</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">132</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">112</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">120</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xu-song" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xusong.vip@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=373453180&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/xusong666" target="_blank" title="FB Page" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-java"><span class="nav-number">2.</span> <span class="nav-text">Object.java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么Object-java中看不到构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">为什么Object.java中看不到构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么在stack-trace中看不到调用Object"><span class="nav-number">2.2.</span> <span class="nav-text">为什么在stack trace中看不到调用Object.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-c"><span class="nav-number">3.</span> <span class="nav-text">Object.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-hashcode"><span class="nav-number">4.</span> <span class="nav-text">跟踪 hashcode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FastHashCode"><span class="nav-number">4.1.</span> <span class="nav-text">FastHashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-next-hash-–-这才是核心代码"><span class="nav-number">4.2.</span> <span class="nav-text">get_next_hash – 这才是核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">4.3.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪wait"><span class="nav-number">5.</span> <span class="nav-text">跟踪wait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪notify"><span class="nav-number">6.</span> <span class="nav-text">跟踪notify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪clone"><span class="nav-number">7.</span> <span class="nav-text">跟踪clone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-getClass"><span class="nav-number">8.</span> <span class="nav-text">跟踪 getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪"><span class="nav-number">9.</span> <span class="nav-text">跟踪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#byte-code"><span class="nav-number">10.</span> <span class="nav-text">byte code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">11.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">12.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ESON</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a> and <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>Github Pages</b></a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://blog.eson.org/pub/1c98e0dc/';
+        this.page.identifier = 'pub/1c98e0dc/';
+        this.page.title = 'java系列 - Object';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Eson.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.2.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>
