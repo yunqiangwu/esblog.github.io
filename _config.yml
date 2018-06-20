@@ -106,7 +106,7 @@ search:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-- type: baidu_url_submitter
+#- type: baidu_url_submitter
 - type: git
   repo: git@github.com:esblog/esblog.github.io.git
   branch: master
