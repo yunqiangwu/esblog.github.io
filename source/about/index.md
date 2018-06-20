@@ -1,8 +1,6 @@
 ---
 title: About Me
-sidebar: false
 ---
-
 
 # 简介
 

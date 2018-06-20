@@ -6,8 +6,8 @@
 title: ESON
 subtitle: Daily Notes
 #description: machine learning, NLP, deep learning, 机器学习，深度学习，强化学习，java，python
-#description: 吾常终日而思，不如须臾之所学也。吾尝跂而望矣，不如登高之博见也。 
-#description: 吾尝终日不食,终夜不寝,以思,无益,不如学也 --《论语》 
+#description: 吾常终日而思，不如须臾之所学也。吾尝跂而望矣，不如登高之博见也。
+#description: 吾尝终日不食,终夜不寝,以思,无益,不如学也 --《论语》
 description: 学而不思则罔，思而不学则殆
 keywords: "机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON"
 author: ESON
@@ -51,7 +51,7 @@ default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
-render_drafts: true 
+render_drafts: true
 post_asset_folder: false
 relative_link: false
 future: true
@@ -60,7 +60,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -69,14 +69,14 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
 tag_map:
 auto_category:
-  enable: true 
-  depth:    
+  enable: true
+  depth:
 
 
 # Date / Time format
@@ -130,5 +130,5 @@ baidu_url_submit:
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 
 tagInstagram:
-  captioned: true 
+  captioned: true
   width: 50%
