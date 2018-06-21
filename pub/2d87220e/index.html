@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="ss参考 RNN tutorial| tensorflow">
+  <meta name="description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【语言模型】RNN (LSTM)">
+<meta property="og:title" content="【语言模型】n-gram">
 <meta property="og:url" content="https://blog.eson.org/pub/2d87220e/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="ss参考 RNN tutorial| tensorflow">
+<meta property="og:description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T01:34:46.677Z">
+<meta property="og:updated_time" content="2018-06-21T03:58:24.413Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【语言模型】RNN (LSTM)">
-<meta name="twitter:description" content="ss参考 RNN tutorial| tensorflow">
+<meta name="twitter:title" content="【语言模型】n-gram">
+<meta name="twitter:description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>【语言模型】RNN (LSTM) | ESON</title>
+  <title>【语言模型】n-gram | ESON</title>
   
 
 
@@ -370,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【语言模型】RNN (LSTM)
+          <h2 class="post-title" itemprop="name headline">【语言模型】n-gram
               
             
           </h2>
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:34:46" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：11:58:24" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
             
 
             
@@ -467,11 +467,11 @@
       
 
       
-        <h1 id="ss"><a href="#ss" class="headerlink" title="ss"></a>ss</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="https://www.tensorflow.org/tutorials/recurrent" target="_blank" rel="noopener">RNN tutorial| tensorflow</a></li>
-<li></li>
-</ul>
-
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为：</p>
+<p>当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率</p>
+<p>假设词表的大小为100,000，那么n-gram模型的参数数量为</p>
+<p>n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bigram，其次是unigram和trigram，n取≥4的情况较少。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
       
     </div>
 
@@ -496,7 +496,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/2d87220e/" title="【语言模型】RNN (LSTM)">https://blog.eson.org/pub/2d87220e/</a>
+    <a href="https://blog.eson.org/pub/2d87220e/" title="【语言模型】n-gram">https://blog.eson.org/pub/2d87220e/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -516,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/f4a8f778/" rel="next" title="【语言模型】综述">
-                <i class="fa fa-chevron-left"></i> 【语言模型】综述
+              <a href="/pub/b64e6f85/" rel="next" title="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
+                <i class="fa fa-chevron-left"></i> 优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）
               </a>
             
           </div>
@@ -526,8 +526,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/0/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/f4a8f778/" rel="prev" title="【语言模型】综述">
+                【语言模型】综述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -616,7 +616,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">139</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1162,7 +1162,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ss"><span class="nav-number">1.</span> <span class="nav-text">ss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1371,7 +1371,7 @@
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/2d87220e/';
         this.page.identifier = 'pub/2d87220e/';
-        this.page.title = '【语言模型】RNN (LSTM)';
+        this.page.title = '【语言模型】n-gram';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。 常用方法">
+  <meta name="description" content="早期的自然语言处理系统主要是基于人工撰写的规则，这种方法费时费力，且不能覆盖各种语言现象。上个世纪80年代后期，机器学习算法被引入到自然语言处理中，这要归功于不断提高的计算能力。研究主要集中在统计模型上，这种方法采用大规模的训练语料（corpus）对模型的参数进行自动的学习，和之前的基于规则的方法相比，这种方法更具鲁棒性。 统计语言模型$$ P$$ 统计语言模型（Statistical Langu">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【语言模型】综述">
 <meta property="og:url" content="https://blog.eson.org/pub/f4a8f778/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。 常用方法">
+<meta property="og:description" content="早期的自然语言处理系统主要是基于人工撰写的规则，这种方法费时费力，且不能覆盖各种语言现象。上个世纪80年代后期，机器学习算法被引入到自然语言处理中，这要归功于不断提高的计算能力。研究主要集中在统计模型上，这种方法采用大规模的训练语料（corpus）对模型的参数进行自动的学习，和之前的基于规则的方法相比，这种方法更具鲁棒性。 统计语言模型$$ P$$ 统计语言模型（Statistical Langu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T01:34:46.678Z">
+<meta property="og:updated_time" content="2018-06-21T03:58:24.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【语言模型】综述">
-<meta name="twitter:description" content="简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。 常用方法">
+<meta name="twitter:description" content="早期的自然语言处理系统主要是基于人工撰写的规则，这种方法费时费力，且不能覆盖各种语言现象。上个世纪80年代后期，机器学习算法被引入到自然语言处理中，这要归功于不断提高的计算能力。研究主要集中在统计模型上，这种方法采用大规模的训练语料（corpus）对模型的参数进行自动的学习，和之前的基于规则的方法相比，这种方法更具鲁棒性。 统计语言模型$$ P$$ 统计语言模型（Statistical Langu">
 
 
 
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:34:46" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：11:58:24" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
             
 
             
@@ -467,7 +467,10 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。<br>在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。</p>
+        <p>早期的自然语言处理系统主要是基于人工撰写的规则，这种方法费时费力，且不能覆盖各种语言现象。上个世纪80年代后期，机器学习算法被引入到自然语言处理中，这要归功于不断提高的计算能力。研究主要集中在统计模型上，这种方法采用大规模的训练语料（corpus）对模型的参数进行自动的学习，和之前的基于规则的方法相比，这种方法更具鲁棒性。</p>
+<h1 id="统计语言模型"><a href="#统计语言模型" class="headerlink" title="统计语言模型"></a>统计语言模型</h1><p>$$ P$$</p>
+<p>统计语言模型（Statistical Language Model）就是在这样的环境和背景下被提出来的。它广泛应用于各种自然语言处理问题，如语音识别、机器翻译、分词、词性标注，等等。简单地说，语言模型就是用来计算一个句子的概率的模型，即</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。<br>在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。</p>
 <h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ul>
 <li>HMM</li>
 <li>n-gram</li>
@@ -500,6 +503,10 @@
 <p><strong>关键词:</strong></p>
 <ul>
 <li>bidirectional lstm for language model</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>统计语言模型 | 《数学之美》第三章</li>
+<li></li>
 </ul>
 
       
@@ -546,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/b64e6f85/" rel="next" title="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
-                <i class="fa fa-chevron-left"></i> 优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）
+              <a href="/pub/2d87220e/" rel="next" title="【语言模型】n-gram">
+                <i class="fa fa-chevron-left"></i> 【语言模型】n-gram
               </a>
             
           </div>
@@ -556,8 +563,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/2d87220e/" rel="prev" title="【语言模型】RNN (LSTM)">
-                【语言模型】RNN (LSTM) <i class="fa fa-chevron-right"></i>
+              <a href="/pub/2d87220e/" rel="prev" title="【语言模型】RNN - LSTM/GRU">
+                【语言模型】RNN - LSTM/GRU <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +653,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">139</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1192,7 +1199,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用方法"><span class="nav-number">2.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#loss-function-amp-evaluation"><span class="nav-number">3.</span> <span class="nav-text">loss function &amp; evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#研究方向"><span class="nav-number">4.</span> <span class="nav-text">研究方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#char-level"><span class="nav-number">4.1.</span> <span class="nav-text">char-level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化"><span class="nav-number">5.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么只以预测next-word为目标，而不采用前后context填词？"><span class="nav-number">5.1.</span> <span class="nav-text">为什么只以预测next word为目标，而不采用前后context填词？</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#统计语言模型"><span class="nav-number">1.</span> <span class="nav-text">统计语言模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用方法"><span class="nav-number">3.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#loss-function-amp-evaluation"><span class="nav-number">4.</span> <span class="nav-text">loss function &amp; evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#研究方向"><span class="nav-number">5.</span> <span class="nav-text">研究方向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#char-level"><span class="nav-number">5.1.</span> <span class="nav-text">char-level</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化"><span class="nav-number">6.</span> <span class="nav-text">优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么只以预测next-word为目标，而不采用前后context填词？"><span class="nav-number">6.1.</span> <span class="nav-text">为什么只以预测next word为目标，而不采用前后context填词？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

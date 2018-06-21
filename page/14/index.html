@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/8748fd7b/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/7d785abb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -372,8 +372,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/8748fd7b/" itemprop="url">
-                  java系列 - Map
+                <a class="post-title-link" href="/pub/7d785abb/" itemprop="url">
+                  java系列 - System
                 </a>
               
             
@@ -469,7 +469,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/util/" itemprop="url" rel="index"><span itemprop="name">util</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/system/" itemprop="url" rel="index"><span itemprop="name">system</span></a></span>
 
                 
                 
@@ -533,20 +533,13 @@
       
         
           
-          diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html
-
-Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。
-
-summary
-
-
-类
-同步(线程安全)
-
+          简介java.lang.System.java
+跟踪arraycopypublic static native void arraycopy(Object src,  int  srcPos, Object dest, int destPos, int length);
+System.c// jdk
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/8748fd7b/#更多" rel="contents">
+            <a class="btn" href="/pub/7d785abb/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -842,7 +835,7 @@ summary
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/1c98e0dc/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/2a8bf999/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -861,8 +854,237 @@ summary
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/1c98e0dc/" itemprop="url">
-                  java系列 - Object
+                <a class="post-title-link" href="/pub/2a8bf999/" itemprop="url">
+                  java系列 - String
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-02T00:00:00+08:00">2017-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-06-20 19:22:08" itemprop="dateModified" datetime="2018-06-20T19:22:08+08:00">2018-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/" itemprop="url" rel="index"><span itemprop="name">programing</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/" itemprop="url" rel="index"><span itemprop="name">jdk</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          ssString s = “abc”,并没有在堆上生成对象Object o = new Object() 对应字节码为:
+0: new           #2                  // class java/lang/Object
+3: dup           
+4: invok
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pub/2a8bf999/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/e4c70599/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pub/e4c70599/" itemprop="url">
+                  java hotspot虚拟机 - init方法
                 </a>
               
             
@@ -951,14 +1173,14 @@ summary
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/" itemprop="url" rel="index"><span itemprop="name">rt</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/jvm/" itemprop="url" rel="index"><span itemprop="name">jvm</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/lang/" itemprop="url" rel="index"><span itemprop="name">lang</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/jvm/HotSpot/" itemprop="url" rel="index"><span itemprop="name">HotSpot</span></a></span>
 
                 
                 
@@ -1022,18 +1244,13 @@ summary
       
         
           
-          架构
-Object.java(rt.jar) 调用 jdk的native方法(Object.c)。
-native方法 调用hotspot jvm的方法(jvm.cpp)。
-
-Object.java
-java source版本：oracle 1.7
-
-Object 还有隐形的构造函数.new Obje
+          初始化方法在编译生成class文件时，会自动产生两个方法，一个是类的初始化方法, 另一个是实例的初始化方法
+：在jvm第一次加载class文件时调用，包括静态变量初始化语句和静态块的执行
+:在实例创建出来的时候调用，包括调用new操作符；调用Class或java.lang.reflect.Const
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/1c98e0dc/#更多" rel="contents">
+            <a class="btn" href="/pub/e4c70599/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2152,7 +2369,7 @@ Typically, we can locate this file by URL with default hexo settings.
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">139</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3259,6 +3476,8 @@ Typically, we can locate this file by URL with default hexo settings.
 
   
   
+    
+      
     
       
     

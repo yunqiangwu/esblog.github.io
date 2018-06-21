@@ -121,7 +121,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
-<meta property="og:updated_time" content="2018-06-20T13:12:51.122Z">
+<meta property="og:updated_time" content="2018-06-21T03:58:24.415Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivationcontext很重要上下文很重要，比如以下这句话： “I arrived at the bank after crossing the…” 要">
@@ -411,7 +411,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-06-20 21:12:51" itemprop="dateModified" datetime="2018-06-20T21:12:51+08:00">2018-06-20</time>
+                <time title="修改时间：2018-06-21 11:58:24" itemprop="dateModified" datetime="2018-06-21T11:58:24+08:00">2018-06-21</time>
               
             
           </span>
@@ -536,6 +536,7 @@
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
 <h1 id="对attention的抽象-q-k-v"><a href="#对attention的抽象-q-k-v" class="headerlink" title="对attention的抽象 q k v"></a>对attention的抽象 q k v</h1><p><img alt="scaled dot product attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
+<p>When (a \ne 0), there are two solutions to (ax^2 + bx + c = 0) and they are<br>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
 <p>前面给出的是一般化的框架形式的描述，事实上Google给出的方案是很具体的。首先，它先把Attention的定义给了出来：<br>[ Attention(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) = softmax\left(\frac{\boldsymbol{Q}\boldsymbol{K}^{\top}}{\sqrt{d_k}}\right)\boldsymbol{V} ]</p>
 <p>这里用的是跟Google的论文一致的符号，其中( \boldsymbol{Q}\in\mathbb{R}^{n\times d_k}, \boldsymbol{K}\in\mathbb{R}^{m\times d_k}, \boldsymbol{V}\in\mathbb{R}^{m\times d_v} )。如果忽略激活函数softmax的话，那么事实上它就是三个( n\times d_k,d_k\times m, m\times d_v )的矩阵相乘，最后的结果就是一个( n\times d_v )的矩阵。于是我们可以认为：这是一个Attention层，将n( n\times d_k )的序列Q编码成了一个新的( n\times d_v )的序列。</p>
 <p>并行其实就是encoder的时候可以，速度上来说transformer并不占优势</p>
@@ -628,8 +629,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/664e9bad/" rel="prev" title="transformer">
-                transformer <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
+                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -718,7 +719,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">139</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1877,6 +1878,29 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
