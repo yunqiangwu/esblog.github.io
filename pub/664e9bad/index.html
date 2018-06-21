@@ -111,18 +111,21 @@
 
 
 
-  <meta name="description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 code TensorFlow https://github.com/Kyubyong/transformer https://github.com/tensorflo">
+  <meta name="description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivationcontext很重要上下文很重要，比如以下这句话： “I arrived at the bank after crossing the…” 要">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="transformer">
+<meta property="og:title" content="【机器翻译】transformer">
 <meta property="og:url" content="https://blog.eson.org/pub/664e9bad/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 code TensorFlow https://github.com/Kyubyong/transformer https://github.com/tensorflo">
+<meta property="og:description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivationcontext很重要上下文很重要，比如以下这句话： “I arrived at the bank after crossing the…” 要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-20T11:22:09.238Z">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
+<meta property="og:updated_time" content="2018-06-20T13:12:51.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="transformer">
-<meta name="twitter:description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 code TensorFlow https://github.com/Kyubyong/transformer https://github.com/tensorflo">
+<meta name="twitter:title" content="【机器翻译】transformer">
+<meta name="twitter:description" content="简介谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivationcontext很重要上下文很重要，比如以下这句话： “I arrived at the bank after crossing the…” 要">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 
 
 
@@ -139,7 +142,7 @@
   };
 </script>
 
-  <title>transformer | ESON</title>
+  <title>【机器翻译】transformer | ESON</title>
   
 
 
@@ -370,7 +373,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">transformer
+          <h2 class="post-title" itemprop="name headline">【机器翻译】transformer
               
             
           </h2>
@@ -408,7 +411,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
+                <time title="修改时间：2018-06-20 21:12:51" itemprop="dateModified" datetime="2018-06-20T21:12:51+08:00">2018-06-20</time>
               
             
           </span>
@@ -430,14 +433,28 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep learning</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/" itemprop="url" rel="index"><span itemprop="name">applications</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/model/" itemprop="url" rel="index"><span itemprop="name">model</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/" itemprop="url" rel="index"><span itemprop="name">nlp</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/machine-translation/model/" itemprop="url" rel="index"><span itemprop="name">model</span></a></span>
 
                 
                 
@@ -508,13 +525,53 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统用CNN或者RNN的定式，取得了很好的效果，激起了工业界和学术界的广泛讨论。</p>
-<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><ul>
+<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="context很重要"><a href="#context很重要" class="headerlink" title="context很重要"></a>context很重要</h2><p>上下文很重要，比如以下这句话：</p>
+<p>“I arrived at the bank after crossing the…” 要知道bank的意思，最后一个词是“road”还是“river”很重要。</p>
+<h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的方法有RNN、CNN。</p>
+<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p>RNN需要一个个地读取bank到river之间的所有单词，才能够确定bank的实际意义。即<strong>RNN的决策步骤太长</strong>。<br>然而，the more such steps decisions require, the harder it is<br>for a recurrent network to learn how to make those decisions。</p>
+<p>另外，由于RNN是时序处理，在GPU上<strong>不易并行化</strong>。</p>
+<p>这两点说的太好了，赞，赞。</p>
+<h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p>CNN不是时序处理，容易并行化，但是，the number of steps required to combine<br>information from distant parts of the input still grows with increasing distance.</p>
+<h3 id="transformer横空出世"><a href="#transformer横空出世" class="headerlink" title="transformer横空出世"></a>transformer横空出世</h3><p>Transformer避开了recurrence，只用attention，便可以刻画出输入和输出的依赖关系。</p>
+<p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
+<p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
+<h1 id="对attention的抽象-q-k-v"><a href="#对attention的抽象-q-k-v" class="headerlink" title="对attention的抽象 q k v"></a>对attention的抽象 q k v</h1><p><img alt="scaled dot product attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
+<p>前面给出的是一般化的框架形式的描述，事实上Google给出的方案是很具体的。首先，它先把Attention的定义给了出来：<br>[ Attention(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) = softmax\left(\frac{\boldsymbol{Q}\boldsymbol{K}^{\top}}{\sqrt{d_k}}\right)\boldsymbol{V} ]</p>
+<p>这里用的是跟Google的论文一致的符号，其中( \boldsymbol{Q}\in\mathbb{R}^{n\times d_k}, \boldsymbol{K}\in\mathbb{R}^{m\times d_k}, \boldsymbol{V}\in\mathbb{R}^{m\times d_v} )。如果忽略激活函数softmax的话，那么事实上它就是三个( n\times d_k,d_k\times m, m\times d_v )的矩阵相乘，最后的结果就是一个( n\times d_v )的矩阵。于是我们可以认为：这是一个Attention层，将n( n\times d_k )的序列Q编码成了一个新的( n\times d_v )的序列。</p>
+<p>并行其实就是encoder的时候可以，速度上来说transformer并不占优势</p>
+<p>这里将attention抽象成 q k v</p>
+<ol>
+<li>attention 可以不只是用于 decoder 里每步输入一个符号，而是可以用在网络中的任意一层，把一个序列转换成另一个序列。这个作用与 convolutional layer、recurrent layer 等是类似的，但有一个好处就是不再局限于局域性。attention是直接去capture dependency structure，摆脱了局限性魔咒</li>
+<li>attention 可以一般地描述为在一个 key-value mapping 中进行检索，只不过 query 跟 key 可以进行模糊匹配，检索结果是各个 key 对应的 value 的加权平均。</li>
+</ol>
+<p>Query, key, value 其实并不是专门针对翻译的概念。不过可以举一些翻译中的例子。例如，当刚刚翻译完主语之后，attention 的内部状态就会想要去找谓语，这时它就把「想找谓语」这件事编码成 query。然后句子里本身是谓语的地方，会有一个 key，表明「我这里可以提供谓语」，它跟 query 一拍即合。这个 key 对应的 value 就是谓语本身的 embedding。</p>
+<p>Q: 在LSTM+attention模型里，query就是上一个时间单元的隐状态，容易理解，即你所谓的对[想找谓语]编码，但是all attention模型不再使用LSTM，这个query编码是什么？谢谢<br>A: all attention model 只不过不再用 lstm 计算隐状态，而是用 attention 计算得出。一层 attention 计算出的结果就是下一层的 query</p>
+<h1 id="核心点-创新点-亮点"><a href="#核心点-创新点-亮点" class="headerlink" title="核心点 创新点 亮点"></a>核心点 创新点 亮点</h1><h2 id="multi-head-self-attention-mechanism"><a href="#multi-head-self-attention-mechanism" class="headerlink" title="multi-head self-attention mechanism"></a>multi-head self-attention mechanism</h2><p>1️⃣Q为例，单个head的计算</p>
+<p><img alt="multi head attention" src="/images/raw/NN - transformer - multi head attention.jpg"></p>
+<ul>
+<li><a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/common_attention.py#L2646" target="_blank" rel="noopener">code-t2t</a></li>
+<li><a href="https://github.com/Kyubyong/transformer/blob/master/modules.py#L169" target="_blank" rel="noopener">code-Kyubyong</a></li>
+<li><a href="https://github.com/bojone/attention/blob/master/attention_keras.py" target="_blank" rel="noopener">code-keras</a></li>
+</ul>
+<p>将输入向量切成8份，这每一<br>份可以看成一个local partial，然后再分别attnetion最终再concat成一个context向量。如果将本文multi-head attention的V输入切成八份后的<br>向量类比关注不同local paritial的卷积核的话，我们可以看到CNN和这里multi-head attention异曲同工</p>
+<p><strong>优势</strong>：能在encode的时候并行化，(convS2S同样可以，但是transformer只用attention）</p>
+<h2 id="positionwise-fully-connected-feed-forward-network"><a href="#positionwise-fully-connected-feed-forward-network" class="headerlink" title="positionwise fully connected feed-forward network"></a>positionwise fully connected feed-forward network</h2><p>Sinusoid Positional Encoding</p>
+<p><a href="https://github.com/Kyubyong/transformer/blob/master/modules.py#L120" target="_blank" rel="noopener">code</a></p>
+<h1 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h1><p>LayerNorm(x + Sublayer(x)),</p>
+<h2 id="residual-connection"><a href="#residual-connection" class="headerlink" title="residual connection"></a>residual connection</h2><h2 id="layer-normalization"><a href="#layer-normalization" class="headerlink" title="layer normalization"></a>layer normalization</h2><p>residual之后加的LN</p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul>
 <li>TensorFlow<ul>
-<li><a href="https://github.com/Kyubyong/transformer" target="_blank" rel="noopener">https://github.com/Kyubyong/transformer</a></li>
-<li><a href="https://github.com/tensorflow/tensor2tensor#translation" target="_blank" rel="noopener">https://github.com/tensorflow/tensor2tensor#translation</a>  这个最官方，有中英文翻译</li>
+<li><a href="https://github.com/Kyubyong/transformer" target="_blank" rel="noopener">https://github.com/Kyubyong/transformer</a>  简易版，bucket， lr decay都没有实现，训起来效果应该没那好</li>
+<li><a href="https://github.com/tensorflow/tensor2tensor#translation" target="_blank" rel="noopener">https://github.com/tensorflow/tensor2tensor#translation</a>  产品级，最官方，有中英文翻译数据库</li>
+<li>代码解析： <a href="https://blog.csdn.net/mijiaoxiaosan/article/details/74909076" target="_blank" rel="noopener">https://blog.csdn.net/mijiaoxiaosan/article/details/74909076</a></li>
 </ul>
 </li>
 <li>Pytorch</li>
+</ul>
+<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<li><a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html" target="_blank" rel="noopener">Transformer | Google-blog</a></li>
+<li><a href="https://kexue.fm/archives/4765" target="_blank" rel="noopener">《Attention is All You Need》浅读（简介+代码）| kexue.fm</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/27464080" target="_blank" rel="noopener">从convS2S到transformer | 知乎</a></li>
 </ul>
 
       
@@ -541,7 +598,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/664e9bad/" title="transformer">https://blog.eson.org/pub/664e9bad/</a>
+    <a href="https://blog.eson.org/pub/664e9bad/" title="【机器翻译】transformer">https://blog.eson.org/pub/664e9bad/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -561,8 +618,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
-                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
+              <a href="/pub/75bd2e9b/" rel="next" title="【读图识政治】中国最高领导人">
+                <i class="fa fa-chevron-left"></i> 【读图识政治】中国最高领导人
               </a>
             
           </div>
@@ -571,8 +628,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/664e9bad/" rel="prev" title="【机器翻译】transformer">
-                【机器翻译】transformer <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
+                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +718,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">132</span>
+                    <span class="site-state-item-count">138</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -888,17 +945,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">112</span>
+                    <span class="site-state-item-count">107</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1217,7 +1264,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#code"><span class="nav-number">1.1.</span> <span class="nav-text">code</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#context很重要"><span class="nav-number">2.1.</span> <span class="nav-text">context很重要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.2.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN"><span class="nav-number">2.2.1.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN"><span class="nav-number">2.2.2.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.2.3.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对attention的抽象-q-k-v"><span class="nav-number">3.</span> <span class="nav-text">对attention的抽象 q k v</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点"><span class="nav-number">4.</span> <span class="nav-text">核心点 创新点 亮点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-head-self-attention-mechanism"><span class="nav-number">4.1.</span> <span class="nav-text">multi-head self-attention mechanism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#positionwise-fully-connected-feed-forward-network"><span class="nav-number">4.2.</span> <span class="nav-text">positionwise fully connected feed-forward network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">5.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">5.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">5.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">6.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">7.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
@@ -1426,7 +1473,7 @@
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/664e9bad/';
         this.page.identifier = 'pub/664e9bad/';
-        this.page.title = 'transformer';
+        this.page.title = '【机器翻译】transformer';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
