@@ -119,7 +119,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。 常用方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T01:22:22.114Z">
+<meta property="og:updated_time" content="2018-06-21T01:34:46.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【语言模型】综述">
 <meta name="twitter:description" content="简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。在语音辨识和在资料压缩的领域中，这种模式试图捕捉语言的特性，并预测在语音串列中的下一个字。 常用方法">
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:22:22" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:34:46" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
             
 
             
@@ -474,9 +474,9 @@
 <li>LSTM 同时学习了language model和word embedding。疑问：lstm学习的embedding怎么样？</li>
 </ul>
 <h1 id="loss-function-amp-evaluation"><a href="#loss-function-amp-evaluation" class="headerlink" title="loss function &amp; evaluation"></a>loss function &amp; evaluation</h1><p> minimize the average negative log probability of the target words</p>
-<p>[ \text{loss} = -\frac{1}{N}\sum_{i=1}^{N} \ln p_{\text{target}_i} ]</p>
+<p>$$ \text{loss} = -\frac{1}{N}\sum_{i=1}^{N} \ln p_{\text{target}_i} $$</p>
 <p>The typical measure reported in the papers is average per-word perplexity (often just called perplexity), which is equal to</p>
-<p>[ e^{-\frac{1}{N}\sum_{i=1}^{N} \ln p_{\text{target}_i}} = e^{\text{loss}} ]</p>
+<p>$$ e^{-\frac{1}{N}\sum_{i=1}^{N} \ln p_{\text{target}_i}} = e^{\text{loss}} $$</p>
 <h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
 <li>Context-dependent Language Model</li>
 </ul>
@@ -546,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/980c5a0f/" rel="next" title="SVD与PCA">
-                <i class="fa fa-chevron-left"></i> SVD与PCA
+              <a href="/pub/b64e6f85/" rel="next" title="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
+                <i class="fa fa-chevron-left"></i> 优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）
               </a>
             
           </div>
