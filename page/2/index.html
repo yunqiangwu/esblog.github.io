@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/f4a8f778/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/686aa0ca/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -372,8 +372,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/f4a8f778/" itemprop="url">
-                  【语言模型】综述
+                <a class="post-title-link" href="/pub/686aa0ca/" itemprop="url">
+                  【机器翻译】对偶学习
                 </a>
               
             
@@ -397,7 +397,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:34:46" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：09:35:13" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
             
 
             
@@ -465,11 +465,11 @@
       
         
           
-          简介语言模型经常使用在许多自然语言处理方面的应用，如语音识别，机器翻译，词性标注，句法分析和资讯检索。由于字词与句子都是任意组合的长度，因此在训练过的语言模型中会出现未曾出现的字串(资料稀疏的问题)，也使得在语料库中估算字串的概率变得很困难，这也是要使用近似的平滑n元语法(N-gram)模型之原因。
+          利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learn
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/f4a8f778/#更多" rel="contents">
+            <a class="btn" href="/pub/686aa0ca/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -919,6 +919,219 @@ u =
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/89d326d4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pub/89d326d4/" itemprop="url">
+                  A星寻路算法
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-24T00:00:00+08:00">2018-05-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/" itemprop="url" rel="index"><span itemprop="name">运筹学-动态规划</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/常见问题/" itemprop="url" rel="index"><span itemprop="name">常见问题</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          很多游戏特别是rts，rpg类游戏，都需要用到寻路。寻路算法有深度优先搜索（DFS），广度优先搜索(BFS)，A星算法等，而A星算法是一种具备启发性策略的算法，效率是几种算法中最高的，因此也成为游戏中最常用的寻路算法。
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pub/89d326d4/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/8c8e707b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1229,219 +1442,6 @@ yskin说eDonkey2000（好吧，就是大家说的电驴）是这样
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/pub/45a589a3/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/89d326d4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pub/89d326d4/" itemprop="url">
-                  A星寻路算法
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-24T00:00:00+08:00">2018-05-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/" itemprop="url" rel="index"><span itemprop="name">运筹学-动态规划</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/常见问题/" itemprop="url" rel="index"><span itemprop="name">常见问题</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          很多游戏特别是rts，rpg类游戏，都需要用到寻路。寻路算法有深度优先搜索（DFS），广度优先搜索(BFS)，A星算法等，而A星算法是一种具备启发性策略的算法，效率是几种算法中最高的，因此也成为游戏中最常用的寻路算法。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pub/89d326d4/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -3537,25 +3537,25 @@ HMM 示例模型
   
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
       
     
   
