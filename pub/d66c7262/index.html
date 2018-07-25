@@ -114,14 +114,14 @@
   <meta name="description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 <meta name="keywords" content="rnn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【深度学习-模型系列】递归神经网络 RNN">
+<meta property="og:title" content="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
 <meta property="og:url" content="https://blog.eson.org/pub/d66c7262/index.html">
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-20T11:22:09.245Z">
+<meta property="og:updated_time" content="2018-07-25T10:53:15.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【深度学习-模型系列】递归神经网络 RNN">
+<meta name="twitter:title" content="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
 <meta name="twitter:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>【深度学习-模型系列】递归神经网络 RNN | ESON</title>
+  <title>【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN) | ESON</title>
   
 
 
@@ -370,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【深度学习-模型系列】递归神经网络 RNN
+          <h2 class="post-title" itemprop="name headline">【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)
               
             
           </h2>
@@ -408,7 +408,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
+                <time title="修改时间：2018-07-25 18:53:15" itemprop="dateModified" datetime="2018-07-25T18:53:15+08:00">2018-07-25</time>
               
             
           </span>
@@ -515,10 +515,33 @@
 <li>recursive</li>
 <li>feedforward</li>
 </ul>
-<h2 id="历史–-发展史–背景，rnn之前"><a href="#历史–-发展史–背景，rnn之前" class="headerlink" title="历史– 发展史–背景，rnn之前"></a>历史– 发展史–背景，rnn之前</h2><h3 id="before-rnn"><a href="#before-rnn" class="headerlink" title="before rnn"></a>before rnn</h3><ul>
+<h2 id="序列建模的发展史"><a href="#序列建模的发展史" class="headerlink" title="序列建模的发展史"></a>序列建模的发展史</h2><ul>
 <li>Memoryless models for sequences</li>
-<li>HMM</li>
+<li>Markov:  bi-gram, tri-gram, n-gram<ul>
+<li>严格的独立性假设条件，<strong>无法建模任意长度的上下文信息</strong>。</li>
+<li>n-gram矩阵太大，太稀疏，(2-gram也很大很稀疏)。怎样解决？词典大小$V$，</li>
+<li>详见HMM博客</li>
 </ul>
+</li>
+<li>HMM</li>
+<li>RNN<ul>
+<li>HMM转移概率矩阵太大，这里可以认为是对其降维。</li>
+</ul>
+</li>
+<li>LSTM</li>
+</ul>
+<p><strong>RNN与HMM</strong></p>
+<p>基本结构上是挺像的，都是通过hidden state 的演化来刻画 序列间的依赖关系</p>
+<p>RNN与HMM的本质区别是RNN没有马尔科夫假设，可以考虑很长的历史信息。</p>
+<ol>
+<li>隐状态的表示: hmm是onehot, RNN是分布表示，RNN的表示能力强很多，或者说在面对高维度时，表示效率更高。类似nlp里，对单个token的表示，一种是onehot, 一种是word vector 。</li>
+<li>隐状态的演化方式: hmm是线性的，RNN是高度非线性。</li>
+<li>在垂直方向上，实际中的lstm还会增加depth, 来增加不同层面的抽象表示，也会使得表示能力指数增加，随着depth 增加。</li>
+</ol>
+<p>RNN也是基于马尔可夫假设的，当前的隐状态仅依赖前一个时刻的隐状态。在有马尔可夫假设的模型中，不代表距离超过1的两个状态是无依赖的。</p>
+<p>印象中有paper证明， 在HMM中两个状态的依赖关系随距离指数衰减，而在RNN中是power law decay.  也就是大家通常说的 rnn可以略好的刻画 long term dependency.</p>
+<p>另，SLAM中还有种算法跟hmm类似，kalman filter.</p>
+<p>作者：a88i99<br>链接：<a href="https://www.zhihu.com/question/57396443/answer/263019702" target="_blank" rel="noopener">https://www.zhihu.com/question/57396443/answer/263019702</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h2 id="RNN-Overview"><a href="#RNN-Overview" class="headerlink" title="RNN Overview"></a>RNN Overview</h2><ul>
 <li>狭义上的RNN，指vanilla RNN。</li>
 <li>广义上的RNN，lstm gru等都属于RNN框架。</li>
@@ -545,24 +568,34 @@
 <p>抽象不是实现，是API。由整体到局部，可把RNN当做一个黑盒子，有需求的情况下再细看其具体实现。</p>
 </blockquote>
 <h3 id="keras的RNN抽象"><a href="#keras的RNN抽象" class="headerlink" title="keras的RNN抽象"></a>keras的RNN抽象</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">keras.layers.RNN(cell, return_sequences=<span class="keyword">False</span>, return_state=<span class="keyword">False</span>, go_backwards=<span class="keyword">False</span>, stateful=<span class="keyword">False</span>, unroll=<span class="keyword">False</span>)</span><br><span class="line"><span class="comment"># return_sequences: 是否返回整个序列out</span></span><br><span class="line"><span class="comment"># return_state: 是否返回整个序列的hidden</span></span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/keras-team/keras/blob/master/examples/imdb_lstm.py#L41" target="_blank" rel="noopener">应用示例–lstm用于二分类</a>：</p>
+<p><a href="https://github.com/keras-team/keras/blob/master/examples/imdb_lstm.py#L41" target="_blank" rel="noopener">应用示例—lstm用于二分类</a>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">model = Sequential()</span><br><span class="line">model.add(Embedding(num_words, <span class="number">128</span>))  <span class="comment"># 输入整个sequence</span></span><br><span class="line">model.add(LSTM(<span class="number">128</span>, dropout=<span class="number">0.2</span>, recurrent_dropout=<span class="number">0.2</span>)) <span class="comment"># 输出最后一个cell的output</span></span><br><span class="line">model.add(Dense(<span class="number">1</span>, activation=<span class="string">'sigmoid'</span>)) <span class="comment"># 二分类</span></span><br></pre></td></tr></table></figure>
 <p>这是上图中的<code>many to one</code>模式。</p>
 <ul>
 <li>关于</li>
 <li>关于静态图：sequence的数目固定为80</li>
 </ul>
-<details><br>  <summary><a href="https://github.com/keras-team/keras/blob/master/examples/lstm_seq2seq.py" target="_blank" rel="noopener">应用示例–基于lstm的seq2seq</a></summary><br>  <div><br>  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define an input sequence and process it.</span></span><br><span class="line">encoder_inputs = Input(shape=(<span class="keyword">None</span>, num_encoder_tokens))</span><br><span class="line">encoder = LSTM(latent_dim, return_state=<span class="keyword">True</span>)</span><br><span class="line">encoder_outputs, state_h, state_c = encoder(encoder_inputs)</span><br><span class="line"><span class="comment"># We discard `encoder_outputs` and only keep the states.</span></span><br><span class="line">encoder_states = [state_h, state_c]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set up the decoder, using `encoder_states` as initial state.</span></span><br><span class="line">decoder_inputs = Input(shape=(<span class="keyword">None</span>, num_decoder_tokens))</span><br><span class="line"><span class="comment"># We set up our decoder to return full output sequences,</span></span><br><span class="line"><span class="comment"># and to return internal states as well. We don't use the</span></span><br><span class="line"><span class="comment"># return states in the training model, but we will use them in inference.</span></span><br><span class="line">decoder_lstm = LSTM(latent_dim, return_sequences=<span class="keyword">True</span>, return_state=<span class="keyword">True</span>)</span><br><span class="line">decoder_outputs, _, _ = decoder_lstm(decoder_inputs,</span><br><span class="line">                                     initial_state=encoder_states)</span><br><span class="line">decoder_dense = Dense(num_decoder_tokens, activation=<span class="string">'softmax'</span>)</span><br><span class="line">decoder_outputs = decoder_dense(decoder_outputs)</span><br></pre></td></tr></table></figure><br><br>  <div><br></div></div></details>
+<details>
+  <summary>[应用示例--基于lstm的seq2seq](https://github.com/keras-team/keras/blob/master/examples/lstm_seq2seq.py)</summary>
+  <div>
+  <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define an input sequence and process it.</span></span><br><span class="line">encoder_inputs = Input(shape=(<span class="keyword">None</span>, num_encoder_tokens))</span><br><span class="line">encoder = LSTM(latent_dim, return_state=<span class="keyword">True</span>)</span><br><span class="line">encoder_outputs, state_h, state_c = encoder(encoder_inputs)</span><br><span class="line"><span class="comment"># We discard `encoder_outputs` and only keep the states.</span></span><br><span class="line">encoder_states = [state_h, state_c]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set up the decoder, using `encoder_states` as initial state.</span></span><br><span class="line">decoder_inputs = Input(shape=(<span class="keyword">None</span>, num_decoder_tokens))</span><br><span class="line"><span class="comment"># We set up our decoder to return full output sequences,</span></span><br><span class="line"><span class="comment"># and to return internal states as well. We don't use the</span></span><br><span class="line"><span class="comment"># return states in the training model, but we will use them in inference.</span></span><br><span class="line">decoder_lstm = LSTM(latent_dim, return_sequences=<span class="keyword">True</span>, return_state=<span class="keyword">True</span>)</span><br><span class="line">decoder_outputs, _, _ = decoder_lstm(decoder_inputs,</span><br><span class="line">                                     initial_state=encoder_states)</span><br><span class="line">decoder_dense = Dense(num_decoder_tokens, activation=<span class="string">'softmax'</span>)</span><br><span class="line">decoder_outputs = decoder_dense(decoder_outputs)</span><br></pre></td></tr></table></figure>
 
-<details><br>  <summary><a href="https://github.com/keras-team/keras/blob/master/examples/lstm_seq2seq.py" target="_blank" rel="noopener">应用示例–基于lstm的attention-seq2seq</a></summary><br>  <p><code><br>  </code></p><br></details>
+  <div>
+</div></div></details>
+
+<details>
+  <summary>[应用示例--基于lstm的attention-seq2seq](https://github.com/keras-team/keras/blob/master/examples/lstm_seq2seq.py)</summary>
+  <p><code>
+  </code></p>
+</details>
 
 
 <p>keras是对整个sequence做的抽象。因为keras是面向tensorflow和theano的静态图做的封装。</p>
-<h3 id="pytorch的RNN抽象"><a href="#pytorch的RNN抽象" class="headerlink" title="pytorch的RNN抽象"></a>pytorch的RNN抽象</h3><p>应用示例–基于lstm的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for a sequence inputs</span></span><br><span class="line"><span class="keyword">for</span> input <span class="keyword">in</span> inputs:</span><br><span class="line">  <span class="comment"># Step through the sequence one element at a time</span></span><br><span class="line">  out, hidden = lstm(input, hidden)</span><br></pre></td></tr></table></figure></p>
+<h3 id="pytorch的RNN抽象"><a href="#pytorch的RNN抽象" class="headerlink" title="pytorch的RNN抽象"></a>pytorch的RNN抽象</h3><p>应用示例—基于lstm的<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for a sequence inputs</span></span><br><span class="line"><span class="keyword">for</span> input <span class="keyword">in</span> inputs:</span><br><span class="line">  <span class="comment"># Step through the sequence one element at a time</span></span><br><span class="line">  out, hidden = lstm(input, hidden)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">output, (h_n, c_n) = lstm(input, (h_0, c_0))</span><br></pre></td></tr></table></figure>
 <p>pytorch是动态图，会随着inputsequence</p>
 <p><a href="https://github.com/pytorch/pytorch/blob/master/torch/nn/modules/rnn.py#L346" target="_blank" rel="noopener">源码实现</a></p>
-<h2 id="tensorflow的抽象"><a href="#tensorflow的抽象" class="headerlink" title="tensorflow的抽象"></a>tensorflow的抽象</h2><p><a href="https://www.tensorflow.org/tutorials/recurrent" target="_blank" rel="noopener">示例–基于lstm的语言模型</a></p>
+<h2 id="tensorflow的抽象"><a href="#tensorflow的抽象" class="headerlink" title="tensorflow的抽象"></a>tensorflow的抽象</h2><p><a href="https://www.tensorflow.org/tutorials/recurrent" target="_blank" rel="noopener">示例—基于lstm的语言模型</a></p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lstm = tf.contrib.rnn.BasicLSTMCell(lstm_size)</span><br><span class="line">output, state = lstm(words, state) <span class="comment"># 这里的输入和输出都是符号，类型是tf.placeholder，lstm参数是tf.variable</span></span><br></pre></td></tr></table></figure>
 <p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py#L476" target="_blank" rel="noopener">BasicLSTMCell源码</a></p>
 <h2 id="基于RNN的变形（mainstream-variation）"><a href="#基于RNN的变形（mainstream-variation）" class="headerlink" title="基于RNN的变形（mainstream variation）"></a>基于RNN的变形（mainstream variation）</h2><h3 id="cell"><a href="#cell" class="headerlink" title="cell"></a>cell</h3><h3 id="cascade-rnn"><a href="#cascade-rnn" class="headerlink" title="cascade rnn"></a>cascade rnn</h3><p>char-rnn + word rnn (Finding Function in Form: Compositional Character Models for Open Vocabulary Word Representation)<br>char-cnn + word rnn (Exploring the Limits of Language Modeling)</p>
@@ -583,7 +616,7 @@
 </ul>
 </li>
 <li><strong>decoder</strong>:<ul>
-<li><strong>simple decoder</strong>: 通常是LSTM作为解码器[^seq2seq-NN][^seq2seq-MT][^seq2seq-Conversation]. encodes the “meaning” of the input sequence into a single vector of a fixed dimensionality. Then another deep LSTM to decode the target sequence from the vector. (only last output of the encoder. This last output is sometimes called the <code>context vector</code> as it encodes context from the entire sequence.<br>map the input sequence)<br><br><strong>缺陷</strong>：只用了一个vector(<code>context vector</code>)表征输入序列压力太大(it carries the burden of encoding the entire sentence).<br><br><strong>解决</strong>: 整个序列都用<br><br> 1. 一个简单的方式是<a href="http://deeplearning.net/tutorial/lstm.html" target="_blank" rel="noopener">对序列vector取均值</a>，高大上点叫<code>mean pooling</code><br><br> 2. 对序列vector线性加权。难点：加权系数怎么来？因为这是不定长序列，不能像DNN那样放一个全连接参数W让模型去学。于是就出现了attention，以及self-attention。</li>
+<li><strong>simple decoder</strong>: 通常是LSTM作为解码器<sup><a href="#fn_seq2seq-NN" id="reffn_seq2seq-NN">seq2seq-NN</a></sup><sup><a href="#fn_seq2seq-MT" id="reffn_seq2seq-MT">seq2seq-MT</a></sup><sup><a href="#fn_seq2seq-Conversation" id="reffn_seq2seq-Conversation">seq2seq-Conversation</a></sup>. encodes the “meaning” of the input sequence into a single vector of a fixed dimensionality. Then another deep LSTM to decode the target sequence from the vector. (only last output of the encoder. This last output is sometimes called the <code>context vector</code> as it encodes context from the entire sequence.<br>map the input sequence)<br><br><strong>缺陷</strong>：只用了一个vector(<code>context vector</code>)表征输入序列压力太大(it carries the burden of encoding the entire sentence).<br><br><strong>解决</strong>: 整个序列都用<br><br> 1. 一个简单的方式是<a href="http://deeplearning.net/tutorial/lstm.html" target="_blank" rel="noopener">对序列vector取均值</a>，高大上点叫<code>mean pooling</code><br><br> 2. 对序列vector线性加权。难点：加权系数怎么来？因为这是不定长序列，不能像DNN那样放一个全连接参数W让模型去学。于是就出现了attention，以及self-attention。</li>
 <li><strong>attention decoder</strong>: LSTM+attention<br><br> The decoder decides parts of the source sentence to pay attention to.<br><br> It relieves the encoder from the burden of having to encode all information in the source sentence into a fixedlength vector.<br><br><br>Attention allows the decoder network to “focus” on a different part of the encoder’s outputs for every step of the decoder’s own outputs. First we calculate a set of <code>attention weights</code>.</li>
 </ul>
 </li>
@@ -591,7 +624,19 @@
 </li>
 </ol>
 <p>列个表，input和output</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>[^RNN]: <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="noopener">The Unreasonable Effectiveness of Recurrent Neural Networks</a><br>[^seq2seq-NN]: <a href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf" target="_blank" rel="noopener">Sequence to Sequence Learning with Neural Networks | nips 2014</a><br>[^seq2seq-MT]: <a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="noopener">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation | EMNLP 2014</a><br>[^seq2seq-Conversation]: <a href="https://arxiv.org/abs/1506.05869" target="_blank" rel="noopener">A Neural Conversational Model</a><br>[]: <a href="http://mp.weixin.qq.com/s?__biz=MzIwOTc2MTUyMg==&amp;mid=2247484029&amp;idx=1&amp;sn=c93b5eddec33dc29dc172a5ea0d76822&amp;chksm=976fa7e0a0182ef61e36d1c32aa0706c4e81e1762a7ee2554165beecde929b72cf026c5b7a64&amp;mpshare=1&amp;scene=23&amp;srcid=0503qzbJeq0QB0eiZo0vAnMr#rd" target="_blank" rel="noopener">吴恩达《序列模型》精炼笔记 – 循环神经网络（RNN）</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote id="fn_RNN">
+<sup>RNN</sup>. <a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="noopener">The Unreasonable Effectiveness of Recurrent Neural Networks</a><a href="#reffn_RNN" title="Jump back to footnote [RNN] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_seq2seq-NN">
+<sup>seq2seq-NN</sup>. <a href="http://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural-networks.pdf" target="_blank" rel="noopener">Sequence to Sequence Learning with Neural Networks | nips 2014</a><a href="#reffn_seq2seq-NN" title="Jump back to footnote [seq2seq-NN] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_seq2seq-MT">
+<sup>seq2seq-MT</sup>. <a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="noopener">Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation | EMNLP 2014</a><a href="#reffn_seq2seq-MT" title="Jump back to footnote [seq2seq-MT] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_seq2seq-Conversation">
+<sup>seq2seq-Conversation</sup>. <a href="https://arxiv.org/abs/1506.05869" target="_blank" rel="noopener">A Neural Conversational Model</a><a href="#reffn_seq2seq-Conversation" title="Jump back to footnote [seq2seq-Conversation] in the text."> &#8617;</a>
+</blockquote>
+<p>[]: <a href="http://mp.weixin.qq.com/s?__biz=MzIwOTc2MTUyMg==&amp;mid=2247484029&amp;idx=1&amp;sn=c93b5eddec33dc29dc172a5ea0d76822&amp;chksm=976fa7e0a0182ef61e36d1c32aa0706c4e81e1762a7ee2554165beecde929b72cf026c5b7a64&amp;mpshare=1&amp;scene=23&amp;srcid=0503qzbJeq0QB0eiZo0vAnMr#rd" target="_blank" rel="noopener">吴恩达《序列模型》精炼笔记 — 循环神经网络（RNN）</a></p>
 </image>
       
     </div>
@@ -617,7 +662,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/d66c7262/" title="【深度学习-模型系列】递归神经网络 RNN">https://blog.eson.org/pub/d66c7262/</a>
+    <a href="https://blog.eson.org/pub/d66c7262/" title="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">https://blog.eson.org/pub/d66c7262/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -643,8 +688,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/855d5922/" rel="next" title="微信网页版 聊天原理">
-                <i class="fa fa-chevron-left"></i> 微信网页版 聊天原理
+              <a href="/pub/5f589e78/" rel="next" title="关于websocket">
+                <i class="fa fa-chevron-left"></i> 关于websocket
               </a>
             
           </div>
@@ -653,8 +698,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c79f2f90/" rel="prev" title="GRU的源码实现">
-                GRU的源码实现 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/a6941437/" rel="prev" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
+                【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -743,7 +788,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -964,13 +1009,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1289,7 +1328,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史–-发展史–背景，rnn之前"><span class="nav-number">1.1.</span> <span class="nav-text">历史– 发展史–背景，rnn之前</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#before-rnn"><span class="nav-number">1.1.1.</span> <span class="nav-text">before rnn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Overview"><span class="nav-number">1.2.</span> <span class="nav-text">RNN Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN的高层抽象"><span class="nav-number">1.3.</span> <span class="nav-text">RNN的高层抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keras的RNN抽象"><span class="nav-number">1.3.1.</span> <span class="nav-text">keras的RNN抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch的RNN抽象"><span class="nav-number">1.3.2.</span> <span class="nav-text">pytorch的RNN抽象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorflow的抽象"><span class="nav-number">1.4.</span> <span class="nav-text">tensorflow的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于RNN的变形（mainstream-variation）"><span class="nav-number">1.5.</span> <span class="nav-text">基于RNN的变形（mainstream variation）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell"><span class="nav-number">1.5.1.</span> <span class="nav-text">cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cascade-rnn"><span class="nav-number">1.5.2.</span> <span class="nav-text">cascade rnn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sequence-labeling"><span class="nav-number">1.6.</span> <span class="nav-text">sequence labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attention"><span class="nav-number">1.7.</span> <span class="nav-text">attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn-new-trends"><span class="nav-number">1.8.</span> <span class="nav-text">rnn new trends</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未分类"><span class="nav-number">1.9.</span> <span class="nav-text">未分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架-总结"><span class="nav-number">2.</span> <span class="nav-text">框架 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#序列建模的发展史"><span class="nav-number">1.1.</span> <span class="nav-text">序列建模的发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Overview"><span class="nav-number">1.2.</span> <span class="nav-text">RNN Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN的高层抽象"><span class="nav-number">1.3.</span> <span class="nav-text">RNN的高层抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keras的RNN抽象"><span class="nav-number">1.3.1.</span> <span class="nav-text">keras的RNN抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch的RNN抽象"><span class="nav-number">1.3.2.</span> <span class="nav-text">pytorch的RNN抽象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorflow的抽象"><span class="nav-number">1.4.</span> <span class="nav-text">tensorflow的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于RNN的变形（mainstream-variation）"><span class="nav-number">1.5.</span> <span class="nav-text">基于RNN的变形（mainstream variation）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell"><span class="nav-number">1.5.1.</span> <span class="nav-text">cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cascade-rnn"><span class="nav-number">1.5.2.</span> <span class="nav-text">cascade rnn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sequence-labeling"><span class="nav-number">1.6.</span> <span class="nav-text">sequence labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attention"><span class="nav-number">1.7.</span> <span class="nav-text">attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn-new-trends"><span class="nav-number">1.8.</span> <span class="nav-text">rnn new trends</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未分类"><span class="nav-number">1.9.</span> <span class="nav-text">未分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架-总结"><span class="nav-number">2.</span> <span class="nav-text">框架 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1498,7 +1537,7 @@
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/d66c7262/';
         this.page.identifier = 'pub/d66c7262/';
-        this.page.title = '【深度学习-模型系列】递归神经网络 RNN';
+        this.page.title = '【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

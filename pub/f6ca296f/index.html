@@ -112,7 +112,7 @@
 
 
   <meta name="description" content="优化目标分类。词典大小是N，那么就是N分类。 弊端：  【策略一】转化为二叉树，多个二分类。即Hierarchical Softmax 【策略二】直接视为二分类：中心词w和context(w)相关，是正例，其他word都是负例 负例太多，所以采用Negative Sampling    论文采用Negative Sampling了吗？ Hierarchical SoftmaxHierarchica">
-<meta name="keywords" content="deep learning,word2vec,hierarchical softmax,negative sampling">
+<meta name="keywords" content="word2vec,deep learning,hierarchical softmax,negative sampling">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【深度学习-模型系列】word2vec">
 <meta property="og:url" content="https://blog.eson.org/pub/f6ca296f/index.html">
@@ -529,7 +529,7 @@
 <li><a href="https://github.com/tmikolov/word2vec/blob/master/word2vec.c#L464" target="_blank" rel="noopener">基于Negative Sampling的CBOW模型 源码</a></li>
 <li><a href="https://github.com/tmikolov/word2vec/blob/master/word2vec.c#L520" target="_blank" rel="noopener">基于Negative Sampling的Skip-Gram模型 源码</a><br>-</li>
 </ul>
-<p>比如我们有一个训练样本，中心词是w,它周围上下文共有2c个词，记为context(w)。由于这个中心词w,的确和context(w)相关存在，因此它是一个真实的正例。通过Negative Sampling采样，我们得到neg个和w不同的中心词wi,i=1,2,..neg，这样context(w)和$$w_i$就组成了neg个并不真实存在的负例。利用这一个正例和neg个负例，我们进行二元逻辑回归，得到负采样对应每个词$w_i$对应的模型参数$\theta_{i}$，和每个词的词向量。</p>
+<p>比如我们有一个训练样本，中心词是w,它周围上下文共有2c个词，记为context(w)。由于这个中心词w,的确和context(w)相关存在，因此它是一个真实的正例。通过Negative Sampling采样，我们得到neg个和w不同的中心词wi,i=1,2,..neg，这样context(w)和$$w<em>i$就组成了neg个并不真实存在的负例。利用这一个正例和neg个负例，我们进行二元逻辑回归，得到负采样对应每个词$w_i$对应的模型参数$\theta</em>{i}$，和每个词的词向量。</p>
 <blockquote>
 <p>Negative Sampling由于没有采用霍夫曼树，每次只是通过采样neg个不同的中心词做负例，就可以训练模型，因此整个过程要比Hierarchical Softmax简单。</p>
 </blockquote>
@@ -591,9 +591,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
-          
             <a href="/tags/word2vec/" rel="tag"># word2vec</a>
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
           
             <a href="/tags/hierarchical-softmax/" rel="tag"># hierarchical softmax</a>
           
@@ -610,8 +610,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/9219a0a9/" rel="next" title="【深度学习-trick系列】Batch Normalization">
-                <i class="fa fa-chevron-left"></i> 【深度学习-trick系列】Batch Normalization
+              <a href="/pub/1b7bcecc/" rel="next" title="【java源码】HashMap">
+                <i class="fa fa-chevron-left"></i> 【java源码】HashMap
               </a>
             
           </div>
@@ -710,7 +710,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -931,13 +931,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

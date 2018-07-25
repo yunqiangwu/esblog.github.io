@@ -517,6 +517,7 @@
 <li>catch an error at compile time:  before you even try to run the program  (think in java)<br>-<h2 id="java-framework"><a href="#java-framework" class="headerlink" title="java framework"></a>java framework</h2></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Throwable─┬─Exception─┬─RuntimeException─┬─IndexOutOfBoundsException</span><br><span class="line">          │           │                  ├─NullPointerException</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  │</span><br><span class="line">          │           │                  └─</span><br><span class="line">          │           │                  </span><br><span class="line">          │           ├─ ReflectiveOperationException─┬─NoSuchMethodException</span><br><span class="line">          │           │                               ├─ClassNotFoundException</span><br><span class="line">          │           │                               └─IllegalAccessException</span><br><span class="line">          │           │</span><br><span class="line">          │           │</span><br><span class="line">          │           │</span><br><span class="line">          │           ├─IOException─┬─FileNotFoundException</span><br><span class="line">          │           │             ├─EOFException</span><br><span class="line">          │</span><br><span class="line">          └─Error─┬─</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -552,6 +553,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p> Compile-Time Checking of Exceptions</p>
 <h2 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h2><p><strong>RuntimeException</strong><br>一般情况下，不要捕获或声明RuntimeException。因为问题在于你的程序逻辑本身有问题，<br>如果你用异常流程处理了，反而让正常流程问题一直存在。<br>程序应该从逻辑角度尽可能避免这类异常的发生；</p>
 <p><strong>non-RuntimeException</strong><br>RuntimeException之外的异常我们统称为非运行时异常。<br>从程序语法角度讲是必须进行处理的异常，如果不处理，程序就不能编译通过。</p>
@@ -634,8 +636,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/7d785abb/" rel="next" title="java系列 - System">
-                <i class="fa fa-chevron-left"></i> java系列 - System
+              <a href="/pub/5eb3e0be/" rel="next" title="java hotspot虚拟机 - SocketOutputStream">
+                <i class="fa fa-chevron-left"></i> java hotspot虚拟机 - SocketOutputStream
               </a>
             
           </div>
@@ -644,8 +646,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/3a5d7b99/" rel="prev" title="java hotspot虚拟机 - class文件">
-                java hotspot虚拟机 - class文件 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/2a8bf999/" rel="prev" title="java系列 - String">
+                java系列 - String <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -734,7 +736,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -955,13 +957,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

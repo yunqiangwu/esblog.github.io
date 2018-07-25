@@ -532,15 +532,15 @@
 <p><strong>怎么办呢？</strong></p>
 <p>那就让github认识一下<code>xusong.vip</code>，也就是在github page里设置一下custom domain，或者添加CNAME文件，详见<a href="../利用Github Pages搭建独立域名的个人博客/">用Github Pages搭建独立域名的个人博客</a></p>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 如果DNS设置CNAME记录，是不是github page不用设置就能work？</li>
+<li>[ ] 如果DNS设置CNAME记录，是不是github page不用设置就能work？</li>
 </ul>
 <h2 id="那么上一篇中的重重疑点也就解开了"><a href="#那么上一篇中的重重疑点也就解开了" class="headerlink" title="那么上一篇中的重重疑点也就解开了"></a>那么上一篇中的重重疑点也就解开了</h2><ul>
-<li style="list-style: none"><input type="checkbox" checked> 每个账号的gitpage都是独立的IP吗？github怎么这么多独立外网IP？还是不同账号共用IP？<ul>
+<li>[x] 每个账号的gitpage都是独立的IP吗？github怎么这么多独立外网IP？还是不同账号共用IP？<ul>
 <li>很多账号是同一个ip。</li>
 </ul>
 </li>
-<li style="list-style: none"><input type="checkbox" checked> 不同github page共享ip 正因为如此，才需要<code>步骤3</code>的设置。</li>
-<li style="list-style: none"><input type="checkbox" checked> 配置github pages的custom domain，其作用仅仅是<code>xu-song.github.io --&gt; xusong.vip (重定向)</code>吗？<ul>
+<li>[x] 不同github page共享ip 正因为如此，才需要<code>步骤3</code>的设置。</li>
+<li>[x]  配置github pages的custom domain，其作用仅仅是<code>xu-song.github.io --&gt; xusong.vip (重定向)</code>吗？<ul>
 <li>不是。1. 查dns解析是否通过 2. 部署到github服务器的相应目录（因为） 3. github page到domain的重定向</li>
 </ul>
 </li>
@@ -552,14 +552,14 @@
 <p>比如你的账号名为  username, 项目叫 project1    那你可以通过  username.github.io/project1 访问， 如果配置了个人域名就可以用自己的域名访问了</p>
 <p>但是CNAME不能指向username.github.io/project1，怎么办？</p>
 <h2 id="todo"><a href="#todo" class="headerlink" title="todo"></a>todo</h2><ul>
-<li style="list-style: none"><input type="checkbox"> 如何解决md同步问题？<ul>
+<li>[ ] 如何解决md同步问题？<ul>
 <li>git-repo源，gist源，git issue源，gitpage源。最优的方式就是同源 + 自动deploy。</li>
 <li>方式一：以issue作源，要自己利用github api，读取issue，然后写到source目录(貌似也挺简单)。</li>
 <li>方式二：以git-repo作源，貌似不错哎。单独把source目录单独作为repo</li>
 <li>方式三：以gist作源：易集成(一行js即可)，但不易管理(不支持directory，文档多了很麻烦)</li>
 </ul>
 </li>
-<li style="list-style: none"><input type="checkbox"> 如何实现在线写blog，像wordpress那样<ul>
+<li>[ ] 如何实现在线写blog，像wordpress那样<ul>
 <li>用js调用github api，或者其他后台api即可</li>
 </ul>
 </li>
@@ -604,9 +604,9 @@
           
             <a href="/tags/github/" rel="tag"># github</a>
           
-            <a href="/tags/pages/" rel="tag"># pages</a>
-          
             <a href="/tags/blog/" rel="tag"># blog</a>
+          
+            <a href="/tags/pages/" rel="tag"># pages</a>
           
         </div>
       
@@ -629,8 +629,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/87420f16/" rel="prev" title="DNS解析之“记录类型”">
-                DNS解析之“记录类型” <i class="fa fa-chevron-right"></i>
+              <a href="/pub/d051a027/" rel="prev" title="Gist 从入门到精通到放弃">
+                Gist 从入门到精通到放弃 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +719,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -940,13 +940,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

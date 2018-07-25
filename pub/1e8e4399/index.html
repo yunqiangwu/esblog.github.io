@@ -111,30 +111,25 @@
 
 
 
-  <meta name="description" content="# “you want zero-mean unit-variance activations? just make them so.” 采用强制归一化，而不通过小心翼翼的设计激活函数，实现中间层的N(0,1)分布。 # resnet中的batch normalization 123x = Conv2D(filters1, (1, 1), name=conv_name_base + &apos;2a&apos;)(">
+  <meta name="description" content="实例分析lexNetResNet 整体架构一直在升维，没有升维的地方采用了residual connection 单个block结构：降维(11small_size) + 卷积(33small_size) + 升维(11large_size)。  NINGoogLeNetTransformer先升维再降维 PCA映射过程是一个“先升维再降维”的过程 SVM的核函数，低维空间不可分，先映射到高维空间">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【深度学习-trick系列】Batch Normalization">
-<meta property="og:url" content="https://blog.eson.org/pub/9219a0a9/index.html">
+<meta property="og:title" content="维度尺寸设计 - 综述">
+<meta property="og:url" content="https://blog.eson.org/pub/1e8e4399/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="# “you want zero-mean unit-variance activations? just make them so.” 采用强制归一化，而不通过小心翼翼的设计激活函数，实现中间层的N(0,1)分布。 # resnet中的batch normalization 123x = Conv2D(filters1, (1, 1), name=conv_name_base + &apos;2a&apos;)(">
+<meta property="og:description" content="实例分析lexNetResNet 整体架构一直在升维，没有升维的地方采用了residual connection 单个block结构：降维(11small_size) + 卷积(33small_size) + 升维(11large_size)。  NINGoogLeNetTransformer先升维再降维 PCA映射过程是一个“先升维再降维”的过程 SVM的核函数，低维空间不可分，先映射到高维空间">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
-<meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
-<meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
-<meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
-<meta property="og:updated_time" content="2018-06-20T11:22:09.233Z">
+<meta property="og:updated_time" content="2018-07-25T11:50:54.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【深度学习-trick系列】Batch Normalization">
-<meta name="twitter:description" content="# “you want zero-mean unit-variance activations? just make them so.” 采用强制归一化，而不通过小心翼翼的设计激活函数，实现中间层的N(0,1)分布。 # resnet中的batch normalization 123x = Conv2D(filters1, (1, 1), name=conv_name_base + &apos;2a&apos;)(">
-<meta name="twitter:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
+<meta name="twitter:title" content="维度尺寸设计 - 综述">
+<meta name="twitter:description" content="实例分析lexNetResNet 整体架构一直在升维，没有升维的地方采用了residual connection 单个block结构：降维(11small_size) + 卷积(33small_size) + 升维(11large_size)。  NINGoogLeNetTransformer先升维再降维 PCA映射过程是一个“先升维再降维”的过程 SVM的核函数，低维空间不可分，先映射到高维空间">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/9219a0a9/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/1e8e4399/"/>
 
 
 
@@ -144,7 +139,7 @@
   };
 </script>
 
-  <title>【深度学习-trick系列】Batch Normalization | ESON</title>
+  <title>维度尺寸设计 - 综述 | ESON</title>
   
 
 
@@ -358,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/9219a0a9/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/1e8e4399/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -375,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【深度学习-trick系列】Batch Normalization
+          <h2 class="post-title" itemprop="name headline">维度尺寸设计 - 综述
               
             
           </h2>
@@ -398,56 +393,16 @@
                 
               
 
-              <time title="创建时间：2018-04-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-24T00:00:00+08:00">2018-04-24</time>
+              <time title="创建时间：2018-07-25 19:34:28 / 修改时间：19:50:54" itemprop="dateCreated datePublished" datetime="2018-07-25T19:34:28+08:00">2018-07-25</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
               
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep learning</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/trick/" itemprop="url" rel="index"><span itemprop="name">trick</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -512,29 +467,21 @@
       
 
       
-        <link rel="stylesheet" href="/css/tag-chat.css">
-<p>#</p>
-<p><strong>“you want zero-mean unit-variance activations? just make them so.”</strong></p>
-<p><strong>采用强制归一化，而不通过小心翼翼的设计激活函数，实现中间层的N(0,1)分布</strong>。</p>
-<p>#</p>
-<p>resnet中的batch normalization</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = Conv2D(filters1, (<span class="number">1</span>, <span class="number">1</span>), name=conv_name_base + <span class="string">'2a'</span>)(input_tensor)</span><br><span class="line">x = BatchNormalization(axis=bn_axis, name=bn_name_base + <span class="string">'2a'</span>)(x)</span><br><span class="line">x = Activation(<span class="string">'relu'</span>)(x)</span><br></pre></td></tr></table></figure>
-<p>#</p>
-<div class="chatContent" id="chatContent"><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>为什么要在激活前做BN？</pre> </div> </div> </div>  </div> </div>  </div><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>因为我们期望的是激活函数的输入服从N(0,1)，而不是激活函数的output服从N(0,1)。</pre> </div> </div> </div>  </div> </div>  </div><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>有了BN，是否还需要对输入数据归一化处理？</pre> </div> </div> </div>  </div> </div>  </div><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>不用了</pre> </div> </div> </div>  </div> </div>  </div></div>
-<h1 id="DNN中的normalization"><a href="#DNN中的normalization" class="headerlink" title="DNN中的normalization"></a>DNN中的normalization</h1><ul>
-<li>白化（whitening）<br>-</li>
+        <h1 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h1><h2 id="lexNet"><a href="#lexNet" class="headerlink" title="lexNet"></a>lexNet</h2><h2 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h2><ul>
+<li>整体架构一直在升维，没有升维的地方采用了<code>residual connection</code></li>
+<li>单个block结构：<code>降维</code>(1<em>1</em>small_size) + <code>卷积(</code>3<em>3</em>small_size) + <code>升维</code>(1<em>1</em>large_size)。</li>
 </ul>
-<h1 id="关于Batch-Normalization"><a href="#关于Batch-Normalization" class="headerlink" title="关于Batch Normalization"></a>关于Batch Normalization</h1><p>为什么简写BM？</p>
-<p>ResNet采用了Batch Normalization</p>
-<h2 id="源码实现"><a href="#源码实现" class="headerlink" title="源码实现"></a>源码实现</h2><ul>
-<li><a href="https://github.com/keras-team/keras/blob/master/keras/layers/normalization.py" target="_blank" rel="noopener">keras实现</a></li>
-<li><a href="">tensorflow实现</a></li>
+<h2 id="NIN"><a href="#NIN" class="headerlink" title="NIN"></a>NIN</h2><h2 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h2><h2 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h2><h2 id="先升维再降维"><a href="#先升维再降维" class="headerlink" title="先升维再降维"></a>先升维再降维</h2><ul>
+<li><a href="">PCA映射过程是一个“先升维再降维”的过程</a></li>
+<li>SVM的核函数，低维空间不可分，先映射到高维空间</li>
+<li>ResNet的</li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://arxiv.org/abs/1502.03167" target="_blank" rel="noopener">Batch normalization layer (Ioffe and Szegedy, 2014)</a></li>
-<li><a href="https://arxiv.org/abs/1502.03167" target="_blank" rel="noopener">Batch Normalization: Accelerating Deep Network.. 2015</a></li>
-</ul>
-
+<p>inception网络中的1*1卷积</p>
+<h2 id="先降维再升维"><a href="#先降维再升维" class="headerlink" title="先降维再升维"></a>先降维再升维</h2><p>1×1 layers reducing and then increasing (restoring) dimensions, leaving the 3×3 layer a bottleneck with smaller input/output dimensions.</p>
+<h2 id="1-1-kernel"><a href="#1-1-kernel" class="headerlink" title="1*1 kernel"></a>1*1 kernel</h2><p>可用于降维，可用于升维。</p>
+<p>NIN中用于降维</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    input       conv</span><br><span class="line">[?*100*100*128] * [1*1*128*32]</span><br></pre></td></tr></table></figure>
+<h1 id="bottleneck设计"><a href="#bottleneck设计" class="headerlink" title="bottleneck设计"></a>bottleneck设计</h1>
       
     </div>
 
@@ -559,7 +506,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/9219a0a9/" title="【深度学习-trick系列】Batch Normalization">https://blog.eson.org/pub/9219a0a9/</a>
+    <a href="https://blog.eson.org/pub/1e8e4399/" title="维度尺寸设计 - 综述">https://blog.eson.org/pub/1e8e4399/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -579,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/1b7bcecc/" rel="next" title="【java源码】HashMap">
-                <i class="fa fa-chevron-left"></i> 【java源码】HashMap
+              <a href="/pub/0/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -588,10 +535,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/pub/f6ca296f/" rel="prev" title="【深度学习-模型系列】word2vec">
-                【深度学习-模型系列】word2vec <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -679,7 +622,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -900,13 +843,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1225,7 +1162,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DNN中的normalization"><span class="nav-number">1.</span> <span class="nav-text">DNN中的normalization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于Batch-Normalization"><span class="nav-number">2.</span> <span class="nav-text">关于Batch Normalization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码实现"><span class="nav-number">2.1.</span> <span class="nav-text">源码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.2.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#实例分析"><span class="nav-number">1.</span> <span class="nav-text">实例分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lexNet"><span class="nav-number">1.1.</span> <span class="nav-text">lexNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResNet"><span class="nav-number">1.2.</span> <span class="nav-text">ResNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NIN"><span class="nav-number">1.3.</span> <span class="nav-text">NIN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GoogLeNet"><span class="nav-number">1.4.</span> <span class="nav-text">GoogLeNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformer"><span class="nav-number">1.5.</span> <span class="nav-text">Transformer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先升维再降维"><span class="nav-number">1.6.</span> <span class="nav-text">先升维再降维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#先降维再升维"><span class="nav-number">1.7.</span> <span class="nav-text">先降维再升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-kernel"><span class="nav-number">1.8.</span> <span class="nav-text">1*1 kernel</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bottleneck设计"><span class="nav-number">2.</span> <span class="nav-text">bottleneck设计</span></a></li></ol></div>
             
 
           </div>
@@ -1432,9 +1369,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/9219a0a9/';
-        this.page.identifier = 'pub/9219a0a9/';
-        this.page.title = '【深度学习-trick系列】Batch Normalization';
+        this.page.url = 'https://blog.eson.org/pub/1e8e4399/';
+        this.page.identifier = 'pub/1e8e4399/';
+        this.page.title = '维度尺寸设计 - 综述';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

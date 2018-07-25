@@ -732,14 +732,14 @@ intptr_t ObjectSynchronizer::FastHashCode (Thread * Self, oop obj) {
   // We finally get the hash
   return hash;
 }
-</code></pre><h3 id="get-next-hash-–-这才是核心代码"><a href="#get-next-hash-–-这才是核心代码" class="headerlink" title="get_next_hash – 这才是核心代码"></a>get_next_hash – 这才是核心代码</h3><p>又调用的get_next_hash()</p>
+</code></pre><h3 id="get-next-hash-—-这才是核心代码"><a href="#get-next-hash-—-这才是核心代码" class="headerlink" title="get_next_hash — 这才是核心代码"></a>get_next_hash — 这才是核心代码</h3><p>又调用的get_next_hash()</p>
 <pre><code>// 路径: openjdk\hotspot\src\share\vm\runtime\synchronizer.cpp
 static inline intptr_t get_next_hash(Thread * Self, oop obj) {
   intptr_t value = 0 ;
   if (hashCode == 0) {
      // This form uses an unguarded global Park-Miller RNG,
-     // so it&apos;s possible for two threads to race and generate the same RNG.
-     // On MP system we&apos;ll have lots of RW access to a global, so the
+     // so it&#39;s possible for two threads to race and generate the same RNG.
+     // On MP system we&#39;ll have lots of RW access to a global, so the
      // mechanism induces lots of coherency traffic.
      value = os::random() ;
   } else
@@ -759,8 +759,8 @@ static inline intptr_t get_next_hash(Thread * Self, oop obj) {
   if (hashCode == 4) {
      value = intptr_t(obj) ;
   } else {
-     // Marsaglia&apos;s xor-shift scheme with thread-specific state
-     // This is probably the best overall implementation -- we&apos;ll
+     // Marsaglia&#39;s xor-shift scheme with thread-specific state
+     // This is probably the best overall implementation -- we&#39;ll
      // likely make this the default in future releases.
      unsigned t = Self-&gt;_hashStateX ;
      t ^= (t &lt;&lt; 11) ;
@@ -780,8 +780,7 @@ static inline intptr_t get_next_hash(Thread * Self, oop obj) {
   return value;
 }
 </code></pre><p>hashCode()并不是简单的返回内存地址。<br>OpenJDK一共实现了5中不同的计算hash值的方法，通过<br>这段代码中hashCode进行切换。其中hashCode == 4的是直接使用地址的（前面的实验说明OpenJDK默认情况下并没有使用这种方式，或许可以通过运行/编译时参数进行选择）。</p>
-<p>###</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>前面通过JNI验证已经能够得到很显然的结论，hashCode返回的并不一定是对象的（虚拟）内存地址，具体取决于运行时库和JVM的具体实现。</p>
+<h2 id=""><a href="#" class="headerlink" title="#"></a>#</h2><h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>前面通过JNI验证已经能够得到很显然的结论，hashCode返回的并不一定是对象的（虚拟）内存地址，具体取决于运行时库和JVM的具体实现。</p>
 <h2 id="跟踪wait"><a href="#跟踪wait" class="headerlink" title="跟踪wait"></a>跟踪wait</h2><pre><code>JNIEXPORT void JNICALL
 JVM_MonitorWait(JNIEnv *env, jobject obj, jlong ms);
 
@@ -977,8 +976,8 @@ public class java.lang.Object {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/5eb3e0be/" rel="next" title="java hotspot虚拟机 - SocketOutputStream">
-                <i class="fa fa-chevron-left"></i> java hotspot虚拟机 - SocketOutputStream
+              <a href="/pub/2a8bf999/" rel="next" title="java系列 - String">
+                <i class="fa fa-chevron-left"></i> java系列 - String
               </a>
             
           </div>
@@ -987,8 +986,8 @@ public class java.lang.Object {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/8748fd7b/" rel="prev" title="java系列 - Map">
-                java系列 - Map <i class="fa fa-chevron-right"></i>
+              <a href="/pub/851507b3/" rel="prev" title="java系列 - Thread">
+                java系列 - Thread <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1077,7 +1076,7 @@ public class java.lang.Object {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1298,13 +1297,7 @@ public class java.lang.Object {
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1623,7 +1616,7 @@ public class java.lang.Object {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-java"><span class="nav-number">2.</span> <span class="nav-text">Object.java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么Object-java中看不到构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">为什么Object.java中看不到构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么在stack-trace中看不到调用Object"><span class="nav-number">2.2.</span> <span class="nav-text">为什么在stack trace中看不到调用Object.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-c"><span class="nav-number">3.</span> <span class="nav-text">Object.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-hashcode"><span class="nav-number">4.</span> <span class="nav-text">跟踪 hashcode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FastHashCode"><span class="nav-number">4.1.</span> <span class="nav-text">FastHashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-next-hash-–-这才是核心代码"><span class="nav-number">4.2.</span> <span class="nav-text">get_next_hash – 这才是核心代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">4.3.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪wait"><span class="nav-number">5.</span> <span class="nav-text">跟踪wait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪notify"><span class="nav-number">6.</span> <span class="nav-text">跟踪notify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪clone"><span class="nav-number">7.</span> <span class="nav-text">跟踪clone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-getClass"><span class="nav-number">8.</span> <span class="nav-text">跟踪 getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪"><span class="nav-number">9.</span> <span class="nav-text">跟踪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">9.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#byte-code"><span class="nav-number">10.</span> <span class="nav-text">byte code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">11.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">12.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-java"><span class="nav-number">2.</span> <span class="nav-text">Object.java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么Object-java中看不到构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">为什么Object.java中看不到构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么在stack-trace中看不到调用Object"><span class="nav-number">2.2.</span> <span class="nav-text">为什么在stack trace中看不到调用Object.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-c"><span class="nav-number">3.</span> <span class="nav-text">Object.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-hashcode"><span class="nav-number">4.</span> <span class="nav-text">跟踪 hashcode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FastHashCode"><span class="nav-number">4.1.</span> <span class="nav-text">FastHashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-next-hash-—-这才是核心代码"><span class="nav-number">4.2.</span> <span class="nav-text">get_next_hash — 这才是核心代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#结论"><span class="nav-number">5.1.</span> <span class="nav-text">结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪wait"><span class="nav-number">6.</span> <span class="nav-text">跟踪wait</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪notify"><span class="nav-number">7.</span> <span class="nav-text">跟踪notify</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪clone"><span class="nav-number">8.</span> <span class="nav-text">跟踪clone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪-getClass"><span class="nav-number">9.</span> <span class="nav-text">跟踪 getClass</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#跟踪"><span class="nav-number">10.</span> <span class="nav-text">跟踪</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">10.1.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#byte-code"><span class="nav-number">11.</span> <span class="nav-text">byte code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">12.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">13.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>

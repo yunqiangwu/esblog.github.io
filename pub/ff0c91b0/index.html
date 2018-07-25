@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="image classificationImageNet分类模型   model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same Re">
+  <meta name="description" content="image classificationImageNet分类模型    model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same R">
 <meta name="keywords" content="deep learning,cv,image classification">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图像分类--模型汇总">
 <meta property="og:url" content="https://blog.eson.org/pub/ff0c91b0/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="image classificationImageNet分类模型   model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same Re">
+<meta property="og:description" content="image classificationImageNet分类模型    model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same R">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-06-20T11:22:09.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像分类--模型汇总">
-<meta name="twitter:description" content="image classificationImageNet分类模型   model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same Re">
+<meta name="twitter:description" content="image classificationImageNet分类模型    model 简介  conv_padding conv_activation pooling code 备注     LeNet5 3个卷积层+2个pooling层  valid sigmoid     AlexNet 8层  same ReLU Overlapping Pooling   VGG-19 19层  same R">
 
 
 
@@ -514,7 +514,8 @@
       
 
       
-        <h2 id="image-classification"><a href="#image-classification" class="headerlink" title="image classification"></a>image classification</h2><h1 id="ImageNet分类模型"><a href="#ImageNet分类模型" class="headerlink" title="ImageNet分类模型"></a>ImageNet分类模型</h1><table>
+        <h2 id="image-classification"><a href="#image-classification" class="headerlink" title="image classification"></a>image classification</h2><h1 id="ImageNet分类模型"><a href="#ImageNet分类模型" class="headerlink" title="ImageNet分类模型"></a>ImageNet分类模型</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:left">model</th>
@@ -570,8 +571,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>padding=same，是采用zero-padding的方式，使得input和output的维度一致。</p>
-<p><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <script type="text/javascript">google.charts.load(“current”,{packages:[‘corechart’]}); google.charts.setOnLoadCallback(drawChart); function drawChart(){var data=google.visualization.arrayToDataTable([ [“Year”, “Accruacy”], [“2010\nLin”, 28.2], [“2011\nSanchez”, 25.8], [“2012\nAlexNet”, 16.4], [“2013\nZeiler”, 11.7], [“2014\nVGG”, 7.3], [“2014\nGoogLeNet”, 6.7], [“2015\nResNet”, 3.6], [“2016\nShao”, 3.0], [“2017\nSENet”, 2.3], [“Human\nRussak..”, 5.1],]); var view=new google.visualization.DataView(data); view.setColumns([0, 1,{calc: “stringify”, sourceColumn: 1, type: “string”, role: “annotation”}]); var options={title: “ImageNet”, titlePosition: ‘none’, width: 800, height: 400, ‘chartArea’:{‘width’: ‘95%’}, vAxis:{maxValue: 32, ticks: [0, 10, 20, 30]}, hAxis:{textStyle:{fontSize:12.4}}, bar:{groupWidth: “50%”}, legend:{position: “none”}, annotations:{alwaysOutside: ‘true’, textStyle:{color: “black”, bold:true}},}; var chart=new google.visualization.ColumnChart(document.getElementById(“columnchart_values”)); chart.draw(view, options);}</script> <div id="columnchart_values" style="width: 800px; height: 300px;"></div></p>
+<p><script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> <script type="text/javascript">google.charts.load("current",{packages:['corechart']}); google.charts.setOnLoadCallback(drawChart); function drawChart(){var data=google.visualization.arrayToDataTable([ ["Year", "Accruacy"], ["2010\nLin", 28.2], ["2011\nSanchez", 25.8], ["2012\nAlexNet", 16.4], ["2013\nZeiler", 11.7], ["2014\nVGG", 7.3], ["2014\nGoogLeNet", 6.7], ["2015\nResNet", 3.6], ["2016\nShao", 3.0], ["2017\nSENet", 2.3], ["Human\nRussak..", 5.1],]); var view=new google.visualization.DataView(data); view.setColumns([0, 1,{calc: "stringify", sourceColumn: 1, type: "string", role: "annotation"}]); var options={title: "ImageNet", titlePosition: 'none', width: 800, height: 400, 'chartArea':{'width': '95%'}, vAxis:{maxValue: 32, ticks: [0, 10, 20, 30]}, hAxis:{textStyle:{fontSize:12.4}}, bar:{groupWidth: "50%"}, legend:{position: "none"}, annotations:{alwaysOutside: 'true', textStyle:{color: "black", bold:true}},}; var chart=new google.visualization.ColumnChart(document.getElementById("columnchart_values")); chart.draw(view, options);}</script> <div id="columnchart_values" style="width: 800px; height: 300px;"></div></p>
 <p>上图来自cs231n,</p>
 
       
@@ -638,8 +640,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/435df108/" rel="prev" title="关于SEO">
-                关于SEO <i class="fa fa-chevron-right"></i>
+              <a href="/pub/8dcc3c99/" rel="prev" title="关于域名">
+                关于域名 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -728,7 +730,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -949,13 +951,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

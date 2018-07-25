@@ -111,25 +111,25 @@
 
 
 
-  <meta name="description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
+  <meta name="description" content="语言字母(或者中文的笔画)、文字和数字实际上是信息编码的不同单元。任何一种语言都是一种编码的方式，而语言的语法规则是编解码的算法。 我们把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这门语言，他就可以用这门语言的解码方法获得说话人要表达的信息。这就是语言的数学本质。  基本名词 文法、语法 Grammer">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【语言模型】n-gram">
-<meta property="og:url" content="https://blog.eson.org/pub/2d87220e/index.html">
+<meta property="og:title" content="自然语言处理 - 从规则到统计">
+<meta property="og:url" content="https://blog.eson.org/pub/cd9c7906/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
+<meta property="og:description" content="语言字母(或者中文的笔画)、文字和数字实际上是信息编码的不同单元。任何一种语言都是一种编码的方式，而语言的语法规则是编解码的算法。 我们把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这门语言，他就可以用这门语言的解码方法获得说话人要表达的信息。这就是语言的数学本质。  基本名词 文法、语法 Grammer">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T03:58:24.413Z">
+<meta property="og:updated_time" content="2018-06-25T02:01:14.452Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【语言模型】n-gram">
-<meta name="twitter:description" content="简介n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为： 当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率 假设词表的大小为100,000，那么n-gram模型的参数数量为 n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bi">
+<meta name="twitter:title" content="自然语言处理 - 从规则到统计">
+<meta name="twitter:description" content="语言字母(或者中文的笔画)、文字和数字实际上是信息编码的不同单元。任何一种语言都是一种编码的方式，而语言的语法规则是编解码的算法。 我们把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次编码，编码的结果就是一串文字。而如果对方懂得这门语言，他就可以用这门语言的解码方法获得说话人要表达的信息。这就是语言的数学本质。  基本名词 文法、语法 Grammer">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/2d87220e/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/cd9c7906/"/>
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>【语言模型】n-gram | ESON</title>
+  <title>自然语言处理 - 从规则到统计 | ESON</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/2d87220e/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/cd9c7906/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -370,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【语言模型】n-gram
+          <h2 class="post-title" itemprop="name headline">自然语言处理 - 从规则到统计
               
             
           </h2>
@@ -393,12 +393,22 @@
                 
               
 
-              <time title="创建时间：2018-06-21 00:00:00 / 修改时间：11:58:24" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
+              <time title="创建时间：2018-06-21 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-21T00:00:00+08:00">2018-06-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-06-25 10:01:14" itemprop="dateModified" datetime="2018-06-25T10:01:14+08:00">2018-06-25</time>
               
             
           </span>
@@ -467,11 +477,56 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>n-gram模型也称为n-1阶马尔科夫模型，它有一个有限历史假设：当前词的出现概率仅仅与前面n-1个词相关。因此(1)式可以近似为：</p>
-<p>当n取1、2、3时，n-gram模型分别称为unigram、bigram和trigram语言模型。n-gram模型的参数就是条件概率</p>
-<p>假设词表的大小为100,000，那么n-gram模型的参数数量为</p>
-<p>n越大，模型越准确，也越复杂，需要的计算量越大。最常用的是bigram，其次是unigram和trigram，n取≥4的情况较少。</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+        <h1 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h1><p>字母(或者中文的笔画)、文字和数字实际上是信息编码的不同单元。任何一种语言都是一种编码的方式，而<strong>语言的语法规则是编解码的算法</strong>。</p>
+<p>我们把一个要表达的意思，通过某种语言的一句话表达出来，就是用这种语言的编码方式对头脑中的信息做了一次<strong>编码</strong>，编码的结果就是一串文字。而如果对方懂得这门语言，他就可以用这门语言的<strong>解码方法</strong>获得说话人要表达的信息。这就是语言的数学本质。</p>
+<!-- -->
+<h2 id="基本名词"><a href="#基本名词" class="headerlink" title="基本名词"></a>基本名词</h2><ul>
+<li>文法、语法 Grammer</li>
+<li>文法包括词法和句法</li>
+<li>词法主要研究词的内部结构，包括变形、构词法。又称形态学(Morphologic)</li>
+<li>句法研究句子结构成分的相关关系</li>
+</ul>
+<ul>
+<li>上下文无关文法 (Context Independent Grammar)，比如程序设计语言。计算复杂度大约是句子长度的2次方</li>
+<li>上下文有关文法 (Context dependency Grammar)，比如自然语言。计算复杂度大约是语句长度的6次方。</li>
+</ul>
+<h1 id="自然语言理解"><a href="#自然语言理解" class="headerlink" title="自然语言理解"></a>自然语言理解</h1><ul>
+<li>人是怎样理解语言的？</li>
+<li>机器能否像人一样理解语言？</li>
+</ul>
+<p>今天，机器翻译和语音识别已经做得不错，但大部分这个领域之外的人依然错误地认为这两个应用是靠计算机理解了自然语言而完成的。事实上，它们全都靠得是数学，更准确地说是<strong>靠统计</strong>。</p>
+<h2 id="门派"><a href="#门派" class="headerlink" title="门派"></a>门派</h2><ul>
+<li>基于规则的：专家根据自己的经验 人工撰写规则。<ul>
+<li>背景：</li>
+<li>优点：设计规则，简单有效。</li>
+<li>缺点：费时费力；规则不能覆盖各种语言现象</li>
+</ul>
+</li>
+<li>基于统计的：<ul>
+<li>背景：上个世纪80年代后期，机器学习算法被引入到自然语言处理中，这要归功于不断提高的计算能力。</li>
+<li>优点：相对基于规则的方法，更鲁棒</li>
+<li>缺点/局限性：data-driven，强烈依赖数据，需要大规模的训练语料。计算能力</li>
+</ul>
+</li>
+</ul>
+<p>基于统计的方法代替传统的方法，需要等原有的一批语言学家退休。</p>
+<p>今天几乎不再有科学家宣称自己是基于规则方法的捍卫者。而自然语言处理的研究也<strong>从单纯的句法分析和语义理解，变成了非常贴近应用的机器翻译、语音识别、文本到数据库自动生成、数据挖掘和知识的获取等等。</strong></p>
+<blockquote>
+<p>上面是什么意思？从无监督学习变成了有监督学习？贬低语义理解？</p>
+</blockquote>
+<h3 id="门派斗争"><a href="#门派斗争" class="headerlink" title="门派斗争"></a>门派斗争</h3><ul>
+<li>基于统计的方法只能处理浅层的自然语言处理问题，无法进入生层次的研究</li>
+</ul>
+<h2 id="基于规则的自然语言处理"><a href="#基于规则的自然语言处理" class="headerlink" title="基于规则的自然语言处理"></a>基于规则的自然语言处理</h2><p><code>语法规则</code>(Gramar Rules)、<code>词性</code>(Part of Speech)、<code>构词法</code>(Morphologic)等，这些规则是人类学习语言(尤其是外语)的好工具。而恰恰这些语法规则又很容易用计算机的算法描述，这就更坚定了大家对基于规则的自然语言处理的信心。</p>
+<p>语法树太复杂</p>
+<h2 id="基于统计的自然语言处理"><a href="#基于统计的自然语言处理" class="headerlink" title="基于统计的自然语言处理"></a>基于统计的自然语言处理</h2><p><strong>由于计算量十分庞大，在20世纪70年代，基于规则的句法分析很快走到了尽头</strong>。</p>
+<p>1970年以后统计语言学的出现使得自然语言处理重获新生。<br>当时，基于统计的方法核心模型是通信系统加<code>隐马尔科夫模型</code>。<strong>这个系统的输入和输出都是一维的符号序列，而且保持原有的次序</strong>(即sequence labeling问题)。最早获得成功的是语音识别，接下来是磁性分析。</p>
+<p>但是在句法分析中，输入时一维的句子，输出是二维的分析树。在机器翻译中，<strong>输出的次序会有很大的变化</strong>（翻译不再是sequence labeling问题）。HMM就不太管用了。1988年，IBM的Peter Brown等人提出了基于统计的机器翻译方法，框架是对的，但是效果很差，因为当时既没有足够的数据，也没有足够强大的模型来解决不同语言<strong>语序颠倒的问题</strong>。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>《数学之美》 | 吴军</li>
+<li>《》</li>
+</ul>
+
       
     </div>
 
@@ -496,7 +551,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/2d87220e/" title="【语言模型】n-gram">https://blog.eson.org/pub/2d87220e/</a>
+    <a href="https://blog.eson.org/pub/cd9c7906/" title="自然语言处理 - 从规则到统计">https://blog.eson.org/pub/cd9c7906/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -516,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/b64e6f85/" rel="next" title="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
-                <i class="fa fa-chevron-left"></i> 优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）
+              <a href="/pub/980c5a0f/" rel="next" title="SVD与PCA">
+                <i class="fa fa-chevron-left"></i> SVD与PCA
               </a>
             
           </div>
@@ -526,8 +581,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/f4a8f778/" rel="prev" title="【语言模型】综述">
-                【语言模型】综述 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/ed02138c/" rel="prev" title="贝叶斯学派 VS 频率学派">
+                贝叶斯学派 VS 频率学派 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -616,7 +671,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -837,13 +892,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1162,7 +1211,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#语言"><span class="nav-number">1.</span> <span class="nav-text">语言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本名词"><span class="nav-number">1.1.</span> <span class="nav-text">基本名词</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自然语言理解"><span class="nav-number">2.</span> <span class="nav-text">自然语言理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#门派"><span class="nav-number">2.1.</span> <span class="nav-text">门派</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#门派斗争"><span class="nav-number">2.1.1.</span> <span class="nav-text">门派斗争</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于规则的自然语言处理"><span class="nav-number">2.2.</span> <span class="nav-text">基于规则的自然语言处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于统计的自然语言处理"><span class="nav-number">2.3.</span> <span class="nav-text">基于统计的自然语言处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1369,9 +1418,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/2d87220e/';
-        this.page.identifier = 'pub/2d87220e/';
-        this.page.title = '【语言模型】n-gram';
+        this.page.url = 'https://blog.eson.org/pub/cd9c7906/';
+        this.page.identifier = 'pub/cd9c7906/';
+        this.page.title = '自然语言处理 - 从规则到统计';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -1775,29 +1824,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 

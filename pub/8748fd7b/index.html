@@ -111,20 +111,20 @@
 
 
 
-  <meta name="description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary   类 同步(线程安全) order null key null value implementation 增删查改(按key">
+  <meta name="description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary    类 同步(线程安全) order null key null value implementation 增删查改(按ke">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java系列 - Map">
 <meta property="og:url" content="https://blog.eson.org/pub/8748fd7b/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary   类 同步(线程安全) order null key null value implementation 增删查改(按key">
+<meta property="og:description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary    类 同步(线程安全) order null key null value implementation 增删查改(按ke">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Java%20-%20diagram%20-%20java.util.Map%20-%20skywang.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Java%20-%20diagram%20-%20java.util.Map%20-%20xusong.svg">
 <meta property="og:updated_time" content="2018-06-20T11:22:08.992Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java系列 - Map">
-<meta name="twitter:description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary   类 同步(线程安全) order null key null value implementation 增删查改(按key">
+<meta name="twitter:description" content="diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html  Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。  summary    类 同步(线程安全) order null key null value implementation 增删查改(按ke">
 <meta name="twitter:image" content="https://blog.eson.org/images/raw/Java%20-%20diagram%20-%20java.util.Map%20-%20skywang.jpg">
 
 
@@ -542,7 +542,8 @@
 <p><img src="/images/raw/Java - diagram - java.util.Map - skywang.jpg"></p>
 <p>Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。</p>
 <p><img src="/images/raw/Java - diagram - java.util.Map - xusong.svg"></p>
-<h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><table>
+<h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>类</th>
@@ -638,6 +639,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>HashMap是非synchronized，而Hashtable是synchronized，这意味着Hashtable是线程安全的，多个线程可以共享一个Hashtable；而如果没有正确的同步的话，多个线程是不能共享HashMap的。Java 5提供了ConcurrentHashMap，它是HashTable的替代，比HashTable的扩展性更好。</li>
 <li>HashMap的迭代器(Iterator)是fail-fast迭代器，而Hashtable的enumerator迭代器不是fail-fast的。所以当有其它线程改变了HashMap的结构（增加或者移除元素），将会抛出ConcurrentModificationException，但迭代器本身的remove()方法移除元素则不会抛出ConcurrentModificationException异常。但这并不是一个一定发生的行为，要看JVM。这条同样也是Enumeration和Iterator的区别。</li>
@@ -645,7 +647,7 @@
 <blockquote>
 <p>sychronized意味着在一次仅有一个线程能够更改Hashtable。就是说任何线程要更新Hashtable时要首先获得同步锁，其它线程要等到同步锁被释放之后才能再次获得同步锁更新Hashtable。<br>Fail-safe和iterator迭代器相关。如果某个集合对象创建了Iterator或者ListIterator，然后其它的线程试图“结构上”更改集合对象，将会抛出ConcurrentModificationException异常。但其它线程可以通过set()方法更改集合对象是允许的，因为这并没有从“结构上”更改集合。但是假如已经从结构上进行了更改，再调用set()方法，将会抛出IllegalArgumentException异常。<br> 结构上的更改指的是删除或者插入一个元素，这样会影响到map的结构。</p>
 </blockquote>
-<p>有没有既linked，又线程安全的Map，答案没有。因为多个线程同时操作，不同的执行顺序会产生不同的结果。所以linked的东东都应该不存在线程安全性。不能加锁吗？ –by xs</p>
+<p>有没有既linked，又线程安全的Map，答案没有。因为多个线程同时操作，不同的执行顺序会产生不同的结果。所以linked的东东都应该不存在线程安全性。不能加锁吗？ —by xs</p>
 <h1 id="底层实现"><a href="#底层实现" class="headerlink" title="底层实现"></a>底层实现</h1><p>HashTable使用Enumeration，HashMap使用Iterator。<br>HashTable中hash数组默认大小是11，增加的方式是 old*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。</p>
 <p>6.哈希值的使用不同，HashTable直接使用对象的hashCode，代码是这样的：<br>int hash = key.hashCode();<br>int index = (hash &amp; 0x7FFFFFFF) % tab.length;<br>而HashMap重新计算hash值，而且用与代替求模：<br>int hash = hash(k);<br>int i = indexFor(hash, table.length);</p>
 <p>static int hash(Object x) {<br>　　int h = x.hashCode();</p>
@@ -695,8 +697,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/1c98e0dc/" rel="next" title="java系列 - Object">
-                <i class="fa fa-chevron-left"></i> java系列 - Object
+              <a href="/pub/aca7a464/" rel="next" title="java系列 - Collection Framework">
+                <i class="fa fa-chevron-left"></i> java系列 - Collection Framework
               </a>
             
           </div>
@@ -705,8 +707,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/1b34e5ea/" rel="prev" title="java系列 - object">
-                java系列 - object <i class="fa fa-chevron-right"></i>
+              <a href="/pub/7d785abb/" rel="prev" title="java系列 - System">
+                java系列 - System <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -795,7 +797,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1016,13 +1018,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

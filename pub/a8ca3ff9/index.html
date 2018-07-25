@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift [v3 - 2015] Rethinking the Inception Architecture">
+  <meta name="description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift 加了BatchNormalization正则，去除55卷积，用两个33代替 [v3 - 2015]">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【深度学习-模型系列】Inception">
 <meta property="og:url" content="https://blog.eson.org/pub/a8ca3ff9/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift [v3 - 2015] Rethinking the Inception Architecture">
+<meta property="og:description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift 加了BatchNormalization正则，去除55卷积，用两个33代替 [v3 - 2015]">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-20T11:22:09.248Z">
+<meta property="og:updated_time" content="2018-07-25T10:53:15.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】Inception">
-<meta name="twitter:description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift [v3 - 2015] Rethinking the Inception Architecture">
+<meta name="twitter:description" content="简介 [v1 - 2014] Going Deeper with Convolutions [v2 - 2015] Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift 加了BatchNormalization正则，去除55卷积，用两个33代替 [v3 - 2015]">
 
 
 
@@ -408,7 +408,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-06-20 19:22:09" itemprop="dateModified" datetime="2018-06-20T19:22:09+08:00">2018-06-20</time>
+                <time title="修改时间：2018-07-25 18:53:15" itemprop="dateModified" datetime="2018-07-25T18:53:15+08:00">2018-07-25</time>
               
             
           </span>
@@ -509,9 +509,9 @@
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><ul>
 <li>[v1 - 2014] <a href="http://arxiv.org/abs/1409.4842" target="_blank" rel="noopener">Going Deeper with Convolutions</a></li>
-<li>[v2 - 2015] <a href="http://arxiv.org/abs/1502.03167" target="_blank" rel="noopener">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a></li>
-<li>[v3 - 2015] <a href="http://arxiv.org/abs/1512.00567" target="_blank" rel="noopener">Rethinking the Inception Architecture for Computer Vision</a></li>
-<li>[v4 - 2016] <a href="http://arxiv.org/abs/1602.07261" target="_blank" rel="noopener">Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning</a> – <a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/inception_resnet_v2.py" target="_blank" rel="noopener">code-tensorflow</a><ul>
+<li>[v2 - 2015] <a href="http://arxiv.org/abs/1502.03167" target="_blank" rel="noopener">Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift</a> 加了BatchNormalization正则，去除5<em>5卷积，用两个3</em>3代替</li>
+<li>[v3 - 2015] <a href="http://arxiv.org/abs/1512.00567" target="_blank" rel="noopener">Rethinking the Inception Architecture for Computer Vision</a> 7<em>7卷积又拆成7</em>1+1*7</li>
+<li>[v4 - 2016] <a href="http://arxiv.org/abs/1602.07261" target="_blank" rel="noopener">Inception-v4, Inception-ResNet and the Impact of Residual Connections on Learning</a>  加入了残差结构  <a href="https://github.com/tensorflow/models/blob/master/research/slim/nets/inception_resnet_v2.py" target="_blank" rel="noopener">code-tensorflow</a><ul>
 <li>尽管Inception v3与Inception-ResNet-v2都很擅长识别每一条狗所属的类别，这种新模型的性能更为显著。例如，旧模型可能会错误地将右边的图片识别为阿拉斯加雪橇犬，新模型Inception-ResNet-v2能够准确地识别两个图片中狗的类别。</li>
 </ul>
 </li>
@@ -561,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/6b34bb62/" rel="next" title="【java源码系列】random的源码实现">
-                <i class="fa fa-chevron-left"></i> 【java源码系列】random的源码实现
+              <a href="/pub/dec3cfee/" rel="next" title="【Hexo插件系列】hexo-reference">
+                <i class="fa fa-chevron-left"></i> 【Hexo插件系列】hexo-reference
               </a>
             
           </div>
@@ -571,8 +571,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/dec3cfee/" rel="prev" title="【Hexo插件系列】hexo-reference">
-                【Hexo插件系列】hexo-reference <i class="fa fa-chevron-right"></i>
+              <a href="/pub/6b34bb62/" rel="prev" title="【java源码系列】random的源码实现">
+                【java源码系列】random的源码实现 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,7 +661,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -882,13 +882,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

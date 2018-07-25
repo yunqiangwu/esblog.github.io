@@ -525,7 +525,7 @@
 <h2 id="详解hexo-g"><a href="#详解hexo-g" class="headerlink" title="详解hexo g"></a>详解hexo g</h2><p>每次运行 hexo g 命令，hexo(node.js程序)会遍历你的 source 目录，建立索引，根据你 theme 文件夹的主题生成页面到 public 文件夹。这时 public 文件夹就是一个纯由 html javascript css 等内容制作的博客，而这些恰好能在 git pages 识别</p>
 <h2 id="详解deploy"><a href="#详解deploy" class="headerlink" title="详解deploy"></a>详解deploy</h2><p>最后 hexo d 将 public 文件夹的内容复制到临时目录，以 git 方式 push 到 github 的指定项目的指定分支，由 github 进行显示</p>
 <p>首次deploy<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d --debug</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 首先加载plugin和theme</span></span><br><span class="line">DEBUG Config loaded: ~/xs/blog/_config.yml</span><br><span class="line">DEBUG Plugin loaded: hexo-generator-category</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 开始转化html</span></span><br><span class="line">INFO  Start processing</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.1 处理404页面</span></span><br><span class="line">DEBUG Processed: <span class="built_in">source</span>/404.html  <span class="comment"># 404不需要theme</span></span><br><span class="line">DEBUG Processed: 404.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.2 加载主题，处理source目录下的.md .html</span></span><br><span class="line">DEBUG Theme config loaded.</span><br><span class="line">DEBUG Processed: _config.yml  <span class="comment"># 这个也需要处理？</span></span><br><span class="line">DEBUG Processed: <span class="built_in">source</span>/css/main.styl  <span class="comment"># 处理source目录下所有文件，包括js image md</span></span><br><span class="line">DEBUG Processed: layout/archive.swig   <span class="comment"># 处理layout languages等</span></span><br><span class="line"></span><br><span class="line">DEBUG Generator: page  <span class="comment"># 还包括post category archive index tag</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 生成html，存储在public目录</span></span><br><span class="line">INFO  Files loaded <span class="keyword">in</span> 796 ms  <span class="comment">#</span></span><br><span class="line">DEBUG Rendering page: 404.html</span><br><span class="line">DEBUG Rendering post: 2018/01/25/hello-world/index.html</span><br><span class="line">DEBUG Rendering archive: archives/index.html</span><br><span class="line">DEBUG Rendering index: index.html</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4. deploy: 创建git repo，在public中拷贝文件，并push</span></span><br><span class="line">INFO  Deploying: git</span><br><span class="line">Initialized empty Git repository   <span class="comment"># git init</span></span><br><span class="line">INFO  Copying files from public folder...  <span class="comment"># 从public复制到.deploy_git目录</span></span><br><span class="line">INFO  Copying files from extend <span class="built_in">dirs</span>...</span><br><span class="line">INFO  Deploy <span class="keyword">done</span>: git  <span class="comment"># commit &amp; push 已完成</span></span><br><span class="line">DEBUG Database saved</span><br></pre></td></tr></table></figure></p>
-<h2 id="详解hexo-server"><a href="#详解hexo-server" class="headerlink" title="详解hexo server"></a>详解hexo server</h2><p>hexo s –debug</p>
+<h2 id="详解hexo-server"><a href="#详解hexo-server" class="headerlink" title="详解hexo server"></a>详解hexo server</h2><p>hexo s —debug</p>
 <h2 id="hexo的模板引擎-Rendering-HTML"><a href="#hexo的模板引擎-Rendering-HTML" class="headerlink" title="hexo的模板引擎,Rendering HTML"></a>hexo的模板引擎,Rendering HTML</h2><p>模板引擎的作用，就是将界面与数据分离。最简单的原理是将模板内容中指定的地方替换成数据，实现业务代码与逻辑代码分离。</p>
 <p>source 文件夹理解为数据库，而theme文件夹相当于 界面。 hexo g 就将我们的数据和界面相结合生成静态文件 public。</p>
 <p>Hexo 的模板引擎是默认使用 ejs 编写的，同类型的东西还有很多，比如jade，swig。</p>
@@ -596,8 +596,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/d3c1b8ca/" rel="prev" title="【hexo系列】hexo的正确打开方式">
-                【hexo系列】hexo的正确打开方式 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/3329d7fc/" rel="prev" title="google云主机---GCE">
+                google云主机---GCE <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +686,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -907,13 +907,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

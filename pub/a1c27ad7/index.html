@@ -534,7 +534,8 @@
 <li><strong>neutral</strong> 中立、无关 \(p \nLeftrightarrow h \)</li>
 </ul>
 <p>用于自然语言推理 (Natural language inference,NLI), 也称为 (recognizing textual entailment, RTE)。</p>
-<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><h2 id="示例数据"><a href="#示例数据" class="headerlink" title="示例数据"></a>示例数据</h2><table>
+<h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><h2 id="示例数据"><a href="#示例数据" class="headerlink" title="示例数据"></a>示例数据</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>Text</th>
@@ -570,12 +571,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><code>snli_1.0/snli_1.0_train.jsonl</code>的第一行</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"annotator_labels"</span>:[</span><br><span class="line">      <span class="string">"neutral"</span></span><br><span class="line">   ],</span><br><span class="line">   <span class="attr">"captionID"</span>:<span class="string">"3416050480.jpg#4"</span>,</span><br><span class="line">   <span class="attr">"gold_label"</span>:<span class="string">"neutral"</span>,</span><br><span class="line">   <span class="attr">"pairID"</span>:<span class="string">"3416050480.jpg#4r1n"</span>,</span><br><span class="line">   <span class="attr">"sentence1"</span>:<span class="string">"A person on a horse jumps over a broken down airplane."</span>,</span><br><span class="line">   <span class="attr">"sentence1_binary_parse"</span>:<span class="string">"( ( ( A person ) ( on ( a horse ) ) ) ( ( jumps ( over ( a ( broken ( down airplane ) ) ) ) ) . ) )"</span>,</span><br><span class="line">   <span class="attr">"sentence1_parse"</span>:<span class="string">"(ROOT (S (NP (NP (DT A) (NN person)) (PP (IN on) (NP (DT a) (NN horse)))) (VP (VBZ jumps) (PP (IN over) (NP (DT a) (JJ broken) (JJ down) (NN airplane)))) (. .)))"</span>,</span><br><span class="line">   <span class="attr">"sentence2"</span>:<span class="string">"A person is training his horse for a competition."</span>,</span><br><span class="line">   <span class="attr">"sentence2_binary_parse"</span>:<span class="string">"( ( A person ) ( ( is ( ( training ( his horse ) ) ( for ( a competition ) ) ) ) . ) )"</span>,</span><br><span class="line">   <span class="attr">"sentence2_parse"</span>:<span class="string">"(ROOT (S (NP (DT A) (NN person)) (VP (VBZ is) (VP (VBG training) (NP (PRP$ his) (NN horse)) (PP (IN for) (NP (DT a) (NN competition))))) (. .)))"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><div class="chatContent" id="chatContent"><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>为什么有好几个judgement？</pre> </div> </div> </div>  </div> </div>  </div><div class="clearfix">  <div class="message others"> <div class="avatar" data-author-id="lj"> <img src="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png" alt="雷军"> </div> <div class="content"> <div class="bubble  bubble_default left"> <div class="bubble_cont"> <div class="plain"> <pre>最终标签是综合了5个专家的意见，根据少数服从多数的原则得到的。</pre> </div> </div> </div>  </div> </div>  </div></div>
 <p>还额外提供了句子的<strong>两种解析树</strong>表示。</p>
 <p>自然语言推理（NLI）数据在构造的过程中存在一系列的人工模式，这种模式的直接后果是模型可以在不需要知道推理前提（premise）的条件下就可以以 67%的准确率判断推理假设（hypothesis）是否是蕴含（entailment）中立（neural）或对立（contradiction）</p>
-<h1 id="数据统计-amp-分析"><a href="#数据统计-amp-分析" class="headerlink" title="数据统计 &amp;分析"></a>数据统计 &amp;分析</h1><table>
+<h1 id="数据统计-amp-分析"><a href="#数据统计-amp-分析" class="headerlink" title="数据统计 &amp;分析"></a>数据统计 &amp;分析</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>premise</th>
@@ -706,6 +709,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ul>
 <li>premis比较具体，hyposies 简洁，抽象(比如male抽象成man，苹果抽象成苹果)</li>
 <li>contradiction通常有反义词，比如 up down</li>
@@ -769,8 +773,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/fdc2b2a8/" rel="next" title="【数据分析篇】SemEval-2018-阅读理解">
-                <i class="fa fa-chevron-left"></i> 【数据分析篇】SemEval-2018-阅读理解
+              <a href="/pub/31a07523/" rel="next" title="java的正则表达式">
+                <i class="fa fa-chevron-left"></i> java的正则表达式
               </a>
             
           </div>
@@ -869,7 +873,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1090,13 +1094,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

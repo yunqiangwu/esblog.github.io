@@ -528,7 +528,7 @@
 <h2 id="实际应用案例"><a href="#实际应用案例" class="headerlink" title="实际应用案例"></a>实际应用案例</h2><h3 id="socket的热补丁"><a href="#socket的热补丁" class="headerlink" title="socket的热补丁"></a>socket的热补丁</h3><p>用过gevent就会知道,会在最开头的地方gevent.monkey.patch_all();把标准库中的thread/socket等给替换掉.这样我们在后面使用socket的时候可以跟平常一样使用,无需修改任何代码,但是它变成非阻塞的了.</p>
 <h3 id="SQL注入攻击"><a href="#SQL注入攻击" class="headerlink" title="SQL注入攻击"></a>SQL注入攻击</h3><p>网页和数据库</p>
 <h3 id="Zope、Plone中的安全补丁"><a href="#Zope、Plone中的安全补丁" class="headerlink" title="Zope、Plone中的安全补丁"></a>Zope、Plone中的安全补丁</h3><blockquote>
-<p>In Zope and Plone, security patches are often delivered using dynamic class modification, but they are called hot fixes.<br>– wikipedia</p>
+<p>In Zope and Plone, security patches are often delivered using dynamic class modification, but they are called hot fixes.<br>— wikipedia</p>
 </blockquote>
 <p>很多安全补丁也是一种猴子补丁，只不过叫法不同而已。</p>
 <h3 id="Eventlet-Patcher"><a href="#Eventlet-Patcher" class="headerlink" title="Eventlet Patcher"></a>Eventlet Patcher</h3><p>现在我们先来看一下eventlet中的Patcher的调用代码吧，这段代码对标准的ftplib做monkey patch，将eventlet的GreenSocket替换标准的socket。</p>
@@ -562,7 +562,7 @@
 </ul>
 <p>没看懂的部分，后面再看。</p>
 <blockquote>
-<p> That is really the only way to make this work when you use gevent, threading is cooperative so you have to release the CPU so that other tasks associated with the server get a chance to run and flush the messages. Any chance you haven’t monkey patched the standard library?<br>— Flask-SocketIO的作者miguelgrinberg link</p>
+<p> That is really the only way to make this work when you use gevent, threading is cooperative so you have to release the CPU so that other tasks associated with the server get a chance to run and flush the messages. Any chance you haven’t monkey patched the standard library?<br>—- Flask-SocketIO的作者miguelgrinberg link</p>
 </blockquote>
 <p>这里说的意思是，<code>socketio.emit(message)</code> 默认会加缓存(buffer)。需要主动flush才能立即发送。而<code>gevent.sleep(</code>是flush的一种方式，因为它会  将cpu的控制权显式的交给未被gevent.sleep()阻塞的协程使用，切换之前会先flush一下。</p>
 <p>socketio.emit默认会有个buffer（为了高效），为什么gevent.sleep会flush这个buffer？让我们重新梳理一下思路：</p>
@@ -729,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -950,13 +950,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

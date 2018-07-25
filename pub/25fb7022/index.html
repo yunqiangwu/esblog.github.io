@@ -111,18 +111,18 @@
 
 
 
-  <meta name="description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 &amp;lt;script src=https://www.gstatic.com/charts/loader.js&amp;gt;function dra">
+  <meta name="description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 function drawSimpleNodeChart(){var a=new google.visualization.arrayToDa">
 <meta name="keywords" content="hmm,viterbi,动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="维特比算法">
 <meta property="og:url" content="https://blog.eson.org/pub/25fb7022/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 &amp;lt;script src=https://www.gstatic.com/charts/loader.js&amp;gt;function dra">
+<meta property="og:description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 function drawSimpleNodeChart(){var a=new google.visualization.arrayToDa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-06-20T11:22:09.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="维特比算法">
-<meta name="twitter:description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 &amp;lt;script src=https://www.gstatic.com/charts/loader.js&amp;gt;function dra">
+<meta name="twitter:description" content="动态规划 这是个递归问题递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。但是递归低效递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法 HMM 示例模型 全连接 - 指数级 - 朴素递归法重复计算子问题 function drawSimpleNodeChart(){var a=new google.visualization.arrayToDa">
 
 
 
@@ -511,9 +511,9 @@
 <p>这是个递归问题<br>递归思想就是：把问题分解成规模更小，但和原问题有着相同解法的问题。<br>但是递归低效<br>递归：1-T的最优，依赖2-T最优,…依赖T-1到T的最优。但是T-1到T的最优是无法</p>
 <h1 id="HMM-示例"><a href="#HMM-示例" class="headerlink" title="HMM 示例"></a>HMM 示例</h1><p>模型</p>
 <h1 id="全连接-指数级-朴素递归法"><a href="#全连接-指数级-朴素递归法" class="headerlink" title="全连接 - 指数级 - 朴素递归法"></a>全连接 - 指数级 - 朴素递归法</h1><p>重复计算子问题</p>
-<p>&lt;script src=<a href="https://www.gstatic.com/charts/loader.js&gt;" target="_blank" rel="noopener">https://www.gstatic.com/charts/loader.js&gt;</a><script>function drawSimpleNodeChart(){var a=new google.visualization.arrayToDataTable([[“id”,”childLabel”,”parent”,”ss”,{role:”style”}],[0,”初始状态”,-1,322,”black”],[1,”1”,0,111,”black”],[2,”2”,0,5,”black”],[3,”3”,0,1,”blue”],[11,”1”,1,1,”black”],[12,”2”,1,1,”black”],[13,”3”,1,1,”black”],[111,”1”,11,1,”black”],[112,”2”,11,1,”black”],[113,”3”,11,1,”black”],[121,”1”,12,1,”black”],[122,”2”,12,1,”black”],[123,”3”,12,1,”black”],[131,”1”,13,1,”black”],[132,”2”,13,1,”black”],[133,”3”,13,1,”black”],[21,”1”,2,1,”black”],[22,”2”,2,1,”black”],[23,”3”,2,1,”black”],[211,”1”,21,1,”black”],[212,”2”,21,1,”black”],[213,”3”,21,1,”black”],[221,”1”,22,1,”black”],[222,”2”,22,1,”black”],[223,”3”,22,1,”black”],[231,”1”,23,1,”black”],[232,”2”,23,1,”black”],[233,”3”,23,1,”black”],[31,”1”,3,1,”black”],[32,”2”,3,1,”red”],[33,”3”,3,1,”blue”],[311,”1”,31,1,”black”],[312,”2”,31,1,”black”],[313,”3”,31,1,”black”],[321,”1”,32,1,”black”],[322,”2  — line1 贪婪路径”,32,1,”red”],[323,”3”,32,1,”black”],[331,”1”,33,1,”black”],[332,”2”,33,1,”black”],[333,”3  — line0 全局最优路径”,33,1,”blue”]]);new google.visualization.WordTree(document.getElementById(“wordtree_explicit”)).draw(a,{wordtree:{format:”explicit”,type:”suffix”}})}google.charts.load(“current”,{packages:[“wordtree”]}),google.charts.setOnLoadCallback(drawSimpleNodeChart)</script><div id="wordtree_explicit" style="width:900px;height:500px"></div></p>
+<p><script src="https://www.gstatic.com/charts/loader.js"></script><script>function drawSimpleNodeChart(){var a=new google.visualization.arrayToDataTable([["id","childLabel","parent","ss",{role:"style"}],[0,"初始状态",-1,322,"black"],[1,"1",0,111,"black"],[2,"2",0,5,"black"],[3,"3",0,1,"blue"],[11,"1",1,1,"black"],[12,"2",1,1,"black"],[13,"3",1,1,"black"],[111,"1",11,1,"black"],[112,"2",11,1,"black"],[113,"3",11,1,"black"],[121,"1",12,1,"black"],[122,"2",12,1,"black"],[123,"3",12,1,"black"],[131,"1",13,1,"black"],[132,"2",13,1,"black"],[133,"3",13,1,"black"],[21,"1",2,1,"black"],[22,"2",2,1,"black"],[23,"3",2,1,"black"],[211,"1",21,1,"black"],[212,"2",21,1,"black"],[213,"3",21,1,"black"],[221,"1",22,1,"black"],[222,"2",22,1,"black"],[223,"3",22,1,"black"],[231,"1",23,1,"black"],[232,"2",23,1,"black"],[233,"3",23,1,"black"],[31,"1",3,1,"black"],[32,"2",3,1,"red"],[33,"3",3,1,"blue"],[311,"1",31,1,"black"],[312,"2",31,1,"black"],[313,"3",31,1,"black"],[321,"1",32,1,"black"],[322,"2  --- line1 贪婪路径",32,1,"red"],[323,"3",32,1,"black"],[331,"1",33,1,"black"],[332,"2",33,1,"black"],[333,"3  --- line0 全局最优路径",33,1,"blue"]]);new google.visualization.WordTree(document.getElementById("wordtree_explicit")).draw(a,{wordtree:{format:"explicit",type:"suffix"}})}google.charts.load("current",{packages:["wordtree"]}),google.charts.setOnLoadCallback(drawSimpleNodeChart)</script><div id="wordtree_explicit" style="width:900px;height:500px"></div></p>
 <p>复杂度 ( O(N^{T}) )</p>
-<h2 id="最优路径-维特比算法"><a href="#最优路径-维特比算法" class="headerlink" title="最优路径 - 维特比算法"></a>最优路径 - 维特比算法</h2><p>&lt;script src=<a href="https://www.gstatic.com/charts/loader.js&gt;" target="_blank" rel="noopener">https://www.gstatic.com/charts/loader.js&gt;</a><script>function drawChart(){var n=new google.visualization.DataTable;n.addColumn(“number”,”时间”),n.addColumn(“number”,”line0”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn(“number”,”line1”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn(“number”,”line2”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn(“number”,”line3”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn(“number”,”line4”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn(“number”,”line5”),n.addColumn({type:”string”,role:”annotation”}),n.addColumn({type:”string”,role:”legend”}),n.addRows([[1,3,”0.28”,3,””,3,””,3,””,2,”0.16”,1,”0.1”,”none”],[2,3,”0.42”,2,”0.0504”,2,””,1,”0.028”,null,””,null,””,”none”],[3,3,”0.0147”,2,”0.01008”,1,”0.00756”,null,””,null,””,null,””,”none”]]),new google.visualization.LineChart(document.getElementById(“visualization”)).draw(n,{legend:{position:”bottom”},pointSize:7,vAxis:{title:”状态”,titleTextStyle:{fontName:”Times-Roman”,bold:!0,italic:!1},ticks:[0,1,2,3],viewWindow:{max:4},maxValue:0},hAxis:{title:”时间”,ticks:[1,2,3],viewWindow:{max:4},maxValue:0,gridlines:{color:”transparent”,count:0}}})}google.charts.load(“current”,{packages:[“corechart”]}),google.charts.setOnLoadCallback(drawChart),google.load(“visualization”,”1”,{packages:[“corechart”]}),google.setOnLoadCallback(drawChart)</script><div id="visualization"></div></p>
+<h2 id="最优路径-维特比算法"><a href="#最优路径-维特比算法" class="headerlink" title="最优路径 - 维特比算法"></a>最优路径 - 维特比算法</h2><p><script src="https://www.gstatic.com/charts/loader.js"></script><script>function drawChart(){var n=new google.visualization.DataTable;n.addColumn("number","时间"),n.addColumn("number","line0"),n.addColumn({type:"string",role:"annotation"}),n.addColumn("number","line1"),n.addColumn({type:"string",role:"annotation"}),n.addColumn("number","line2"),n.addColumn({type:"string",role:"annotation"}),n.addColumn("number","line3"),n.addColumn({type:"string",role:"annotation"}),n.addColumn("number","line4"),n.addColumn({type:"string",role:"annotation"}),n.addColumn("number","line5"),n.addColumn({type:"string",role:"annotation"}),n.addColumn({type:"string",role:"legend"}),n.addRows([[1,3,"0.28",3,"",3,"",3,"",2,"0.16",1,"0.1","none"],[2,3,"0.42",2,"0.0504",2,"",1,"0.028",null,"",null,"","none"],[3,3,"0.0147",2,"0.01008",1,"0.00756",null,"",null,"",null,"","none"]]),new google.visualization.LineChart(document.getElementById("visualization")).draw(n,{legend:{position:"bottom"},pointSize:7,vAxis:{title:"状态",titleTextStyle:{fontName:"Times-Roman",bold:!0,italic:!1},ticks:[0,1,2,3],viewWindow:{max:4},maxValue:0},hAxis:{title:"时间",ticks:[1,2,3],viewWindow:{max:4},maxValue:0,gridlines:{color:"transparent",count:0}}})}google.charts.load("current",{packages:["corechart"]}),google.charts.setOnLoadCallback(drawChart),google.load("visualization","1",{packages:["corechart"]}),google.setOnLoadCallback(drawChart)</script><div id="visualization"></div></p>
 <p>全局最优：line0<br>贪心算法会找到 line1</p>
 <p>维特比是少计算了？剪枝了？还是并未少计算，只是复用了前面的计算结果？</p>
 <p>维特比并未少计算，只是去除了冗余计算量而已</p>
@@ -575,8 +575,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/9c2934f2/" rel="next" title="路径搜索算法">
-                <i class="fa fa-chevron-left"></i> 路径搜索算法
+              <a href="/pub/d3abacec/" rel="next" title="alpha-go">
+                <i class="fa fa-chevron-left"></i> alpha-go
               </a>
             
           </div>
@@ -585,8 +585,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/aa8b4e3e/" rel="prev" title="启发式算法">
-                启发式算法 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/89d326d4/" rel="prev" title="A星寻路算法">
+                A星寻路算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +675,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -896,13 +896,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

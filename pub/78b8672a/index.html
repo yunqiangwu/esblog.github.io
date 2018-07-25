@@ -111,25 +111,25 @@
 
 
 
-  <meta name="description" content="利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learning）方法，并引入联合训练（Joint Training）算法，通过在一个统一的框架中反复提高从源">
+  <meta name="description" content="简介特征 [BOW]  参考 文本特征提取">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【机器翻译】对偶学习">
-<meta property="og:url" content="https://blog.eson.org/pub/686aa0ca/index.html">
+<meta property="og:title" content="文本特征提取">
+<meta property="og:url" content="https://blog.eson.org/pub/78b8672a/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learning）方法，并引入联合训练（Joint Training）算法，通过在一个统一的框架中反复提高从源">
+<meta property="og:description" content="简介特征 [BOW]  参考 文本特征提取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-21T03:58:13.999Z">
+<meta property="og:updated_time" content="2018-07-25T11:52:58.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【机器翻译】对偶学习">
-<meta name="twitter:description" content="利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learning）方法，并引入联合训练（Joint Training）算法，通过在一个统一的框架中反复提高从源">
+<meta name="twitter:title" content="文本特征提取">
+<meta name="twitter:description" content="简介特征 [BOW]  参考 文本特征提取">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/686aa0ca/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/78b8672a/"/>
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>【机器翻译】对偶学习 | ESON</title>
+  <title>文本特征提取 | ESON</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/686aa0ca/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/78b8672a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -370,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【机器翻译】对偶学习
+          <h2 class="post-title" itemprop="name headline">文本特征提取
               
             
           </h2>
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
+              <time title="创建时间：2018-06-26 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-26T00:00:00+08:00">2018-06-26</time>
             
 
             
@@ -408,7 +408,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-06-21 11:58:13" itemprop="dateModified" datetime="2018-06-21T11:58:13+08:00">2018-06-21</time>
+                <time title="修改时间：2018-07-25 19:52:58" itemprop="dateModified" datetime="2018-07-25T19:52:58+08:00">2018-07-25</time>
               
             
           </span>
@@ -477,7 +477,12 @@
       
 
       
-        <p>利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learning）方法，并引入联合训练（Joint Training）算法，通过在一个统一的框架中反复提高从源语言到目标语言翻译和从目标语言到源语言翻译的模型，从而增强单语源和目标数据的效果。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h1><ul>
+<li>[BOW]</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="http://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction" target="_blank" rel="noopener">文本特征提取</a></li>
+</ul>
 
       
     </div>
@@ -503,7 +508,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/686aa0ca/" title="【机器翻译】对偶学习">https://blog.eson.org/pub/686aa0ca/</a>
+    <a href="https://blog.eson.org/pub/78b8672a/" title="文本特征提取">https://blog.eson.org/pub/78b8672a/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -523,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/89d326d4/" rel="next" title="A星寻路算法">
-                <i class="fa fa-chevron-left"></i> A星寻路算法
+              <a href="/pub/64cff6f7/" rel="next" title="【反爬虫系列】代理IP">
+                <i class="fa fa-chevron-left"></i> 【反爬虫系列】代理IP
               </a>
             
           </div>
@@ -533,8 +538,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/5d84fcc7/" rel="prev" title="中朝">
-                中朝 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/0/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -594,8 +599,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -614,7 +628,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">140</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -835,13 +849,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">107</span>
+                    <span class="site-state-item-count">104</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1151,6 +1159,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特征"><span class="nav-number">2.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -1351,9 +1375,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/686aa0ca/';
-        this.page.identifier = 'pub/686aa0ca/';
-        this.page.title = '【机器翻译】对偶学习';
+        this.page.url = 'https://blog.eson.org/pub/78b8672a/';
+        this.page.identifier = 'pub/78b8672a/';
+        this.page.title = '文本特征提取';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
