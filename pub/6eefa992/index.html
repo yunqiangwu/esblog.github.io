@@ -111,20 +111,18 @@
 
 
 
-  <meta name="description" content="参考">
+  <meta name="description" content="去年，谷歌提出了GNMT，神经机器翻译（NMT: Neural Machine Translation）是一种用于自动翻译的端到端的学习方法，该方法有望克服传统的基于短语的翻译系统的缺点。但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务中的应用，因为在实际应用中，准确度和速度都很关键。而谷歌的神经机器翻译提出了带有 8 个编码器和 8">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【机器翻译】注意力模型">
+<meta property="og:title" content="【机器翻译】GNMT">
 <meta property="og:url" content="https://blog.eson.org/pub/6eefa992/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="参考">
+<meta property="og:description" content="去年，谷歌提出了GNMT，神经机器翻译（NMT: Neural Machine Translation）是一种用于自动翻译的端到端的学习方法，该方法有望克服传统的基于短语的翻译系统的缺点。但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务中的应用，因为在实际应用中，准确度和速度都很关键。而谷歌的神经机器翻译提出了带有 8 个编码器和 8">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://opennmt.net/simple-attn.png">
-<meta property="og:updated_time" content="2018-07-17T03:09:51.227Z">
+<meta property="og:updated_time" content="2018-07-26T08:58:14.982Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【机器翻译】注意力模型">
-<meta name="twitter:description" content="参考">
-<meta name="twitter:image" content="http://opennmt.net/simple-attn.png">
+<meta name="twitter:title" content="【机器翻译】GNMT">
+<meta name="twitter:description" content="去年，谷歌提出了GNMT，神经机器翻译（NMT: Neural Machine Translation）是一种用于自动翻译的端到端的学习方法，该方法有望克服传统的基于短语的翻译系统的缺点。但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务中的应用，因为在实际应用中，准确度和速度都很关键。而谷歌的神经机器翻译提出了带有 8 个编码器和 8">
 
 
 
@@ -141,7 +139,7 @@
   };
 </script>
 
-  <title>【机器翻译】注意力模型 | ESON</title>
+  <title>【机器翻译】GNMT | ESON</title>
   
 
 
@@ -372,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【机器翻译】注意力模型
+          <h2 class="post-title" itemprop="name headline">【机器翻译】GNMT
               
             
           </h2>
@@ -410,11 +408,41 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-17 11:09:51" itemprop="dateModified" datetime="2018-07-17T11:09:51+08:00">2018-07-17</time>
+                <time title="修改时间：2018-07-26 16:58:14" itemprop="dateModified" datetime="2018-07-26T16:58:14+08:00">2018-07-26</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/" itemprop="url" rel="index"><span itemprop="name">2. 主流model-研究现状</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/2-神经机器翻译-NMT/" itemprop="url" rel="index"><span itemprop="name">2. 神经机器翻译 NMT</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -479,8 +507,8 @@
       
 
       
-        <p><img src="http://opennmt.net/simple-attn.png" alt="simple-attn"></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
+        <p>去年，谷歌提出了GNMT，神经机器翻译（NMT: Neural Machine Translation）是一种用于自动翻译的端到端的学习方法，该方法有望克服传统的基于短语的翻译系统的缺点。但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务中的应用，因为在实际应用中，准确度和速度都很关键。而谷歌的神经机器翻译提出了带有 8 个编码器和 8 个解码器的深度 LSTM 网络组成的模型，使用了注意力和残差连接。为了提升并行性从而降低训练时间，注意机制将解码器的底层连接到了编码器的顶层。在推理计算过程中使用了低精度运算来加速翻译速度。为改善对罕见词的处理，谷歌将词分成常见子词单元（词的组件）的一个有限集合，该集合既是输入也是输出。这种方法能提供「字符」-delimited models 的灵活性和「词」-delimited models 的有效性之间的平衡、能自然地处理罕见词的翻译、并能最终提升系统的整体准确度。谷歌的波束搜索技术使用了一个长度规范化过程，并使用了一个覆盖度惩罚，其可以激励很可能能覆盖源句子中所有的词的输出句子的生成。在 WMT’ 14 英语-法语和英语-德语基准上，GNMT 实现了可与当前最佳结果媲美的结果。通过在一个单独的简单句子集合的人类对比评估中，它相比于谷歌已经投入生产的基于短语的系统的翻译误差平均降低了 60%。</p>
+
       
     </div>
 
@@ -505,7 +533,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/6eefa992/" title="【机器翻译】注意力模型">https://blog.eson.org/pub/6eefa992/</a>
+    <a href="https://blog.eson.org/pub/6eefa992/" title="【机器翻译】GNMT">https://blog.eson.org/pub/6eefa992/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -596,17 +624,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,7 +644,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">163</span>
+                    <span class="site-state-item-count">149</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -862,7 +881,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">112</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1172,22 +1201,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
         <div class="back-to-top">
@@ -1390,7 +1403,7 @@
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/6eefa992/';
         this.page.identifier = 'pub/6eefa992/';
-        this.page.title = '【机器翻译】注意力模型';
+        this.page.title = '【机器翻译】GNMT';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

@@ -119,13 +119,14 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了Transformer模型。 谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
-<meta property="og:updated_time" content="2018-07-26T08:35:36.447Z">
+<meta property="og:updated_time" content="2018-07-26T08:59:46.513Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了Transformer模型。 谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广">
-<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
+<meta name="twitter:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 
 
 
@@ -411,7 +412,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-26 16:35:36" itemprop="dateModified" datetime="2018-07-26T16:35:36+08:00">2018-07-26</time>
+                <time title="修改时间：2018-07-26 16:59:46" itemprop="dateModified" datetime="2018-07-26T16:59:46+08:00">2018-07-26</time>
               
             
           </span>
@@ -426,35 +427,21 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/" itemprop="url" rel="index"><span itemprop="name">applications</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/" itemprop="url" rel="index"><span itemprop="name">2. 主流model-研究现状</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/" itemprop="url" rel="index"><span itemprop="name">nlp</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/machine-translation/model/" itemprop="url" rel="index"><span itemprop="name">model</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/2-神经机器翻译-NMT/" itemprop="url" rel="index"><span itemprop="name">2. 神经机器翻译 NMT</span></a></span>
 
                 
                 
@@ -530,6 +517,7 @@
 <p>“I arrived at the bank after crossing the…” 要知道bank的意思，最后一个词是“road”还是“river”很重要。</p>
 <h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的方法有RNN、CNN。</p>
 <p>见 related work</p>
+<p><img alt="transformer" title="transformer - data flow" src="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif"></p>
 <h3 id="transformer横空出世"><a href="#transformer横空出世" class="headerlink" title="transformer横空出世"></a>transformer横空出世</h3><p>Transformer避开了recurrence，只用attention，便可以刻画出输入和输出的依赖关系。</p>
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
@@ -621,8 +609,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/75bd2e9b/" rel="next" title="【读图识政治】中国最高领导人">
-                <i class="fa fa-chevron-left"></i> 【读图识政治】中国最高领导人
+              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
+                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
               </a>
             
           </div>
@@ -631,8 +619,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
-                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/7e199c30/" rel="prev" title="推荐系统架构">
+                推荐系统架构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -721,7 +709,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">163</span>
+                    <span class="site-state-item-count">149</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -958,7 +946,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">112</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
