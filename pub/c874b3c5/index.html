@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="emtKuCBSwP_Lnea7aB-7zRLW9DcVrzBUJlbMxRP_VrY" />
+
+
+
+  <meta name="msvalidate.01" content="D07545095E3B3DED99406636136B159E" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-song.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-song.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo-song.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="机器翻译历史 直接转换法 从源语言句子的表层出发，将单词、短语或句子直接置换成目标语言译文，必要时进行简单的词序调整。对原文句子的分析仅满足于特定译文生成的需要。这类翻译系统一般针对某一个特定的语言对，将分析与生成、语言数据、文法和规则与程序等都融合在一起。例如：I like Mary. —&amp;gt; Me(I) gusta(like) Maria(Mary).X like Y —&amp;gt; Y X">
+<meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器翻译-历史">
+<meta property="og:url" content="https://blog.eson.org/pub/c874b3c5/index.html">
+<meta property="og:site_name" content="ESON">
+<meta property="og:description" content="机器翻译历史 直接转换法 从源语言句子的表层出发，将单词、短语或句子直接置换成目标语言译文，必要时进行简单的词序调整。对原文句子的分析仅满足于特定译文生成的需要。这类翻译系统一般针对某一个特定的语言对，将分析与生成、语言数据、文法和规则与程序等都融合在一起。例如：I like Mary. —&amp;gt; Me(I) gusta(like) Maria(Mary).X like Y —&amp;gt; Y X">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-26T01:32:38.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器翻译-历史">
+<meta name="twitter:description" content="机器翻译历史 直接转换法 从源语言句子的表层出发，将单词、短语或句子直接置换成目标语言译文，必要时进行简单的词序调整。对原文句子的分析仅满足于特定译文生成的需要。这类翻译系统一般针对某一个特定的语言对，将分析与生成、语言数据、文法和规则与程序等都融合在一起。例如：I like Mary. —&amp;gt; Me(I) gusta(like) Maria(Mary).X like Y —&amp;gt; Y X">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.eson.org/pub/c874b3c5/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器翻译-历史 | ESON</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115875587-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115875587-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4144ca6f2a9b60f1feea7806f82aa6d0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ESON</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Daily Notes</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />时间轴</a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />站内搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/c874b3c5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">机器翻译-历史
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-25 19:34:27" itemprop="dateCreated datePublished" datetime="2018-07-25T19:34:27+08:00">2018-07-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-07-26 09:32:38" itemprop="dateModified" datetime="2018-07-26T09:32:38+08:00">2018-07-26</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+             title="阅读次数" >
+            <i class="fa fa-eye"></i>
+            
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="机器翻译历史"><a href="#机器翻译历史" class="headerlink" title="机器翻译历史"></a>机器翻译历史</h1><ul>
+<li>直接转换法<ul>
+<li>从源语言句子的表层出发，将单词、短语或句子直接置换成目标语言译文，必要时进行简单的词序调整。对原文句子的分析仅满足于特定译文生成的需要。这类翻译系统一般针对某一个特定的语言对，将分析与生成、语言数据、文法和规则与程序等都融合在一起。例如：I like Mary. —&gt; Me(I) gusta(like) Maria(Mary).<br>X like Y —&gt; Y X gusta</li>
+</ul>
+</li>
+<li>基于规则的机器翻译(Rule-based)<ul>
+<li>对源语言和目标语言均进行适当描述、把翻译机制与语法分开、用规则描述语法的实现思想</li>
+<li>1954年 Georgetown 大学在 IBM 协助下，用IBM-701计算机实现了世界上第一个 MT 系统，实现俄译英翻译，1954年1月该系统在纽约公开演示。系统只有250条俄语词汇，6 条语法规则，可以翻译简单的俄语句子。</li>
+</ul>
+</li>
+<li>统计机器翻译 SMT：<ul>
+<li>1990年，IBM 提出统计机器翻译模型，机器翻译研究进入了一个空前辉煌的繁荣时期。</li>
+</ul>
+</li>
+<li>神经机器翻译 NMT<ul>
+<li>优点：翻译更加顺畅；不需要去存储短语表，而是有着一个小规模的词汇表，这大大减小了计算的复杂度。</li>
+<li>缺点：为了能够控制计算的复杂度，有着一个固定大小的词汇表，通常会将词汇表限制在 30k 到 80k 之间，这就导致了其在翻译未登录词时有着严重的不足</li>
+</ul>
+</li>
+</ul>
+<h2 id="主流架构"><a href="#主流架构" class="headerlink" title="主流架构"></a>主流架构</h2><ul>
+<li>基于规则的机器翻译</li>
+<li>统计机器翻译 SMT：</li>
+<li>神经机器翻译 NMT<ul>
+<li>优点：翻译更加顺畅；不需要去存储短语表，而是有着一个小规模的词汇表，这大大减小了计算的复杂度。</li>
+<li>缺点：为了能够控制计算的复杂度，有着一个固定大小的词汇表，通常会将词汇表限制在 30k 到 80k 之间，这就导致了其在翻译未登录词时有着严重的不足。</li>
+</ul>
+</li>
+</ul>
+<p>我们首先要了解一下基于短语的系统的工作原理。<br>基于短语的方法是目前比较成熟的统计机器翻译技术，它的主要思想是以短语作为翻译的基本单元。给定一个源语言句子，其翻译过程如下：<br>a． 对源语言句子进行短语划分；<br>b． 根据翻译模型翻译每个短语；<br>c． 对短语进行重排序。</p>
+<h1 id="Facebook总结的很好"><a href="#Facebook总结的很好" class="headerlink" title="Facebook总结的很好"></a>Facebook总结的很好</h1><p>顺便介绍一下CNN缺陷，RNN缺陷</p>
+<ul>
+<li><strong>Convolutional Neural Networks (CNN)</strong><ul>
+<li><a href="https://arxiv.org/abs/1612.08083" target="_blank" rel="noopener">Dauphin et al. (2017): Language Modeling with Gated Convolutional Networks</a></li>
+<li><a href="https://arxiv.org/abs/1705.03122" target="_blank" rel="noopener">Gehring et al. (2017): Convolutional Sequence to Sequence Learning</a></li>
+<li><strong><em>New</em></strong> <a href="https://arxiv.org/abs/1711.04956" target="_blank" rel="noopener">Edunov et al. (2018): Classical Structured Prediction Losses for Sequence to Sequence Learning</a></li>
+<li><strong><em>New</em></strong> <a href="https://arxiv.org/abs/1805.04833" target="_blank" rel="noopener">Fan et al. (2018): Hierarchical Neural Story Generation</a></li>
+</ul>
+</li>
+<li><strong>Long Short-Term Memory (LSTM) networks</strong><ul>
+<li><a href="https://arxiv.org/abs/1508.04025" target="_blank" rel="noopener">Luong et al. (2015): Effective Approaches to Attention-based Neural Machine Translation</a></li>
+<li><a href="https://arxiv.org/abs/1606.02960" target="_blank" rel="noopener">Wiseman and Rush (2016): Sequence-to-Sequence Learning as Beam-Search Optimization</a></li>
+</ul>
+</li>
+<li><strong>Transformer (self-attention) networks</strong><ul>
+<li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Vaswani et al. (2017): Attention Is All You Need</a></li>
+<li><strong><em>New</em></strong> <a href="https://arxiv.org/abs/1806.00187" target="_blank" rel="noopener">Ott et al. (2018): Scaling Neural Machine Translation</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><p><strong>优点</strong>：</p>
+<ul>
+<li><strong>长依赖</strong>: 相对传统RNN</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>非线性数目：<!--  --></li>
+<li><strong>编码能力弱</strong>: 没有attention的RNN，对长序列编码能力较弱</li>
+<li><strong>难并行</strong>：training阶段RNN很难并行</li>
+<li><strong>决策步骤太长</strong>: RNN需要一个个地读取bank到river之间的所有单词，才能够确定bank的实际意义。<!-- the more such steps decisions require, the harder it is for a recurrent network to learn how to make those decisions。-->
+</li>
+</ul>
+<p>另外，由于RNN是时序处理，在GPU上<strong>不易并行化</strong>。</p>
+<p>这两点说的太好了，赞，赞。</p>
+<h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p><strong>优点</strong>:</p>
+<ul>
+<li><strong>易并行</strong>：CNN的计算不存在序列依赖问题，training时容易并行化<!-- 1. Compared to recurrent models, computations over all elements can be fully parallelized during training。 2. CNN do not depend on the computations of the previous time step.
+--></li>
+<li><strong>易优化</strong>：CNN的非线性单元的数目固定，容易优化。而RNN的非线性单元随序列长度变化<!-- 1. optimization is easier since the number of non-linearities is fixed and independent of the input length 2. Fixing the number of nonlinearities applied to the inputs also eases learning --></li>
+<li><strong>依赖路径更短</strong>: 对于距离为n的长依赖，RNN的复杂度是O(n), CNN的复杂度是O(n/k)，k是kernel width</li>
+<li>gated linear units<!-- gated linear units eases gradient propagation -->
+</li>
+</ul>
+<p><strong>缺点</strong>：<br>-<br><!-- the number of steps required to combine
+information from distant parts of the input still grows with increasing distance. 没看懂 --><br>-</p>
+<p><strong>其他</strong></p>
+<ul>
+<li>long-dependency问题：<br><br>LSTM引以为豪的是long-dependency较好。实际上CNN也可以通过堆叠CNN层来增大感受野，实现long-dependency。</li>
+</ul>
+<!--
+1. Compared to recurrent layers, convolutions create representations for fixed size contexts, however, the effective context size of the network can easily be made larger by stacking several layers on top of each other.
+2. nearby input elements interact at lower layers while distant elements interact at higher layers.
+-->
+<p><br>或者dilated convolutions<br>-</p>
+<h3 id="通用trick"><a href="#通用trick" class="headerlink" title="通用trick"></a>通用trick</h3><ul>
+<li>gated linear units</li>
+<li>residual connections</li>
+</ul>
+<h2 id="模型汇总"><a href="#模型汇总" class="headerlink" title="模型汇总"></a>模型汇总</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th style="text-align:right">paper</th>
+<th style="text-align:right">出处</th>
+<th style="text-align:right">简介</th>
+<th style="text-align:right">创新点</th>
+<th style="text-align:center">缺陷</th>
+<th>code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基于规则的翻译</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>基于短语的翻译（PBMT）</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">IBM 1989</td>
+<td style="text-align:right">较复杂</td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>seq2seq-RNN</td>
+<td style="text-align:right"><a href="https://arxiv.org/abs/1409.3215" target="_blank" rel="noopener">Seq2seq Learning with NN</a></td>
+<td style="text-align:right">NIPS 2014</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td><a href="https://www.tensorflow.org/tutorials/seq2seq" target="_blank" rel="noopener">code</a></td>
+</tr>
+<tr>
+<td>seq2seq-RNN</td>
+<td style="text-align:right"><a href="https://arxiv.org/abs/1406.1078" target="_blank" rel="noopener">Learning Phrase Representations using RNN Encoder-Decoder for SMT</a></td>
+<td style="text-align:right">EMNLP2014</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>☆seq2seq-RNN+attention</td>
+<td style="text-align:right"><a href="">Effective Approaches to Attention-based NMT</a></td>
+<td style="text-align:right">EMNLP 2015</td>
+<td style="text-align:right">基于高斯分布推导了Local Attention,比较了Global Align Attention和Local Align Attention， 和视频处理里面 Soft Attention 和 Hard Attention建立了联系。</td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td><a href="https://nlp.stanford.edu/projects/nmt/" target="_blank" rel="noopener">code</a></td>
+</tr>
+<tr>
+<td>seq2seq-attention</td>
+<td style="text-align:right">Neural machine translation by jointly learning to align and translate</td>
+<td style="text-align:right">ICLR 2015</td>
+<td style="text-align:right">RNN+attention</td>
+<td style="text-align:right">首次加入attention，ALIGN AND TRANSLATE</td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">On using very large target vocabulary for neural machine translation</td>
+<td style="text-align:right">2015</td>
+<td style="text-align:right">提出词表扩大的方法</td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>☆GNMT</td>
+<td style="text-align:right">Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation</td>
+<td style="text-align:right">Google 2016</td>
+<td style="text-align:right">deep_LSTM, residual, attention, converage，subword</td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>BPE</td>
+<td style="text-align:right">Neural Machine Translation of Rare Words with Subword Units</td>
+<td style="text-align:right">2016</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td><a href="https://github.com/rsennrich/subword-nmt" target="_blank" rel="noopener">code-Sennrich</a></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">Character Based Neural Machine Translation</td>
+<td style="text-align:right">2016</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right">Achieving open vocabulary neural machine translation with hybrid word-character models</td>
+<td style="text-align:right">2016</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td></td>
+</tr>
+<tr>
+<td>☆ConvSeq2seq</td>
+<td style="text-align:right"><a href="https://arxiv.org/abs/1611.02344" target="_blank" rel="noopener">paper1</a>; <a href="https://arxiv.org/abs/1705.03122" target="_blank" rel="noopener">paper2</a></td>
+<td style="text-align:right">Facebook 2016</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td><a href="https://github.com/facebookresearch/fairseq" target="_blank" rel="noopener">code1</a>;</td>
+</tr>
+<tr>
+<td>☆Transformer</td>
+<td style="text-align:right"><a href="">Attention is all you need</a></td>
+<td style="text-align:right">Google 2017</td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+<td><a href="https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor" target="_blank" rel="noopener">G-tf</a></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Depthwise Separable Convolutions for Neural Machine Translation</p>
+<h2 id="SMT时代"><a href="#SMT时代" class="headerlink" title="SMT时代"></a>SMT时代</h2><ul>
+<li>1978年欧共体启动多语言机器翻译计划； 11.1.2 机器翻译的产生与发展</li>
+<li>1982 ~ 1986，日本在提出第五代机的同时，研究日英双向机器翻译系统 Mu 和亚洲多语言机器翻译（日语、汉语、印尼语、马来西亚语、泰国语）；</li>
+<li>1990年，IBM 提出统计机器翻译模型，机器翻译研究进入了一个空前辉煌的繁荣时期。</li>
+</ul>
+<h2 id="NMT时代"><a href="#NMT时代" class="headerlink" title="NMT时代"></a>NMT时代</h2><ul>
+<li>2005年，Google基于统计方法的翻译系统全面超过基于规则方法的SysTran翻译系统。基于规则方法固守的最后一个堡垒被拔掉了。</li>
+<li>2016 <a href="">GNMT</a></li>
+<li>facebook FAIR在上个月刚祭出state of the art的convseq2seq</li>
+<li>谷歌全attention机器翻译模型Transformer, WMT en-de和en-fr都刷<br>到了新的state of the art，而且这次不用RNN，不用CNN，只有attention</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ESON</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.eson.org/pub/c874b3c5/" title="机器翻译-历史">https://blog.eson.org/pub/c874b3c5/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pub/c5a74607/" rel="next" title="从wmt竞赛看机器翻译史">
+                <i class="fa fa-chevron-left"></i> 从wmt竞赛看机器翻译史
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/43028def/" rel="prev" title="【机器翻译】- 面临的挑战">
+                【机器翻译】- 面临的挑战 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="ESON" />
+            
+              <p class="site-author-name" itemprop="name">ESON</p>
+              <p class="site-description motion-element" itemprop="description">学而不思则罔，思而不学则殆</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">163</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">112</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">120</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xu-song" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xusong.vip@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=373453180&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/xusong666" target="_blank" title="FB Page" rel="external nofollow"><i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank" rel="external nofollow">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#机器翻译历史"><span class="nav-number">1.</span> <span class="nav-text">机器翻译历史</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主流架构"><span class="nav-number">1.1.</span> <span class="nav-text">主流架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Facebook总结的很好"><span class="nav-number">2.</span> <span class="nav-text">Facebook总结的很好</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN"><span class="nav-number">2.0.1.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN"><span class="nav-number">2.0.2.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用trick"><span class="nav-number">2.0.3.</span> <span class="nav-text">通用trick</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型汇总"><span class="nav-number">2.1.</span> <span class="nav-text">模型汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMT时代"><span class="nav-number">2.2.</span> <span class="nav-text">SMT时代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NMT时代"><span class="nav-number">2.3.</span> <span class="nav-text">NMT时代</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ESON</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数"></span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长"></span>
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a> and <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>Github Pages</b></a></div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+  
+
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://blog.eson.org/pub/c874b3c5/';
+        this.page.identifier = 'pub/c874b3c5/';
+        this.page.title = '机器翻译-历史';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Eson.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
+  
+
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.2.0"></script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/7e199c30/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/686aa0ca/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -372,8 +372,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/7e199c30/" itemprop="url">
-                  推荐系统架构
+                <a class="post-title-link" href="/pub/686aa0ca/" itemprop="url">
+                  【机器翻译】对偶学习
                 </a>
               
             
@@ -397,7 +397,7 @@
                 
               
 
-              <time title="创建时间：2018-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-03T00:00:00+08:00">2018-05-03</time>
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
             
 
             
@@ -412,34 +412,11 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-06-21 11:59:14" itemprop="dateModified" datetime="2018-06-21T11:59:14+08:00">2018-06-21</time>
               
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/recommender-system/" itemprop="url" rel="index"><span itemprop="name">recommender-system</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -498,18 +475,11 @@
       
         
           
-          推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。
-
-
-
-可以方便地增加/删除引擎，控制不同引擎对推荐结果的影响。对于绝大多数需求，只需要通过不同的引擎组合实现。
-可以实现推荐引擎级别的用户反馈
-
-推荐系
+          利用翻译问题的对偶性（duality），使模型能够从源语言到目标语言（Source to Target）和从目标语言到源语言（Target to Source）这两个方向的翻译中学习。同时，这让我们能同时从有监督和无监督的源数据和目标数据中学习。具体而言，我们利用通用的对偶学习（dual learn
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/7e199c30/#更多" rel="contents">
+            <a class="btn" href="/pub/686aa0ca/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -565,7 +535,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/6aa77778/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/6eefa992/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -584,8 +554,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/6aa77778/" itemprop="url">
-                  hexo中如何支持公式 mathjax
+                <a class="post-title-link" href="/pub/6eefa992/" itemprop="url">
+                  【机器翻译】注意力模型
                 </a>
               
             
@@ -609,7 +579,7 @@
                 
               
 
-              <time title="创建时间：2018-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-03T00:00:00+08:00">2018-05-03</time>
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
             
 
             
@@ -624,34 +594,382 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-25 19:39:39" itemprop="dateModified" datetime="2018-07-25T19:39:39+08:00">2018-07-25</time>
               
             
           </span>
 
           
-            <span class="post-category" >
+
+          
             
-              <span class="post-meta-divider">|</span>
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          去年，谷歌提出了GNMT，神经机器翻译（NMT: Neural Machine Translation）是一种用于自动翻译的端到端的学习方法，该方法有望克服传统的基于短语的翻译系统的缺点。但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pub/6eefa992/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/b4bccd18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pub/b4bccd18/" itemprop="url">
+                  【机器翻译】conv seq2seq
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="fa fa-calendar-o"></i>
               </span>
               
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/demo/" itemprop="url" rel="index"><span itemprop="name">demo</span></a></span>
 
-                
-                
-                  ，
+              
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/demo/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
 
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
+            
+
+            
+              
+
+              
                 
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-07-26 15:27:54" itemprop="dateModified" datetime="2018-07-26T15:27:54+08:00">2018-07-26</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          模型简介convseq2seq 架构
+卷积过程
+采用的全卷积网络(没有RNN)
+
+Position Embedding: 给CNN更多的“位置感”
+Gated Linear Units: 给CNN的输出加gate
+Residual Connection: 给CNN都加
+Multi-step Atte
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pub/b4bccd18/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/6eefa992/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pub/6eefa992/" itemprop="url">
+                  【机器翻译】注意力模型
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
                 
               
-            </span>
+
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-07-17 11:09:51" itemprop="dateModified" datetime="2018-07-17T11:09:51+08:00">2018-07-17</time>
+              
+            
+          </span>
+
           
 
           
@@ -711,14 +1029,11 @@
         
           
           
-简介MathJax 和 Katex
-mathjax
-Beautiful math in all browsersA JavaScript display engine for mathematics that works in all browsers. —— 来自www.mathjax.org
-
-          ...
+参考
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/6aa77778/#更多" rel="contents">
+            <a class="btn" href="/pub/6eefa992/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -774,7 +1089,7 @@ Beautiful math in all browsersA JavaScript display engine for mathematics that w
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/c47c5082/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/5d84fcc7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -793,8 +1108,8 @@ Beautiful math in all browsersA JavaScript display engine for mathematics that w
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/c47c5082/" itemprop="url">
-                  深度学习中的注意力机制 原理 及 代码
+                <a class="post-title-link" href="/pub/5d84fcc7/" itemprop="url">
+                  中朝
                 </a>
               
             
@@ -818,7 +1133,7 @@ Beautiful math in all browsersA JavaScript display engine for mathematics that w
                 
               
 
-              <time title="创建时间：2018-05-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-01T00:00:00+08:00">2018-05-01</time>
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
             
 
             
@@ -833,220 +1148,7 @@ Beautiful math in all browsersA JavaScript display engine for mathematics that w
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep learning</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/model/" itemprop="url" rel="index"><span itemprop="name">model</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          seq2seq缺陷：无论之前的context有多长，包含多少信息量，最终都要被压缩成一个几百维的vector。这意味着context越大，最终的state vector会丢失越多的信息。
-Attention based model的核心思想: 一个模型完全可以在decode的过程中利用context
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pub/c47c5082/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/75bd2e9b/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pub/75bd2e9b/" itemprop="url">
-                  【读图识政治】中国最高领导人
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-29 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-29T00:00:00+08:00">2018-04-29</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
               
             
           </span>
@@ -1075,14 +1177,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/others/politics/china/" itemprop="url" rel="index"><span itemprop="name">china</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/others/politics/china/国家领袖/" itemprop="url" rel="index"><span itemprop="name">国家领袖</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/others/politics/朝鲜/" itemprop="url" rel="index"><span itemprop="name">朝鲜</span></a></span>
 
                 
                 
@@ -1146,12 +1241,19 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
       
         
           
-          最高领导人中华人民共和国最高领导人是指中华人民共和国政治中具有最终决定和最高地位的政治领导人，是一个“非官方”的称谓。最高领导人在中国共产党和中华人民共和国的权力机构中不一定拥有最高职衔，但均曾担任中共中央军委主席，能有效控制其三大党政军机构——中国共产党、政府和解放军等武装力量。
-目前中国官方称呼
+          金正恩，百日内三度访华-
+
+2018-6.12 金正恩在新加坡会见特朗普 (朝鲜战争之后首次朝美首脑会晤) 牛逼呀
+迈出了半岛核问题政治解决进程的重要一步。
+
+
+2018.6.19-6.20，金正恩、李雪主第三次访华，钓鱼台国宾馆。（估计是朝美首脑会晤后的一个表态）
+参观农业科学院 科技创新园
+参观
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/75bd2e9b/#更多" rel="contents">
+            <a class="btn" href="/pub/5d84fcc7/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1207,7 +1309,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/dec3cfee/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/88165cc0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -1226,8 +1328,8 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/dec3cfee/" itemprop="url">
-                  【Hexo插件系列】hexo-reference
+                <a class="post-title-link" href="/pub/88165cc0/" itemprop="url">
+                  个人所得税
                 </a>
               
             
@@ -1251,7 +1353,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                 
               
 
-              <time title="创建时间：2018-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-28T00:00:00+08:00">2018-04-28</time>
+              <time title="创建时间：2018-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-20T00:00:00+08:00">2018-06-20</time>
             
 
             
@@ -1266,7 +1368,213 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/economy/" itemprop="url" rel="index"><span itemprop="name">economy</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/economy/赋税/" itemprop="url" rel="index"><span itemprop="name">赋税</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          2018.06.19，十三届全国人大常委会第三次会议，个税修正案提请审议。这是个税法自1980年出台以后第七次大修。
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/pub/88165cc0/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/8c8e707b/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/pub/8c8e707b/" itemprop="url">
+                  Dropbox差异同步算法rsync及其改进算法原理
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-24T00:00:00+08:00">2018-05-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
               
             
           </span>
@@ -1288,28 +1596,21 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/" itemprop="url" rel="index"><span itemprop="name">web</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/tools/" itemprop="url" rel="index"><span itemprop="name">tools</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/" itemprop="url" rel="index"><span itemprop="name">blog-framework</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/tools/同步与版本管理/" itemprop="url" rel="index"><span itemprop="name">同步与版本管理</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/nodejs-hexo/" itemprop="url" rel="index"><span itemprop="name">nodejs-hexo</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/blog-framework/nodejs-hexo/plugin/" itemprop="url" rel="index"><span itemprop="name">plugin</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/tools/同步与版本管理/云存储-dropbox/" itemprop="url" rel="index"><span itemprop="name">云存储-dropbox</span></a></span>
 
                 
                 
@@ -1373,11 +1674,12 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
       
         
           
-          12345678910111213141516var renderFootnotes = require('./src/footnotes');    util = require('hexo-util');// Register footnotes filterhexo.extend.filter
+          打个比方，你一共在两台电脑上（A,B）用同一个帐号的Dropbox，一共有三个文件（C，D，E），你在A电脑上删了（或者任意操作后保存）C，只要同步，B上面的C就会执行自行同步你在A上对C 的操作。至于Ipad上的同步，原理是一样。
+yskin说eDonkey2000（好吧，就是大家说的电驴）是这样
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/dec3cfee/#更多" rel="contents">
+            <a class="btn" href="/pub/8c8e707b/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1433,7 +1735,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/6b34bb62/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/89d326d4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -1452,8 +1754,8 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/6b34bb62/" itemprop="url">
-                  【java源码系列】random的源码实现
+                <a class="post-title-link" href="/pub/89d326d4/" itemprop="url">
+                  A星寻路算法
                 </a>
               
             
@@ -1477,7 +1779,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                 
               
 
-              <time title="创建时间：2018-04-28 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-28T00:00:00+08:00">2018-04-28</time>
+              <time title="创建时间：2018-05-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-24T00:00:00+08:00">2018-05-24</time>
             
 
             
@@ -1492,7 +1794,7 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
               
             
           </span>
@@ -1507,49 +1809,21 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/" itemprop="url" rel="index"><span itemprop="name">programing</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/" itemprop="url" rel="index"><span itemprop="name">运筹学-动态规划</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/" itemprop="url" rel="index"><span itemprop="name">jdk</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/" itemprop="url" rel="index"><span itemprop="name">rt</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/lang/" itemprop="url" rel="index"><span itemprop="name">lang</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/常见问题/" itemprop="url" rel="index"><span itemprop="name">常见问题</span></a></span>
 
                 
                 
@@ -1613,14 +1887,12 @@ Attention based model的核心思想: 一个模型完全可以在decode的过程
       
         
           
-          API介绍
-Math.random()方法来产生一个随机数，这个产生的随机数是0-1之间的一个double-
+          很多游戏特别是rts，rpg类游戏，都需要用到寻路。寻路算法有深度优先搜索（DFS），广度优先搜索(BFS)，A星算法等，而A星算法是一种具备启发性策略的算法，效率是几种算法中最高的，因此也成为游戏中最常用的寻路算法。
 
-用法生成从1到10的int型随机数12345// 方式一：int i = (int)(1+Math.random()*(10-1+1))// 方式二:int i = random.next
-          ...
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/6b34bb62/#更多" rel="contents">
+            <a class="btn" href="/pub/89d326d4/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1676,7 +1948,7 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/27351887/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/d3abacec/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -1695,8 +1967,8 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/27351887/" itemprop="url">
-                  【数据分析篇】aspect-level 数据分析
+                <a class="post-title-link" href="/pub/d3abacec/" itemprop="url">
+                  alpha-go
                 </a>
               
             
@@ -1720,7 +1992,7 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
                 
               
 
-              <time title="创建时间：2018-04-25 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-25T00:00:00+08:00">2018-04-25</time>
+              <time title="创建时间：2018-05-18 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-18T00:00:00+08:00">2018-05-18</time>
             
 
             
@@ -1735,7 +2007,7 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
               
             
           </span>
@@ -1764,28 +2036,7 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/" itemprop="url" rel="index"><span itemprop="name">nlp</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/text-classification/" itemprop="url" rel="index"><span itemprop="name">text_classification</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/text-classification/datasets/" itemprop="url" rel="index"><span itemprop="name">datasets</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/text-classification/datasets/aspect/" itemprop="url" rel="index"><span itemprop="name">aspect</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/Reinforcement-Learning/" itemprop="url" rel="index"><span itemprop="name">Reinforcement Learning</span></a></span>
 
                 
                 
@@ -1849,15 +2100,12 @@ Math.random()方法来产生一个随机数，这个产生的随机数是0-1之�
       
         
           
-          SemEval 2014 Task 4
-Read train 2990, test 973
-长度 20以下的，Trimmed to train 2124, test 692
-数据量好少，
-12345678910111213141516171819202122232425262728293031323
-          ...
+          占坑
+
+          
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/27351887/#更多" rel="contents">
+            <a class="btn" href="/pub/d3abacec/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1913,7 +2161,7 @@ Read train 2990, test 973
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/f6ca296f/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/aa8b4e3e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -1932,8 +2180,8 @@ Read train 2990, test 973
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/f6ca296f/" itemprop="url">
-                  【深度学习-模型系列】word2vec
+                <a class="post-title-link" href="/pub/aa8b4e3e/" itemprop="url">
+                  启发式算法
                 </a>
               
             
@@ -1957,7 +2205,7 @@ Read train 2990, test 973
                 
               
 
-              <time title="创建时间：2018-04-24 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-24T00:00:00+08:00">2018-04-24</time>
+              <time title="创建时间：2018-05-18 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-18T00:00:00+08:00">2018-05-18</time>
             
 
             
@@ -1972,7 +2220,7 @@ Read train 2990, test 973
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
+                <time title="修改时间：2018-07-26 11:44:17" itemprop="dateModified" datetime="2018-07-26T11:44:17+08:00">2018-07-26</time>
               
             
           </span>
@@ -1987,21 +2235,21 @@ Read train 2990, test 973
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/" itemprop="url" rel="index"><span itemprop="name">deep learning</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/" itemprop="url" rel="index"><span itemprop="name">运筹学-动态规划</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/deep-learning/model/" itemprop="url" rel="index"><span itemprop="name">model</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/运筹学-动态规划/启发式算法/" itemprop="url" rel="index"><span itemprop="name">启发式算法</span></a></span>
 
                 
                 
@@ -2065,482 +2313,16 @@ Read train 2990, test 973
       
         
           
-          优化目标分类。词典大小是N，那么就是N分类。
-弊端：
+          说文解字Heuristic 启发式的；探索的。
 
-【策略一】转化为二叉树，多个二分类。即Hierarchical Softmax
-【策略二】直接视为二分类：中心词w和context(w)相关，是正例，其他word都是负例
-负例太多，所以采用Negative Sampling
+启发法(Heuristics):是凭经验的解题方法,也可称经验规则。
 
-
-
-论文采用Ne
+人在解决问题时所采取的一种根据经验规则进行发现的方法。其特点是在解决问题时,利用过去的经验,选择已经行之有效的方法，而不是系统地、以确定的步骤去寻求答案
+看上去有点类似strea
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/f6ca296f/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/eab986ce/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pub/eab986ce/" itemprop="url">
-                  【java源码】准备篇
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-23 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-23T00:00:00+08:00">2018-04-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/" itemprop="url" rel="index"><span itemprop="name">programing</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/" itemprop="url" rel="index"><span itemprop="name">jdk</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          关于版本号7是指jdk版本  7.0版本  u是update 更新的意思  45 是第45次更新
-为什么要新建u开头的project？http://openjdk.java.net/projects/jdk8u/qanda.html
-b07是不是发布JDK6u1时，JDK6作为开发分支的最后一个bu
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pub/eab986ce/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/eae469b0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/pub/eae469b0/" itemprop="url">
-                  文本分类 - 综述
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-04-23 00:00:00" itemprop="dateCreated datePublished" datetime="2018-04-23T00:00:00+08:00">2018-04-23</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-07-25 22:11:23" itemprop="dateModified" datetime="2018-07-25T22:11:23+08:00">2018-07-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/" itemprop="url" rel="index"><span itemprop="name">applications</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/" itemprop="url" rel="index"><span itemprop="name">nlp</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ML/applications/nlp/text-classification/" itemprop="url" rel="index"><span itemprop="name">text_classification</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          任务
-短文本分类
-长文本分类
-超短文本(一个word)分类
-
-特定领域的文本分类
-
-aspect-level classification
-ss
-
-methods:
-word-level
-
-tfidf + svm/lr
-fastText facebook (只是作为baseline而已)
-lstm 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/pub/eae469b0/#更多" rel="contents">
+            <a class="btn" href="/pub/aa8b4e3e/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2585,7 +2367,7 @@ lstm
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2632,7 +2414,7 @@ lstm
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">133</span>
+                    <span class="site-state-item-count">163</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2865,7 +2647,11 @@ lstm
                     
                       
                     
-                    <span class="site-state-item-count">110</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">112</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3749,8 +3535,6 @@ lstm
       
     
       
-        
-      
     
       
     
@@ -3770,29 +3554,6 @@ lstm
     
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
