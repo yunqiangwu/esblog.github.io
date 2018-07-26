@@ -111,25 +111,25 @@
 
 
 
-  <meta name="description" content="简介完全无监督 的方式训练 NMT 系统 仅需使用单语语料库  三角剖分（triangulation） 半监督学习技术  在近期关于无监督嵌入映射的研究基础上构建，包含经过少许修改的注意力编码器-解码器模型（attentional encoder-decoder model），该模型使用去噪和回译（backtranslation）结合的方式在单语语料库上进行训练 对语言 L1 中的每个句子，该系统">
+  <meta name="description" content="简介采用的sha256对每层编码。对image进行编码。 Docker对于镜像的维护类似于git对于repository的维护，都是只记录增量的。原有镜像是静态文件，基于这个静态文件可以创建的一个动态容器，在这个动态的容器中做任何你希望做的修改，然后退出容器后使用commit生成新的镜像，这个新的镜像就保留了你做的改动，从而生成新的一层。  未改变的文件还是使用原有镜像的文件，  被改动的文件作为">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无监督机器翻译">
-<meta property="og:url" content="https://blog.eson.org/pub/7ceb3af7/index.html">
+<meta property="og:title" content="Docker镜像分层技术">
+<meta property="og:url" content="https://blog.eson.org/pub/229a050/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介完全无监督 的方式训练 NMT 系统 仅需使用单语语料库  三角剖分（triangulation） 半监督学习技术  在近期关于无监督嵌入映射的研究基础上构建，包含经过少许修改的注意力编码器-解码器模型（attentional encoder-decoder model），该模型使用去噪和回译（backtranslation）结合的方式在单语语料库上进行训练 对语言 L1 中的每个句子，该系统">
+<meta property="og:description" content="简介采用的sha256对每层编码。对image进行编码。 Docker对于镜像的维护类似于git对于repository的维护，都是只记录增量的。原有镜像是静态文件，基于这个静态文件可以创建的一个动态容器，在这个动态的容器中做任何你希望做的修改，然后退出容器后使用commit生成新的镜像，这个新的镜像就保留了你做的改动，从而生成新的一层。  未改变的文件还是使用原有镜像的文件，  被改动的文件作为">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-26T08:40:17.219Z">
+<meta property="og:updated_time" content="2018-07-26T11:03:28.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无监督机器翻译">
-<meta name="twitter:description" content="简介完全无监督 的方式训练 NMT 系统 仅需使用单语语料库  三角剖分（triangulation） 半监督学习技术  在近期关于无监督嵌入映射的研究基础上构建，包含经过少许修改的注意力编码器-解码器模型（attentional encoder-decoder model），该模型使用去噪和回译（backtranslation）结合的方式在单语语料库上进行训练 对语言 L1 中的每个句子，该系统">
+<meta name="twitter:title" content="Docker镜像分层技术">
+<meta name="twitter:description" content="简介采用的sha256对每层编码。对image进行编码。 Docker对于镜像的维护类似于git对于repository的维护，都是只记录增量的。原有镜像是静态文件，基于这个静态文件可以创建的一个动态容器，在这个动态的容器中做任何你希望做的修改，然后退出容器后使用commit生成新的镜像，这个新的镜像就保留了你做的改动，从而生成新的一层。  未改变的文件还是使用原有镜像的文件，  被改动的文件作为">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/7ceb3af7/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/229a050/"/>
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>无监督机器翻译 | ESON</title>
+  <title>Docker镜像分层技术 | ESON</title>
   
 
 
@@ -353,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/7ceb3af7/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/229a050/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -370,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">无监督机器翻译
+          <h2 class="post-title" itemprop="name headline">Docker镜像分层技术
               
             
           </h2>
@@ -393,7 +393,7 @@
                 
               
 
-              <time title="创建时间：2018-07-25 19:34:28" itemprop="dateCreated datePublished" datetime="2018-07-25T19:34:28+08:00">2018-07-25</time>
+              <time title="创建时间：2018-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-01-01T00:00:00+08:00">2018-01-01</time>
             
 
             
@@ -408,7 +408,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-26 16:40:17" itemprop="dateModified" datetime="2018-07-26T16:40:17+08:00">2018-07-26</time>
+                <time title="修改时间：2018-07-26 19:03:28" itemprop="dateModified" datetime="2018-07-26T19:03:28+08:00">2018-07-26</time>
               
             
           </span>
@@ -423,21 +423,35 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/" itemprop="url" rel="index"><span itemprop="name">2. 主流model-研究现状</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/2-神经机器翻译-NMT/" itemprop="url" rel="index"><span itemprop="name">2. 神经机器翻译 NMT</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/tutorial/images/" itemprop="url" rel="index"><span itemprop="name">images</span></a></span>
 
                 
                 
@@ -507,19 +521,14 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><strong>完全无监督</strong> 的方式训练 NMT 系统</p>
-<p>仅需使用单语语料库</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>采用的sha256对每层编码。对image进行编码。</p>
+<p>Docker对于镜像的维护类似于git对于repository的维护，都是只记录增量的。原有镜像是静态文件，基于这个静态文件可以创建的一个动态容器，在这个动态的容器中做任何你希望做的修改，然后退出容器后使用commit生成新的镜像，这个新的镜像就保留了你做的改动，从而生成新的一层。  未改变的文件还是使用原有镜像的文件，  被改动的文件作为新的layer被保存。基于同一个base image构建的两个不同的镜像，就类似于 基于同一个repository创建的两个不同的branch， 未修改的文件由两个镜像公用，每个镜像又独自保留他们特定的修改内容的增量。</p>
+<p>从命令行上来说：</p>
 <ul>
-<li>三角剖分（triangulation）</li>
-<li>半监督学习技术</li>
+<li>一个commit指令对应一个新的layer</li>
+<li>一条RUN语句对应一个新的layer</li>
 </ul>
-<p>在近期关于无监督嵌入映射的研究基础上构建，包含经过少许修改的注意力编码器-解码器模型（attentional encoder-decoder model），该模型使用去噪和回译（backtranslation）结合的方式在单语语料库上进行训练</p>
-<p>对语言 L1 中的每个句子，该系统都通过两个步骤进行训练：</p>
-<ol>
-<li><strong>去噪</strong>——利用<code>共享编码器</code>优化对句子带噪声版本进行编码和使用 L1 解码器重构句子的概率；</li>
-<li><strong>回译</strong>——在推断模式（inference mode）下翻译该句子（使用共享编码器编码该句子，使用 L2 解码器进行解码），<br>利用共享编码器优化对译文句子进行编码和使用 L1 解码器恢复源句子的概率。交替执行这两个步骤对 L1 和 L2 进行训练，对 L2 的训练步骤和 L1 类似。</li>
-</ol>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.jiqizhixin.com/articles/2017-11-03" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2017-11-03</a></p>
+<h1 id="Ubuntu系统的镜像"><a href="#Ubuntu系统的镜像" class="headerlink" title="Ubuntu系统的镜像"></a>Ubuntu系统的镜像</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>-</p>
 
       
     </div>
@@ -545,7 +554,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/7ceb3af7/" title="无监督机器翻译">https://blog.eson.org/pub/7ceb3af7/</a>
+    <a href="https://blog.eson.org/pub/229a050/" title="Docker镜像分层技术">https://blog.eson.org/pub/229a050/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -565,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/43028def/" rel="next" title="【机器翻译】- 面临的挑战">
-                <i class="fa fa-chevron-left"></i> 【机器翻译】- 面临的挑战
+              <a href="/pub/ff0c91b0/" rel="next" title="图像分类--模型汇总">
+                <i class="fa fa-chevron-left"></i> 图像分类--模型汇总
               </a>
             
           </div>
@@ -575,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/a8b3f785/" rel="prev" title="字符级机器翻译">
-                字符级机器翻译 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/8dcc3c99/" rel="prev" title="关于域名">
+                关于域名 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,7 +674,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">149</span>
+                    <span class="site-state-item-count">148</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -912,7 +921,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">117</span>
+                      
+                    
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1231,7 +1242,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ubuntu系统的镜像"><span class="nav-number">2.</span> <span class="nav-text">Ubuntu系统的镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1438,9 +1449,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/7ceb3af7/';
-        this.page.identifier = 'pub/7ceb3af7/';
-        this.page.title = '无监督机器翻译';
+        this.page.url = 'https://blog.eson.org/pub/229a050/';
+        this.page.identifier = 'pub/229a050/';
+        this.page.title = 'Docker镜像分层技术';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

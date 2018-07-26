@@ -111,21 +111,25 @@
 
 
 
-  <meta name="description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了Transformer模型。 谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广">
+  <meta name="description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【机器翻译】transformer">
 <meta property="og:url" content="https://blog.eson.org/pub/664e9bad/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了Transformer模型。 谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广">
+<meta property="og:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
-<meta property="og:updated_time" content="2018-07-26T08:59:46.513Z">
+<meta property="og:image" content="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
+<meta property="og:updated_time" content="2018-07-26T15:55:22.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
-<meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了Transformer模型。 谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广">
+<meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
 <meta name="twitter:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 
 
@@ -412,7 +416,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-26 16:59:46" itemprop="dateModified" datetime="2018-07-26T16:59:46+08:00">2018-07-26</time>
+                <time title="修改时间：2018-07-26 23:55:22" itemprop="dateModified" datetime="2018-07-26T23:55:22+08:00">2018-07-26</time>
               
             
           </span>
@@ -427,7 +431,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine_translation</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine translation</span></a></span>
 
                 
                 
@@ -511,11 +515,8 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在2017年5月Facebook发布了<code>ConvSeq2Seq</code>模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发布了<code>Transformer</code>模型。</p>
-<p>谷歌发了一篇论文Attention is all you need,文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它<strong>抛弃了传统的CNN、RNN，只采用attention</strong>，取得了很好的效果，激起了工业界和学术界的广泛讨论。</p>
-<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="context很重要"><a href="#context很重要" class="headerlink" title="context很重要"></a>context很重要</h2><p>上下文很重要，比如以下这句话：</p>
-<p>“I arrived at the bank after crossing the…” 要知道bank的意思，最后一个词是“road”还是“river”很重要。</p>
-<h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的方法有RNN、CNN。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在2017年5月Facebook发布了<code>ConvSeq2Seq</code>模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做<code>Transformer</code>，用以来实现机器翻译。它<strong>抛弃了传统的CNN、RNN，只采用attention</strong>，取得了很好的效果，激起了工业界和学术界的广泛讨论。</p>
+<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的方法有RNN、CNN。</p>
 <p>见 related work</p>
 <p><img alt="transformer" title="transformer - data flow" src="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif"></p>
 <h3 id="transformer横空出世"><a href="#transformer横空出世" class="headerlink" title="transformer横空出世"></a>transformer横空出世</h3><p>Transformer避开了recurrence，只用attention，便可以刻画出输入和输出的依赖关系。</p>
@@ -550,6 +551,11 @@
 <p><a href="">more detail</a></p>
 <h1 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h1><p>LayerNorm(x + Sublayer(x)),</p>
 <h2 id="residual-connection"><a href="#residual-connection" class="headerlink" title="residual connection"></a>residual connection</h2><h2 id="layer-normalization"><a href="#layer-normalization" class="headerlink" title="layer normalization"></a>layer normalization</h2><p>residual之后加的LN</p>
+<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><p><img title="不同翻译系统的效果对比" src="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png"></p>
+<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>经过测试，列了以下可视化结果。</p>
+<p><img src="/images/raw/NN - transformer - attention visualization 1.png"></p>
+<p><img src="/images/raw/NN - transformer - attention visualization 2.png"></p>
+<p><img src="/images/raw/NN - transformer - attention visualization 3.png"></p>
 <h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul>
 <li>TensorFlow<ul>
 <li><a href="https://github.com/Kyubyong/transformer" target="_blank" rel="noopener">https://github.com/Kyubyong/transformer</a>  简易版，bucket， lr decay都没有实现，训起来效果应该没那好</li>
@@ -609,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
-                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
+              <a href="/pub/75bd2e9b/" rel="next" title="【读图识政治】中国最高领导人">
+                <i class="fa fa-chevron-left"></i> 【读图识政治】中国最高领导人
               </a>
             
           </div>
@@ -619,8 +625,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/7e199c30/" rel="prev" title="推荐系统架构">
-                推荐系统架构 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
+                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -709,7 +715,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">149</span>
+                    <span class="site-state-item-count">148</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -956,7 +962,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">117</span>
+                      
+                    
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1275,7 +1283,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#context很重要"><span class="nav-number">2.1.</span> <span class="nav-text">context很重要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.2.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.2.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.3.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">5.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.1.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.3.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">5.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">6.1.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">7.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">8.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
