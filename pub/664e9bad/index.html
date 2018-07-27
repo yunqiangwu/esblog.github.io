@@ -122,11 +122,10 @@
 <meta property="og:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
-<meta property="og:image" content="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
-<meta property="og:updated_time" content="2018-07-26T15:55:22.898Z">
+<meta property="og:updated_time" content="2018-07-27T04:30:18.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
@@ -416,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-26 23:55:22" itemprop="dateModified" datetime="2018-07-26T23:55:22+08:00">2018-07-26</time>
+                <time title="修改时间：2018-07-27 12:30:18" itemprop="dateModified" datetime="2018-07-27T12:30:18+08:00">2018-07-27</time>
               
             
           </span>
@@ -523,7 +522,7 @@
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
 <h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><h2 id="对attention的抽象"><a href="#对attention的抽象" class="headerlink" title="对attention的抽象"></a>对attention的抽象</h2><p>对attention的抽象 q k v</p>
-<p><img alt="scaled dot product attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
+<p><img alt="Scaled Dot Product Attention" title="Scaled Dot Product Attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
 <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
 <script type="math/tex; mode=display">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script><p>前面给出的是一般化的框架形式的描述，事实上Google给出的方案是很具体的。首先，它先把Attention的定义给了出来：</p>
 <script type="math/tex; mode=display">Attention(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) = softmax\left(\frac{\boldsymbol{Q}\boldsymbol{K}^{\top}}{\sqrt{d_k}}\right)\boldsymbol{V}</script><p>这里用的是跟Google的论文一致的符号，其中$ \boldsymbol{Q}\in\mathbb{R}^{n\times d_k}, \boldsymbol{K}\in\mathbb{R}^{m\times d_k}, \boldsymbol{V}\in\mathbb{R}^{m\times d_v} $。如果忽略激活函数softmax的话，那么事实上它就是三个$ n\times d_k,d_k\times m, m\times d_v $的矩阵相乘，最后的结果就是一个$ n\times d_v $的矩阵。于是我们可以认为：这是一个Attention层，将n$ n\times d_k $的序列Q编码成了一个新的$ n\times d_v $的序列。</p>
@@ -536,7 +535,7 @@
 <p>Query, key, value 其实并不是专门针对翻译的概念。不过可以举一些翻译中的例子。例如，当刚刚翻译完主语之后，attention 的内部状态就会想要去找谓语，这时它就把「想找谓语」这件事编码成 query。然后句子里本身是谓语的地方，会有一个 key，表明「我这里可以提供谓语」，它跟 query 一拍即合。这个 key 对应的 value 就是谓语本身的 embedding。</p>
 <p>Q: 在LSTM+attention模型里，query就是上一个时间单元的隐状态，容易理解，即你所谓的对[想找谓语]编码，但是all attention模型不再使用LSTM，这个query编码是什么？谢谢<br>A: all attention model 只不过不再用 lstm 计算隐状态，而是用 attention 计算得出。一层 attention 计算出的结果就是下一层的 query</p>
 <h2 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h2><p>以Q为例，单个head的计算</p>
-<p><img alt="multi head attention" src="/images/raw/NN - transformer - multi head attention.jpg"></p>
+<p><img alt="Multi-Head Attention" title="Multi-Head Attention" src="/images/raw/NN - transformer - multi head attention.jpg"></p>
 <ul>
 <li><a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/common_attention.py#L2646" target="_blank" rel="noopener">code-t2t</a></li>
 <li><a href="https://github.com/Kyubyong/transformer/blob/master/modules.py#L169" target="_blank" rel="noopener">code-Kyubyong</a></li>
@@ -551,8 +550,7 @@
 <p><a href="">more detail</a></p>
 <h1 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h1><p>LayerNorm(x + Sublayer(x)),</p>
 <h2 id="residual-connection"><a href="#residual-connection" class="headerlink" title="residual connection"></a>residual connection</h2><h2 id="layer-normalization"><a href="#layer-normalization" class="headerlink" title="layer normalization"></a>layer normalization</h2><p>residual之后加的LN</p>
-<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><p><img title="不同翻译系统的效果对比" src="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png"></p>
-<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>经过测试，列了以下可视化结果。</p>
+<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>经过测试，列了以下可视化结果。</p>
 <p><img src="/images/raw/NN - transformer - attention visualization 1.png"></p>
 <p><img src="/images/raw/NN - transformer - attention visualization 2.png"></p>
 <p><img src="/images/raw/NN - transformer - attention visualization 3.png"></p>
@@ -964,7 +962,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">118</span>
+                      
+                    
+                    <span class="site-state-item-count">119</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
