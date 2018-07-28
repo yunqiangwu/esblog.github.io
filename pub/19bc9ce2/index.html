@@ -111,24 +111,29 @@
 
 
 
-  <meta name="description" content="学而不思则罔，思而不学则殆">
-<meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ESON">
-<meta property="og:url" content="https://blog.eson.org/categories/machine-translation/2-主流model-研究现状/2-神经机器翻译-NMT/index.html">
+  <meta name="description" content="环境配置的难题如果你正好是一个运维工程师而且你正感觉你的运维环境一团糟，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着不同版本的库？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库">
+<meta name="keywords" content="docker,cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Docker系列】Docker入门教程">
+<meta property="og:url" content="https://blog.eson.org/pub/19bc9ce2/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="学而不思则罔，思而不学则殆">
+<meta property="og:description" content="环境配置的难题如果你正好是一个运维工程师而且你正感觉你的运维环境一团糟，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着不同版本的库？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png">
+<meta property="og:image" content="https://www.docker.com/sites/default/files/Container%402x.png">
+<meta property="og:image" content="https://www.docker.com/sites/default/files/VM%402x.png">
+<meta property="og:updated_time" content="2018-07-27T13:59:16.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ESON">
-<meta name="twitter:description" content="学而不思则罔，思而不学则殆">
+<meta name="twitter:title" content="【Docker系列】Docker入门教程">
+<meta name="twitter:description" content="环境配置的难题如果你正好是一个运维工程师而且你正感觉你的运维环境一团糟，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着不同版本的库？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库">
+<meta name="twitter:image" content="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/categories/machine-translation/2-主流model-研究现状/2-神经机器翻译-NMT/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/19bc9ce2/"/>
 
 
 
@@ -138,7 +143,7 @@
   };
 </script>
 
-  <title>分类: 2. 神经机器翻译 NMT | ESON</title>
+  <title>【Docker系列】Docker入门教程 | ESON</title>
   
 
 
@@ -204,7 +209,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -260,7 +265,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
@@ -332,82 +337,417 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>2. 神经机器翻译 NMT<small>分类</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/19bc9ce2/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ESON">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ESON">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/pub/664e9bad/" itemprop="url">
-              
-                <span itemprop="name">【机器翻译】transformer</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">【Docker系列】Docker入门教程
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-01T00:00:00+08:00"
-              content="2018-05-01" >
-          05-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-21T00:00:00+08:00">2018-07-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-07-27 21:59:16" itemprop="dateModified" datetime="2018-07-27T21:59:16+08:00">2018-07-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+             title="阅读次数" >
+            <i class="fa fa-eye"></i>
+            
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数"></span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"></span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="环境配置的难题"><a href="#环境配置的难题" class="headerlink" title="环境配置的难题"></a>环境配置的难题</h1><p>如果你正好是一个运维工程师而且你正感觉你的运维<strong>环境一团糟</strong>，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着<strong>不同版本的库</strong>？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库版本以及语言版本完全一样的环境？于是你每次遇到问题都要去排查到底那个坑到底在那里？从网络、内核到应用逻辑。你每次遇到产品升级都要在各种环境上做稳定性测试，发现不同的环境代码 crash 的原因都不尽相同。你就像一个老中医一样去经历各种疑难杂症，如果遇到问题能找到原因甚至都是幸运的，绝大多数情况是解决了但不知道原因和没解决自动好了也不知道原因。于是你们在一个特定的公司的环境中积累着“经验”，成为你们组新手眼中的大神，凭借历经故障养成的条件反射在快速解决不断发生的重复问题，并故弄玄虚的说：这就是工作经验。因为经验经常是搞不清楚原因时的最后一个遮羞布。当别人抱怨你们部门效率低的时候，你一般的反应是：”you can you up，no can no 逼逼！“</p>
+<blockquote>
+<p>来自知乎</p>
+</blockquote>
+<h1 id="简介-amp-简单原理"><a href="#简介-amp-简单原理" class="headerlink" title="简介 &amp; 简单原理"></a>简介 &amp; 简单原理</h1><p><img src="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png" alt=""></p>
+<ul>
+<li>可重复</li>
+<li>可移植。镜像应该可以运行在任何主机上并且运行尽可能多的次数。</li>
+</ul>
+<p>用了 Docker，就像世界出现了集装箱，这样你的业务就可以随意的、无拘无束的运行在任何地方。</p>
+<p>Docker 公司的口号：Build，Ship，and Run Any App，Anywhere。大概意思就是编译好一个应用后，可以在任何地方运行，不会像传统的程序一样，一旦换了运行环境，往往就会出现缺这个库，少那个包的问题。</p>
+<h2 id="Docker-concepts"><a href="#Docker-concepts" class="headerlink" title="Docker concepts"></a>Docker concepts</h2><ul>
+<li><strong>镜像</strong>（Image）：Docker 把应用程序及其依赖，打包在 image 文件里面</li>
+<li><strong>容器</strong>（Container）: 镜像本身是只读的，容器从镜像启动时，Docker在镜像的上层创建一个可写层，镜像本身不变。同一个 image 文件，可以生成多个同时运行的容器实例。</li>
+<li><strong>注册服务器</strong>（Registry）: 存放实际的镜像的地方，比如Docker的官方仓库<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>、<a href="https://store.docker.com/" target="_blank" rel="noopener">Docker Store</a></li>
+<li><strong>仓库</strong>（Repository）: 仓库是存放一组关联镜像的集合，比如同一个应用的不同版本的镜像。比如<a href="https://hub.docker.com/r/tensorflow/tensorflow/tags/" target="_blank" rel="noopener">tensorflow</a></li>
+</ul>
+<h2 id="容器-VS-虚拟机"><a href="#容器-VS-虚拟机" class="headerlink" title="容器 VS 虚拟机"></a>容器 VS 虚拟机</h2><table>  <tbody>    <tr>      <td><img src="https://www.docker.com/sites/default/files/Container%402x.png" alt="Container stack example" width="300px"></td>      <td><img src="https://www.docker.com/sites/default/files/VM%402x.png" alt="Virtual machine stack example" width="300px"></td>    </tr>  </tbody></table>
+
+
+<ul>
+<li>轻量级：<br>硬盘空间: ubuntu 16.4的<a href="https://hub.docker.com/_/ubuntu/" target="_blank" rel="noopener">docker镜像</a>只有114M，<a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/16.04/" target="_blank" rel="noopener">系统镜像iso</a>则需要1.5G。<br> 运行时: 多个容器共享主机的内核，VM会消耗更多资源</li>
+<li>启动快：<br>虚拟机等完整系统，冗余步骤多：比如用户登录</li>
+<li>Stackable: You can stack services vertically and on-the-fly.</li>
+</ul>
+<!--
+Hypervisor是一种运行在物理服务器和操作系统之间的中间软件层,可允许多个操作系统和应用共享一套基础物理硬件，因此也可以看作是虚拟环境中的“元”操作系统，它可以协调访问服务器上的所有物理设备和虚拟机，也叫虚拟机监视器（Virtual Machine Monitor）。
+
+- 虚拟化的级别越偏底层，速度越慢，用户越难察觉到虚拟化的存在。
+- 虚拟化的级别越偏上层，速度越快，用户越容易感知。
+
+
+JVM
+
+- 程序虚拟机：Java虚拟机（JVM）
+- 系统虚拟机：VPC，v-Box，VMware Server。。KVM、Xen、OpenVZ。需要一个完整的操作系统，所以体积会比较大，如果想优化速度就必须要精简操作系统了，
+- VMware ESX Server 裸机安装
+
+
+那么 Docker 的实质是什么？在我看来**就是个针对 PAAS 平台的自动化运维工具而已**。
+
+虚拟机启动太慢，额外开销太高，性能由于多了一层会下降。
+
+KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了基于Linux Kernel，通过加载新的模块从而使Linux Kernel本身变成一个Hypervisor
+
+-->
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="关于镜像的基本操作"><a href="#关于镜像的基本操作" class="headerlink" title="关于镜像的基本操作"></a>关于镜像的基本操作</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker images          <span class="comment"># 列出本机所有的docker镜像</span></span><br><span class="line">docker inspect img_id  <span class="comment"># 查看镜像详细信息</span></span><br><span class="line">docker <span class="built_in">history</span> img_id  <span class="comment"># 查看镜像分层</span></span><br><span class="line">docker rmi img_id      <span class="comment"># 删除镜像</span></span><br><span class="line">docker rmi -f $(docker images -q)  <span class="comment"># 删除所有镜像</span></span><br><span class="line">docker pull repository:tag    <span class="comment"># 拉取镜像，类似 git pull</span></span><br><span class="line">docker push repository:tag    <span class="comment"># 上传镜像，类似git push</span></span><br></pre></td></tr></table></figure>
+<h2 id="关于容器的基本操作"><a href="#关于容器的基本操作" class="headerlink" title="关于容器的基本操作"></a>关于容器的基本操作</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 基于镜像启动一个容器</span></span><br><span class="line">NAME=name_test           <span class="comment"># 命名你的容器，姓名_任务_其他</span></span><br><span class="line">PROJECT_DIR=`<span class="built_in">pwd</span>`/tutorial</span><br><span class="line">nvidia-docker run -it \</span><br><span class="line">  --name <span class="variable">$NAME</span> \</span><br><span class="line">  -v <span class="variable">$PROJECT_DIR</span>:/root/  \</span><br><span class="line">  tensorflow/tensorflow:latest-gpu bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 运行程序</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=   <span class="comment"># 只占用cpu</span></span><br><span class="line">python convolutional.py</span><br><span class="line"><span class="comment"># 3. 退出容器</span></span><br><span class="line">ctrl+p+q    <span class="comment"># 临时退出容器而不终止它 (不关闭bash进程)</span></span><br><span class="line"><span class="comment"># ctrl+d    # 退出shell，退出容器</span></span><br><span class="line"><span class="comment"># 4. 查看所有正在运行的容器，并通过name找到你运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment"># 5. 查看运行日志</span></span><br><span class="line">docker logs container_id</span><br><span class="line"><span class="comment"># 6. 重新进入容器</span></span><br><span class="line">docker attach container_id         <span class="comment"># 进入同一个bash</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">docker <span class="built_in">exec</span> -it container_id bash  <span class="comment"># 重新创建一个bash</span></span><br><span class="line"><span class="comment"># 7. 删除容器</span></span><br><span class="line">docker rm container_id</span><br><span class="line"><span class="comment"># 8. 删除所有容器</span></span><br><span class="line">docker rm -f $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：</p>
+<ul>
+<li><code>attach</code> 与 <code>exec</code>的区别</li>
+<li><code>ctrl+p+q</code> 与 <code>ctrl+d</code>的区别</li>
+</ul>
+<h2 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h2><ul>
+<li>合理命名镜像和容器</li>
+<li>少用port</li>
+<li>不要把频繁更新的项目打入镜像</li>
+<li>不用的镜像及时删除</li>
+<li>不用的容器及时退出</li>
+</ul>
+<h1 id="定制自己的镜像-Dockerfile"><a href="#定制自己的镜像-Dockerfile" class="headerlink" title="定制自己的镜像 - Dockerfile"></a>定制自己的镜像 - Dockerfile</h1><h2 id="自己写dockerfile"><a href="#自己写dockerfile" class="headerlink" title="自己写dockerfile"></a>自己写dockerfile</h2><ul>
+<li><strong>FROM</strong>: 指定基础镜像</li>
+<li><strong>MAINTAINER</strong>：用来指定维护者的姓名和联系方式</li>
+<li><strong>ENV</strong>: 设置环境变量</li>
+<li><strong>RUN</strong>：在shell或者exec的环境下执行的命令。RUN指令会在新创建的镜像上添加新的层</li>
+<li><strong>EXPOSE</strong>: 指定容器在运行时监听的端口</li>
+<li><strong>COPY</strong>:</li>
+<li><strong>VOLUME</strong>: 授权访问从容器内到主机上的目录。用于containers之间共享数据</li>
+<li><strong>WORKDIR</strong>: 指定RUN、CMD与ENTRYPOINT命令的工作目录。</li>
+<li><strong>ENTRYPOINT</strong>:</li>
+<li><strong>CMD</strong>: 提供了容器默认的执行命令</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>CMD</code>与 <code>ENTRYPOINT</code> 的区别：<br><code>CMD</code>不能接受参数，运行时可被覆盖；<br> <code>ENTRYPOINT</code>能够接收参数，运行时不可被覆盖</li>
+<li><code>COPY</code>与映射<code>-v</code>的区别</li>
+</ul>
+<p><a href="dockerfile/dockerfile.tf1.8-t2t1.6">示例dockerfile</a></p>
+<h2 id="build-images"><a href="#build-images" class="headerlink" title="build images"></a>build images</h2><p>从文件进行build<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -f dockerfile . -t tensorflow/t2t:nmt</span><br></pre></td></tr></table></figure></p>
+<p>或 从标准输入中读取 Dockerfile 进行构建<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat dockerfile | docker build -</span><br></pre></td></tr></table></figure></p>
+<h2 id="docker镜像升级"><a href="#docker镜像升级" class="headerlink" title="docker镜像升级"></a>docker镜像升级</h2><ul>
+<li>更改 &amp; commit的方式   (不推荐)</li>
+<li>更改<code>dockerfile</code>，重新build镜像   (推荐)</li>
+</ul>
+<h2 id="Dockerfile-优化"><a href="#Dockerfile-优化" class="headerlink" title="Dockerfile 优化"></a>Dockerfile 优化</h2><ul>
+<li><code>apt-get install</code>之前先<code>apt-get update</code></li>
+<li>尽量选取满足需求但较小的基础系统镜像，建议选择debian:wheezy镜像，仅有86MB大小</li>
+<li>清理编译生成文件、安装包的缓存等临时文件</li>
+<li>安装各个软件时候要指定准确的版本号，并避免引入不需要的依赖</li>
+<li>从安全的角度考虑，应用尽量使用系统的库和依赖</li>
+<li>使用Dockerfile创建镜像时候要添加.dockerignore文件或使用干净的工作目录</li>
+</ul>
+<p><strong>扩展阅读</strong>:</p>
+<ul>
+<li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices" target="_blank" rel="noopener">Best practices for writing Dockerfiles | 官网</a></li>
+</ul>
+<h1 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h1><p>登录服务器<code>ssh docker1@10.31.39.12</code></p>
+<h2 id="关于镜像的操作"><a href="#关于镜像的操作" class="headerlink" title="关于镜像的操作"></a>关于镜像的操作</h2><p><a href="#关于镜像的基本操作">参考上文↑</a></p>
+<h2 id="关于容器的基本操作-1"><a href="#关于容器的基本操作-1" class="headerlink" title="关于容器的基本操作"></a>关于容器的基本操作</h2><ol>
+<li>从已有docker启动容器，参考<br><a href="https://hub.docker.com/r/tensorflow/tensorflow/" target="_blank" rel="noopener">https://hub.docker.com/r/tensorflow/tensorflow/</a></li>
+<li>从bash启动容器，<a href="#关于容器的基本操作">参考上文↑</a></li>
+</ol>
+<p>optinal:</p>
+<ul>
+<li><strong>httpd</strong>： 利用docker搭一个http server</li>
+<li><strong>gitlab</strong>: 利用docker搭一个gitlab server</li>
+<li><strong>kaldi</strong>: 利用docker跑kaldi</li>
+<li><strong>pytorch</strong>: 利用docker跑pytorch</li>
+</ul>
+<h2 id="Dockerfile相关"><a href="#Dockerfile相关" class="headerlink" title="Dockerfile相关"></a>Dockerfile相关</h2><ol>
+<li>找到<code>tensorflow</code>的dockerfile，并参考</li>
+<li>找到<code>nvidia/cuda</code>的dockerfile，并参考</li>
+<li>自己根据需求，修改dockerfile，build image</li>
+</ol>
+<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><ol>
+<li>卸载 + commit 操作，镜像会变小吗？</li>
+<li><code>run yum clean cache</code>这样写dockerfile镜像会变小吗？</li>
+<li>可以在一个容器中同时运行多个应用进程吗？</li>
+<li>Docker运行时内部删除的文件，如何恢复？</li>
+<li><code>RUN rm -rf somefile</code> 镜像会减小吗？<a href="https://github.com/tianon/docker-brew-ubuntu-core/blob/58cc180042b7ebec2b683576faa00c04d5d011e2/xenial/Dockerfile#L36" target="_blank" rel="noopener">示例</a></li>
+</ol>
+<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<li><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">什么是 Docker ？ | 腾讯云社区 </a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">Docker 入门教程 | 阮一峰</a></li>
+<li><a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">docker practice</a></li>
+</ul>
 
       
     </div>
 
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>ESON</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.eson.org/pub/19bc9ce2/" title="【Docker系列】Docker入门教程">https://blog.eson.org/pub/19bc9ce2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+            <a href="/tags/cloud/" rel="tag"># cloud</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/pub/ee61a13a/" rel="next" title="docker中的权限">
+                <i class="fa fa-chevron-left"></i> docker中的权限
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/bb3d8549/" rel="prev" title="【Docker系列】Docker的存储">
+                【Docker系列】Docker的存储 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -428,8 +768,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -697,9 +1046,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">119</span>
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -952,7 +1299,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">120</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1008,6 +1369,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置的难题"><span class="nav-number">1.</span> <span class="nav-text">环境配置的难题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介-amp-简单原理"><span class="nav-number">2.</span> <span class="nav-text">简介 &amp; 简单原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Docker concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器-VS-虚拟机"><span class="nav-number">2.2.</span> <span class="nav-text">容器 VS 虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">关于镜像的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">3.3.</span> <span class="nav-text">使用建议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制自己的镜像-Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">定制自己的镜像 - Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">自己写dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-images"><span class="nav-number">4.2.</span> <span class="nav-text">build images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker镜像升级"><span class="nav-number">4.3.</span> <span class="nav-text">docker镜像升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-优化"><span class="nav-number">4.4.</span> <span class="nav-text">Dockerfile 优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的操作"><span class="nav-number">5.1.</span> <span class="nav-text">关于镜像的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作-1"><span class="nav-number">5.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile相关"><span class="nav-number">5.3.</span> <span class="nav-text">Dockerfile相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.4.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1190,6 +1567,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
 
   
 
@@ -1202,6 +1583,37 @@
 
   
 
+  
+    <script type="text/javascript">
+      var disqus_config = function () {
+        this.page.url = 'https://blog.eson.org/pub/19bc9ce2/';
+        this.page.identifier = 'pub/19bc9ce2/';
+        this.page.title = '【Docker系列】Docker入门教程';
+      };
+      function loadComments () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Eson.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      }
+      
+        $(function () {
+          var offsetTop = $('#comments').offset().top - $(window).height();
+          if (offsetTop <= 0) {
+            // load directly when there's no a scrollbar
+            loadComments();
+          } else {
+            $(window).on('scroll.disqus_scroll', function () {
+              var scrollTop = document.documentElement.scrollTop;
+              if (scrollTop >= offsetTop) {
+                $(window).off('.disqus_scroll');
+                loadComments();
+              }
+            });
+          }
+        });
+      
+    </script>
   
 
 

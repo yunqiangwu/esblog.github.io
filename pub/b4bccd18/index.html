@@ -111,20 +111,20 @@
 
 
 
-  <meta name="description" content="模型简介convseq2seq 架构 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention: 一层attention不够那就上叠加的attention  Implementatio">
-<meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
+  <meta name="description" content="模型简介convseq2seq 架构注意: 这里的attention是同时得到的，RNN中的attention则是依次得到的。 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention">
+<meta name="keywords" content="机器翻译,seq2seq,CNN,attention">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【机器翻译】conv seq2seq">
+<meta property="og:title" content="【机器翻译】CNN系列 - convseq2seq">
 <meta property="og:url" content="https://blog.eson.org/pub/b4bccd18/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="模型简介convseq2seq 架构 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention: 一层attention不够那就上叠加的attention  Implementatio">
+<meta property="og:description" content="模型简介convseq2seq 架构注意: 这里的attention是同时得到的，RNN中的attention则是依次得到的。 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20convseq2seq%20-%20architecture.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20convseq2seq%20-%20flow.gif">
-<meta property="og:updated_time" content="2018-07-27T02:19:00.066Z">
+<meta property="og:updated_time" content="2018-07-27T13:53:59.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【机器翻译】conv seq2seq">
-<meta name="twitter:description" content="模型简介convseq2seq 架构 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention: 一层attention不够那就上叠加的attention  Implementatio">
+<meta name="twitter:title" content="【机器翻译】CNN系列 - convseq2seq">
+<meta name="twitter:description" content="模型简介convseq2seq 架构注意: 这里的attention是同时得到的，RNN中的attention则是依次得到的。 卷积过程 采用的全卷积网络(没有RNN)  Position Embedding: 给CNN更多的“位置感” Gated Linear Units: 给CNN的输出加gate Residual Connection: 给CNN都加 Multi-step Attention">
 <meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20convseq2seq%20-%20architecture.png">
 
 
@@ -142,7 +142,7 @@
   };
 </script>
 
-  <title>【机器翻译】conv seq2seq | ESON</title>
+  <title>【机器翻译】CNN系列 - convseq2seq | ESON</title>
   
 
 
@@ -373,7 +373,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【机器翻译】conv seq2seq
+          <h2 class="post-title" itemprop="name headline">【机器翻译】CNN系列 - convseq2seq
               
             
           </h2>
@@ -411,7 +411,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-27 10:19:00" itemprop="dateModified" datetime="2018-07-27T10:19:00+08:00">2018-07-27</time>
+                <time title="修改时间：2018-07-27 21:53:59" itemprop="dateModified" datetime="2018-07-27T21:53:59+08:00">2018-07-27</time>
               
             
           </span>
@@ -426,7 +426,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">machine translation</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/" itemprop="url" rel="index"><span itemprop="name">-machine translation</span></a></span>
 
                 
                 
@@ -510,7 +510,7 @@
       
 
       
-        <h1 id="模型简介"><a href="#模型简介" class="headerlink" title="模型简介"></a>模型简介</h1><p>convseq2seq 架构<br><img src="/images/raw/NN - convseq2seq - architecture.png" alt=""></p>
+        <h1 id="模型简介"><a href="#模型简介" class="headerlink" title="模型简介"></a>模型简介</h1><p>convseq2seq 架构<br><img alt="Illustration of batching during training" title="convs2s的batch training过程" src="/images/raw/NN - convseq2seq - architecture.png"><br><strong>注意</strong>: 这里的attention是同时得到的，RNN中的attention则是依次得到的。</p>
 <p>卷积过程<br><img alt="convseq2seq的卷积过程" title="convseq2seq的卷积过程" src="/images/raw/NN - convseq2seq - flow.gif"></p>
 <p>采用的全卷积网络(没有RNN)</p>
 <ul>
@@ -563,7 +563,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/b4bccd18/" title="【机器翻译】conv seq2seq">https://blog.eson.org/pub/b4bccd18/</a>
+    <a href="https://blog.eson.org/pub/b4bccd18/" title="【机器翻译】CNN系列 - convseq2seq">https://blog.eson.org/pub/b4bccd18/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -574,6 +574,18 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/机器翻译/" rel="tag"># 机器翻译</a>
+          
+            <a href="/tags/seq2seq/" rel="tag"># seq2seq</a>
+          
+            <a href="/tags/CNN/" rel="tag"># CNN</a>
+          
+            <a href="/tags/attention/" rel="tag"># attention</a>
+          
+        </div>
+      
 
       
       
@@ -583,8 +595,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/89d326d4/" rel="next" title="A星寻路算法">
-                <i class="fa fa-chevron-left"></i> A星寻路算法
+              <a href="/pub/6eefa992/" rel="next" title="【机器翻译】RNN系列 - 注意力模型">
+                <i class="fa fa-chevron-left"></i> 【机器翻译】RNN系列 - 注意力模型
               </a>
             
           </div>
@@ -593,8 +605,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/88165cc0/" rel="prev" title="个人所得税">
-                个人所得税 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/b64e6f85/" rel="prev" title="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
+                优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -932,9 +944,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">119</span>
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1187,7 +1197,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">120</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1462,7 +1486,7 @@
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/b4bccd18/';
         this.page.identifier = 'pub/b4bccd18/';
-        this.page.title = '【机器翻译】conv seq2seq';
+        this.page.title = '【机器翻译】CNN系列 - convseq2seq';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');

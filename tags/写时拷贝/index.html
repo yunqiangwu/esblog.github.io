@@ -111,28 +111,24 @@
 
 
 
-  <meta name="description" content="简介https://docs.docker.com/storage/storagedriver/ 每个Docker镜像（Image）都引用了一些只读的（read-only）层（layer），不同的文件系统layer也不同。这些layer堆叠在一起构成了容器（Container）的根文件系统（root filesystem）。 当你基于Ubuntu 创建一个新的容器的时候，你其实只是在它的上层又增加">
+  <meta name="description" content="学而不思则罔，思而不学则殆">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker的存储">
-<meta property="og:url" content="https://blog.eson.org/pub/a80b580e/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ESON">
+<meta property="og:url" content="https://blog.eson.org/tags/写时拷贝/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介https://docs.docker.com/storage/storagedriver/ 每个Docker镜像（Image）都引用了一些只读的（read-only）层（layer），不同的文件系统layer也不同。这些layer堆叠在一起构成了容器（Container）的根文件系统（root filesystem）。 当你基于Ubuntu 创建一个新的容器的时候，你其实只是在它的上层又增加">
+<meta property="og:description" content="学而不思则罔，思而不学则殆">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.eson.org/uploads/86224eb33527e33bfa0ee5ba70416428/20161027203243.jpg">
-<meta property="og:image" content="https://blog.eson.org/uploads/091cf3833ef1eda26489369a283df22c/Picture1.png">
-<meta property="og:updated_time" content="2018-07-26T16:33:25.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker的存储">
-<meta name="twitter:description" content="简介https://docs.docker.com/storage/storagedriver/ 每个Docker镜像（Image）都引用了一些只读的（read-only）层（layer），不同的文件系统layer也不同。这些layer堆叠在一起构成了容器（Container）的根文件系统（root filesystem）。 当你基于Ubuntu 创建一个新的容器的时候，你其实只是在它的上层又增加">
-<meta name="twitter:image" content="https://blog.eson.org/uploads/86224eb33527e33bfa0ee5ba70416428/20161027203243.jpg">
+<meta name="twitter:title" content="ESON">
+<meta name="twitter:description" content="学而不思则罔，思而不学则殆">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/a80b580e/"/>
+  <link rel="canonical" href="https://blog.eson.org/tags/写时拷贝/"/>
 
 
 
@@ -142,7 +138,7 @@
   };
 </script>
 
-  <title>docker的存储 | ESON</title>
+  <title>标签: 写时拷贝 | ESON</title>
   
 
 
@@ -208,7 +204,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -256,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-tags">
+          <li class="menu-item menu-item-tags menu-item-active">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -336,309 +332,81 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block tag">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>写时拷贝<small>标签</small>
+        </h2>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/a80b580e/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/pub/bb3d8549/" itemprop="url">
+              
+                <span itemprop="name">【Docker系列】Docker的存储</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">docker的存储
-              
-            
-          </h2>
-        
+      </h3>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-21T00:00:00+08:00">2018-07-21</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                <time title="修改时间：2018-07-27 00:33:25" itemprop="dateModified" datetime="2018-07-27T00:33:25+08:00">2018-07-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/" itemprop="url" rel="index"><span itemprop="name">cloud</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/cloud/docker/tutorial/" itemprop="url" rel="index"><span itemprop="name">tutorial</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-             title="阅读次数" >
-            <i class="fa fa-eye"></i>
-            
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><a href="https://docs.docker.com/storage/storagedriver/" target="_blank" rel="noopener">https://docs.docker.com/storage/storagedriver/</a></p>
-<p>每个Docker镜像（Image）都引用了一些只读的（read-only）层（layer），不同的文件系统layer也不同。这些layer堆叠在一起构成了容器（Container）的根文件系统（root filesystem）。</p>
-<p>当你基于Ubuntu 创建一个新的容器的时候，你其实只是在它的上层又增加了一个新的、薄的、可写层。这个新增的可写层称为容器层（container layer）。当这个新的容器运行时，所有的改动（比如创建新文件、修改已有文件、删除文件等）都会写到这一层。</p>
-<h2 id="存储-镜像层-Layers"><a href="#存储-镜像层-Layers" class="headerlink" title="存储 - 镜像层(Layers)"></a>存储 - 镜像层(Layers)</h2><p>镜像层依赖于一系列的底层技术，比如文件系统(filesystems)、写时复制(copy-on-write)、联合挂载(union mounts)等</p>
-<p><img src="/uploads/86224eb33527e33bfa0ee5ba70416428/20161027203243.jpg" alt="20161027203243"></p>
-<p>容器层是可写层。</p>
-<p>例如：<br><code>docker history  tensorflow/tensorflow:1.8.0-gpu</code></p>
-<p><img src="/uploads/091cf3833ef1eda26489369a283df22c/Picture1.png" alt="Picture1"></p>
-<ul>
-<li><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/Dockerfile.gpu" target="_blank" rel="noopener">tensorflow镜像</a></li>
-<li><a href="https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/base/Dockerfile" target="_blank" rel="noopener">nvidia-cuda镜像</a></li>
-<li><a href="https://github.com/tianon/docker-brew-ubuntu-core/blob/58cc180042b7ebec2b683576faa00c04d5d011e2/xenial/Dockerfile" target="_blank" rel="noopener">ubuntu镜像</a></li>
-</ul>
-<h1 id="写时拷贝策略-CopyOnWrite"><a href="#写时拷贝策略-CopyOnWrite" class="headerlink" title="写时拷贝策略(CopyOnWrite)"></a>写时拷贝策略(CopyOnWrite)</h1><p>CopyOnWrite容器即写时复制的容器。通俗的理解是当我们往一个容器添加元素的时候，不直接往当前容器添加，而是<strong>先将当前容器进行Copy，复制出一个新的容器，然后新的容器里添加元素，之后再将原容器的引用指向新的容器</strong>。这样做的好处是我们可以对CopyOnWrite容器进行<strong>并发的读，而不需要加锁</strong>，因为当前容器不会添加任何元素。所以CopyOnWrite容器也是一种<strong>读写分离</strong>的思想，读和写不同的容器。</p>
-<p><strong>缺点</strong></p>
-<ul>
-<li>内存占用问题：<br>在进行写操作的时候，内存里会同时驻扎两个对象的内存，<strong>旧的对象</strong>和<strong>新写入的对象</strong>（注意:在复制的时候只是复制容器里的引用，只是在写的时候会创建新对象添加到新容器里，而旧容器的对象还在使用，所以有两份对象内存）。 <br> docker的什么操作会写容器？不涉及文件写操作的会涉及到容器的写操作吗？只有commit操作会写操作？</li>
-<li>数据一致性问题</li>
-</ul>
-<h2 id="COW的应用"><a href="#COW的应用" class="headerlink" title="COW的应用"></a>COW的应用</h2><p>CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。</p>
-<h3 id="COW在java"><a href="#COW在java" class="headerlink" title="COW在java"></a>COW在java</h3><p>从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet</p>
-<h3 id="COW在C"><a href="#COW在C" class="headerlink" title="COW在C++"></a>COW在C++</h3><p>C++的STL中，曾经也有过Copy-On-Write的玩法，参见陈皓的《C++ STL String类中的Copy-On-Write》，后来，因为有很多线程安全上的事，就被去掉了。</p>
-<h1 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="http://www.maiziedu.com/wiki/cloud/dockerimage/" target="_blank" rel="noopener">Docker镜像分层技术</a></li>
-<li><a href="https://coolshell.cn/articles/11175.html" target="_blank" rel="noopener">JAVA中的COPYONWRITE容器</a></li>
-</ul>
-
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>ESON</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/a80b580e/" title="docker的存储">https://blog.eson.org/pub/a80b580e/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-07-21T00:00:00+08:00"
+              content="2018-07-21" >
+          07-21
+        </time>
       </div>
-    
 
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/pub/ee61a13a/" rel="next" title="docker中的权限">
-                <i class="fa fa-chevron-left"></i> docker中的权限
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/pub/c874b3c5/" rel="prev" title="机器翻译-历史">
-                机器翻译-历史 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    </div>
-
-  
-
-
 
         </div>
         
@@ -659,17 +427,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -937,9 +696,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">119</span>
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1192,7 +949,21 @@
                     
                       
                     
-                    <span class="site-state-item-count">120</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1248,22 +1019,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储-镜像层-Layers"><span class="nav-number">1.1.</span> <span class="nav-text">存储 - 镜像层(Layers)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写时拷贝策略-CopyOnWrite"><span class="nav-number">2.</span> <span class="nav-text">写时拷贝策略(CopyOnWrite)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#COW的应用"><span class="nav-number">2.1.</span> <span class="nav-text">COW的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在java"><span class="nav-number">2.1.1.</span> <span class="nav-text">COW在java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在C"><span class="nav-number">2.1.2.</span> <span class="nav-text">COW在C++</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据持久化"><span class="nav-number">3.</span> <span class="nav-text">数据持久化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -1446,10 +1201,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
-
-
 
   
 
@@ -1462,37 +1213,6 @@
 
   
 
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/a80b580e/';
-        this.page.identifier = 'pub/a80b580e/';
-        this.page.title = 'docker的存储';
-      };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
   
 
 
