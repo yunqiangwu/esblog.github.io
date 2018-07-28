@@ -111,24 +111,20 @@
 
 
 
-  <meta name="description" content="2016年9月，Google机器翻译实现重大突破！Google研究团队宣布开发Google神经机器翻译系统(GNMT)。同年11月，Google翻译停止使用其自2007年10月以来一直使用的专有统计机器翻译（SMT）技术，开始使用神经机器翻译（NMT）。从此宣告， 机器翻译经过27年左右， 正式从1989年的IBM机器翻译模型(PBMT，基于短语的机器翻译)，过渡到了神经网络机器翻译模型。 GNM">
-<meta name="keywords" content="机器翻译,seq2seq,RNN,attention">
+  <meta name="description" content="参考">
+<meta name="keywords" content="机器翻译,seq2seq,RNN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【机器翻译】RNN系列 - GNMT">
+<meta property="og:title" content="【机器翻译】RNN系列 - 注意力模型">
 <meta property="og:url" content="https://blog.eson.org/pub/6eefa992/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="2016年9月，Google机器翻译实现重大突破！Google研究团队宣布开发Google神经机器翻译系统(GNMT)。同年11月，Google翻译停止使用其自2007年10月以来一直使用的专有统计机器翻译（SMT）技术，开始使用神经机器翻译（NMT）。从此宣告， 机器翻译经过27年左右， 正式从1989年的IBM机器翻译模型(PBMT，基于短语的机器翻译)，过渡到了神经网络机器翻译模型。 GNM">
+<meta property="og:description" content="参考">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20GNMT%20-%20flow.gif">
-<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20GNMT%20-%20architecture.jpg">
-<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20GNMT%20-%20LSTM%20with%20residual.png">
-<meta property="og:image" content="https://1.bp.blogspot.com/-jOLa-LdidQU/V-qV2oJn1aI/AAAAAAAABPg/-6OhKKPhxT89Vs9HhyKMEnyG_0ncWGjJQCLcB/s640/image00.png">
-<meta property="og:image" content="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png">
-<meta property="og:updated_time" content="2018-07-27T13:54:29.843Z">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20seq2seq%20-%20attention%20based%20rnn.jpg">
+<meta property="og:updated_time" content="2018-07-28T02:13:34.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【机器翻译】RNN系列 - GNMT">
-<meta name="twitter:description" content="2016年9月，Google机器翻译实现重大突破！Google研究团队宣布开发Google神经机器翻译系统(GNMT)。同年11月，Google翻译停止使用其自2007年10月以来一直使用的专有统计机器翻译（SMT）技术，开始使用神经机器翻译（NMT）。从此宣告， 机器翻译经过27年左右， 正式从1989年的IBM机器翻译模型(PBMT，基于短语的机器翻译)，过渡到了神经网络机器翻译模型。 GNM">
-<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20GNMT%20-%20flow.gif">
+<meta name="twitter:title" content="【机器翻译】RNN系列 - 注意力模型">
+<meta name="twitter:description" content="参考">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20seq2seq%20-%20attention%20based%20rnn.jpg">
 
 
 
@@ -145,7 +141,7 @@
   };
 </script>
 
-  <title>【机器翻译】RNN系列 - GNMT | ESON</title>
+  <title>【机器翻译】RNN系列 - 注意力模型 | ESON</title>
   
 
 
@@ -376,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【机器翻译】RNN系列 - GNMT
+          <h2 class="post-title" itemprop="name headline">【机器翻译】RNN系列 - 注意力模型
               
             
           </h2>
@@ -414,7 +410,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-27 21:54:29" itemprop="dateModified" datetime="2018-07-27T21:54:29+08:00">2018-07-27</time>
+                <time title="修改时间：2018-07-28 10:13:34" itemprop="dateModified" datetime="2018-07-28T10:13:34+08:00">2018-07-28</time>
               
             
           </span>
@@ -513,33 +509,8 @@
       
 
       
-        <p>2016年9月，Google机器翻译实现重大突破！Google研究团队宣布开发<code>Google神经机器翻译系统</code>(GNMT)。同年11月，Google翻译<strong>停止使用其自2007年10月以来一直使用的专有统计机器翻译（SMT）技术，开始使用神经机器翻译（NMT）</strong>。<br>从此宣告， 机器翻译经过27年左右， 正式从1989年的IBM机器翻译模型(PBMT，基于短语的机器翻译)，过渡到了神经网络机器翻译模型。</p>
-<p>GNMT是一种端到端的学习方法，<strong>不再将句子分解为词和短语独立翻译，而是翻译完整的句子</strong>，使得误差降低了 55%-85% 以上。</p>
-<p><img title="GNMT进行中英翻译的流程" src="/images/raw/NN - GNMT - flow.gif"></p>
-<p>首先，模型对中文进行编码。整个句子编码完成后，启动decoder，进行解码。解码过程中的每一步，都需要一组attention weight，对输入序列的vector进行加权。</p>
-<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>NMT虽然已经开始应用，</p>
-<p>但 NMT 系统的训练和翻译推理的计算成本非常高，同时也难以应对罕见词，这些问题阻碍了 NMT 在实际部署和服务中的应用，因为在实际应用中，准确度和速度都很关键。而谷歌的神经机器翻译提出了带有 8 个编码器和 8 个解码器的深度 LSTM 网络组成的模型，使用了注意力和残差连接。为了提升并行性从而降低训练时间，注意机制将解码器的底层连接到了编码器的顶层。在推理计算过程中使用了低精度运算来加速翻译速度。为改善对罕见词的处理，谷歌将词分成常见子词单元（词的组件）的一个有限集合，该集合既是输入也是输出。这种方法能提供「字符」-delimited models 的灵活性和「词」-delimited models 的有效性之间的平衡、能自然地处理罕见词的翻译、并能最终提升系统的整体准确度。谷歌的波束搜索技术使用了一个长度规范化过程，并使用了一个覆盖度惩罚，其可以激励很可能能覆盖源句子中所有的词的输出句子的生成。在 WMT’ 14 英语-法语和英语-德语基准上，GNMT 实现了可与当前最佳结果媲美的结果。通过在一个单独的简单句子集合的人类对比评估中，它相比于谷歌已经投入生产的基于短语的系统的翻译误差平均降低了 60%。</p>
-<!--
-GNMT improves on the quality of translation by applying an example based (EBMT) MT method in which the system "learns from millions of examples"
--->
-<h1 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h1><p><img title="GNMT architecture" src="/images/raw/NN - GNMT - architecture.jpg"></p>
-<p><img title="LSTM with residual connection" src="/images/raw/NN - GNMT - LSTM with residual.png"></p>
-<h1 id="zero-shot翻译"><a href="#zero-shot翻译" class="headerlink" title="zero-shot翻译"></a>zero-shot翻译</h1><p>GNMT系统可以处理“零点翻译”，即直接将一种语言翻译成另一种语言（例如中文到日文）。以前Google翻译会<strong>先将源语言翻译成英文，然后将英文翻译成目标语言</strong>，而不是直接从一种语言翻译成另一种语言。</p>
-<h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><p><img title="评分从0到6，0表示最差翻译，6表示最佳翻译" src="https://1.bp.blogspot.com/-jOLa-LdidQU/V-qV2oJn1aI/AAAAAAAABPg/-6OhKKPhxT89Vs9HhyKMEnyG_0ncWGjJQCLcB/s640/image00.png"></p>
-<p><img title="不同翻译系统的效果对比" src="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png"></p>
-<p>以上可以看出</p>
-<h1 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h1><ul>
-<li>漏翻 <!-- dropping words --></li>
-<li>错翻：特别是对于名字和稀有词(rare word)</li>
-<li>未考虑大语境(context of the paragraph or page)</li>
-</ul>
-<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
-<li><a href="">GNMT: Bridging the Gap between Human and Machine Translation</a></li>
-<li><a href="https://ai.googleblog.com/2016/09/a-neural-network-for-machine.html" target="_blank" rel="noopener">NTM at Production Scale | Google Blog</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Google_Neural_Machine_Translation" target="_blank" rel="noopener">GNMT | 维基百科</a></li>
-<li><a href="https://www.zhihu.com/question/51089192" target="_blank" rel="noopener">如何评价Google神经机器翻译（GNMT）系统？ | 知乎</a></li>
-</ul>
-
+        <p><img title="attention based LSTM(图来自opennmt)" src="/images/raw/NN - seq2seq - attention based rnn.jpg"></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1>
       
     </div>
 
@@ -564,7 +535,7 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/6eefa992/" title="【机器翻译】RNN系列 - GNMT">https://blog.eson.org/pub/6eefa992/</a>
+    <a href="https://blog.eson.org/pub/6eefa992/" title="【机器翻译】RNN系列 - 注意力模型">https://blog.eson.org/pub/6eefa992/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -583,8 +554,6 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
           
             <a href="/tags/RNN/" rel="tag"># RNN</a>
           
-            <a href="/tags/attention/" rel="tag"># attention</a>
-          
         </div>
       
 
@@ -596,8 +565,8 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/88165cc0/" rel="next" title="个人所得税">
-                <i class="fa fa-chevron-left"></i> 个人所得税
+              <a href="/pub/5d84fcc7/" rel="next" title="中朝">
+                <i class="fa fa-chevron-left"></i> 中朝
               </a>
             
           </div>
@@ -606,8 +575,8 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/5d84fcc7/" rel="prev" title="中朝">
-                中朝 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/88165cc0/" rel="prev" title="个人所得税">
+                个人所得税 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -943,9 +912,7 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">118</span>
+                    <span class="site-state-item-count">117</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1278,7 +1245,7 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型"><span class="nav-number">2.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zero-shot翻译"><span class="nav-number">3.</span> <span class="nav-text">zero-shot翻译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">4.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存在的问题"><span class="nav-number">5.</span> <span class="nav-text">存在的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">1.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1487,7 +1454,7 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
       var disqus_config = function () {
         this.page.url = 'https://blog.eson.org/pub/6eefa992/';
         this.page.identifier = 'pub/6eefa992/';
-        this.page.title = '【机器翻译】RNN系列 - GNMT';
+        this.page.title = '【机器翻译】RNN系列 - 注意力模型';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
