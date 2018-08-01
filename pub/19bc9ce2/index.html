@@ -120,9 +120,7 @@
 <meta property="og:description" content="环境配置的难题如果你正好是一个运维工程师而且你正感觉你的运维环境一团糟，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着不同版本的库？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png">
-<meta property="og:image" content="https://www.docker.com/sites/default/files/Container%402x.png">
-<meta property="og:image" content="https://www.docker.com/sites/default/files/VM%402x.png">
-<meta property="og:updated_time" content="2018-07-28T05:20:08.290Z">
+<meta property="og:updated_time" content="2018-07-31T03:24:40.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Docker系列】Docker入门教程">
 <meta name="twitter:description" content="环境配置的难题如果你正好是一个运维工程师而且你正感觉你的运维环境一团糟，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着不同版本的库？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库">
@@ -412,7 +410,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-07-28 13:20:08" itemprop="dateModified" datetime="2018-07-28T13:20:08+08:00">2018-07-28</time>
+                <time title="修改时间：2018-07-31 11:24:40" itemprop="dateModified" datetime="2018-07-31T11:24:40+08:00">2018-07-31</time>
               
             
           </span>
@@ -521,35 +519,6 @@
 <li><strong>注册服务器</strong>（Registry）: 存放实际的镜像的地方，比如Docker的官方仓库<a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>、<a href="https://store.docker.com/" target="_blank" rel="noopener">Docker Store</a></li>
 <li><strong>仓库</strong>（Repository）: 仓库是存放一组关联镜像的集合，比如同一个应用的不同版本的镜像。比如<a href="https://hub.docker.com/r/tensorflow/tensorflow/tags/" target="_blank" rel="noopener">tensorflow</a></li>
 </ul>
-<h2 id="容器-VS-虚拟机"><a href="#容器-VS-虚拟机" class="headerlink" title="容器 VS 虚拟机"></a>容器 VS 虚拟机</h2><table>  <tbody>    <tr>      <td><img src="https://www.docker.com/sites/default/files/Container%402x.png" alt="Container stack example" width="300px"></td>      <td><img src="https://www.docker.com/sites/default/files/VM%402x.png" alt="Virtual machine stack example" width="300px"></td>    </tr>  </tbody></table>
-
-
-<ul>
-<li>轻量级：<br>硬盘空间: ubuntu 16.4的<a href="https://hub.docker.com/_/ubuntu/" target="_blank" rel="noopener">docker镜像</a>只有114M，<a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/16.04/" target="_blank" rel="noopener">系统镜像iso</a>则需要1.5G。<br> 运行时: 多个容器共享主机的内核，VM会消耗更多资源</li>
-<li>启动快：<br>虚拟机等完整系统，冗余步骤多：比如用户登录</li>
-<li>Stackable: You can stack services vertically and on-the-fly.</li>
-</ul>
-<!--
-Hypervisor是一种运行在物理服务器和操作系统之间的中间软件层,可允许多个操作系统和应用共享一套基础物理硬件，因此也可以看作是虚拟环境中的“元”操作系统，它可以协调访问服务器上的所有物理设备和虚拟机，也叫虚拟机监视器（Virtual Machine Monitor）。
-
-- 虚拟化的级别越偏底层，速度越慢，用户越难察觉到虚拟化的存在。
-- 虚拟化的级别越偏上层，速度越快，用户越容易感知。
-
-
-JVM
-
-- 程序虚拟机：Java虚拟机（JVM）
-- 系统虚拟机：VPC，v-Box，VMware Server。。KVM、Xen、OpenVZ。需要一个完整的操作系统，所以体积会比较大，如果想优化速度就必须要精简操作系统了，
-- VMware ESX Server 裸机安装
-
-
-那么 Docker 的实质是什么？在我看来**就是个针对 PAAS 平台的自动化运维工具而已**。
-
-虚拟机启动太慢，额外开销太高，性能由于多了一层会下降。
-
-KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了基于Linux Kernel，通过加载新的模块从而使Linux Kernel本身变成一个Hypervisor
-
--->
 <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="关于镜像的基本操作"><a href="#关于镜像的基本操作" class="headerlink" title="关于镜像的基本操作"></a>关于镜像的基本操作</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker images          <span class="comment"># 列出本机所有的docker镜像</span></span><br><span class="line">docker inspect img_id  <span class="comment"># 查看镜像详细信息</span></span><br><span class="line">docker <span class="built_in">history</span> img_id  <span class="comment"># 查看镜像分层</span></span><br><span class="line">docker rmi img_id      <span class="comment"># 删除镜像</span></span><br><span class="line">docker rmi -f $(docker images -q)  <span class="comment"># 删除所有镜像</span></span><br><span class="line">docker pull repository:tag    <span class="comment"># 拉取镜像，类似 git pull</span></span><br><span class="line">docker push repository:tag    <span class="comment"># 上传镜像，类似git push</span></span><br></pre></td></tr></table></figure>
 <h2 id="关于容器的基本操作"><a href="#关于容器的基本操作" class="headerlink" title="关于容器的基本操作"></a>关于容器的基本操作</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 基于镜像启动一个容器</span></span><br><span class="line">NAME=name_test           <span class="comment"># 命名你的容器，姓名_任务_其他</span></span><br><span class="line">PROJECT_DIR=`<span class="built_in">pwd</span>`/tutorial</span><br><span class="line">nvidia-docker run -it \</span><br><span class="line">  --name <span class="variable">$NAME</span> \</span><br><span class="line">  -v <span class="variable">$PROJECT_DIR</span>:/root/  \</span><br><span class="line">  tensorflow/tensorflow:latest-gpu bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 运行程序</span></span><br><span class="line"><span class="built_in">cd</span> /root</span><br><span class="line"><span class="built_in">export</span> CUDA_VISIBLE_DEVICES=   <span class="comment"># 只占用cpu</span></span><br><span class="line">python convolutional.py</span><br><span class="line"><span class="comment"># 3. 退出容器</span></span><br><span class="line">ctrl+p+q    <span class="comment"># 临时退出容器而不终止它 (不关闭bash进程)</span></span><br><span class="line"><span class="comment"># ctrl+d    # 退出shell，退出容器</span></span><br><span class="line"><span class="comment"># 4. 查看所有正在运行的容器，并通过name找到你运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"><span class="comment"># 5. 查看运行日志</span></span><br><span class="line">docker logs container_id</span><br><span class="line"><span class="comment"># 6. 重新进入容器</span></span><br><span class="line">docker attach container_id         <span class="comment"># 进入同一个bash</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">docker <span class="built_in">exec</span> -it container_id bash  <span class="comment"># 重新创建一个bash</span></span><br><span class="line"><span class="comment"># 7. 删除容器</span></span><br><span class="line">docker rm container_id</span><br><span class="line"><span class="comment"># 8. 删除所有容器</span></span><br><span class="line">docker rm -f $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>：</p>
@@ -563,6 +532,9 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
 <li>不要把频繁更新的项目打入镜像</li>
 <li>不用的镜像及时删除</li>
 <li>不用的容器及时退出</li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://yeasy.gitbooks.io/docker_practice/container/" target="_blank" rel="noopener">操作 Docker 容器 | Docker从入门到实践</a></li>
 </ul>
 <h1 id="定制自己的镜像-Dockerfile"><a href="#定制自己的镜像-Dockerfile" class="headerlink" title="定制自己的镜像 - Dockerfile"></a>定制自己的镜像 - Dockerfile</h1><h2 id="自己写dockerfile"><a href="#自己写dockerfile" class="headerlink" title="自己写dockerfile"></a>自己写dockerfile</h2><ul>
 <li><strong>FROM</strong>: 指定基础镜像</li>
@@ -625,7 +597,7 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
 <li>Docker运行时内部删除的文件，如何恢复？</li>
 <li><code>RUN rm -rf somefile</code> 镜像会减小吗？<a href="https://github.com/tianon/docker-brew-ubuntu-core/blob/58cc180042b7ebec2b683576faa00c04d5d011e2/xenial/Dockerfile#L36" target="_blank" rel="noopener">示例</a></li>
 </ol>
-<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<h1 id="扩展阅读-1"><a href="#扩展阅读-1" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
 <li><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">什么是 Docker ？ | 腾讯云社区 </a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">Docker 入门教程 | 阮一峰</a></li>
 <li><a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">docker practice</a></li>
@@ -683,8 +655,8 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/3ddeac97/" rel="next" title="【Docker系列】docker中的权限">
-                <i class="fa fa-chevron-left"></i> 【Docker系列】docker中的权限
+              <a href="/pub/bb3d8549/" rel="next" title="【Docker系列】Docker的存储">
+                <i class="fa fa-chevron-left"></i> 【Docker系列】Docker的存储
               </a>
             
           </div>
@@ -693,8 +665,8 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/bb3d8549/" rel="prev" title="【Docker系列】Docker的存储">
-                【Docker系列】Docker的存储 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c874b3c5/" rel="prev" title="【机器翻译】- 发展史">
+                【机器翻译】- 发展史 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1032,9 +1004,7 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">119</span>
+                    <span class="site-state-item-count">118</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1371,7 +1341,7 @@ KVM：KVM并没有选择从底层开始新写一个Hypervisor，而是选择了�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置的难题"><span class="nav-number">1.</span> <span class="nav-text">环境配置的难题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介-amp-简单原理"><span class="nav-number">2.</span> <span class="nav-text">简介 &amp; 简单原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Docker concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器-VS-虚拟机"><span class="nav-number">2.2.</span> <span class="nav-text">容器 VS 虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">关于镜像的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">3.3.</span> <span class="nav-text">使用建议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制自己的镜像-Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">定制自己的镜像 - Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">自己写dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-images"><span class="nav-number">4.2.</span> <span class="nav-text">build images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker镜像升级"><span class="nav-number">4.3.</span> <span class="nav-text">docker镜像升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-优化"><span class="nav-number">4.4.</span> <span class="nav-text">Dockerfile 优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的操作"><span class="nav-number">5.1.</span> <span class="nav-text">关于镜像的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作-1"><span class="nav-number">5.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile相关"><span class="nav-number">5.3.</span> <span class="nav-text">Dockerfile相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.4.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置的难题"><span class="nav-number">1.</span> <span class="nav-text">环境配置的难题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介-amp-简单原理"><span class="nav-number">2.</span> <span class="nav-text">简介 &amp; 简单原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Docker concepts</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">关于镜像的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">3.3.</span> <span class="nav-text">使用建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">3.4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制自己的镜像-Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">定制自己的镜像 - Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">自己写dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-images"><span class="nav-number">4.2.</span> <span class="nav-text">build images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker镜像升级"><span class="nav-number">4.3.</span> <span class="nav-text">docker镜像升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-优化"><span class="nav-number">4.4.</span> <span class="nav-text">Dockerfile 优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的操作"><span class="nav-number">5.1.</span> <span class="nav-text">关于镜像的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作-1"><span class="nav-number">5.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile相关"><span class="nav-number">5.3.</span> <span class="nav-text">Dockerfile相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.4.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读-1"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
