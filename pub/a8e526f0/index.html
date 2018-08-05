@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="目的实现 Gitbook - Github仓库 - Github Pages 三方同步。  修改Gitbook，实现 Github自动同步 + 自动部署静态页面到Github Pages 修改Github仓库，实现Gitbook自动同步 + 自动部署静态页面到Github Pages  Gitbook自身已经实现了与Github仓库的同步，现在的问题是，如何实现自动部署静态页面到Github Pa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:44:11.863Z">
+<meta property="og:updated_time" content="2018-08-05T10:01:36.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用travis自动构建Gitbook静态页面，并自动部署到Github Page">
 <meta name="twitter:description" content="目的实现 Gitbook - Github仓库 - Github Pages 三方同步。  修改Gitbook，实现 Github自动同步 + 自动部署静态页面到Github Pages 修改Github仓库，实现Gitbook自动同步 + 自动部署静态页面到Github Pages  Gitbook自身已经实现了与Github仓库的同步，现在的问题是，如何实现自动部署静态页面到Github Pa">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 18:01:36" itemprop="dateModified" datetime="2018-08-05T18:01:36+08:00">2018-08-05</time>
               
             
           </span>
@@ -1544,14 +1544,19 @@
 <!-- END LOCAL -->
 
     
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
 
     
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
             id: window.location.pathname,
-            owner: 'esblog',
-            repo: 'https://github.com/ESblog/comments',
+            owner: 'ESblog',
+            repo: 'comments',
             
             lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
             
