@@ -111,19 +111,19 @@
 
 
 
-  <meta name="description" content="环境配置的难题   简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议 扩展阅读   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读">
+  <meta name="description" content="环境配置的难题 简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读   环境配置">
 <meta name="keywords" content="docker,cloud">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【Docker系列】Docker入门教程">
 <meta property="og:url" content="https://blog.eson.org/pub/19bc9ce2/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="环境配置的难题   简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议 扩展阅读   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读">
+<meta property="og:description" content="环境配置的难题 简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读   环境配置">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png">
-<meta property="og:updated_time" content="2018-08-05T09:07:16.866Z">
+<meta property="og:updated_time" content="2018-08-05T09:19:54.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Docker系列】Docker入门教程">
-<meta name="twitter:description" content="环境配置的难题   简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议 扩展阅读   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读">
+<meta name="twitter:description" content="环境配置的难题 简介 &amp;amp; 简单原理 Docker concepts   基本操作 关于镜像的基本操作 关于容器的基本操作 使用建议   定制自己的镜像 - Dockerfile 自己写dockerfile build images docker镜像升级 Dockerfile 优化   练习 关于镜像的操作 关于容器的基本操作 Dockerfile相关 思考题   扩展阅读   环境配置">
 <meta name="twitter:image" content="https://assets.gitlab-static.net/uploads/-/system/project/avatar/3846659/vertical_large.png">
 
 
@@ -410,7 +410,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:07:16" itemprop="dateModified" datetime="2018-08-05T17:07:16+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:19:54" itemprop="dateModified" datetime="2018-08-05T17:19:54+08:00">2018-08-05</time>
               
             
           </span>
@@ -505,35 +505,32 @@
         <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 <ol>
 <li><a href="#环境配置的难题">环境配置的难题</a></li>
-</ol>
-<ul>
-<li><a href="#简介-简单原理">简介 &amp; 简单原理</a><ul>
+<li><a href="#简介-简单原理">简介 &amp; 简单原理</a><ol>
 <li><a href="#docker-concepts">Docker concepts</a></li>
-</ul>
+</ol>
 </li>
-<li><a href="#基本操作">基本操作</a><ul>
+<li><a href="#基本操作">基本操作</a><ol>
 <li><a href="#关于镜像的基本操作">关于镜像的基本操作</a></li>
 <li><a href="#关于容器的基本操作">关于容器的基本操作</a></li>
 <li><a href="#使用建议">使用建议</a></li>
-<li><a href="#扩展阅读">扩展阅读</a></li>
-</ul>
+</ol>
 </li>
-<li><a href="#定制自己的镜像-dockerfile">定制自己的镜像 - Dockerfile</a><ul>
+<li><a href="#定制自己的镜像-dockerfile">定制自己的镜像 - Dockerfile</a><ol>
 <li><a href="#自己写dockerfile">自己写dockerfile</a></li>
 <li><a href="#build-images">build images</a></li>
 <li><a href="#docker镜像升级">docker镜像升级</a></li>
 <li><a href="#dockerfile-优化">Dockerfile 优化</a></li>
-</ul>
+</ol>
 </li>
-<li><a href="#练习">练习</a><ul>
+<li><a href="#练习">练习</a><ol>
 <li><a href="#关于镜像的操作">关于镜像的操作</a></li>
 <li><a href="#关于容器的基本操作">关于容器的基本操作</a></li>
 <li><a href="#dockerfile相关">Dockerfile相关</a></li>
 <li><a href="#思考题">思考题</a></li>
-</ul>
+</ol>
 </li>
 <li><a href="#扩展阅读">扩展阅读</a></li>
-</ul>
+</ol>
 <!-- /TOC -->
 <h1 id="环境配置的难题"><a href="#环境配置的难题" class="headerlink" title="环境配置的难题"></a>环境配置的难题</h1><p>如果你正好是一个运维工程师而且你正感觉你的运维<strong>环境一团糟</strong>，麻烦请你思考一下这是为什么？你是不是正在运维着一个使用 php、java、C#甚至 C/C++等用各种语言编写的应用都在运行的环境里？这个环境是不是因为某种历史原因，使你的操作系统运行着各个版本的内核甚至还有 windows？即使是同样语言编写的业务也运行着<strong>不同版本的库</strong>？你的整个系统环境是不是甚至找不出来两台硬件、操作系统、库版本以及语言版本完全一样的环境？于是你每次遇到问题都要去排查到底那个坑到底在那里？从网络、内核到应用逻辑。你每次遇到产品升级都要在各种环境上做稳定性测试，发现不同的环境代码 crash 的原因都不尽相同。你就像一个老中医一样去经历各种疑难杂症，如果遇到问题能找到原因甚至都是幸运的，绝大多数情况是解决了但不知道原因和没解决自动好了也不知道原因。于是你们在一个特定的公司的环境中积累着“经验”，成为你们组新手眼中的大神，凭借历经故障养成的条件反射在快速解决不断发生的重复问题，并故弄玄虚的说：这就是工作经验。因为经验经常是搞不清楚原因时的最后一个遮羞布。当别人抱怨你们部门效率低的时候，你一般的反应是：”you can you up，no can no 逼逼！“</p>
 <blockquote>
@@ -566,7 +563,8 @@
 <li>不用的镜像及时删除</li>
 <li>不用的容器及时退出</li>
 </ul>
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<p><strong>扩展阅读</strong></p>
+<ul>
 <li><a href="https://yeasy.gitbooks.io/docker_practice/container/" target="_blank" rel="noopener">操作 Docker 容器 | Docker从入门到实践</a></li>
 </ul>
 <h1 id="定制自己的镜像-Dockerfile"><a href="#定制自己的镜像-Dockerfile" class="headerlink" title="定制自己的镜像 - Dockerfile"></a>定制自己的镜像 - Dockerfile</h1><h2 id="自己写dockerfile"><a href="#自己写dockerfile" class="headerlink" title="自己写dockerfile"></a>自己写dockerfile</h2><ul>
@@ -634,7 +632,7 @@
 <li>Docker运行时内部删除的文件，如何恢复？</li>
 <li><code>RUN rm -rf somefile</code> 镜像会减小吗？<a href="https://github.com/tianon/docker-brew-ubuntu-core/blob/58cc180042b7ebec2b683576faa00c04d5d011e2/xenial/Dockerfile#L36" target="_blank" rel="noopener">示例</a></li>
 </ol>
-<h1 id="扩展阅读-1"><a href="#扩展阅读-1" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
 <li><a href="https://cloud.tencent.com/developer/article/1005172" target="_blank" rel="noopener">什么是 Docker ？ | 腾讯云社区 </a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html" target="_blank" rel="noopener">Docker 入门教程 | 阮一峰</a></li>
 <li><a href="https://yeasy.gitbooks.io/docker_practice/" target="_blank" rel="noopener">docker practice</a></li>
@@ -692,8 +690,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/3ddeac97/" rel="next" title="【Docker系列】docker中的权限">
-                <i class="fa fa-chevron-left"></i> 【Docker系列】docker中的权限
+              <a href="/pub/bb3d8549/" rel="next" title="【Docker系列】Docker的存储">
+                <i class="fa fa-chevron-left"></i> 【Docker系列】Docker的存储
               </a>
             
           </div>
@@ -702,8 +700,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/bb3d8549/" rel="prev" title="【Docker系列】Docker的存储">
-                【Docker系列】Docker的存储 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c874b3c5/" rel="prev" title="【机器翻译】- 发展史">
+                【机器翻译】- 发展史 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -792,7 +790,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-count">157</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1382,7 +1380,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置的难题"><span class="nav-number">1.</span> <span class="nav-text">环境配置的难题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介-amp-简单原理"><span class="nav-number">2.</span> <span class="nav-text">简介 &amp; 简单原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Docker concepts</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">关于镜像的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">3.3.</span> <span class="nav-text">使用建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-number">3.4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制自己的镜像-Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">定制自己的镜像 - Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">自己写dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-images"><span class="nav-number">4.2.</span> <span class="nav-text">build images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker镜像升级"><span class="nav-number">4.3.</span> <span class="nav-text">docker镜像升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-优化"><span class="nav-number">4.4.</span> <span class="nav-text">Dockerfile 优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的操作"><span class="nav-number">5.1.</span> <span class="nav-text">关于镜像的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作-1"><span class="nav-number">5.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile相关"><span class="nav-number">5.3.</span> <span class="nav-text">Dockerfile相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.4.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读-1"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置的难题"><span class="nav-number">1.</span> <span class="nav-text">环境配置的难题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介-amp-简单原理"><span class="nav-number">2.</span> <span class="nav-text">简介 &amp; 简单原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Docker concepts</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的基本操作"><span class="nav-number">3.1.</span> <span class="nav-text">关于镜像的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作"><span class="nav-number">3.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用建议"><span class="nav-number">3.3.</span> <span class="nav-text">使用建议</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定制自己的镜像-Dockerfile"><span class="nav-number">4.</span> <span class="nav-text">定制自己的镜像 - Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自己写dockerfile"><span class="nav-number">4.1.</span> <span class="nav-text">自己写dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#build-images"><span class="nav-number">4.2.</span> <span class="nav-text">build images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker镜像升级"><span class="nav-number">4.3.</span> <span class="nav-text">docker镜像升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile-优化"><span class="nav-number">4.4.</span> <span class="nav-text">Dockerfile 优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#练习"><span class="nav-number">5.</span> <span class="nav-text">练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于镜像的操作"><span class="nav-number">5.1.</span> <span class="nav-text">关于镜像的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于容器的基本操作-1"><span class="nav-number">5.2.</span> <span class="nav-text">关于容器的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile相关"><span class="nav-number">5.3.</span> <span class="nav-text">Dockerfile相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思考题"><span class="nav-number">5.4.</span> <span class="nav-text">思考题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
