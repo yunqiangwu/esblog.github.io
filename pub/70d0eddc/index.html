@@ -6,6 +6,12 @@
 
 
 
+
+
+
+
+
+
 <html class="theme-next gemini" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
@@ -61,19 +67,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-song.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-song.png?v=6.3.0">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-song.png?v=6.2.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-song.png?v=6.3.0">
 
 
-  <link rel="mask-icon" href="/images/logo-song.svg?v=6.2.0" color="#222">
+  <link rel="mask-icon" href="/images/logo-song.svg?v=6.3.0" color="#222">
 
 
 
@@ -88,7 +94,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Gemini',
-    version: '6.2.0',
+    version: '6.3.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     fastclick: false,
@@ -119,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="首先为什么要看源码呢？因为想自己更便捷高效的管理博客，比如  如何更新Hexo。(需要看hexo init的源码，因为该命令隐藏了hexo-starter项目) 如何更新theme。某些bug-fix&amp;amp;新功能。(需要借助git的submodule来高效管理) 如何自己实现一个新功能(比如添加edit button，添加URL哈希。需要了解模板原理)  源码不用细看，看个大概能满足自己的需求">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:07:30.160Z">
+<meta property="og:updated_time" content="2018-08-05T09:22:11.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo源码系列】 之 入门">
 <meta name="twitter:description" content="首先为什么要看源码呢？因为想自己更便捷高效的管理博客，比如  如何更新Hexo。(需要看hexo init的源码，因为该命令隐藏了hexo-starter项目) 如何更新theme。某些bug-fix&amp;amp;新功能。(需要借助git的submodule来高效管理) 如何自己实现一个新功能(比如添加edit button，添加URL哈希。需要了解模板原理)  源码不用细看，看个大概能满足自己的需求">
@@ -220,9 +226,11 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
+    
       
         <h1 class="site-subtitle" itemprop="description">Daily Notes</h1>
       
+    
   </div>
 
   <div class="site-nav-toggle">
@@ -233,7 +241,6 @@
     </button>
   </div>
 </div>
-
 
 
 
@@ -357,7 +364,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="学而不思则罔，思而不学则殆">
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
@@ -408,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:07:30" itemprop="dateModified" datetime="2018-08-05T17:07:30+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -622,6 +629,46 @@
     
       
 
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/pub/8b29356c/" rel="bookmark">Hexo中的SEO技巧</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/pub/0/" rel="bookmark"></a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/pub/fc959554/" rel="bookmark">【Demo】 hexo-tag-instagram</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/pub/d3c1b8ca/" rel="bookmark">【hexo系列】hexo的正确打开方式</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/pub/80e7b4b1/" rel="bookmark">Hexo简介</a></div>
+      
+    </li>
+  
+  </ul>
+
 
     
 
@@ -670,8 +717,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/9ff21bc3/" rel="next" title="渣渣中的渣渣 之 DaoVoice">
-                <i class="fa fa-chevron-left"></i> 渣渣中的渣渣 之 DaoVoice
+              <a href="/pub/3329d7fc/" rel="next" title="google云主机---GCE">
+                <i class="fa fa-chevron-left"></i> google云主机---GCE
               </a>
             
           </div>
@@ -680,8 +727,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/3329d7fc/" rel="prev" title="google云主机---GCE">
-                google云主机---GCE <i class="fa fa-chevron-right"></i>
+              <a href="/pub/ef977b92/" rel="prev" title="github中的git gist wiki区别">
+                github中的git gist wiki区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -698,10 +745,6 @@
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
@@ -1427,7 +1470,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.2.0</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
 
 
 
@@ -1469,7 +1512,10 @@
     
 
     
+	
+    
 
+    
   </div>
 
   
@@ -1531,32 +1577,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
 
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
 
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
 
 
 
@@ -1570,7 +1616,7 @@
         this.page.url = 'https://blog.eson.org/pub/70d0eddc/';
         this.page.identifier = 'pub/70d0eddc/';
         this.page.title = '【Hexo源码系列】 之 入门';
-      };
+        };
       function loadComments () {
         var d = document, s = d.createElement('script');
         s.src = 'https://Eson.disqus.com/embed.js';
@@ -1595,18 +1641,6 @@
         });
       
     </script>
-  
-
-
-
-
-
-	
-
-
-
-
-
   
 
 
@@ -1984,7 +2018,7 @@
   
 
   
-  <script type="text/javascript" src="/js/src/exturl.js?v=6.2.0"></script>
+  <script type="text/javascript" src="/js/src/exturl.js?v=6.3.0"></script>
 
 
   
