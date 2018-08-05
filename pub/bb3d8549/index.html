@@ -121,7 +121,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Cloud%20-%20docker%20-%20image%20layer.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Cloud%20-%20docker%20-%20image%20layer%20-%20tensorflow.png">
-<meta property="og:updated_time" content="2018-08-01T05:39:54.786Z">
+<meta property="og:updated_time" content="2018-08-05T03:00:46.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Docker系列】Docker的存储">
 <meta name="twitter:description" content="简介https://docs.docker.com/storage/storagedriver/ 每个Docker镜像（Image）都引用了一些只读的（read-only）层（layer），不同的文件系统layer也不同。这些layer堆叠在一起构成了容器（Container）的根文件系统（root filesystem）。 当你基于Ubuntu 创建一个新的容器的时候，你其实只是在它的上层又增加">
@@ -411,7 +411,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-01 13:39:54" itemprop="dateModified" datetime="2018-08-01T13:39:54+08:00">2018-08-01</time>
+                <time title="修改时间：2018-08-05 11:00:46" itemprop="dateModified" datetime="2018-08-05T11:00:46+08:00">2018-08-05</time>
               
             
           </span>
@@ -525,9 +525,17 @@
 <h2 id="COW的应用"><a href="#COW的应用" class="headerlink" title="COW的应用"></a>COW的应用</h2><p>CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到。</p>
 <h3 id="COW在java"><a href="#COW在java" class="headerlink" title="COW在java"></a>COW在java</h3><p>从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet</p>
 <h3 id="COW在C"><a href="#COW在C" class="headerlink" title="COW在C++"></a>COW在C++</h3><p>C++的STL中，曾经也有过Copy-On-Write的玩法，参见陈皓的《C++ STL String类中的Copy-On-Write》，后来，因为有很多线程安全上的事，就被去掉了。</p>
-<h1 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h1 id="数据持久化"><a href="#数据持久化" class="headerlink" title="数据持久化"></a>数据持久化</h1><h1 id="配置本地镜像与容器的存储位置"><a href="#配置本地镜像与容器的存储位置" class="headerlink" title="配置本地镜像与容器的存储位置"></a>配置本地镜像与容器的存储位置</h1><p>默认情况下Docker的存放位置为：/var/lib/docker<br>可以通过下面命令查看具体位置：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker info | grep <span class="string">"Docker Root Dir"</span></span><br></pre></td></tr></table></figure></p>
+<p>解决这个问题，最直接的方法当然是挂载分区到这个目录，但是我的数据盘还有其他东西，这肯定不好管理，所以采用修改镜像和容器的存放路径的方式达到目的。</p>
+<p>这个方法里将通过软连接来实现。</p>
+<p>首先停掉Docker服务：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br><span class="line">或者</span><br><span class="line">service docker stop</span><br></pre></td></tr></table></figure></p>
+<p>然后移动整个/var/lib/docker目录到目的路径：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /var/lib/docker /root/data/docker</span><br><span class="line">ln -s /root/data/docker /var/lib/docker</span><br></pre></td></tr></table></figure>
+<p>这时候启动Docker时发现存储目录依旧是/var/lib/docker，但是实际上是存储在数据盘的，你可以在数据盘上看到容量变化。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><a href="http://www.maiziedu.com/wiki/cloud/dockerimage/" target="_blank" rel="noopener">Docker镜像分层技术</a></li>
 <li><a href="https://coolshell.cn/articles/11175.html" target="_blank" rel="noopener">JAVA中的COPYONWRITE容器</a></li>
+<li><a href="https://blog.csdn.net/wenwenxiong/article/details/78728696" target="_blank" rel="noopener">Docker配置本地镜像与容器的存储位置</a></li>
 </ul>
 
       
@@ -584,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/19bc9ce2/" rel="next" title="【Docker系列】Docker入门教程">
-                <i class="fa fa-chevron-left"></i> 【Docker系列】Docker入门教程
+              <a href="/pub/3ddeac97/" rel="next" title="【Docker系列】docker中的权限">
+                <i class="fa fa-chevron-left"></i> 【Docker系列】docker中的权限
               </a>
             
           </div>
@@ -594,8 +602,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/3ddeac97/" rel="prev" title="【Docker系列】docker中的权限">
-                【Docker系列】docker中的权限 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/19bc9ce2/" rel="prev" title="【Docker系列】Docker入门教程">
+                【Docker系列】Docker入门教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -684,7 +692,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">159</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1272,7 +1280,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储-镜像层-Layers"><span class="nav-number">1.1.</span> <span class="nav-text">存储 - 镜像层(Layers)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写时拷贝策略-CopyOnWrite"><span class="nav-number">2.</span> <span class="nav-text">写时拷贝策略(CopyOnWrite)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#COW的应用"><span class="nav-number">2.1.</span> <span class="nav-text">COW的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在java"><span class="nav-number">2.1.1.</span> <span class="nav-text">COW在java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在C"><span class="nav-number">2.1.2.</span> <span class="nav-text">COW在C++</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据持久化"><span class="nav-number">3.</span> <span class="nav-text">数据持久化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#存储-镜像层-Layers"><span class="nav-number">1.1.</span> <span class="nav-text">存储 - 镜像层(Layers)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写时拷贝策略-CopyOnWrite"><span class="nav-number">2.</span> <span class="nav-text">写时拷贝策略(CopyOnWrite)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#COW的应用"><span class="nav-number">2.1.</span> <span class="nav-text">COW的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在java"><span class="nav-number">2.1.1.</span> <span class="nav-text">COW在java</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COW在C"><span class="nav-number">2.1.2.</span> <span class="nav-text">COW在C++</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据持久化"><span class="nav-number">3.</span> <span class="nav-text">数据持久化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#配置本地镜像与容器的存储位置"><span class="nav-number">4.</span> <span class="nav-text">配置本地镜像与容器的存储位置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
