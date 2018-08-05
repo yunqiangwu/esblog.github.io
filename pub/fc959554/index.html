@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="Instagramhexo-tag-instagram embeds Instagram photo and movie for Hexo blog. Simple UsageBy default, width:100%, captioned:true 1&amp;#123;% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %&amp;#125;    It">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.123Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Demo】 hexo-tag-instagram">
 <meta name="twitter:description" content="Instagramhexo-tag-instagram embeds Instagram photo and movie for Hexo blog. Simple UsageBy default, width:100%, captioned:true 1&amp;#123;% instagram https://www.instagram.com/p/Bg71nq4HuAU/ %&amp;#125;    It">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -446,6 +446,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/fc959554/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/fc959554/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -535,7 +545,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/0/" rel="bookmark"></a></div>
+      <div class="popular-posts-title"><a href="/pub/a03f82c/" rel="bookmark">【Demo】 hexo-tag-chat</a></div>
       
     </li>
   
@@ -549,7 +559,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/2cc9ead/" rel="bookmark">【Hexo插件系列】permalink 永久链接 - hexo链接持久化解决方案</a></div>
+      <div class="popular-posts-title"><a href="/pub/70564e/" rel="bookmark">【Hexo插件系列】日志排序插件 hexo-generator-index，实现文章置顶</a></div>
       
     </li>
   
@@ -563,7 +573,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/70564e/" rel="bookmark">【Hexo插件系列】日志排序插件 hexo-generator-index，实现文章置顶</a></div>
+      <div class="popular-posts-title"><a href="/pub/2cc9ead/" rel="bookmark">【Hexo插件系列】permalink 永久链接 - hexo链接持久化解决方案</a></div>
       
     </li>
   
@@ -619,8 +629,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/a03f82c/" rel="next" title="【Demo】 hexo-tag-chat">
-                <i class="fa fa-chevron-left"></i> 【Demo】 hexo-tag-chat
+              <a href="/pub/48d1b830/" rel="next" title="贪多嚼不烂">
+                <i class="fa fa-chevron-left"></i> 贪多嚼不烂
               </a>
             
           </div>
@@ -629,8 +639,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/8f038bde/" rel="prev" title="陈云霁报告 - 听课笔记">
-                陈云霁报告 - 听课笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/a03f82c/" rel="prev" title="【Demo】 hexo-tag-chat">
+                【Demo】 hexo-tag-chat <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -655,12 +665,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1510,46 +1517,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/fc959554/';
-        this.page.identifier = 'pub/fc959554/';
-        this.page.title = '【Demo】 hexo-tag-instagram';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

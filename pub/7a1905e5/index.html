@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="什么时候采用均方差，什么时候采用cross entropy？ 连个任意向量的距离L1 L2 L2距离，更改坐标系，距离不变。L1距离，更改坐标系，距离会变。coordinate dependency 有特殊意义的，可以用L1. 没有特殊意义的向量，最好用L2。 http://vision.stanford.edu/teaching/cs231n-demos/knn/ 两个概率的距离 cross e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.118Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="metric 距离度量">
 <meta name="twitter:description" content="什么时候采用均方差，什么时候采用cross entropy？ 连个任意向量的距离L1 L2 L2距离，更改坐标系，距离不变。L1距离，更改坐标系，距离会变。coordinate dependency 有特殊意义的，可以用L1. 没有特殊意义的向量，最好用L2。 http://vision.stanford.edu/teaching/cs231n-demos/knn/ 两个概率的距离 cross e">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -446,6 +446,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/7a1905e5/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/7a1905e5/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -566,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/48f2c2f6/" rel="next" title="【机器学习系列】特征工程">
-                <i class="fa fa-chevron-left"></i> 【机器学习系列】特征工程
+              <a href="/pub/8b29356c/" rel="next" title="Hexo中的SEO技巧">
+                <i class="fa fa-chevron-left"></i> Hexo中的SEO技巧
               </a>
             
           </div>
@@ -602,12 +612,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1457,46 +1464,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/7a1905e5/';
-        this.page.identifier = 'pub/7a1905e5/';
-        this.page.title = 'metric 距离度量';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

@@ -126,7 +126,7 @@
 <meta property="og:description" content="路由器是怎样做到连接不同网络的？用到的关键技术有什么？路由器的好处是为不同类型的物理网络提供连接：以太网、令牌环网、点对点的链接和FDDI（光纤分布式数据接口）等等。 现在网关这个术语只用来表示应用层网关：一个连接两种不同协议族的进程（例如，TCP/IP和IBM的SNA），它为某个特定的应用程序服务（常常是电子邮件或文件传输）。 不在同一    应用层和运输层使用端到端（End-to-end）协议">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/TCP%20IP%20-%20%E8%B7%AF%E7%94%B1%E5%99%A8%E8%BF%9E%E6%8E%A5%E4%B8%A4%E4%B8%AA%E7%BD%91%E7%BB%9C%20-%20TCPIP%E8%AF%A6%E8%A7%A3.PNG">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.157Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="路由器">
 <meta name="twitter:description" content="路由器是怎样做到连接不同网络的？用到的关键技术有什么？路由器的好处是为不同类型的物理网络提供连接：以太网、令牌环网、点对点的链接和FDDI（光纤分布式数据接口）等等。 现在网关这个术语只用来表示应用层网关：一个连接两种不同协议族的进程（例如，TCP/IP和IBM的SNA），它为某个特定的应用程序服务（常常是电子邮件或文件传输）。 不在同一    应用层和运输层使用端到端（End-to-end）协议">
@@ -417,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -462,6 +462,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/5799c0b3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/5799c0b3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -573,8 +583,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/fae97115/" rel="next" title="经典的web编辑器--CKEditor">
-                <i class="fa fa-chevron-left"></i> 经典的web编辑器--CKEditor
+              <a href="/pub/5e6131fb/" rel="next" title="网络分层">
+                <i class="fa fa-chevron-left"></i> 网络分层
               </a>
             
           </div>
@@ -583,8 +593,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/5e6131fb/" rel="prev" title="网络分层">
-                网络分层 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/fae97115/" rel="prev" title="经典的web编辑器--CKEditor">
+                经典的web编辑器--CKEditor <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -609,12 +619,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1464,46 +1471,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/5799c0b3/';
-        this.page.identifier = 'pub/5799c0b3/';
-        this.page.title = '路由器';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.184Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
 <meta name="twitter:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -460,6 +460,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/d66c7262/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/d66c7262/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -714,8 +724,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/a6941437/" rel="next" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
-                <i class="fa fa-chevron-left"></i> 【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）
+              <a href="/pub/c79f2f90/" rel="next" title="GRU的源码实现">
+                <i class="fa fa-chevron-left"></i> GRU的源码实现
               </a>
             
           </div>
@@ -724,8 +734,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c79f2f90/" rel="prev" title="GRU的源码实现">
-                GRU的源码实现 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/a6941437/" rel="prev" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
+                【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -750,12 +760,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1605,46 +1612,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/d66c7262/';
-        this.page.identifier = 'pub/d66c7262/';
-        this.page.title = '【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

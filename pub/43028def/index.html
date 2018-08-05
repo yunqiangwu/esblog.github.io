@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="面临的挑战NLP常见的问题见trick-NLP 机器翻译独有的问题歧义自然语言中普遍存在的歧义和未知现象  句法结构歧义/词汇歧义/语用歧义 … 新的词汇、术语、结构、语义  机器翻译不仅仅是字符串的转换不同语言之间文化的差异现有方法无法表示和利用世界知识和常识 bad case 未登录词(OOV)的影响以及策略NMT 系统为了能够控制计算的复杂度，有着一个固定大小的词汇表，通常会将词汇表限制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.107Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】- 面临的挑战">
 <meta name="twitter:description" content="面临的挑战NLP常见的问题见trick-NLP 机器翻译独有的问题歧义自然语言中普遍存在的歧义和未知现象  句法结构歧义/词汇歧义/语用歧义 … 新的词汇、术语、结构、语义  机器翻译不仅仅是字符串的转换不同语言之间文化的差异现有方法无法表示和利用世界知识和常识 bad case 未登录词(OOV)的影响以及策略NMT 系统为了能够控制计算的复杂度，有着一个固定大小的词汇表，通常会将词汇表限制">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -439,6 +439,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/43028def/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/43028def/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -602,12 +612,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1457,46 +1464,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/43028def/';
-        this.page.identifier = 'pub/43028def/';
-        this.page.title = '【机器翻译】- 面临的挑战';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

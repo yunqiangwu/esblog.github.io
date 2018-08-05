@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="Overview基本概念&amp;nbsp;数据单元/格式TCP/IP层OSI层功能TCP/IP协议族典型设备主机层Dagta(数据)应用层7. 应用层网络进程到应用程序。针对特定应用规定各层协议、时序、表示等，进行封装。在端系统中用软件来实现，如HTTP等DHCP、Telnet、FTP、HTTP、SNMP、DNS网关6. 表示层数据表示形式，加密和解密，把机器相关的数据转换成独立于机器的数据。规定数据的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.134Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络分层">
 <meta name="twitter:description" content="Overview基本概念&amp;nbsp;数据单元/格式TCP/IP层OSI层功能TCP/IP协议族典型设备主机层Dagta(数据)应用层7. 应用层网络进程到应用程序。针对特定应用规定各层协议、时序、表示等，进行封装。在端系统中用软件来实现，如HTTP等DHCP、Telnet、FTP、HTTP、SNMP、DNS网关6. 表示层数据表示形式，加密和解密，把机器相关的数据转换成独立于机器的数据。规定数据的">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -453,6 +453,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/5e6131fb/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/5e6131fb/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -640,8 +650,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/5799c0b3/" rel="next" title="路由器">
-                <i class="fa fa-chevron-left"></i> 路由器
+              <a href="/pub/b7c755c3/" rel="next" title="反演 百度DNS解析规则">
+                <i class="fa fa-chevron-left"></i> 反演 百度DNS解析规则
               </a>
             
           </div>
@@ -650,8 +660,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c429c70d/" rel="prev" title="禁止搜索引擎收录的方法">
-                禁止搜索引擎收录的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/5799c0b3/" rel="prev" title="路由器">
+                路由器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -676,12 +686,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1531,46 +1538,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/5e6131fb/';
-        this.page.identifier = 'pub/5e6131fb/';
-        this.page.title = '网络分层';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

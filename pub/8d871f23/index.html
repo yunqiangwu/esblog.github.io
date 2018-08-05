@@ -127,7 +127,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.stack.imgur.com/MyUMt.png">
 <meta property="og:image" content="http://scikit-learn.org/stable/_images/sphx_glr_plot_sgd_loss_functions_001.png">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.141Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.845Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对比不同的loss funtion">
 <meta name="twitter:description" content="分类 loss 参考 http://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_loss_functions.html 0-1 losslogistic losshinge-loss也叫SVM loss max(0, 1-py) h(x)=max(1−x,0) 平滑的hinge-lossE = ln (1 + exp(−t">
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -456,6 +456,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/8d871f23/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/8d871f23/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -571,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/9fa270bc/" rel="next" title="图像风格迁移-Image Style Transfer">
-                <i class="fa fa-chevron-left"></i> 图像风格迁移-Image Style Transfer
+              <a href="/pub/8e7b306/" rel="next" title="反卷积 逆卷积(Deconvolution)  - CNN的逆过程">
+                <i class="fa fa-chevron-left"></i> 反卷积 逆卷积(Deconvolution)  - CNN的逆过程
               </a>
             
           </div>
@@ -607,12 +617,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1462,46 +1469,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/8d871f23/';
-        this.page.identifier = 'pub/8d871f23/';
-        this.page.title = '对比不同的loss funtion';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

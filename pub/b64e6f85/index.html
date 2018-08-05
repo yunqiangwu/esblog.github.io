@@ -126,7 +126,7 @@
 <meta property="og:description" content="参考 为什么说随机最速下降法(SGD)是一个很好的方法？ | 知乎 SGD在两层神经网络上是怎么收敛的？ An overview of gradient descent optimization algorithms | 经典 繁体翻译 - 隨機梯度下降（SGD）優化算法及可視化 知乎翻译   keras的优化器">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://img.mp.itc.cn/upload/20170404/44ce325fe7ae4be6b68641e9a7b927ba_th.gif">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.116Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）">
 <meta name="twitter:description" content="参考 为什么说随机最速下降法(SGD)是一个很好的方法？ | 知乎 SGD在两层神经网络上是怎么收敛的？ An overview of gradient descent optimization algorithms | 经典 繁体翻译 - 隨機梯度下降（SGD）優化算法及可視化 知乎翻译   keras的优化器">
@@ -417,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -448,6 +448,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/b64e6f85/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/b64e6f85/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -566,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/88165cc0/" rel="next" title="个人所得税">
-                <i class="fa fa-chevron-left"></i> 个人所得税
+              <a href="/pub/980c5a0f/" rel="next" title="SVD、PCA、LDA、LSA、PLSA、LDA">
+                <i class="fa fa-chevron-left"></i> SVD、PCA、LDA、LSA、PLSA、LDA
               </a>
             
           </div>
@@ -576,8 +586,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/980c5a0f/" rel="prev" title="SVD、PCA、LDA、LSA、PLSA、LDA">
-                SVD、PCA、LDA、LSA、PLSA、LDA <i class="fa fa-chevron-right"></i>
+              <a href="/pub/cd9c7906/" rel="prev" title="自然语言处理 - 从规则到统计">
+                自然语言处理 - 从规则到统计 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,12 +612,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1457,46 +1464,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/b64e6f85/';
-        this.page.identifier = 'pub/b64e6f85/';
-        this.page.title = '优化方法总结比较（SGD，Adagrad，Adadelta，Adam，Adamax，Nadam）';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

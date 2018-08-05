@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://blog.eson.org/images/raw/Politics%20-%20国家监察委员会%20-%20改革后1%20-%20中纪委监委.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Politics%20-%20国家监察委员会%20-%20改革后2%20-%20中纪委监委.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/Politics%20-%20党和国家机构改革%20-%20国家监察委员会%20-%20人民日报.gif">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.205Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【读图识政治】国家机构中的新面孔 - 国家监察委员会">
 <meta name="twitter:description" content="这是标题 afda  fad  fad  监察委干嘛的，跟纪委有关系没？功能冲突不？国家监察委员会是中国特色的国家反腐败机构，这个机构将与中国国务院等机构并列为正国级单位。国家监察委员会或将与现在的中纪委合署办公。  扩展阅读监察委员会，国家机构中的新面孔｜长漫画 - 中央纪委国家监委网站">
@@ -421,7 +421,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -473,6 +473,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/65bf8f/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/65bf8f/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -661,12 +671,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1516,46 +1523,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/65bf8f/';
-        this.page.identifier = 'pub/65bf8f/';
-        this.page.title = '【读图识政治】国家机构中的新面孔 - 国家监察委员会';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

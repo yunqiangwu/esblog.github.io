@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="前台渲染 mathjax.js angualr vue-  后台渲染 python flask，django java jsp-  参考 [精读前后端渲染之争 | 知乎]https://zhuanlan.zhihu.com/p/26366128 Here’s Why Client-side Rendering Won | freecodecamp | 中文翻译 前后端渲染之争 后端渲染html、前">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.117Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前后端渲染之争">
 <meta name="twitter:description" content="前台渲染 mathjax.js angualr vue-  后台渲染 python flask，django java jsp-  参考 [精读前后端渲染之争 | 知乎]https://zhuanlan.zhihu.com/p/26366128 Here’s Why Client-side Rendering Won | freecodecamp | 中文翻译 前后端渲染之争 后端渲染html、前">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -446,6 +446,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/5a71ae7b/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/5a71ae7b/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -567,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/fdc2b2a8/" rel="next" title="【数据分析篇】SemEval-2018-阅读理解">
-                <i class="fa fa-chevron-left"></i> 【数据分析篇】SemEval-2018-阅读理解
+              <a href="/pub/7e199c30/" rel="next" title="推荐系统架构">
+                <i class="fa fa-chevron-left"></i> 推荐系统架构
               </a>
             
           </div>
@@ -577,8 +587,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c9065739/" rel="prev" title="exact inference">
-                exact inference <i class="fa fa-chevron-right"></i>
+              <a href="/pub/fdc2b2a8/" rel="prev" title="【数据分析篇】SemEval-2018-阅读理解">
+                【数据分析篇】SemEval-2018-阅读理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -603,12 +613,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1458,46 +1465,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/5a71ae7b/';
-        this.page.identifier = 'pub/5a71ae7b/';
-        this.page.title = '前后端渲染之争';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

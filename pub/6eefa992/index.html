@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20GNMT%20-%20LSTM%20with%20residual.png">
 <meta property="og:image" content="https://1.bp.blogspot.com/-jOLa-LdidQU/V-qV2oJn1aI/AAAAAAAABPg/-6OhKKPhxT89Vs9HhyKMEnyG_0ncWGjJQCLcB/s640/image00.png">
 <meta property="og:image" content="https://1.bp.blogspot.com/-TAEq5oc14jQ/V-qWTeqaA7I/AAAAAAAABPo/IEmOBO6x7nIkzLqomgk_DwVtzvpEtJF1QCLcB/s640/img3.png">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.130Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】RNN系列 - GNMT">
 <meta name="twitter:description" content="2016年9月，Google机器翻译实现重大突破！Google研究团队宣布开发Google神经机器翻译系统(GNMT)。同年11月，Google翻译停止使用其自2007年10月以来一直使用的专有统计机器翻译（SMT）技术，开始使用神经机器翻译（NMT）。从此宣告， 机器翻译经过27年左右， 正式从1989年的IBM机器翻译模型(PBMT，基于短语的机器翻译)，过渡到了神经网络机器翻译模型。 GNM">
@@ -421,7 +421,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -459,6 +459,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/6eefa992/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/6eefa992/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -629,8 +639,8 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/5d84fcc7/" rel="next" title="中朝">
-                <i class="fa fa-chevron-left"></i> 中朝
+              <a href="/pub/a8b3f785/" rel="next" title="【机器翻译】字符级机器翻译 - BPE">
+                <i class="fa fa-chevron-left"></i> 【机器翻译】字符级机器翻译 - BPE
               </a>
             
           </div>
@@ -639,8 +649,8 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/b4bccd18/" rel="prev" title="【机器翻译】CNN系列 - convseq2seq">
-                【机器翻译】CNN系列 - convseq2seq <i class="fa fa-chevron-right"></i>
+              <a href="/pub/5d84fcc7/" rel="prev" title="中朝">
+                中朝 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -665,12 +675,9 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1520,46 +1527,50 @@ GNMT improves on the quality of translation by applying an example based (EBMT) 
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/6eefa992/';
-        this.page.identifier = 'pub/6eefa992/';
-        this.page.title = '【机器翻译】RNN系列 - GNMT';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

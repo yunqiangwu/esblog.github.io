@@ -126,7 +126,7 @@
 <meta property="og:description" content="运行环境由于目前各种环境（浏览器或 Node）暂不支持ES6的代码，所以需要一些shim和polyfill（IE需要）让ES6写的代码能够转化为ES5形式并可以正常运行在浏览器中。   从上图可以看出在 Es5 浏览器下需要以下模块加载器：  systemjs - 通用模块加载器，支持AMD、CommonJS、ES6等各种格式的JS模块加载。 es6-module-loader - ES6模块加载">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2016/09/toolchain.jpg">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.194Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Angular系列】 基本概念">
 <meta name="twitter:description" content="运行环境由于目前各种环境（浏览器或 Node）暂不支持ES6的代码，所以需要一些shim和polyfill（IE需要）让ES6写的代码能够转化为ES5形式并可以正常运行在浏览器中。   从上图可以看出在 Es5 浏览器下需要以下模块加载器：  systemjs - 通用模块加载器，支持AMD、CommonJS、ES6等各种格式的JS模块加载。 es6-module-loader - ES6模块加载">
@@ -417,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -469,6 +469,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/84fd5459/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/84fd5459/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -625,8 +635,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/9299c162/" rel="next" title="文件管理工具 - Everthing原理 之 还没看懂">
-                <i class="fa fa-chevron-left"></i> 文件管理工具 - Everthing原理 之 还没看懂
+              <a href="/pub/ad7baabf/" rel="next" title="javascript与typescript的对比">
+                <i class="fa fa-chevron-left"></i> javascript与typescript的对比
               </a>
             
           </div>
@@ -635,8 +645,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/40a5132a/" rel="prev" title="【Angular系列】Angular 快速入门教程 - Hello Angular">
-                【Angular系列】Angular 快速入门教程 - Hello Angular <i class="fa fa-chevron-right"></i>
+              <a href="/pub/9299c162/" rel="prev" title="文件管理工具 - Everthing原理 之 还没看懂">
+                文件管理工具 - Everthing原理 之 还没看懂 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -661,12 +671,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1516,46 +1523,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/84fd5459/';
-        this.page.identifier = 'pub/84fd5459/';
-        this.page.title = '【Angular系列】 基本概念';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

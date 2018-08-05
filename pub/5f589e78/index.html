@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="websocket属于服务器推送技术的一种。HTML5定义了 WebSocket 协议，以及相关的编程API，能更好的实现双向通信且节省服务器资源和带宽。   WebSocket 实际上指的是一种协议，与我们熟知的 Http 协议是同等的一个网络协议。用网络模型结构来解释的话， WebSocket 和 Http 协议都属于 应用层协议，两者都基于传输层协议 TCP。  http协议  http:/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.138Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于websocket">
 <meta name="twitter:description" content="websocket属于服务器推送技术的一种。HTML5定义了 WebSocket 协议，以及相关的编程API，能更好的实现双向通信且节省服务器资源和带宽。   WebSocket 实际上指的是一种协议，与我们熟知的 Http 协议是同等的一个网络协议。用网络模型结构来解释的话， WebSocket 和 Http 协议都属于 应用层协议，两者都基于传输层协议 TCP。  http协议  http:/">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -453,6 +453,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/5f589e78/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/5f589e78/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -628,8 +638,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/855d5922/" rel="next" title="微信网页版 聊天原理">
-                <i class="fa fa-chevron-left"></i> 微信网页版 聊天原理
+              <a href="/pub/7c655851/" rel="next" title="【Markdown系列】语法进阶 (Advanced Markdown Tips)">
+                <i class="fa fa-chevron-left"></i> 【Markdown系列】语法进阶 (Advanced Markdown Tips)
               </a>
             
           </div>
@@ -638,8 +648,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/a6941437/" rel="prev" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
-                【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM） <i class="fa fa-chevron-right"></i>
+              <a href="/pub/855d5922/" rel="prev" title="微信网页版 聊天原理">
+                微信网页版 聊天原理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,12 +674,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1519,46 +1526,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/5f589e78/';
-        this.page.identifier = 'pub/5f589e78/';
-        this.page.title = '关于websocket';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

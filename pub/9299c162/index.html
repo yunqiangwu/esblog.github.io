@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介Everything is an Awesome Utility that Locates Files and Folders Instantly in Windows Everything仅支持windows系统的NTFS硬盘格式(不支持FAT、FAT32)。Everything默认对文件名、文件大小、日期以及其它某些meta data建索引，可关闭某些字段索引来加速。  建索引很快 数据库">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.160Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件管理工具 - Everthing原理 之 还没看懂">
 <meta name="twitter:description" content="简介Everything is an Awesome Utility that Locates Files and Folders Instantly in Windows Everything仅支持windows系统的NTFS硬盘格式(不支持FAT、FAT32)。Everything默认对文件名、文件大小、日期以及其它某些meta data建索引，可关闭某些字段索引来加速。  建索引很快 数据库">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -460,6 +460,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/9299c162/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/9299c162/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -647,8 +657,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/848e312f/" rel="next" title="如何debug typescript">
-                <i class="fa fa-chevron-left"></i> 如何debug typescript
+              <a href="/pub/84fd5459/" rel="next" title="【Angular系列】 基本概念">
+                <i class="fa fa-chevron-left"></i> 【Angular系列】 基本概念
               </a>
             
           </div>
@@ -657,8 +667,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/84fd5459/" rel="prev" title="【Angular系列】 基本概念">
-                【Angular系列】 基本概念 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/848e312f/" rel="prev" title="如何debug typescript">
+                如何debug typescript <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -683,12 +693,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1538,46 +1545,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/9299c162/';
-        this.page.identifier = 'pub/9299c162/';
-        this.page.title = '文件管理工具 - Everthing原理 之 还没看懂';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

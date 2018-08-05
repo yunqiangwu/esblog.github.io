@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="Overview域名系统（DNS）是一种用于 TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。 通常情况下，我们是先设定DNS解析规则，然后ISP(供应商)依据指定的解析规则进行DNS解析。同样，我们通过测试解析结果，也可以反推DNS解析规则。本文以百度首页为例，分析其DNS解析规则。 DNS地址解析器的核心功能能  gethostbyname">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.208Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反演 百度DNS解析规则">
 <meta name="twitter:description" content="Overview域名系统（DNS）是一种用于 TCP/IP应用程序的分布式数据库，它提供主机名字和IP地址之间的转换及有关电子邮件的选路信息。 通常情况下，我们是先设定DNS解析规则，然后ISP(供应商)依据指定的解析规则进行DNS解析。同样，我们通过测试解析结果，也可以反推DNS解析规则。本文以百度首页为例，分析其DNS解析规则。 DNS地址解析器的核心功能能  gethostbyname">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -467,6 +467,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/b7c755c3/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/b7c755c3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -960,8 +970,8 @@ ARP（地址解析协议） RARP（逆地址解析协议），DNS中是不是也
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/fae97115/" rel="prev" title="经典的web编辑器--CKEditor">
-                经典的web编辑器--CKEditor <i class="fa fa-chevron-right"></i>
+              <a href="/pub/5e6131fb/" rel="prev" title="网络分层">
+                网络分层 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -986,12 +996,9 @@ ARP（地址解析协议） RARP（逆地址解析协议），DNS中是不是也
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1841,46 +1848,50 @@ ARP（地址解析协议） RARP（逆地址解析协议），DNS中是不是也
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/b7c755c3/';
-        this.page.identifier = 'pub/b7c755c3/';
-        this.page.title = '反演 百度DNS解析规则';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

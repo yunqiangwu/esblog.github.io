@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="背景众所周知，神经网络分为有向网络，无向网络。典型的无向网络有CRF、Autoencoder、RBM等。由于Autoencoder和RBM是层级结构，也叫双向网络。这种是专门设计的双向网络，具有很好的理论依据(特别是RBM)。用的更多的网络，比如NN、CNN等都是单向网络。 PGM理论好，实践弱 概率图模型，又称有向图模型。实际上我们是可以通过后验概率，计算图模型的反向。 但是  PGM中的后验概">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.182Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反卷积 逆卷积(Deconvolution)  - CNN的逆过程">
 <meta name="twitter:description" content="背景众所周知，神经网络分为有向网络，无向网络。典型的无向网络有CRF、Autoencoder、RBM等。由于Autoencoder和RBM是层级结构，也叫双向网络。这种是专门设计的双向网络，具有很好的理论依据(特别是RBM)。用的更多的网络，比如NN、CNN等都是单向网络。 PGM理论好，实践弱 概率图模型，又称有向图模型。实际上我们是可以通过后验概率，计算图模型的反向。 但是  PGM中的后验概">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -460,6 +460,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/8e7b306/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/8e7b306/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -607,8 +617,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/a388e785/" rel="next" title="分词">
-                <i class="fa fa-chevron-left"></i> 分词
+              <a href="/pub/9fa270bc/" rel="next" title="图像风格迁移-Image Style Transfer">
+                <i class="fa fa-chevron-left"></i> 图像风格迁移-Image Style Transfer
               </a>
             
           </div>
@@ -617,8 +627,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/4d880ede/" rel="prev" title="CNN网路结构可视化">
-                CNN网路结构可视化 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/8d871f23/" rel="prev" title="对比不同的loss funtion">
+                对比不同的loss funtion <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -643,12 +653,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1498,46 +1505,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/8e7b306/';
-        this.page.identifier = 'pub/8e7b306/';
-        this.page.title = '反卷积 逆卷积(Deconvolution)  - CNN的逆过程';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

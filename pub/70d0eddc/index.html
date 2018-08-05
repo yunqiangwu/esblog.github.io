@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="首先为什么要看源码呢？因为想自己更便捷高效的管理博客，比如  如何更新Hexo。(需要看hexo init的源码，因为该命令隐藏了hexo-starter项目) 如何更新theme。某些bug-fix&amp;amp;新功能。(需要借助git的submodule来高效管理) 如何自己实现一个新功能(比如添加edit button，添加URL哈希。需要了解模板原理)  源码不用细看，看个大概能满足自己的需求">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.183Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo源码系列】 之 入门">
 <meta name="twitter:description" content="首先为什么要看源码呢？因为想自己更便捷高效的管理博客，比如  如何更新Hexo。(需要看hexo init的源码，因为该命令隐藏了hexo-starter项目) 如何更新theme。某些bug-fix&amp;amp;新功能。(需要借助git的submodule来高效管理) 如何自己实现一个新功能(比如添加edit button，添加URL哈希。需要了解模板原理)  源码不用细看，看个大概能满足自己的需求">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -460,6 +460,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/70d0eddc/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/70d0eddc/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -642,14 +652,14 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/0/" rel="bookmark"></a></div>
+      <div class="popular-posts-title"><a href="/pub/a03f82c/" rel="bookmark">【Demo】 hexo-tag-chat</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/fc959554/" rel="bookmark">【Demo】 hexo-tag-instagram</a></div>
+      <div class="popular-posts-title"><a href="/pub/0/" rel="bookmark"></a></div>
       
     </li>
   
@@ -717,8 +727,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/3329d7fc/" rel="next" title="google云主机---GCE">
-                <i class="fa fa-chevron-left"></i> google云主机---GCE
+              <a href="/pub/8dcc3c99/" rel="next" title="关于域名">
+                <i class="fa fa-chevron-left"></i> 关于域名
               </a>
             
           </div>
@@ -727,8 +737,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/ef977b92/" rel="prev" title="github中的git gist wiki区别">
-                github中的git gist wiki区别 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/d3c1b8ca/" rel="prev" title="【hexo系列】hexo的正确打开方式">
+                【hexo系列】hexo的正确打开方式 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -753,12 +763,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1608,46 +1615,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/70d0eddc/';
-        this.page.identifier = 'pub/70d0eddc/';
-        this.page.title = '【Hexo源码系列】 之 入门';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 

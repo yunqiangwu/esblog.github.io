@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="背景hexo默认的链接是http://example.com/2013/07/14/path/hello-world/ 这种类型的，这源于站点目录下的配置_config.yml里的配置: permalink: :year/:month/:day/:title/. 这种默认配置的缺点  文件名是中文，导致url链接里有中文出现 年月日都会有分隔符，目录层次较深 后台路径path变化，会导致链接批量变">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T09:22:11.192Z">
+<meta property="og:updated_time" content="2018-08-05T09:44:11.917Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Hexo插件系列】permalink 永久链接 - hexo链接持久化解决方案">
 <meta name="twitter:description" content="背景hexo默认的链接是http://example.com/2013/07/14/path/hello-world/ 这种类型的，这源于站点目录下的配置_config.yml里的配置: permalink: :year/:month/:day/:title/. 这种默认配置的缺点  文件名是中文，导致url链接里有中文出现 年月日都会有分隔符，目录层次较深 后台路径path变化，会导致链接批量变">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 17:22:11" itemprop="dateModified" datetime="2018-08-05T17:22:11+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-05 17:44:11" itemprop="dateModified" datetime="2018-08-05T17:44:11+08:00">2018-08-05</time>
               
             
           </span>
@@ -467,6 +467,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/pub/2cc9ead/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/2cc9ead/" itemprop="commentsCount"></span>
+                </a>
+              </span>
             
           
 
@@ -585,6 +595,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="/pub/a03f82c/" rel="bookmark">【Demo】 hexo-tag-chat</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="/pub/e2f6e239/" rel="bookmark">【Hexo插件系列】日志的自动分类插件 hexo-auto-category</a></div>
       
     </li>
@@ -592,7 +609,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/fc959554/" rel="bookmark">【Demo】 hexo-tag-instagram</a></div>
+      <div class="popular-posts-title"><a href="/pub/70564e/" rel="bookmark">【Hexo插件系列】日志排序插件 hexo-generator-index，实现文章置顶</a></div>
       
     </li>
   
@@ -600,13 +617,6 @@
       
       
       <div class="popular-posts-title"><a href="/pub/92bb368/" rel="bookmark">【Hexo插件系列】Hexo 插件推荐</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="/pub/70564e/" rel="bookmark">【Hexo插件系列】日志排序插件 hexo-generator-index，实现文章置顶</a></div>
       
     </li>
   
@@ -698,12 +708,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -1553,46 +1560,50 @@
 
   
 
-  
+
 
   
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'https://blog.eson.org/pub/2cc9ead/';
-        this.page.identifier = 'pub/2cc9ead/';
-        this.page.title = '【Hexo插件系列】permalink 永久链接 - hexo链接持久化解决方案';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://Eson.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'esblog',
+            repo: 'https://github.com/ESblog/comments',
+            
+            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
+            
+                client_id: 'c60ad22b1334dc01a9d4'
+            }});
+        gitment.render('gitment-container');
       }
+
       
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
+      renderGitment();
       
-    </script>
-  
-
-
-
-
-
-
+      </script>
+    
 
 
 
