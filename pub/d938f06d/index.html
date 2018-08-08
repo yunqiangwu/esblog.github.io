@@ -117,18 +117,18 @@
 
 
 
-  <meta name="description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程大体的流程如下：  用python写tensorflow模型、训练，训练完成后，使用tensorflow saver 将模型保">
+  <meta name="description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程流程如下：  用python训练模型 保存模型为SavedModel graph文件pbtx: 导出为protobuf的二进制">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【bazel系列】C++调用tensorflow训练好的模型">
 <meta property="og:url" content="https://blog.eson.org/pub/d938f06d/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程大体的流程如下：  用python写tensorflow模型、训练，训练完成后，使用tensorflow saver 将模型保">
+<meta property="og:description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程流程如下：  用python训练模型 保存模型为SavedModel graph文件pbtx: 导出为protobuf的二进制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T10:09:27.865Z">
+<meta property="og:updated_time" content="2018-08-06T12:30:40.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【bazel系列】C++调用tensorflow训练好的模型">
-<meta name="twitter:description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程大体的流程如下：  用python写tensorflow模型、训练，训练完成后，使用tensorflow saver 将模型保">
+<meta name="twitter:description" content="简介用python写的tensorflow模型，训练好之后，想使用C++调用python训练好的模型，怎么办？ 为什么要这样做？ python程序员训练的模型，线上inference对接采用C++-  怎样做？需要  c_api.h libtensorflow.so  流程流程如下：  用python训练模型 保存模型为SavedModel graph文件pbtx: 导出为protobuf的二进制">
 
 
 
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 18:09:27" itemprop="dateModified" datetime="2018-08-05T18:09:27+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-06 20:30:40" itemprop="dateModified" datetime="2018-08-06T20:30:40+08:00">2018-08-06</time>
               
             
           </span>
@@ -519,14 +519,18 @@
 <li>c_api.h</li>
 <li>libtensorflow.so</li>
 </ul>
-<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>大体的流程如下：</p>
+<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>流程如下：</p>
 <ol>
-<li>用python写tensorflow模型、训练，训练完成后，使用tensorflow saver 将模型保存下来。<ul>
+<li>用python训练模型</li>
+<li>保存模型为<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md" target="_blank" rel="noopener">SavedModel</a><ul>
 <li>graph文件<code>pbtx</code>: 导出为protobuf的二进制文件</li>
 <li>checkpoint文件<code>.ckpt</code>: 训练好的模型参数</li>
 </ul>
 </li>
-<li>将<code>pbtx</code>和<code>ckpt</code>绑定编译为<code>pb</code>，调用tensorflow自带的freeze_graph.py 。<br><br>这个步骤的作用是把checkpoint .ckpt文件中的参数转化为常量const operator后和之前的tensor定义绑定在一起。</li>
+<li>将<a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md" target="_blank" rel="noopener">SavedModel</a>转化为<a href="https://www.tensorflow.org/mobile/prepare_models#how_do_you_get_a_model_you_can_use_on_mobile" target="_blank" rel="noopener">Frozen Model</a> <code>.pb</code>  <ul>
+<li>调用tensorflow自带的freeze_graph.py 。<br><br>这个步骤的作用是把checkpoint .ckpt文件中的参数转化为常量const operator后和之前的tensor定义绑定在一起。</li>
+</ul>
+</li>
 <li>在c++新建session，读取<code>pb</code>文件，然后使用session-&gt;run()获得模型的输出。</li>
 <li>编译和运行，有两种选择<br>-<br>-</li>
 </ol>
@@ -590,8 +594,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/dd06fa53/" rel="next" title="Sequence Modeling With CTC">
-                <i class="fa fa-chevron-left"></i> Sequence Modeling With CTC
+              <a href="/pub/5752ccda/" rel="next" title="【bazel系列】tensorflow的自动化构建">
+                <i class="fa fa-chevron-left"></i> 【bazel系列】tensorflow的自动化构建
               </a>
             
           </div>
@@ -599,6 +603,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/0/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -679,7 +687,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">159</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

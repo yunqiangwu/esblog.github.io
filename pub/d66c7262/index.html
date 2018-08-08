@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-05T10:09:27.965Z">
+<meta property="og:updated_time" content="2018-08-07T12:28:50.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
 <meta name="twitter:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-05 18:09:27" itemprop="dateModified" datetime="2018-08-05T18:09:27+08:00">2018-08-05</time>
+                <time title="修改时间：2018-08-07 20:28:50" itemprop="dateModified" datetime="2018-08-07T20:28:50+08:00">2018-08-07</time>
               
             
           </span>
@@ -532,12 +532,18 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><blockquote>
-<p>递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。<br>时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸或消失的问题（Vanishing gradient problem），难以捕捉长期时间关联；而结合不同的LSTM可以很好解决这个问题。[1][2]<br>—— 维基百科</p>
+<p>递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。<br>时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸或消失的问题（Vanishing gradient problem），难以捕捉长期时间关联；而结合不同的LSTM可以很好解决这个问题。<br>—— 维基百科</p>
 </blockquote>
 <ul>
 <li>recurrent</li>
 <li>recursive</li>
 <li>feedforward</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>RNN解决了HMM的</li>
+<li>双向RNN解决了上下文依赖问题</li>
+<li>LSTM解决了RNN训练中梯度消失和梯度爆炸的问题</li>
+<li>GRU取消了LSTM中的cell，结构上更加简单，在性能上，训练时间更短，epoch更小的情况下可以收敛。</li>
 </ul>
 <h2 id="序列建模的发展史"><a href="#序列建模的发展史" class="headerlink" title="序列建模的发展史"></a>序列建模的发展史</h2><ul>
 <li>Memoryless models for sequences</li>
@@ -565,7 +571,7 @@
 <p>RNN也是基于马尔可夫假设的，当前的隐状态仅依赖前一个时刻的隐状态。在有马尔可夫假设的模型中，不代表距离超过1的两个状态是无依赖的。</p>
 <p>印象中有paper证明， 在HMM中两个状态的依赖关系随距离指数衰减，而在RNN中是power law decay.  也就是大家通常说的 rnn可以略好的刻画 long term dependency.</p>
 <p>另，SLAM中还有种算法跟hmm类似，kalman filter.</p>
-<p>作者：a88i99<br>链接：<a href="https://www.zhihu.com/question/57396443/answer/263019702" target="_blank" rel="noopener">https://www.zhihu.com/question/57396443/answer/263019702</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p><a href="https://www.zhihu.com/question/57396443/answer/263019702" target="_blank" rel="noopener">https://www.zhihu.com/question/57396443/answer/263019702</a></p>
 <h2 id="RNN-Overview"><a href="#RNN-Overview" class="headerlink" title="RNN Overview"></a>RNN Overview</h2><ul>
 <li>狭义上的RNN，指vanilla RNN。</li>
 <li>广义上的RNN，lstm gru等都属于RNN框架。</li>
@@ -724,8 +730,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/5f589e78/" rel="next" title="关于websocket">
-                <i class="fa fa-chevron-left"></i> 关于websocket
+              <a href="/pub/c79f2f90/" rel="next" title="GRU简介 & 源码实现">
+                <i class="fa fa-chevron-left"></i> GRU简介 & 源码实现
               </a>
             
           </div>
@@ -817,7 +823,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">159</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1407,7 +1413,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#序列建模的发展史"><span class="nav-number">1.1.</span> <span class="nav-text">序列建模的发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Overview"><span class="nav-number">1.2.</span> <span class="nav-text">RNN Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN的高层抽象"><span class="nav-number">1.3.</span> <span class="nav-text">RNN的高层抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keras的RNN抽象"><span class="nav-number">1.3.1.</span> <span class="nav-text">keras的RNN抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch的RNN抽象"><span class="nav-number">1.3.2.</span> <span class="nav-text">pytorch的RNN抽象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorflow的抽象"><span class="nav-number">1.4.</span> <span class="nav-text">tensorflow的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于RNN的变形（mainstream-variation）"><span class="nav-number">1.5.</span> <span class="nav-text">基于RNN的变形（mainstream variation）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell"><span class="nav-number">1.5.1.</span> <span class="nav-text">cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cascade-rnn"><span class="nav-number">1.5.2.</span> <span class="nav-text">cascade rnn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sequence-labeling"><span class="nav-number">1.6.</span> <span class="nav-text">sequence labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attention"><span class="nav-number">1.7.</span> <span class="nav-text">attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn-new-trends"><span class="nav-number">1.8.</span> <span class="nav-text">rnn new trends</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未分类"><span class="nav-number">1.9.</span> <span class="nav-text">未分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架-总结"><span class="nav-number">2.</span> <span class="nav-text">框架 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列建模的发展史"><span class="nav-number">1.2.</span> <span class="nav-text">序列建模的发展史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN-Overview"><span class="nav-number">1.3.</span> <span class="nav-text">RNN Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN的高层抽象"><span class="nav-number">1.4.</span> <span class="nav-text">RNN的高层抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keras的RNN抽象"><span class="nav-number">1.4.1.</span> <span class="nav-text">keras的RNN抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytorch的RNN抽象"><span class="nav-number">1.4.2.</span> <span class="nav-text">pytorch的RNN抽象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorflow的抽象"><span class="nav-number">1.5.</span> <span class="nav-text">tensorflow的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于RNN的变形（mainstream-variation）"><span class="nav-number">1.6.</span> <span class="nav-text">基于RNN的变形（mainstream variation）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell"><span class="nav-number">1.6.1.</span> <span class="nav-text">cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cascade-rnn"><span class="nav-number">1.6.2.</span> <span class="nav-text">cascade rnn</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sequence-labeling"><span class="nav-number">1.7.</span> <span class="nav-text">sequence labeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attention"><span class="nav-number">1.8.</span> <span class="nav-text">attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rnn-new-trends"><span class="nav-number">1.9.</span> <span class="nav-text">rnn new trends</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未分类"><span class="nav-number">1.10.</span> <span class="nav-text">未分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架-总结"><span class="nav-number">2.</span> <span class="nav-text">框架 总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
