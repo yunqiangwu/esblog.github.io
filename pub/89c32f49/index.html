@@ -120,14 +120,14 @@
   <meta name="description" content="简介 原子量和普通变量相比，主要体现在读写的线程安全上。对原子量的是原子的(比如多线程下的共享变量i++就不是原子的)，由CAS操作保证原子性。对原子量的读可以读到最新值，由volatile关键字来保证可见性。 原子量多用于数据统计(如接口调用次数)、一些序列生成(多线程环境下)以及一些同步数据结构中   atomic是基于底层硬件的CAS做的 区别于HashTable等线程安全类，这里面没有锁">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java系列 - Atomic">
+<meta property="og:title" content="【java源码系列】 - Atomic">
 <meta property="og:url" content="https://blog.eson.org/pub/89c32f49/index.html">
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介 原子量和普通变量相比，主要体现在读写的线程安全上。对原子量的是原子的(比如多线程下的共享变量i++就不是原子的)，由CAS操作保证原子性。对原子量的读可以读到最新值，由volatile关键字来保证可见性。 原子量多用于数据统计(如接口调用次数)、一些序列生成(多线程环境下)以及一些同步数据结构中   atomic是基于底层硬件的CAS做的 区别于HashTable等线程安全类，这里面没有锁">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T07:57:03.874Z">
+<meta property="og:updated_time" content="2018-08-11T08:11:25.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java系列 - Atomic">
+<meta name="twitter:title" content="【java源码系列】 - Atomic">
 <meta name="twitter:description" content="简介 原子量和普通变量相比，主要体现在读写的线程安全上。对原子量的是原子的(比如多线程下的共享变量i++就不是原子的)，由CAS操作保证原子性。对原子量的读可以读到最新值，由volatile关键字来保证可见性。 原子量多用于数据统计(如接口调用次数)、一些序列生成(多线程环境下)以及一些同步数据结构中   atomic是基于底层硬件的CAS做的 区别于HashTable等线程安全类，这里面没有锁">
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>java系列 - Atomic | ESON</title>
+  <title>【java源码系列】 - Atomic | ESON</title>
   
 
 
@@ -377,7 +377,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">java系列 - Atomic
+          <h2 class="post-title" itemprop="name headline">【java源码系列】 - Atomic
               
             
           </h2>
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-11 15:57:03" itemprop="dateModified" datetime="2018-08-11T15:57:03+08:00">2018-08-11</time>
+                <time title="修改时间：2018-08-11 16:11:25" itemprop="dateModified" datetime="2018-08-11T16:11:25+08:00">2018-08-11</time>
               
             
           </span>
@@ -691,7 +691,7 @@ inline jlong    Atomic::cmpxchg    (jlong    exchange_value, volatile jlong*    
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/89c32f49/" title="java系列 - Atomic">https://blog.eson.org/pub/89c32f49/</a>
+    <a href="https://blog.eson.org/pub/89c32f49/" title="【java源码系列】 - Atomic">https://blog.eson.org/pub/89c32f49/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -711,8 +711,8 @@ inline jlong    Atomic::cmpxchg    (jlong    exchange_value, volatile jlong*    
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/2a8bf999/" rel="next" title="java系列 - String">
-                <i class="fa fa-chevron-left"></i> java系列 - String
+              <a href="/pub/1b34e5ea/" rel="next" title="java系列 - object">
+                <i class="fa fa-chevron-left"></i> java系列 - object
               </a>
             
           </div>
@@ -721,8 +721,8 @@ inline jlong    Atomic::cmpxchg    (jlong    exchange_value, volatile jlong*    
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/718175b8/" rel="prev" title="java系列 - class文件">
-                java系列 - class文件 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/851507b3/" rel="prev" title="【java源码系列】- Thread">
+                【java源码系列】- Thread <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -804,7 +804,7 @@ inline jlong    Atomic::cmpxchg    (jlong    exchange_value, volatile jlong*    
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">159</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
