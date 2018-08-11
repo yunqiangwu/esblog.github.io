@@ -117,25 +117,24 @@
 
 
 
-  <meta name="description" content="gemm指的是普通矩阵乘法（General Matrix Multiplication）而gemv指的是普通矩阵向量乘法（General Matrix Vector） sgemm 扩展 how-to-optimize-gemm | github">
+  <meta name="description" content="学而不思则罔，思而不学则殆">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
-<meta property="og:type" content="article">
-<meta property="og:title" content="OpenBLAS项目与矩阵乘法优化">
-<meta property="og:url" content="https://blog.eson.org/pub/d39431a7/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ESON">
+<meta property="og:url" content="https://blog.eson.org/categories/CS/parallel-computing-高性能计算/线性代数-blas/openblas/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="gemm指的是普通矩阵乘法（General Matrix Multiplication）而gemv指的是普通矩阵向量乘法（General Matrix Vector） sgemm 扩展 how-to-optimize-gemm | github">
+<meta property="og:description" content="学而不思则罔，思而不学则殆">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T14:44:03.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OpenBLAS项目与矩阵乘法优化">
-<meta name="twitter:description" content="gemm指的是普通矩阵乘法（General Matrix Multiplication）而gemv指的是普通矩阵向量乘法（General Matrix Vector） sgemm 扩展 how-to-optimize-gemm | github">
+<meta name="twitter:title" content="ESON">
+<meta name="twitter:description" content="学而不思则罔，思而不学则殆">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/d39431a7/"/>
+  <link rel="canonical" href="https://blog.eson.org/categories/CS/parallel-computing-高性能计算/线性代数-blas/openblas/"/>
 
 
 
@@ -145,7 +144,7 @@
   };
 </script>
 
-  <title>OpenBLAS项目与矩阵乘法优化 | ESON</title>
+  <title>分类: openblas | ESON</title>
   
 
 
@@ -211,7 +210,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -268,7 +267,7 @@
         
         
           
-          <li class="menu-item menu-item-categories">
+          <li class="menu-item menu-item-categories menu-item-active">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
   </li>
@@ -340,244 +339,82 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block category">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>openblas<small>分类</small>
+        </h2>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/d39431a7/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ESON">
-      <meta itemprop="description" content="学而不思则罔，思而不学则殆">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ESON">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
+            <a class="post-title-link" href="/pub/5c90aab5/" itemprop="url">
+              
+                <span itemprop="name">OpenBLAS 简介</span>
+              
+            </a>
         
-          <h2 class="post-title" itemprop="name headline">OpenBLAS项目与矩阵乘法优化
-              
-            
-          </h2>
-        
+      </h3>
 
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-11 17:32:55 / 修改时间：22:44:03" itemprop="dateCreated datePublished" datetime="2018-08-11T17:32:55+08:00">2018-08-11</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/pub/d39431a7/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/d39431a7/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-             title="阅读次数" >
-            <i class="fa fa-eye"></i>
-            
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数"></span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长"></span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>gemm指的是普通矩阵乘法（General Matrix Multiplication）而gemv指的是普通矩阵向量乘法（General Matrix Vector）</p>
-<p>sgemm</p>
-<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><ul>
-<li><a href="https://github.com/flame/how-to-optimize-gemm/" target="_blank" rel="noopener">how-to-optimize-gemm | github</a></li>
-</ul>
-
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>ESON</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/d39431a7/" title="OpenBLAS项目与矩阵乘法优化">https://blog.eson.org/pub/d39431a7/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-08-11T00:00:00+08:00"
+              content="2018-08-11" >
+          08-11
+        </time>
       </div>
-    
 
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/pub/d938f06d/" rel="next" title="【bazel系列】C++调用tensorflow训练好的模型">
-                <i class="fa fa-chevron-left"></i> 【bazel系列】C++调用tensorflow训练好的模型
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/pub/72d94504/" rel="prev" title="BLAS">
-                BLAS <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
+      
+    </div>
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
-    </div>
-
-  
-
-
 
         </div>
         
@@ -598,17 +435,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -627,7 +455,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">159</span>
+                    <span class="site-state-item-count">158</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -880,7 +708,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">120</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">123</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1208,22 +1042,6 @@
       </section>
 
       
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展"><span class="nav-number">1.</span> <span class="nav-text">扩展</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
 
       
         <div class="back-to-top">
@@ -1408,10 +1226,6 @@
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
 
   
 
@@ -1446,30 +1260,6 @@
       </style>
     
 
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname,
-            owner: 'ESblog',
-            repo: 'comments',
-            
-            lang: "zh-CN" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-            
-            oauth: {
-            
-            
-                client_secret: '944ff71014a7011b43cb08f9e77f47f64e010e8a',
-            
-                client_id: 'c60ad22b1334dc01a9d4'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
     
 
 
