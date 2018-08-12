@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="关于github提供的http serverping 几个不同账号的gitpage(比如colah.github.io,xu-song.github.io)，发现对应的是同一个ip。为什么返回的页面不同呢？github pages 的 CNAME 是绑定 pages.github.io，不是${username}.github.io coding.net 的 CNAME 是绑定 pages.cod">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T08:01:19.435Z">
+<meta property="og:updated_time" content="2018-08-12T10:55:34.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Pages托管静态博客-原理浅析">
 <meta name="twitter:description" content="关于github提供的http serverping 几个不同账号的gitpage(比如colah.github.io,xu-song.github.io)，发现对应的是同一个ip。为什么返回的页面不同呢？github pages 的 CNAME 是绑定 pages.github.io，不是${username}.github.io coding.net 的 CNAME 是绑定 pages.cod">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-12 16:01:19" itemprop="dateModified" datetime="2018-08-12T16:01:19+08:00">2018-08-12</time>
+                <time title="修改时间：2018-08-12 18:55:34" itemprop="dateModified" datetime="2018-08-12T18:55:34+08:00">2018-08-12</time>
               
             
           </span>
@@ -444,21 +444,21 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/site-dev/" itemprop="url" rel="index"><span itemprop="name">site-dev</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/建站/" itemprop="url" rel="index"><span itemprop="name">建站</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/site-dev/host/" itemprop="url" rel="index"><span itemprop="name">host</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/建站/host/" itemprop="url" rel="index"><span itemprop="name">host</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/site-dev/host/github-pages/" itemprop="url" rel="index"><span itemprop="name">github-pages</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/web/建站/host/github-pages/" itemprop="url" rel="index"><span itemprop="name">github-pages</span></a></span>
 
                 
                 
@@ -539,7 +539,7 @@
 
       
         <h2 id="关于github提供的http-server"><a href="#关于github提供的http-server" class="headerlink" title="关于github提供的http server"></a>关于github提供的http server</h2><h4 id="ping-几个不同账号的gitpage-比如colah-github-io-xu-song-github-io-，发现对应的是同一个ip。为什么返回的页面不同呢？"><a href="#ping-几个不同账号的gitpage-比如colah-github-io-xu-song-github-io-，发现对应的是同一个ip。为什么返回的页面不同呢？" class="headerlink" title="ping 几个不同账号的gitpage(比如colah.github.io,xu-song.github.io)，发现对应的是同一个ip。为什么返回的页面不同呢？"></a>ping 几个不同账号的gitpage(比如<code>colah.github.io</code>,<code>xu-song.github.io</code>)，发现对应的是同一个ip。为什么返回的页面不同呢？</h4><p>github pages 的 CNAME 是绑定 pages.github.io，不是${username}.github.io</p>
-<p>coding.net 的 CNAME 是绑定 pages.coding.me </p>
+<p>coding.net 的 CNAME 是绑定 pages.coding.me</p>
 <p>显然，Github肯定在后台做了处理。即github自身会维护一个映射，<code>host_name --&gt; www_path</code>，这样就可以根据不同的host信息返回不同的html了。</p>
 <p>这样，在访问<code>xu-song.github.io</code>时github就找到了该返回的html。</p>
 <h2 id="关于custom-domain"><a href="#关于custom-domain" class="headerlink" title="关于custom domain"></a>关于custom domain</h2><p>现在我们改用<code>custom domain</code>的方式访问gitpage主页。假设已经配置好了dns的A记录映射。<br>访问<code>xusong.vip</code>，dns解析得到ip地址。然而这次github服务器得到的host是<code>xusong.vip</code>。懵逼了，github不认识<code>xusong.vip</code>(host数据里没有该记录)，返回404页面</p>
@@ -615,14 +615,14 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/65131a14/" rel="bookmark">如何托管你的网站</a></div>
+      <div class="popular-posts-title"><a href="/pub/65131a14/" rel="bookmark">如何托管你的网站 - 托管服务器</a></div>
       
     </li>
   
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/d051a027/" rel="bookmark">Gist 从入门到精通到放弃</a></div>
+      <div class="popular-posts-title"><a href="/pub/d2f02b9b/" rel="bookmark">Coding Pages托管静态博客-原理浅析</a></div>
       
     </li>
   
@@ -659,8 +659,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag"># github</a>
-          
             <a href="/tags/blog/" rel="tag"># blog</a>
           
             <a href="/tags/pages/" rel="tag"># pages</a>
@@ -676,8 +674,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/3329d7fc/" rel="next" title="google云主机---GCE">
-                <i class="fa fa-chevron-left"></i> google云主机---GCE
+              <a href="/pub/d3c1b8ca/" rel="next" title="【hexo系列】hexo的正确打开方式">
+                <i class="fa fa-chevron-left"></i> 【hexo系列】hexo的正确打开方式
               </a>
             
           </div>
