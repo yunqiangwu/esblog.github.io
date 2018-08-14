@@ -117,18 +117,21 @@
 
 
 
-  <meta name="description" content="推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。    可以方便地增加/删除引擎，控制不同引擎对推荐结果的影响。对于绝大多数需求，只需要通过不同的引擎组合实现。 可以实现推荐引擎级别的用户反馈  推荐系统架构 | 知乎 https://www.cnblogs.com/kobedeshow/p/3569">
+  <meta name="description" content="架构 模型训练层 服务层  推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。 召回：初始推荐结果推荐引擎的构建来源于不同的数据源(也就是用户的特征有很多种类，例如统计的、行为的、主题的)+不同的推荐模型算法，推荐引擎的架构可以试多样化的(实时推荐的+离线推荐的)，然后融合推荐结果（人工规则+模型结果）">
 <meta name="keywords" content="推荐系统,架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="推荐系统架构">
 <meta property="og:url" content="https://blog.eson.org/pub/7e199c30/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。    可以方便地增加/删除引擎，控制不同引擎对推荐结果的影响。对于绝大多数需求，只需要通过不同的引擎组合实现。 可以实现推荐引擎级别的用户反馈  推荐系统架构 | 知乎 https://www.cnblogs.com/kobedeshow/p/3569">
+<meta property="og:description" content="架构 模型训练层 服务层  推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。 召回：初始推荐结果推荐引擎的构建来源于不同的数据源(也就是用户的特征有很多种类，例如统计的、行为的、主题的)+不同的推荐模型算法，推荐引擎的架构可以试多样化的(实时推荐的+离线推荐的)，然后融合推荐结果（人工规则+模型结果）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T11:26:20.363Z">
+<meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-1920198/61aytob1de.jpeg?imageView2/2/w/1620">
+<meta property="og:image" content="https://ask.qcloudimg.com/http-save/yehe-1920198/8fdbxtqvh9.jpeg?imageView2/2/w/1620">
+<meta property="og:updated_time" content="2018-08-14T13:17:30.826Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐系统架构">
-<meta name="twitter:description" content="推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。    可以方便地增加/删除引擎，控制不同引擎对推荐结果的影响。对于绝大多数需求，只需要通过不同的引擎组合实现。 可以实现推荐引擎级别的用户反馈  推荐系统架构 | 知乎 https://www.cnblogs.com/kobedeshow/p/3569">
+<meta name="twitter:description" content="架构 模型训练层 服务层  推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。 召回：初始推荐结果推荐引擎的构建来源于不同的数据源(也就是用户的特征有很多种类，例如统计的、行为的、主题的)+不同的推荐模型算法，推荐引擎的架构可以试多样化的(实时推荐的+离线推荐的)，然后融合推荐结果（人工规则+模型结果）">
+<meta name="twitter:image" content="https://ask.qcloudimg.com/http-save/yehe-1920198/61aytob1de.jpeg?imageView2/2/w/1620">
 
 
 
@@ -415,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-12 19:26:20" itemprop="dateModified" datetime="2018-08-12T19:26:20+08:00">2018-08-12</time>
+                <time title="修改时间：2018-08-14 21:17:30" itemprop="dateModified" datetime="2018-08-14T21:17:30+08:00">2018-08-14</time>
               
             
           </span>
@@ -517,16 +520,36 @@
       
 
       
-        <p>推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。</p>
-<image title="推荐系统的架构图" src="/images/raw/ML - 推荐系统 - 架构 - 推荐系统实践.jpg">
+        <h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p><img title="QQ推荐系统架构" src="https://ask.qcloudimg.com/http-save/yehe-1920198/61aytob1de.jpeg?imageView2/2/w/1620"></p>
+<h1 id="模型训练层"><a href="#模型训练层" class="headerlink" title="模型训练层"></a>模型训练层</h1><p><img title="模型训练层的抽象方案 -- QQ" src="https://ask.qcloudimg.com/http-save/yehe-1920198/8fdbxtqvh9.jpeg?imageView2/2/w/1620"></p>
+<h1 id="服务层"><a href="#服务层" class="headerlink" title="服务层"></a>服务层</h1><image title="推荐系统的服务层架构" src="/images/raw/ML - 推荐系统 - 架构 - 推荐系统实践.jpg">
 
+<p>推荐系统需要由多个推荐引擎组成，每个推荐引擎负责一类特征和一种任务，而推荐系统的任务只是将推荐引擎的结果按照一定权重或者优先级合并、排序然后返回。</p>
+<h2 id="召回：初始推荐结果"><a href="#召回：初始推荐结果" class="headerlink" title="召回：初始推荐结果"></a>召回：初始推荐结果</h2><p>推荐引擎的构建来源于不同的数据源(也就是用户的特征有很多种类，例如统计的、行为的、主题的)+不同的推荐模型算法，推荐引擎的架构可以试多样化的(实时推荐的+离线推荐的)，然后融合推荐结果（人工规则+模型结果），融合方式多样的，有线性加权的或者切换式的等</p>
+<p>多个引擎一般也称为多路召回：</p>
 <ul>
+<li>新鲜度召回</li>
+<li>热度召回</li>
+<li>质量分召回</li>
+<li>个性化<ul>
+<li>基于用户CF召回</li>
+<li>基于itemCF召回</li>
+</ul>
+</li>
+</ul>
+<p>随机提取，每路召回1000个item。10路就10000 item。</p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>支持多种模型，以及自定义模型<br>-</li>
 <li>可以方便地增加/删除引擎，控制不同引擎对推荐结果的影响。对于绝大多数需求，只需要通过不同的引擎组合实现。</li>
 <li>可以实现推荐引擎级别的用户反馈</li>
 </ul>
-<p><a href="https://www.zhihu.com/question/25144005" target="_blank" rel="noopener">推荐系统架构 | 知乎</a></p>
-<p><a href="https://www.cnblogs.com/kobedeshow/p/3569525.html" target="_blank" rel="noopener">https://www.cnblogs.com/kobedeshow/p/3569525.html</a></p>
-<p>推荐引擎的构建来源于不同的数据源(也就是用户的特征有很多种类，例如统计的、行为的、主题的)+不同的推荐模型算法，推荐引擎的架构可以试多样化的(实时推荐的+离线推荐的)，然后融合推荐结果（人工规则+模型结果），融合方式多样的，有线性加权的或者切换式的等</p>
+<h2 id="粗排"><a href="#粗排" class="headerlink" title="粗排"></a>粗排</h2><h2 id="精排"><a href="#精排" class="headerlink" title="精排"></a>精排</h2><p>通常采用LR模型，或者LR的变种。</p>
+<p>最上层线上推荐服务、中层各个推荐数据召回集（数据主题、分类池子）、底层各种推荐模型。</p>
+<!--
+经常用的LR.目标是用户观看时长。播放时长=完成度*视频时长。完成度低的，播放时长。用户行为的，评论、点赞，作为正样本。观看过。
+XGboost质量分召回。，
+-->
 <h2 id="推荐系统有哪些坑？-知乎"><a href="#推荐系统有哪些坑？-知乎" class="headerlink" title="推荐系统有哪些坑？ | 知乎"></a><a href="https://www.zhihu.com/question/28247353" target="_blank" rel="noopener">推荐系统有哪些坑？ | 知乎</a></h2><ul>
 <li><p>将“推荐”理解为“推送</p>
 </li>
@@ -535,6 +558,15 @@
 <li>推荐系统中，按照影响效果：用户交互界面(UI) &gt; 数据 &gt; 算法。</li>
 </ul>
 </li>
+</ul>
+<h1 id="技术点"><a href="#技术点" class="headerlink" title="技术点"></a>技术点</h1><ul>
+<li>online/offline</li>
+<li>streaming 推荐，比如滑来滑去小视频</li>
+</ul>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li>《推荐系统实践》 项亮</li>
+<li><a href="https://cloud.tencent.com/developer/article/1118866" target="_blank" rel="noopener">QQ大数据推荐系统的架构演进</a></li>
+<li><a href="https://www.cnblogs.com/kobedeshow/p/3569525.html" target="_blank" rel="noopener">推荐系统的架构</a></li>
 </ul>
 </image>
       
@@ -589,8 +621,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/6aa77778/" rel="next" title="hexo中如何支持公式 mathjax">
-                <i class="fa fa-chevron-left"></i> hexo中如何支持公式 mathjax
+              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
+                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
               </a>
             
           </div>
@@ -599,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/5a71ae7b/" rel="prev" title="前后端渲染之争">
-                前后端渲染之争 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/6aa77778/" rel="prev" title="hexo中如何支持公式 mathjax">
+                hexo中如何支持公式 mathjax <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1278,7 +1310,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐系统有哪些坑？-知乎"><span class="nav-number">1.</span> <span class="nav-text">推荐系统有哪些坑？ | 知乎</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#架构"><span class="nav-number">1.</span> <span class="nav-text">架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型训练层"><span class="nav-number">2.</span> <span class="nav-text">模型训练层</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务层"><span class="nav-number">3.</span> <span class="nav-text">服务层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#召回：初始推荐结果"><span class="nav-number">3.1.</span> <span class="nav-text">召回：初始推荐结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粗排"><span class="nav-number">3.2.</span> <span class="nav-text">粗排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精排"><span class="nav-number">3.3.</span> <span class="nav-text">精排</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐系统有哪些坑？-知乎"><span class="nav-number">3.4.</span> <span class="nav-text">推荐系统有哪些坑？ | 知乎</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#技术点"><span class="nav-number">4.</span> <span class="nav-text">技术点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
