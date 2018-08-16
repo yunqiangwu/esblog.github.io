@@ -117,18 +117,18 @@
 
 
 
-  <meta name="description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  123456789# 从github下载tensorflow源代码git clone --recurs">
+  <meta name="description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  下载tensorflow源码12# 从github下载tensorflow源代码git clone -">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【bazel系列】tensorflow的自动化构建">
 <meta property="og:url" content="https://blog.eson.org/pub/5752ccda/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  123456789# 从github下载tensorflow源代码git clone --recurs">
+<meta property="og:description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  下载tensorflow源码12# 从github下载tensorflow源代码git clone -">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-12T11:53:22.171Z">
+<meta property="og:updated_time" content="2018-08-15T00:58:05.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【bazel系列】tensorflow的自动化构建">
-<meta name="twitter:description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  123456789# 从github下载tensorflow源代码git clone --recurs">
+<meta name="twitter:description" content="bazel的作用  将tensorflow的C++ api编译成可执行文件，示例 https://www.tensorflow.org/api_guides/cc/guide 将tensorflow的python api编译成可执行文件 将tensorflow的python api编译成.so  下载tensorflow源码12# 从github下载tensorflow源代码git clone -">
 
 
 
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-12 19:53:22" itemprop="dateModified" datetime="2018-08-12T19:53:22+08:00">2018-08-12</time>
+                <time title="修改时间：2018-08-15 08:58:05" itemprop="dateModified" datetime="2018-08-15T08:58:05+08:00">2018-08-15</time>
               
             
           </span>
@@ -516,7 +516,9 @@
 <li>将tensorflow的python api编译成可执行文件</li>
 <li>将tensorflow的python api编译成.so</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从github下载tensorflow源代码</span></span><br><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/tensorflow/tensorflow</span><br><span class="line"></span><br><span class="line"><span class="comment">## 进入根目录后编译</span></span><br><span class="line"><span class="comment"># 编译生成.so文件, 编译C++ API的库 (建议)</span></span><br><span class="line">bazel build //tensorflow:libtensorflow_cc.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以选择,编译C API的库</span></span><br><span class="line">bazel build //tensorflow:libtensorflow.so</span><br></pre></td></tr></table></figure>
+<h1 id="下载tensorflow源码"><a href="#下载tensorflow源码" class="headerlink" title="下载tensorflow源码"></a>下载tensorflow源码</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从github下载tensorflow源代码</span></span><br><span class="line">git <span class="built_in">clone</span> --recursive https://github.com/tensorflow/tensorflow</span><br></pre></td></tr></table></figure>
+<h1 id="启动Docker环境"><a href="#启动Docker环境" class="headerlink" title="启动Docker环境"></a>启动Docker环境</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">NAME=xusong_tf_bazel              <span class="comment"># 命名你的容器</span></span><br><span class="line">nvidia-docker run -it \</span><br><span class="line">  --name <span class="variable">$NAME</span> \</span><br><span class="line">  -v `<span class="built_in">pwd</span>`:/root/tensorflow1.8.0  \</span><br><span class="line">  bitspeech/tensorflow:1.8.0-gpu-bazel /bin/bash</span><br></pre></td></tr></table></figure>
+<h1 id="编译tensorflow"><a href="#编译tensorflow" class="headerlink" title="编译tensorflow"></a>编译tensorflow</h1><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 进入根目录后编译</span></span><br><span class="line"><span class="comment"># 编译生成.so文件, 编译C++ API的库 (建议)</span></span><br><span class="line">bazel build //tensorflow:libtensorflow_cc.so</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以选择,编译C API的库</span></span><br><span class="line">bazel build //tensorflow:libtensorflow.so</span><br></pre></td></tr></table></figure>
 <h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><ol>
 <li>首先跑通 <a href="https://github.com/tensorflow/models/tree/master/research/lm_1b" target="_blank" rel="noopener">https://github.com/tensorflow/models/tree/master/research/lm_1b</a></li>
 <li>按教程编译</li>
@@ -534,7 +536,9 @@
 <h2 id="编译成可执行文件"><a href="#编译成可执行文件" class="headerlink" title="编译成可执行文件"></a>编译成可执行文件</h2><ul>
 <li>[x] <a href="https://www.tensorflow.org/api_guides/cc/guide" target="_blank" rel="noopener">Bazel编译tensorflow的C++代码为可执行文件 | 官网</a></li>
 <li>[x] <a href="https://github.com/tensorflow/models/blob/master/research/lm_1b/" target="_blank" rel="noopener">Bazel编译语言模型为可执行文件 | 官网</a></li>
-<li><a href=""></a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="https://www.cnblogs.com/shouhuxianjian/p/9416934.html" target="_blank" rel="noopener">Tensorflow源码安装时bazel行为解析</a></li>
 </ul>
 
       
@@ -591,8 +595,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/5c90aab5/" rel="prev" title="OpenBLAS 简介">
-                OpenBLAS 简介 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/b5dbe43/" rel="prev" title="【bazel系列】从源码安装tensorflow">
+                【bazel系列】从源码安装tensorflow <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -674,7 +678,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">156</span>
+                    <span class="site-state-item-count">157</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1270,7 +1274,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUILD文件配置"><span class="nav-number"></span> <span class="nav-text">BUILD文件配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number"></span> <span class="nav-text">扩展阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成安装包whl"><span class="nav-number">1.</span> <span class="nav-text">编译成安装包whl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成动态链接库so-或-dll"><span class="nav-number">2.</span> <span class="nav-text">编译成动态链接库so 或 dll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成可执行文件"><span class="nav-number">3.</span> <span class="nav-text">编译成可执行文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#下载tensorflow源码"><span class="nav-number">1.</span> <span class="nav-text">下载tensorflow源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动Docker环境"><span class="nav-number">2.</span> <span class="nav-text">启动Docker环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译tensorflow"><span class="nav-number">3.</span> <span class="nav-text">编译tensorflow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">3.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">3.2.</span> <span class="nav-text">2.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUILD文件配置"><span class="nav-number">4.</span> <span class="nav-text">BUILD文件配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成安装包whl"><span class="nav-number">5.1.</span> <span class="nav-text">编译成安装包whl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成动态链接库so-或-dll"><span class="nav-number">5.2.</span> <span class="nav-text">编译成动态链接库so 或 dll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译成可执行文件"><span class="nav-number">5.3.</span> <span class="nav-text">编译成可执行文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">5.4.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
             
 
           </div>
