@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-16T00:14:03.979Z">
+<meta property="og:updated_time" content="2018-08-16T08:02:30.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
 <meta name="twitter:description" content="简介 递归神经网络（RNN）是两种人工神经网络的总称。一种是时间递归神经网络（recurrent neural network），另一种是结构递归神经网络（recursive neural network）。时间递归神经网络的神经元间连接构成矩阵，而结构递归神经网络利用相似的神经网络结构递归构造更为复杂的深度网络。RNN一般指代时间递归神经网络。单纯递归神经网络因为无法处理随着递归，权重指数级爆炸">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
+                <time title="修改时间：2018-08-16 16:02:30" itemprop="dateModified" datetime="2018-08-16T16:02:30+08:00">2018-08-16</time>
               
             
           </span>
@@ -577,11 +577,11 @@
 <li>广义上的RNN，lstm gru等都属于RNN框架。</li>
 </ul>
 <p>该文章针对广义上的RNN。</p>
-<p>RNN的形式有很多种</p>
-<image title="展开的(unrolled) RNN" src="/images/raw/NN - RNN - overview.png">
+<p>RNN的核心思想就是利用当前时刻的输入$X<em>t$和上一时刻的隐状态$h</em>{t-1}$来计算$h_t$:<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out, hidden = lstm(input, hidden)  <span class="comment"># 来自pytorch的抽象</span></span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">h_t = f(x_t, h_{t-1})</script><p>针对不同的任务又有不同的RNN形式</p>
+<image title="RNN的不同展开形式" src="/images/raw/NN - RNN - overview.png">
 
-<p>该图的总结很好，大部分应用都可归入该框架。具体的应用可参考<a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="noopener">karpathy</a><br><!-- 框架之外的模型: attention --></p>
-<p>核心:<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">out, hidden = lstm(input, hidden)  <span class="comment"># 来自pytorch的抽象</span></span><br></pre></td></tr></table></figure></p>
+<p>大部分应用都可归入该框架。具体的应用可参考<a href="http://karpathy.github.io/2015/05/21/rnn-effectiveness/" target="_blank" rel="noopener">karpathy</a><br><!-- 框架之外的模型: attention --></p>
 <p>名词解释:</p>
 <ul>
 <li>hidden 也叫cell, hidden_state, cell_state。它是forget的关键</li>
@@ -730,8 +730,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/a6941437/" rel="next" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
-                <i class="fa fa-chevron-left"></i> 【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）
+              <a href="/pub/855d5922/" rel="next" title="微信网页版 聊天原理">
+                <i class="fa fa-chevron-left"></i> 微信网页版 聊天原理
               </a>
             
           </div>
@@ -740,8 +740,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/ac890a3f/" rel="prev" title="矢量图的制作">
-                矢量图的制作 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/a6941437/" rel="prev" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
+                【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
