@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/8748fd7b/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/aca7a464/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -379,8 +379,8 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/8748fd7b/" itemprop="url">
-                  【java源码系列】 - Map
+                <a class="post-title-link" href="/pub/aca7a464/" itemprop="url">
+                  【java源码系列】 - Collection Framework
                 </a>
               
             
@@ -419,7 +419,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:04" itemprop="dateModified" datetime="2018-08-16T08:14:04+08:00">2018-08-16</time>
               
             
           </span>
@@ -540,20 +540,11 @@
       
         
           
-          diagram，java设计架构来自网络 http://www.cnblogs.com/skywang12345/p/3308931.html
-
-Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。
-
-summary
-
-
-
-类
-同步(线程安全)
+          Hierarchy12345678910111213Collection├List│├ArrayList│├LinkedList│└Vector│　└Stack   # 实现了栈的基本操作，由于涉及不够规范，目前极少使用。使用queue接口的相关实现可以完全取代它├PriorityQueue├Set
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/8748fd7b/#more" rel="contents">
+            <a class="btn" href="/pub/aca7a464/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -609,7 +600,7 @@ summary
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/7d785abb/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/1c98e0dc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -628,8 +619,8 @@ summary
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/pub/7d785abb/" itemprop="url">
-                  【java源码系列】 - System
+                <a class="post-title-link" href="/pub/1c98e0dc/" itemprop="url">
+                  【java源码系列】 - Object
                 </a>
               
             
@@ -668,7 +659,7 @@ summary
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:04" itemprop="dateModified" datetime="2018-08-16T08:14:04+08:00">2018-08-16</time>
               
             
           </span>
@@ -725,7 +716,7 @@ summary
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/system/" itemprop="url" rel="index"><span itemprop="name">system</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/rt/lang/" itemprop="url" rel="index"><span itemprop="name">lang</span></a></span>
 
                 
                 
@@ -789,13 +780,18 @@ summary
       
         
           
-          简介java.lang.System.java
-跟踪arraycopypublic static native void arraycopy(Object src,  int  srcPos, Object dest, int destPos, int length);
-System.c// jdk
+          架构
+Object.java(rt.jar) 调用 jdk的native方法(Object.c)。
+native方法 调用hotspot jvm的方法(jvm.cpp)。
+
+Object.java
+java source版本：oracle 1.7
+
+Object 还有隐形的构造函数.new Obje
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/pub/7d785abb/#more" rel="contents">
+            <a class="btn" href="/pub/1c98e0dc/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -910,7 +906,7 @@ System.c// jdk
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
               
             
           </span>
@@ -1121,7 +1117,7 @@ AI+芯片
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
               
             
           </span>
@@ -1328,7 +1324,7 @@ Simple UsageBy default, width:100%, captioned:true
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
               
             
           </span>
@@ -1535,7 +1531,7 @@ Simple UsageBy default, width:100%, captioned:true
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
               
             
           </span>
@@ -1730,7 +1726,7 @@ Simple UsageBy default, width:100%, captioned:true
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-14 21:18:02" itemprop="dateModified" datetime="2018-08-14T21:18:02+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-16 08:14:03" itemprop="dateModified" datetime="2018-08-16T08:14:03+08:00">2018-08-16</time>
               
             
           </span>
