@@ -125,12 +125,13 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
 <meta property="og:image" content="https://jhui.github.io/assets/rnn/lstm.png">
-<meta property="og:updated_time" content="2018-08-16T13:35:17.332Z">
+<meta property="og:updated_time" content="2018-08-16T14:45:15.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
 <meta name="twitter:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
-<meta name="twitter:image" content="https://jhui.github.io/assets/rnn/lstm.png">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
 
 
 
@@ -417,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-16 21:35:17" itemprop="dateModified" datetime="2018-08-16T21:35:17+08:00">2018-08-16</time>
+                <time title="修改时间：2018-08-16 22:45:15" itemprop="dateModified" datetime="2018-08-16T22:45:15+08:00">2018-08-16</time>
               
             
           </span>
@@ -539,8 +540,8 @@
 <h1 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h1><p>LSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp; Schmidhuber提出。<br>由于独特的设计结构，LSTM适合于处理和预测时间序列中间隔和延迟非常长的重要事件。<br><!-- Long Short Term Memory networks – usually just called “LSTMs” – are a special kind of RNN, capable of learning long-term dependencies.  --></p>
 <p>名字：long short-term memory<br>意思是vanilla RNN是short-term memory，sequence太长，</p>
 <ul>
-<li><strong>LSTM只能避免RNN的梯度消失</strong>（gradient vanishing）；</li>
-<li>梯度膨胀(gradient explosion)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如gradient clipping（如果梯度的范数大于某个给定值，将梯度同比收缩）。下面简单说说LSTM如何避免梯度消失.</li>
+<li><strong>LSTM只能避免RNN的梯度消失</strong>（<code>gradient vanishing</code>）；</li>
+<li>梯度膨胀(<code>gradient explosion</code>)不是个严重的问题，一般靠裁剪后的优化算法即可解决，比如<code>gradient clipping</code>（如果梯度的范数大于某个给定值，将梯度同比收缩）。下面简单说说LSTM如何避免梯度消失.</li>
 <li>梯度弥散是什么鬼？</li>
 </ul>
 <p>cell: memory_cell</p>
@@ -572,15 +573,16 @@
 <ul>
 <li><a href="http://www.bioinf.jku.at/publications/older/2604.pdf#page=5" target="_blank" rel="noopener">LSTM | Sepp Hochreiter 1997</a></li>
 </ul>
-<h1 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM"></a>LSTM</h1><p>LSTM的核心：cell + gate。<br>用于解决传统RNN中的梯度消失问题 (Gradient Vanish)</p>
+<h1 id="LSTM的设计思想"><a href="#LSTM的设计思想" class="headerlink" title="LSTM的设计思想"></a>LSTM的设计思想</h1><p>LSTM的核心：cell + gate。<br>用于解决传统RNN中的梯度消失问题 (Gradient Vanish)</p>
 <h2 id="关于gate"><a href="#关于gate" class="headerlink" title="关于gate"></a>关于gate</h2><!-- 备用图片 http://www.solidswiki.com/images/3/34/Gate_valves.gif -->
 <div style="display:inline;">
 <image width="130px" style="margin: 20px;" src="/images/raw/NN - LSTM gate - colah.png">
 <image width="300px" style="margin: 20px;" src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif">
 </image></image></div>
 
-<p>gate，即阀门，是一种开关。取值范围[0,1]，0表示关闭，1表示通行</p>
+<p>gate，即阀门、开关。取值范围[0,1]，0表示关闭，1表示通行</p>
 <p>使用一个合适激活函数，它的梯度在一个合理的范围。LSTM使用gate function，有选择的让一部分信息通过。gate是由一个sigmoid单元和一个逐点乘积操作组成，sigmoid单元输出1或0，用来判断通过还是阻止，然后训练这些gate的组合。所以，<strong>当gate是打开的（梯度接近于1），梯度就不会vanish。并且sigmoid不超过1，那么梯度也不会explode</strong>。</p>
+<p><strong>LSTM信息流</strong><br><img title="" src="/images/raw/NN - LSTM - cell forget - colah.png"></p>
 <!-- vanishing gradient over time,或者 The Problem of Long-Term Dependencies-->
 <p>包括：input gate, output gate, forget gate</p>
 <blockquote>
@@ -600,8 +602,12 @@
 <p><img width="50%" src="https://jhui.github.io/assets/rnn/lstm.png"></p>
 <p><strong>为什么要设计cell？这样抽象的意义？</strong></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28919765" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28919765</a></p>
-<h2 id="关于激活函数"><a href="#关于激活函数" class="headerlink" title="关于激活函数"></a>关于激活函数</h2><p>sigmoid</p>
-<p>tanh</p>
+<h2 id="关于激活函数"><a href="#关于激活函数" class="headerlink" title="关于激活函数"></a>关于激活函数</h2><h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><p>sigmoid之类的大量用在rnn的门也并非是概率解释的问题。而是理想门函数是阶跃函数，但其本身不可导，所以soft成sigmoid是一种折中。而且rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿，因为门的作用本身就是通过与不通过，他希望的就是激活值大量集中在0/1附近而不是其他的连续值。</p>
+<p>为什么rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿？不影响梯度消失？</p>
+<h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><p>为什么用tanh不用ReLU？</p>
+<p>在CNN等结构中将原先的sigmoid、tanh换成ReLU可以取得比较好的效果。<br>为什么在RNN中，将tanh换成ReLU不能取得类似的效果？</p>
+<p>从信号处理的方式说，要保证系统稳定。类似线性系统极点要在单位圆里，非线性直接加个激活卡住。所以简而言之：Relu不行，越界了；sigmoid差一半平面；只有tanh刚好。tanh还有个好处是零点梯度为1，这个性质比sigmoid好，relu在右半平面也是1，但越界不稳定，然并卵了。</p>
+<p>参考：<a href="https://www.zhihu.com/question/61265076/answer/239987704" target="_blank" rel="noopener">https://www.zhihu.com/question/61265076/answer/239987704</a></p>
 <h2 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">output, (h_n, c_n) = lstm(input, (h_0, c_0))  <span class="comment"># pytorch的接口</span></span><br><span class="line">new_h, (new_c, new_h) = lstm(inputs, (c, h))  <span class="comment"># tensorflow的接口，其中state=(c, h)</span></span><br></pre></td></tr></table></figure>
 <p>LSTM可以看做有两个隐状态h和c，对应的隐层就是一个Tuple。<br>这里可以对比RNN的接口。</p>
 <p>在RNN中 $output = c_t = h_t$，即$h$既是<code>hidden state</code>又是<code>output</code></p>
@@ -630,8 +636,23 @@
 <p>tensorflow源码 - <a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/ops/rnn_cell_impl.py#L553" target="_blank" rel="noopener">BasicLSTMCell</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 源码精简版</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">call</span><span class="params">(self, inputs, state)</span>:</span></span><br><span class="line">  <span class="string">"""Run one step of LSTM.</span></span><br><span class="line"><span class="string">  Args:</span></span><br><span class="line"><span class="string">    inputs: `2-D` tensor with shape `[batch_size, input_size]`. 是单个时间节点的batch样本</span></span><br><span class="line"><span class="string">    state:</span></span><br><span class="line"><span class="string">  Returns:</span></span><br><span class="line"><span class="string">    hidden state, new state ().</span></span><br><span class="line"><span class="string">  """</span></span><br><span class="line">  c, h = state</span><br><span class="line">  gate_inputs = math_ops.matmul(</span><br><span class="line">      array_ops.concat([inputs, h], <span class="number">1</span>), self._kernel)</span><br><span class="line">  gate_inputs = nn_ops.bias_add(gate_inputs, self._bias)</span><br><span class="line">  <span class="comment"># i = input_gate, j = new_input, f = forget_gate, o = output_gate</span></span><br><span class="line">  i, j, f, o = array_ops.split(</span><br><span class="line">      value=gate_inputs, num_or_size_splits=<span class="number">4</span>, axis=one)</span><br><span class="line"></span><br><span class="line">  forget_bias_tensor = constant_op.constant(self._forget_bias, dtype=f.dtype)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># update</span></span><br><span class="line">  new_c = add(multiply(c, sigmoid(add(f, forget_bias_tensor))),</span><br><span class="line">              multiply(sigmoid(i), self._activation(j)))</span><br><span class="line">  new_h = multiply(self._activation(new_c), sigmoid(o))</span><br><span class="line">  new_state = LSTMStateTuple(new_c, new_h)</span><br><span class="line">  <span class="keyword">return</span> new_h, new_state</span><br></pre></td></tr></table></figure>
 <h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><p>包装的好复杂，参考 <a href="https://blog.ddlee.cn/2017/05/29/LSTM-Pytorch%E5%AE%9E%E7%8E%B0/" target="_blank" rel="noopener">https://blog.ddlee.cn/2017/05/29/LSTM-Pytorch%E5%AE%9E%E7%8E%B0/</a></p>
-<h1 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h1><p>关于静态图和动态图？</p>
-<p>gate是点，还是向量？<br>向量， decides what parts of the cell state we’re going to output</p>
+<h1 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h1><ul>
+<li>难并行</li>
+<li>计算量大<ul>
+<li>low rank approximation之类的参数控制，运算量会是对应RNN的四倍以上。所以Gating其实是一种代价很高的方法。</li>
+</ul>
+</li>
+</ul>
+<h1 id="FAQ-汇总"><a href="#FAQ-汇总" class="headerlink" title="FAQ 汇总"></a>FAQ 汇总</h1><p>关于静态图和动态图？</p>
+<ul>
+<li>LSTM为什么要设置cell？ cell state 和 hidden state的关系、区别？为什么lstm代码里和有些图里，习惯吧output称作h(hidden)？</li>
+<li>为什么要引入gate？</li>
+<li>gate是点，还是向量？<ul>
+<li>向量， decides what parts of the cell state we’re going to output</li>
+</ul>
+</li>
+<li>LSTM为什么不用ReLU？</li>
+</ul>
 <h2 id="其他参考"><a href="#其他参考" class="headerlink" title="其他参考"></a>其他参考</h2><ul>
 <li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">通俗经典之作—Understanding LSTM Networks</a></li>
 <li><a href="http://arxiv.org/abs/1409.2329" target="_blank" rel="noopener">BasicLSTMCell对应的paper—Recurrent Neural Network Regularization</a></li>
@@ -644,11 +665,7 @@
 <p>就是说优化算法本身也许没有很好的进步，但是通过网络结构的设计可以规避目前主要基于 SGD 的优化算法难以解决的 LSTM 问题，直接构造一个更适合目前优化算法去优化的网络结构。所以本质上很难说哪个结构更好，你只能说这个结构更适合现在主流的这种优化方法。</p>
 <p>其实论文出来时我稍微看了一点，它本质上好像和 attention model 很像。attention model 的概念是不管语境是怎么传过来的，总是有选择的看所有东西，做决策（比如生成一个词）的时候有选择的去做。这时候会产生一个 attention mask，这可以理解成一个 gate，封住一些不想看的东西，保留想看的。</p>
 <p>这个在图像和 NLP 里面已经得到很好的验证。NLP、语音、图像其实都是相通的，你会发现很多思想、结构、设计理念会越来越相似。这也给了我们信心，让我们可以实现语音图像识别一体化交互，用一套统一的专用架构去做解决各种各样的问题。</p>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
-<li>LSTM为什么要设置cell？ cell state 和 hidden state的关系、区别？为什么lstm代码里和有些图里，习惯吧output称作h(hidden)？</li>
-<li>为什么要引入gate？</li>
-</ul>
-</image></image>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1></image></image>
       
     </div>
 
@@ -722,8 +739,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/5f589e78/" rel="next" title="关于websocket">
-                <i class="fa fa-chevron-left"></i> 关于websocket
+              <a href="/pub/d66c7262/" rel="next" title="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
+                <i class="fa fa-chevron-left"></i> 【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)
               </a>
             
           </div>
@@ -732,8 +749,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c79f2f90/" rel="prev" title="GRU简介 & 源码实现">
-                GRU简介 & 源码实现 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/ac890a3f/" rel="prev" title="矢量图的制作">
+                矢量图的制作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -815,7 +832,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">158</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1411,7 +1428,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统方法-History"><span class="nav-number">1.</span> <span class="nav-text">传统方法 History</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM"><span class="nav-number">2.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于梯度消失问题"><span class="nav-number">2.1.</span> <span class="nav-text">关于梯度消失问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失问题—直观解释"><span class="nav-number">2.1.1.</span> <span class="nav-text">梯度消失问题—直观解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失-—-产生的原因"><span class="nav-number">2.1.2.</span> <span class="nav-text">梯度消失 — 产生的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度消失问题-—-解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">梯度消失问题 — 解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度消失问题-—-LSTM是如何避免的"><span class="nav-number">2.3.</span> <span class="nav-text">梯度消失问题 — LSTM是如何避免的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM-1"><span class="nav-number">3.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于gate"><span class="nav-number">3.1.</span> <span class="nav-text">关于gate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于cell的设计"><span class="nav-number">3.2.</span> <span class="nav-text">关于cell的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于激活函数"><span class="nav-number">3.3.</span> <span class="nav-text">关于激活函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口设计"><span class="nav-number">3.4.</span> <span class="nav-text">接口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example-应用示例"><span class="nav-number">3.5.</span> <span class="nav-text">example 应用示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM-实现"><span class="nav-number">4.</span> <span class="nav-text">LSTM: 实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-tensorflow实现"><span class="nav-number">4.1.</span> <span class="nav-text">LSTM: tensorflow实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch"><span class="nav-number">4.2.</span> <span class="nav-text">pytorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见问题"><span class="nav-number">5.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#其他参考"><span class="nav-number">5.1.</span> <span class="nav-text">其他参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">7.</span> <span class="nav-text">FAQ</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#传统方法-History"><span class="nav-number">1.</span> <span class="nav-text">传统方法 History</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM"><span class="nav-number">2.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于梯度消失问题"><span class="nav-number">2.1.</span> <span class="nav-text">关于梯度消失问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失问题—直观解释"><span class="nav-number">2.1.1.</span> <span class="nav-text">梯度消失问题—直观解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失-—-产生的原因"><span class="nav-number">2.1.2.</span> <span class="nav-text">梯度消失 — 产生的原因</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度消失问题-—-解决方案"><span class="nav-number">2.2.</span> <span class="nav-text">梯度消失问题 — 解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度消失问题-—-LSTM是如何避免的"><span class="nav-number">2.3.</span> <span class="nav-text">梯度消失问题 — LSTM是如何避免的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM的设计思想"><span class="nav-number">3.</span> <span class="nav-text">LSTM的设计思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于gate"><span class="nav-number">3.1.</span> <span class="nav-text">关于gate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于cell的设计"><span class="nav-number">3.2.</span> <span class="nav-text">关于cell的设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于激活函数"><span class="nav-number">3.3.</span> <span class="nav-text">关于激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sigmoid"><span class="nav-number">3.3.1.</span> <span class="nav-text">sigmoid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tanh"><span class="nav-number">3.3.2.</span> <span class="nav-text">tanh</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口设计"><span class="nav-number">3.4.</span> <span class="nav-text">接口设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example-应用示例"><span class="nav-number">3.5.</span> <span class="nav-text">example 应用示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LSTM-实现"><span class="nav-number">4.</span> <span class="nav-text">LSTM: 实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-tensorflow实现"><span class="nav-number">4.1.</span> <span class="nav-text">LSTM: tensorflow实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch"><span class="nav-number">4.2.</span> <span class="nav-text">pytorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺陷"><span class="nav-number">5.</span> <span class="nav-text">缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ-汇总"><span class="nav-number">6.</span> <span class="nav-text">FAQ 汇总</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#其他参考"><span class="nav-number">6.1.</span> <span class="nav-text">其他参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">8.</span> <span class="nav-text">FAQ</span></a></li></ol></div>
             
 
           </div>
