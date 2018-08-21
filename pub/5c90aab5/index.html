@@ -117,20 +117,20 @@
 
 
 
-  <meta name="description" content="什么是BLASBLAS是 Basic Linear Algebra Subprograms （基本线性代数子程序）的首字母缩写，主要用来做基础的矩阵计算，或者是向量计算。它分为三级：  BLAS 1级，主要是向量与向量间的dot或乘加运算，对应元素的计算； BLAS 2级，主要是矩阵和向量的计算 BLAS 3级，主要是矩阵和矩阵的计算，最典型的是A矩阵*B矩阵，得到一个C矩阵。  为什么BLAS是">
+  <meta name="description" content="关于BLAS见blas简介 OpenBLAS简介OpenBLAS历史已经有几年了，从2011年初开始进入，最初的原因是GotoBLAS放弃了，OpenBLAS于是fork了GotoBLAS的一个社区发行版，继续开发和维护。它的维护不是一个简单修BUG的过程，如果想要获得比较好的性能，需要不停跟着硬件走，比如说新出一种新的硬件架构，或者适配更广的硬件架构，都要进行一定的优化，来获得比较好的加速效果。">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenBLAS 简介">
 <meta property="og:url" content="https://blog.eson.org/pub/5c90aab5/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="什么是BLASBLAS是 Basic Linear Algebra Subprograms （基本线性代数子程序）的首字母缩写，主要用来做基础的矩阵计算，或者是向量计算。它分为三级：  BLAS 1级，主要是向量与向量间的dot或乘加运算，对应元素的计算； BLAS 2级，主要是矩阵和向量的计算 BLAS 3级，主要是矩阵和矩阵的计算，最典型的是A矩阵*B矩阵，得到一个C矩阵。  为什么BLAS是">
+<meta property="og:description" content="关于BLAS见blas简介 OpenBLAS简介OpenBLAS历史已经有几年了，从2011年初开始进入，最初的原因是GotoBLAS放弃了，OpenBLAS于是fork了GotoBLAS的一个社区发行版，继续开发和维护。它的维护不是一个简单修BUG的过程，如果想要获得比较好的性能，需要不停跟着硬件走，比如说新出一种新的硬件架构，或者适配更广的硬件架构，都要进行一定的优化，来获得比较好的加速效果。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://static.leiphone.com/uploads/new/article/740_740/201704/58f08e24d0ee0.png?imageMogr2/format/jpg/quality/90">
 <meta property="og:image" content="https://static.leiphone.com/uploads/new/article/740_740/201704/58f08ea8442c1.png?imageMogr2/format/jpg/quality/90">
-<meta property="og:updated_time" content="2018-08-16T13:35:32.594Z">
+<meta property="og:updated_time" content="2018-08-21T01:01:00.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenBLAS 简介">
-<meta name="twitter:description" content="什么是BLASBLAS是 Basic Linear Algebra Subprograms （基本线性代数子程序）的首字母缩写，主要用来做基础的矩阵计算，或者是向量计算。它分为三级：  BLAS 1级，主要是向量与向量间的dot或乘加运算，对应元素的计算； BLAS 2级，主要是矩阵和向量的计算 BLAS 3级，主要是矩阵和矩阵的计算，最典型的是A矩阵*B矩阵，得到一个C矩阵。  为什么BLAS是">
+<meta name="twitter:description" content="关于BLAS见blas简介 OpenBLAS简介OpenBLAS历史已经有几年了，从2011年初开始进入，最初的原因是GotoBLAS放弃了，OpenBLAS于是fork了GotoBLAS的一个社区发行版，继续开发和维护。它的维护不是一个简单修BUG的过程，如果想要获得比较好的性能，需要不停跟着硬件走，比如说新出一种新的硬件架构，或者适配更广的硬件架构，都要进行一定的优化，来获得比较好的加速效果。">
 <meta name="twitter:image" content="https://static.leiphone.com/uploads/new/article/740_740/201704/58f08e24d0ee0.png?imageMogr2/format/jpg/quality/90">
 
 
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-16 21:35:32" itemprop="dateModified" datetime="2018-08-16T21:35:32+08:00">2018-08-16</time>
+                <time title="修改时间：2018-08-21 09:01:00" itemprop="dateModified" datetime="2018-08-21T09:01:00+08:00">2018-08-21</time>
               
             
           </span>
@@ -447,14 +447,21 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/parallel-computing-高性能计算/线性代数-blas/" itemprop="url" rel="index"><span itemprop="name">线性代数-blas</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/parallel-computing-高性能计算/线性代数-blas-lapack-numpy/" itemprop="url" rel="index"><span itemprop="name">线性代数-blas-lapack-numpy</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/parallel-computing-高性能计算/线性代数-blas/openblas/" itemprop="url" rel="index"><span itemprop="name">openblas</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/parallel-computing-高性能计算/线性代数-blas-lapack-numpy/0-矩阵计算/" itemprop="url" rel="index"><span itemprop="name">0. 矩阵计算</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/parallel-computing-高性能计算/线性代数-blas-lapack-numpy/0-矩阵计算/开源-openblas/" itemprop="url" rel="index"><span itemprop="name">开源-openblas</span></a></span>
 
                 
                 
@@ -534,35 +541,7 @@
       
 
       
-        <h1 id="什么是BLAS"><a href="#什么是BLAS" class="headerlink" title="什么是BLAS"></a>什么是BLAS</h1><p>BLAS是 Basic Linear Algebra Subprograms （基本线性代数子程序）的首字母缩写，主要用来做基础的矩阵计算，或者是向量计算。它分为三级：</p>
-<ul>
-<li>BLAS 1级，主要是<strong>向量与向量</strong>间的dot或乘加运算，对应元素的计算；</li>
-<li>BLAS 2级，主要是<strong>矩阵和向量</strong>的计算</li>
-<li>BLAS 3级，主要是<strong>矩阵和矩阵</strong>的计算，最典型的是A矩阵*B矩阵，得到一个C矩阵。</li>
-</ul>
-<p>为什么BLAS是一个非常重要的库或者接口，是因为它是很多科学计算的核心之一。每年做超级计算机的排行榜，都要做LINPACK测试，该测试很多部分就是做BLAS 3级矩阵和矩阵的计算。此外，还有很多科学和工程的模拟，在转换后都变成了一种矩阵上的操作。如果你把矩阵优化的特别好的话，对整个应用的提升，都是非常有帮助的。</p>
-<p><strong>疑问</strong>: 有没有tensor计算？tensor计算要转化成以上三个级别的计算吗？</p>
-<h1 id="BLAS与深度学习"><a href="#BLAS与深度学习" class="headerlink" title="BLAS与深度学习"></a>BLAS与深度学习</h1><p>经过测试，发现Alexnet大部分的时间花费在卷积层（Conv Layer），另外不少时间花在了全连接层（FC layer）。</p>
-<ul>
-<li>卷基层目前通用的实现是展成矩阵，变成矩阵与矩阵的乘法，就是BLAS 3级。</li>
-<li>全连接层一般是变成一个矩阵和向量的乘法，也落成了BLAS操作。</li>
-</ul>
-<p>也就是说，基于矩阵类学习的深度学习，<strong>有90%或者更多的时间是通过BLAS来操作的</strong>。当然，随着新的算法出现，卷积层对3*3的卷积核有专门的算法，或者用FFT类类算法也可以做，但是在通用上，展矩阵来做也非常广泛。</p>
-<p><strong>疑问</strong>: cuda也兼容BLAS接口吗？还是自己独立的接口？</p>
-<h1 id="BLAS实现"><a href="#BLAS实现" class="headerlink" title="BLAS实现"></a>BLAS实现</h1><p>BLAS只是定义了接口，但是具体的实现其实有很多种。从商业的角度来讲，存在很多商业版本。基本上为了搭配自己的硬件，对其做了更优的优化。常见的商业版本有</p>
-<ul>
-<li>Intel MKL</li>
-<li>AMD ACML</li>
-<li>NVIDIA CUBLAS</li>
-<li>IBM ESSL</li>
-</ul>
-<p>开源</p>
-<ul>
-<li>GotoBLAS:（2010年中止开发）</li>
-<li>ATLAS: 美国一所学校开发</li>
-<li>OpenBLAS: 基于GotoBLAS</li>
-<li>BLIS: 基于GotoBLAS扩展出来的一个项目</li>
-</ul>
+        <h1 id="关于BLAS"><a href="#关于BLAS" class="headerlink" title="关于BLAS"></a>关于BLAS</h1><p>见<a href="..">blas简介</a></p>
 <h1 id="OpenBLAS简介"><a href="#OpenBLAS简介" class="headerlink" title="OpenBLAS简介"></a>OpenBLAS简介</h1><p>OpenBLAS历史已经有几年了，从2011年初开始进入，最初的原因是GotoBLAS放弃了，OpenBLAS于是<strong>fork了GotoBLAS的一个社区发行版</strong>，继续开发和维护。它的维护不是一个简单修BUG的过程，如果想要获得比较好的性能，需要<strong>不停跟着硬件走</strong>，比如说新出一种新的硬件架构，或者<strong>适配更广的硬件架构</strong>，都要进行一定的优化，来获得比较好的加速效果。</p>
 <p>OpenBLAS算是目前全球最好的开源矩阵计算库，同时也进入了很多主流的Linux安装包。</p>
 <h1 id="矩阵乘法-GEMM优化"><a href="#矩阵乘法-GEMM优化" class="headerlink" title="矩阵乘法 GEMM优化"></a>矩阵乘法 GEMM优化</h1><h2 id="普通的矩阵乘法"><a href="#普通的矩阵乘法" class="headerlink" title="普通的矩阵乘法"></a>普通的矩阵乘法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// https://github.com/flame/how-to-optimize-gemm/blob/master/src/MMult1.c</span></span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;m; i++) &#123;  <span class="comment">/* Loop over the rows of C */</span></span><br><span class="line">  <span class="keyword">for</span> (j=<span class="number">0</span>; j&lt;n; j++) &#123; <span class="comment">/* Loop over the columns of C */</span></span><br><span class="line">    <span class="keyword">for</span> (p=<span class="number">0</span>; p&lt;k; p++) &#123; <span class="comment">/* Update C(i,j) */</span></span><br><span class="line">      C(i,j) = C(i,j) + A(i,p) * B(p,j);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -639,6 +618,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/72d94504/" rel="prev" title="BLAS">
+                BLAS <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -719,7 +702,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-count">163</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -978,7 +961,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">123</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">129</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1243,13 +1238,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">129</span>
+                    <span class="site-state-item-count">126</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1315,7 +1304,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是BLAS"><span class="nav-number">1.</span> <span class="nav-text">什么是BLAS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BLAS与深度学习"><span class="nav-number">2.</span> <span class="nav-text">BLAS与深度学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BLAS实现"><span class="nav-number">3.</span> <span class="nav-text">BLAS实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenBLAS简介"><span class="nav-number">4.</span> <span class="nav-text">OpenBLAS简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵乘法-GEMM优化"><span class="nav-number">5.</span> <span class="nav-text">矩阵乘法 GEMM优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的矩阵乘法"><span class="nav-number">5.1.</span> <span class="nav-text">普通的矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调优"><span class="nav-number">5.2.</span> <span class="nav-text">调优</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache复用"><span class="nav-number">5.3.</span> <span class="nav-text">cache复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化AddDot1x4-使用寄存器变量"><span class="nav-number">5.4.</span> <span class="nav-text">优化AddDot1x4 - 使用寄存器变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化AddDot1x4-B访存，使用指针"><span class="nav-number">5.5.</span> <span class="nav-text">优化AddDot1x4 - B访存，使用指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再优化"><span class="nav-number">5.6.</span> <span class="nav-text">再优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">6.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于BLAS"><span class="nav-number">1.</span> <span class="nav-text">关于BLAS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenBLAS简介"><span class="nav-number">2.</span> <span class="nav-text">OpenBLAS简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩阵乘法-GEMM优化"><span class="nav-number">3.</span> <span class="nav-text">矩阵乘法 GEMM优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的矩阵乘法"><span class="nav-number">3.1.</span> <span class="nav-text">普通的矩阵乘法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调优"><span class="nav-number">3.2.</span> <span class="nav-text">调优</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache复用"><span class="nav-number">3.3.</span> <span class="nav-text">cache复用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化AddDot1x4-使用寄存器变量"><span class="nav-number">3.4.</span> <span class="nav-text">优化AddDot1x4 - 使用寄存器变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化AddDot1x4-B访存，使用指针"><span class="nav-number">3.5.</span> <span class="nav-text">优化AddDot1x4 - B访存，使用指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再优化"><span class="nav-number">3.6.</span> <span class="nav-text">再优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>

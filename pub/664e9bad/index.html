@@ -128,10 +128,11 @@
 <meta property="og:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20FFN.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
-<meta property="og:updated_time" content="2018-08-16T13:35:32.535Z">
+<meta property="og:updated_time" content="2018-08-21T01:01:00.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
@@ -422,7 +423,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-16 21:35:32" itemprop="dateModified" datetime="2018-08-16T21:35:32+08:00">2018-08-16</time>
+                <time title="修改时间：2018-08-21 09:01:00" itemprop="dateModified" datetime="2018-08-21T09:01:00+08:00">2018-08-21</time>
               
             
           </span>
@@ -451,7 +452,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/2-神经网络机器翻译-NMT/" itemprop="url" rel="index"><span itemprop="name">2. 神经网络机器翻译 NMT</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/machine-translation/2-主流model-研究现状/2-NMT/" itemprop="url" rel="index"><span itemprop="name">2. NMT</span></a></span>
 
                 
                 
@@ -532,14 +533,14 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在2017年5月Facebook发布了<code>ConvSeq2Seq</code>模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做<code>Transformer</code>，用以来实现机器翻译。它<strong>抛弃了传统的CNN、RNN，只采用attention</strong>，取得了很好的效果，激起了工业界和学术界的广泛讨论。</p>
-<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的方法有RNN、CNN。</p>
+<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的模型架构有RNN、CNN。trick方面，常见的是position-encoding</p>
 <p>见 related work</p>
 <p><img alt="transformer" title="transformer - data flow" src="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif"></p>
 <h3 id="transformer横空出世"><a href="#transformer横空出世" class="headerlink" title="transformer横空出世"></a>transformer横空出世</h3><p>Transformer避开了recurrence，只用attention，便可以刻画出输入和输出的依赖关系。</p>
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
 <h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><h2 id="对attention的抽象"><a href="#对attention的抽象" class="headerlink" title="对attention的抽象"></a>对attention的抽象</h2><p>对attention的抽象 q k v</p>
-<p><img alt="Scaled Dot Product Attention" title="Scaled Dot Product Attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
+<p><img width="150px" alt="Scaled Dot Product Attention" title="Scaled Dot Product Attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
 <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
 <script type="math/tex; mode=display">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script><p>前面给出的是一般化的框架形式的描述，事实上Google给出的方案是很具体的。首先，它先把Attention的定义给了出来：</p>
 <script type="math/tex; mode=display">Attention(\boldsymbol{Q},\boldsymbol{K},\boldsymbol{V}) = softmax\left(\frac{\boldsymbol{Q}\boldsymbol{K}^{\top}}{\sqrt{d_k}}\right)\boldsymbol{V}</script><p>这里用的是跟Google的论文一致的符号，其中$ \boldsymbol{Q}\in\mathbb{R}^{n\times d_k}, \boldsymbol{K}\in\mathbb{R}^{m\times d_k}, \boldsymbol{V}\in\mathbb{R}^{m\times d_v} $。如果忽略激活函数softmax的话，那么事实上它就是三个$ n\times d_k,d_k\times m, m\times d_v $的矩阵相乘，最后的结果就是一个$ n\times d_v $的矩阵。于是我们可以认为：这是一个Attention层，将n$ n\times d_k $的序列Q编码成了一个新的$ n\times d_v $的序列。</p>
@@ -552,7 +553,7 @@
 <p>Query, key, value 其实并不是专门针对翻译的概念。不过可以举一些翻译中的例子。例如，当刚刚翻译完主语之后，attention 的内部状态就会想要去找谓语，这时它就把「想找谓语」这件事编码成 query。然后句子里本身是谓语的地方，会有一个 key，表明「我这里可以提供谓语」，它跟 query 一拍即合。这个 key 对应的 value 就是谓语本身的 embedding。</p>
 <p>Q: 在LSTM+attention模型里，query就是上一个时间单元的隐状态，容易理解，即你所谓的对[想找谓语]编码，但是all attention模型不再使用LSTM，这个query编码是什么？谢谢<br>A: all attention model 只不过不再用 lstm 计算隐状态，而是用 attention 计算得出。一层 attention 计算出的结果就是下一层的 query</p>
 <h2 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h2><p>以Q为例，单个head的计算</p>
-<p><img alt="Multi-Head Attention" title="Multi-Head Attention" src="/images/raw/NN - transformer - multi head attention.jpg"></p>
+<p><img width="200px" alt="Multi-Head Attention" title="Multi-Head Attention" src="/images/raw/NN - transformer - multi head attention.jpg"></p>
 <ul>
 <li><a href="https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/common_attention.py#L2646" target="_blank" rel="noopener">code-t2t</a></li>
 <li><a href="https://github.com/Kyubyong/transformer/blob/master/modules.py#L169" target="_blank" rel="noopener">code-Kyubyong</a></li>
@@ -560,29 +561,79 @@
 </ul>
 <p>将输入向量切成8份，这每一<br>份可以看成一个local partial，然后再分别attnetion最终再concat成一个context向量。如果将本文multi-head attention的V输入切成八份后的<br>向量类比关注不同local paritial的卷积核的话，我们可以看到CNN和这里multi-head attention异曲同工</p>
 <p><strong>优势</strong>：能在encode的时候并行化，(convS2S同样可以，但是transformer只用attention）</p>
-<h2 id="FFN层：positionwise-fully-connected-feed-forward-network"><a href="#FFN层：positionwise-fully-connected-feed-forward-network" class="headerlink" title="FFN层：positionwise fully connected feed-forward network"></a>FFN层：positionwise fully connected feed-forward network</h2><p>为什么叫FFN层：positionwise?</p>
-<p>applied to each position separately and identically</p>
-<h2 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h2><p>Sinusoid Positional Encoding</p>
+<p>TODO： 加图</p>
+<h2 id="FFN层：positionwise-fully-connected-feed-forward-network"><a href="#FFN层：positionwise-fully-connected-feed-forward-network" class="headerlink" title="FFN层：positionwise fully connected feed-forward network"></a>FFN层：positionwise fully connected feed-forward network</h2><p><img width="150px" title="position wise FFN" src="/images/raw/NN - transformer - FFN.png"></p>
+<p><strong>疑问</strong>：</p>
+<ol>
+<li>为什么要设置全连接层？全连接层一般占用参数比较多，比如常用的CNN架构里很少在中间层放全连接。  这里在中间层大量使用FFN的思想是什么呢？  仅仅是为了故意避开CNN？<ul>
+<li>答：FFN的设计初衷是: 1. 增加非线性变换; 2. 维度变换。同时尽量减少参数量、计算量。</li>
+<li>如果不采用FFN呢？有什么更好的设计？<ul>
+<li>conv层: 单个position的conv无意义。可以考虑<strong>跨position的conv！！！</strong></li>
+<li>pooling层</li>
+</ul>
+</li>
+<li>全连接参数多，在多数CNN架构里只在最后一层加FC层。</li>
+</ul>
+</li>
+<li>为什么叫强调<code>position-wise</code>？不就是普通的ReLU激活函数的神经网络吗？<ul>
+<li>解释一: 这里FFN层是每个position进行相同且独立的操作，所以叫position-wise。对每个position独立做FFN。</li>
+<li>解释二：从卷积的角度解释，这里的FFN等价于kernel_size=1的卷积，这样每个position都是独立运算的。如果kernel_size=2，或者其他，position之间就具有依赖性了，貌似就不能叫做position-wise了</li>
+<li>paper中强调：applied to each position separately and identically</li>
+</ul>
+</li>
+<li>层数&amp;维度设计：为什么要两层全连接？为什么先升维再降维？<ul>
+<li>ResNet等网络通常采用bottleNeck架构，先降维再升维(减小计算量)</li>
+</ul>
+</li>
+</ol>
+<p>code中叫做 <code>dense_relu_dense</code>，另外一种等价形式是<code>conv_relu_conv</code></p>
+<p>既想增加非线性，又不像增加计算量？</p>
+<h2 id="Positional-Encoding"><a href="#Positional-Encoding" class="headerlink" title="Positional Encoding"></a>Positional Encoding</h2><p>回顾一下Transformer的整个架构，不难发现Transformer模型本身并不能捕捉序列的顺序。换句话说，如果将K,V按行打乱顺序（相当于句子中的词序打乱），那么Attention的结果还是一样的。这就表明了，<strong>到目前为止，Attention模型顶多是一个非常精妙的“词袋模型”而已</strong>。<br><!--
+attention-based BOW，这个模型也不错哎。
+--></p>
+<p>Sinusoid Positional Encoding</p>
 <p><a href="https://github.com/Kyubyong/transformer/blob/master/modules.py#L120" target="_blank" rel="noopener">code</a></p>
-<p><a href="">more detail</a></p>
+<p>1、以前在RNN、CNN模型中其实都出现过Position Embedding，但在那些模型中，Position Embedding是锦上添花的辅助手段，也就是“有它会更好、没它也就差一点点”的情况，因为RNN、CNN本身就能捕捉到位置信息。但是在这个纯Attention模型中，Position Embedding是位置信息的唯一来源，因此它是模型的核心成分之一，并非仅仅是简单的辅助手段。</p>
+<p>2、在以往的Position Embedding中，基本都是根据任务训练出来的向量。而Google直接给出了一个构造Position Embedding的公式：</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}&PE_{2i}(p)=\sin\Big(p/10000^{2i/{d_{pos}}}\Big)\\
+&PE_{2i+1}(p)=\cos\Big(p/10000^{2i/{d_{pos}}}\Big)
+\end{aligned}\right.</script><p>这里的意思是将id为$p$的位置映射为一个$d<em>pos$维的位置向量，这个向量的第$i$个元素的数值就是$PE</em>{i}(p)$。Google在论文中说到他们比较过直接训练出来的位置向量和上述公式计算出来的位置向量，效果是接近的。因此显然我们更乐意使用公式构造的Position Embedding了。</p>
+<p>3、Position Embedding本身是一个绝对位置的信息，但在语言中，相对位置也很重要，Google选择前述的位置向量公式的一个重要原因是：由于我们有 $\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$以及$\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$，这表明位置$p+k$的向量可以表示成位置$p$的向量的线性变换，这提供了表达相对位置信息的可能性。</p>
+<p><strong>思考</strong></p>
+<ol>
+<li>Transformer并没有在结构上突破传统的LSTM和CNN，只是采用了position encoding的方式取巧。<br>如何在结构上突破CNN和LSTM的缺陷，达到获取position(时序)信息、任意长度依赖、易并行的效果？</li>
+<li>其他方案<ul>
+<li><strong>拼接</strong>: 起来作为一个新向量，也可以把位置向量定义为跟词向量一样大小，然后两者加起来。FaceBook的论文和Google论文中用的都是后者。直觉上相加会导致信息损失，似乎不可取</li>
+<li><strong>multi-channel</strong>:</li>
+</ul>
+</li>
+</ol>
 <h1 id="trick"><a href="#trick" class="headerlink" title="trick"></a>trick</h1><p>LayerNorm(x + Sublayer(x)),</p>
 <h2 id="residual-connection"><a href="#residual-connection" class="headerlink" title="residual connection"></a>residual connection</h2><h2 id="layer-normalization"><a href="#layer-normalization" class="headerlink" title="layer normalization"></a>layer normalization</h2><p>residual之后加的LN</p>
 <h1 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h1><h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1><h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><p>经过测试，列了以下可视化结果。</p>
-<p><img src="/images/raw/NN - transformer - attention visualization 1.png"></p>
-<p><img src="/images/raw/NN - transformer - attention visualization 2.png"></p>
-<p><img src="/images/raw/NN - transformer - attention visualization 3.png"></p>
-<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul>
+<p><img width="300px" src="/images/raw/NN - transformer - attention visualization 1.png"></p>
+<p><img width="300px" src="/images/raw/NN - transformer - attention visualization 2.png"></p>
+<p><img width="300px" src="/images/raw/NN - transformer - attention visualization 3.png"></p>
+<p>TODO，+动态可视化</p>
+<h1 id="维度设计"><a href="#维度设计" class="headerlink" title="维度设计"></a>维度设计</h1><p>在NLP的很多网络里，一般</p>
+<ul>
+<li>hidden_dim和embedding_dim 相等<br>-</li>
+</ul>
+<p>每层的维度都是相同的维度，(只在FFN层进行了局部升维)。</p>
+<p>这与传统的</p>
+<h1 id="参数量-amp-计算量"><a href="#参数量-amp-计算量" class="headerlink" title="参数量 &amp; 计算量"></a>参数量 &amp; 计算量</h1><h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><ul>
 <li>TensorFlow<ul>
-<li><a href="https://github.com/Kyubyong/transformer" target="_blank" rel="noopener">https://github.com/Kyubyong/transformer</a>  简易版，bucket， lr decay都没有实现，训起来效果应该没那好</li>
-<li><a href="https://github.com/tensorflow/tensor2tensor#translation" target="_blank" rel="noopener">https://github.com/tensorflow/tensor2tensor#translation</a>  产品级，最官方，有中英文翻译数据库</li>
+<li><a href="https://github.com/Kyubyong/transformer" target="_blank" rel="noopener">https://github.com/Kyubyong/transformer</a>  简易版，bucket、lr、decay等都没有实现</li>
+<li><a href="https://github.com/tensorflow/tensor2tensor#translation" target="_blank" rel="noopener">https://github.com/tensorflow/tensor2tensor#translation</a>  产品级，最官方，有中英文翻译实例</li>
 <li>代码解析： <a href="https://blog.csdn.net/mijiaoxiaosan/article/details/74909076" target="_blank" rel="noopener">https://blog.csdn.net/mijiaoxiaosan/article/details/74909076</a></li>
 </ul>
 </li>
 <li>Pytorch</li>
 </ul>
+<h1 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h1><h2 id="ss"><a href="#ss" class="headerlink" title="ss"></a>ss</h2><p>Attention层的好处是能够一步到位捕捉到全局的联系，因为它直接把序列两两比较（代价是计算量变为$\mathscr{O}(n^2)$)，当然由于是纯矩阵运算，这个计算量相当也不是很严重）；相比之下，RNN需要一步步递推才能捕捉到，而CNN则需要通过层叠来扩大感受野，这是Attention层的明显优势。</p>
 <h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
 <li><a href="https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html" target="_blank" rel="noopener">Transformer | Google-blog</a></li>
-<li><a href="https://kexue.fm/archives/4765" target="_blank" rel="noopener">《Attention is All You Need》浅读（简介+代码）| kexue.fm</a></li>
+<li><a href="https://kexue.fm/archives/4765" target="_blank" rel="noopener">《Attention is All You Need》浅读（简介+代码）| kexue.fm</a> 很多还没看懂，后面继续看</li>
 <li><a href="https://zhuanlan.zhihu.com/p/27464080" target="_blank" rel="noopener">从convS2S到transformer | 知乎</a></li>
 </ul>
 
@@ -598,7 +649,7 @@
     <li class="popular-posts-item">
       
       
-      <div class="popular-posts-title"><a href="/pub/6eefa992/" rel="bookmark">【机器翻译】RNN系列 - GNMT</a></div>
+      <div class="popular-posts-title"><a href="/pub/6eefa992/" rel="bookmark">【机器翻译】RNN系列 - 注意力模型</a></div>
       
     </li>
   
@@ -666,8 +717,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/75bd2e9b/" rel="next" title="【读图识政治】中国最高领导人">
-                <i class="fa fa-chevron-left"></i> 【读图识政治】中国最高领导人
+              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
+                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
               </a>
             
           </div>
@@ -676,8 +727,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
-                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/6aa77778/" rel="prev" title="hexo中如何支持公式 mathjax">
+                hexo中如何支持公式 mathjax <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -759,7 +810,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">158</span>
+                    <span class="site-state-item-count">163</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1018,7 +1069,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">123</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">129</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1283,13 +1346,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">129</span>
+                    <span class="site-state-item-count">126</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1355,7 +1412,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.1.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.3.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">5.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">6.1.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">7.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">8.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.1.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.3.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">5.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">6.1.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#维度设计"><span class="nav-number">7.</span> <span class="nav-text">维度设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数量-amp-计算量"><span class="nav-number">8.</span> <span class="nav-text">参数量 &amp; 计算量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">9.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺陷"><span class="nav-number">10.</span> <span class="nav-text">缺陷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ss"><span class="nav-number">10.1.</span> <span class="nav-text">ss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">11.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
