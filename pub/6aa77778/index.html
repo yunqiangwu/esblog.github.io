@@ -127,7 +127,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
 <meta property="og:image" content="http://c1.mifile.cn/f/i/hd/2016051101/a-lj.png">
-<meta property="og:updated_time" content="2018-08-21T02:01:49.339Z">
+<meta property="og:updated_time" content="2018-08-21T14:22:40.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo中如何支持公式 mathjax">
 <meta name="twitter:description" content="UPDATE: 2018-08-08: github markdown已经支持公式， 简介MathJax 和 Katex mathjax Beautiful math in all browsersA JavaScript display engine for mathematics that works in all browsers. —— 来自www.mathjax.org  MathJa">
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-21 10:01:49" itemprop="dateModified" datetime="2018-08-21T10:01:49+08:00">2018-08-21</time>
+                <time title="修改时间：2018-08-21 22:22:40" itemprop="dateModified" datetime="2018-08-21T22:22:40+08:00">2018-08-21</time>
               
             
           </span>
@@ -571,17 +571,26 @@ angular，等
 </ul>
 </li>
 </ul>
-<h1 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h1><h2 id="markdow引擎的转义问题"><a href="#markdow引擎的转义问题" class="headerlink" title="markdow引擎的转义问题"></a>markdow引擎的转义问题</h2><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\[ x=1 \]</span><br></pre></td></tr></table></figure>
-<p>经过<code>marked</code>引擎解析成以下html。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>[ x=1 ]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>会存在反斜线转义丢失的问题，导致公式无法正常显示。</p>
+<h1 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h1><h2 id="公式的转义问题"><a href="#公式的转义问题" class="headerlink" title="公式的转义问题"></a>公式的转义问题</h2><p>有时会遇到公式渲染失败，有时也会遇到很多不同的公式写法，比如：</p>
 <ul>
-<li><code>marked</code> 轻量级 转换demo，<a href="https://marked.js.org/demo/?text=%23%20good%0A%24%24x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%24%24%0A%0A%23%20bad%0A%5C%5Bx%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C%5D%0A%5C(x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C" target="_blank" rel="noopener">点此</a>)</li>
-<li><code>pandoc</code> 重量级 也存在同样的问题，<a href="http://pandoc.org/try/?text=%23+good%0A%24%24x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%24%24%0A%0A%23+bad%0A%5C%5Bx%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C%5D%0A%5C(x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C" target="_blank" rel="noopener">示例</a>&amp;from=markdown&amp;to=)<ul>
+<li><script type="math/tex; mode=display">`、`$</script></li>
+<li><code>\(</code>和<code>\)</code>、<code>\[</code>和<code>\]</code></li>
+<li><code>\\(</code>和<code>\\)</code>、<code>\\[</code>和<code>\\]</code>，示例<a href="https://www.tensorflow.org/community/documentation#math_in_markdown" target="_blank" rel="noopener">tensorflow</a> 、<a href="https://raw.githubusercontent.com/cs231n/cs231n.github.io/master/neural-networks-1.md" target="_blank" rel="noopener">cs231n</a></li>
+</ul>
+<p>公式渲染失败，一般是由于不同的markdown引擎的渲染方式不同引起的，以上的<code>\\(</code>这种写法也是为了和markdown渲染引擎作斗争，以致于写个公式变得这么复杂。</p>
+<p><strong>举个例子</strong></p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\[ x=1 \]</span><br></pre></td></tr></table></figure>
+<p>经过<code>marked</code>引擎解析成以下html:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>[ x=1 ]<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong> 这里的反斜线<code>\[</code>经过<code>marked</code>引擎后转义丢失，只剩下<code>[</code>。因此mathjax无法识别，以致于公式无法正常显示。</p>
+<p>怎么办？既然反斜线丢失，那就多加个反斜线，写成<code>\\[ x=1 \\]</code>。这样就渲染成功了</p>
+<h2 id="常见的markdown渲染引擎"><a href="#常见的markdown渲染引擎" class="headerlink" title="常见的markdown渲染引擎"></a>常见的markdown渲染引擎</h2><ul>
+<li><code>marked</code> 轻量级 <a href="https://marked.js.org/demo/?text=%23%20good%0A%24%24x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%24%24%0A%0A%23%20bad%0A%5C%5Bx%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C%5D%0A%5C(x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C" target="_blank" rel="noopener">demo</a>)</li>
+<li><code>pandoc</code> 重量级 也存在同样的问题，<a href="http://pandoc.org/try/?text=%23+good%0A%24%24x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%24%24%0A%0A%23+bad%0A%5C%5Bx%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C%5D%0A%5C(x%2B1%5Cover%5Csqrt%7B1-x%5E2%7D%5C" target="_blank" rel="noopener">demo</a>&amp;from=markdown&amp;to=)<ul>
 <li>pandoc -f markdown+tex_math_single_backslash —mathjax test.md -o test.html</li>
 <li>以上参数的命令可以解决问题</li>
 </ul>
 </li>
-<li><code>kramdown</code>也存在同样的问题，<a href="http://kramdown-sandbox.herokuapp.com/" target="_blank" rel="noopener">示例</a></li>
+<li><code>kramdown</code>也存在同样的问题，<a href="http://kramdown-sandbox.herokuapp.com/" target="_blank" rel="noopener">demo</a></li>
 </ul>
 <ol>
 <li>多加个反斜线，比如<code>\[</code>要写成<code>\\[</code>   <strong>麻烦</strong></li>
@@ -656,8 +665,8 @@ angular，等
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
-                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
+              <a href="/pub/664e9bad/" rel="next" title="【机器翻译】transformer">
+                <i class="fa fa-chevron-left"></i> 【机器翻译】transformer
               </a>
             
           </div>
@@ -749,7 +758,7 @@ angular，等
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">159</span>
+                    <span class="site-state-item-count">160</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1347,7 +1356,7 @@ angular，等
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathjax"><span class="nav-number">2.</span> <span class="nav-text">mathjax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html中使用mathjax"><span class="nav-number">3.</span> <span class="nav-text">html中使用mathjax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo中使用mathjax"><span class="nav-number">4.</span> <span class="nav-text">hexo中使用mathjax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">4.1.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo中支持公式的markdown插件"><span class="nav-number">5.</span> <span class="nav-text">hexo中支持公式的markdown插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown渲染引擎"><span class="nav-number">6.</span> <span class="nav-text">markdown渲染引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存在的问题"><span class="nav-number">7.</span> <span class="nav-text">存在的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#markdow引擎的转义问题"><span class="nav-number">7.1.</span> <span class="nav-text">markdow引擎的转义问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">8.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathjax"><span class="nav-number">2.</span> <span class="nav-text">mathjax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#html中使用mathjax"><span class="nav-number">3.</span> <span class="nav-text">html中使用mathjax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo中使用mathjax"><span class="nav-number">4.</span> <span class="nav-text">hexo中使用mathjax</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#示例"><span class="nav-number">4.1.</span> <span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo中支持公式的markdown插件"><span class="nav-number">5.</span> <span class="nav-text">hexo中支持公式的markdown插件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown渲染引擎"><span class="nav-number">6.</span> <span class="nav-text">markdown渲染引擎</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#存在的问题"><span class="nav-number">7.</span> <span class="nav-text">存在的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#公式的转义问题"><span class="nav-number">7.1.</span> <span class="nav-text">公式的转义问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的markdown渲染引擎"><span class="nav-number">7.2.</span> <span class="nav-text">常见的markdown渲染引擎</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">8.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
