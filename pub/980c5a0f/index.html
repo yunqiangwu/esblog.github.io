@@ -117,18 +117,20 @@
 
 
 
-  <meta name="description" content="简介Matrix FactorizationSVD u = -0.825066 -0.047735 -0.563016-0.443084 -0.563669 0.697104-0.350631 0.824620 0.443914 s = Diagonal Matrix 9.2654 0 0 0   3.2340        0  0        0   1.3016 v = -0.636527">
+  <meta name="description" content="PCAPCA有两种通俗易懂的解释，1)是最大化投影后数据的方差(让数据更分散)；2)是最小化投影造成的损失。这两个思路最后都能推导出同样的结果。 其方法主要是通过对协方差矩阵进行特征分解[2]，以得出数据的主成分（即特征向量）与它们的权值（即特征值[3]）。PCA是最简单的以特征量分析多元统计分布的方法。其结果可以理解为对原数据中的方差做出解释：哪一个方向上的数据值对方差的影响最大？换而言之，PC">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVD、PCA、LDA、LSA、PLSA、LDA">
 <meta property="og:url" content="https://blog.eson.org/pub/980c5a0f/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介Matrix FactorizationSVD u = -0.825066 -0.047735 -0.563016-0.443084 -0.563669 0.697104-0.350631 0.824620 0.443914 s = Diagonal Matrix 9.2654 0 0 0   3.2340        0  0        0   1.3016 v = -0.636527">
+<meta property="og:description" content="PCAPCA有两种通俗易懂的解释，1)是最大化投影后数据的方差(让数据更分散)；2)是最小化投影造成的损失。这两个思路最后都能推导出同样的结果。 其方法主要是通过对协方差矩阵进行特征分解[2]，以得出数据的主成分（即特征向量）与它们的权值（即特征值[3]）。PCA是最简单的以特征量分析多元统计分布的方法。其结果可以理解为对原数据中的方差做出解释：哪一个方向上的数据值对方差的影响最大？换而言之，PC">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-21T11:00:19.409Z">
+<meta property="og:image" content="https://blog.eson.org/images/raw/ML%20-%20PCA%20-%20demo.gif">
+<meta property="og:updated_time" content="2018-08-23T00:15:20.247Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVD、PCA、LDA、LSA、PLSA、LDA">
-<meta name="twitter:description" content="简介Matrix FactorizationSVD u = -0.825066 -0.047735 -0.563016-0.443084 -0.563669 0.697104-0.350631 0.824620 0.443914 s = Diagonal Matrix 9.2654 0 0 0   3.2340        0  0        0   1.3016 v = -0.636527">
+<meta name="twitter:description" content="PCAPCA有两种通俗易懂的解释，1)是最大化投影后数据的方差(让数据更分散)；2)是最小化投影造成的损失。这两个思路最后都能推导出同样的结果。 其方法主要是通过对协方差矩阵进行特征分解[2]，以得出数据的主成分（即特征向量）与它们的权值（即特征值[3]）。PCA是最简单的以特征量分析多元统计分布的方法。其结果可以理解为对原数据中的方差做出解释：哪一个方向上的数据值对方差的影响最大？换而言之，PC">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/ML%20-%20PCA%20-%20demo.gif">
 
 
 
@@ -415,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-21 19:00:19" itemprop="dateModified" datetime="2018-08-21T19:00:19+08:00">2018-08-21</time>
+                <time title="修改时间：2018-08-23 08:15:20" itemprop="dateModified" datetime="2018-08-23T08:15:20+08:00">2018-08-23</time>
               
             
           </span>
@@ -524,7 +526,14 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Matrix Factorization<br>SVD</p>
+        <h1 id="PCA"><a href="#PCA" class="headerlink" title="PCA"></a>PCA</h1><p>PCA有两种通俗易懂的解释，1)是最大化投影后数据的方差(让数据更分散)；2)是最小化投影造成的损失。这两个思路最后都能推导出同样的结果。</p>
+<p>其方法主要是通过对协方差矩阵进行特征分解[2]，以得出数据的主成分（即特征向量）与它们的权值（即特征值[3]）。PCA是最简单的以特征量分析多元统计分布的方法。其结果可以理解为对原数据中的方差做出解释：哪一个方向上的数据值对方差的影响最大？换而言之，PCA提供了一种降低数据维度的有效办法；如果分析者在原数据中除掉最小的特征值所对应的成分，那么所得的低维度数据必定是最优化的（也即，这样降低维度必定是失去讯息最少的方法）。主成分分析在分析复杂数据时尤为有用，比如人脸识别。</p>
+<p>PCA和SVD的关系？一个根据covariave。一个是特征值。有什么联系。</p>
+<p>LDA不记得了。</p>
+<p><img src="/images/raw/ML - PCA - demo.gif"></p>
+<p>图片来自 <a href="https://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca" target="_blank" rel="noopener">https://stats.stackexchange.com/questions/134282/relationship-between-svd-and-pca-how-to-use-svd-to-perform-pca</a></p>
+<h1 id="PCA与FA"><a href="#PCA与FA" class="headerlink" title="PCA与FA"></a>PCA与FA</h1><p>因子分析(FA)与主成分分析(PCA)的区别<br>(1)主成分分析是将主要成分表示为原始观察变量的线性组合，而因子分析是将原始观察变量表示为新因子的线性组合，原始观察变量在两种情况下所处的位置不同。</p>
+<h2 id="PCA与SVD"><a href="#PCA与SVD" class="headerlink" title="PCA与SVD"></a>PCA与SVD</h2><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Matrix Factorization<br>SVD</p>
 <p>u =</p>
 <p>-0.825066 -0.047735 -0.563016<br>-0.443084 -0.563669 0.697104<br>-0.350631 0.824620 0.443914</p>
 <p>s =</p>
@@ -550,6 +559,8 @@
 <li><a href="http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html" target="_blank" rel="noopener">http://www.cnblogs.com/LeftNotEasy/archive/2011/01/19/svd-and-applications.html</a></li>
 <li><a href="http://www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html?showall=1" target="_blank" rel="noopener">http://www.puffinwarellc.com/index.php/news-and-articles/articles/30-singular-value-decomposition-tutorial.html?showall=1</a></li>
 <li><a href="http://www.ams.org/samplings/feature-column/fcarc-svd" target="_blank" rel="noopener">http://www.ams.org/samplings/feature-column/fcarc-svd</a></li>
+<li><a href="https://blog.csdn.net/Dark_Scope/article/details/53150883" target="_blank" rel="noopener">https://blog.csdn.net/Dark_Scope/article/details/53150883</a></li>
+<li><a href="https://www.zhihu.com/question/38319536" target="_blank" rel="noopener">https://www.zhihu.com/question/38319536</a></li>
 </ul>
 
       
@@ -689,7 +700,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">160</span>
+                    <span class="site-state-item-count">161</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1287,7 +1298,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fed"><span class="nav-number">2.</span> <span class="nav-text">fed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">3.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA"><span class="nav-number">1.</span> <span class="nav-text">PCA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PCA与FA"><span class="nav-number">2.</span> <span class="nav-text">PCA与FA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA与SVD"><span class="nav-number">2.1.</span> <span class="nav-text">PCA与SVD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">3.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fed"><span class="nav-number">4.</span> <span class="nav-text">fed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">5.</span> <span class="nav-text">疑问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
