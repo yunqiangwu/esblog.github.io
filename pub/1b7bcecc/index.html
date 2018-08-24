@@ -117,18 +117,18 @@
 
 
 
-  <meta name="description" content="java 7的HashMap源码 java 8的HashMap源码 历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 java 8  主要区别 12">
+  <meta name="description" content="java 7的HashMap源码 java 8的HashMap源码  历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 采用的hashTable java 8 采用的  主要区别 12 hashhash值的计算java7 123456789final int hash(Object k) &amp;#123;    int h = h">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【java源码系列】HashMap">
 <meta property="og:url" content="https://blog.eson.org/pub/1b7bcecc/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="java 7的HashMap源码 java 8的HashMap源码 历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 java 8  主要区别 12">
+<meta property="og:description" content="java 7的HashMap源码 java 8的HashMap源码  历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 采用的hashTable java 8 采用的  主要区别 12 hashhash值的计算java7 123456789final int hash(Object k) &amp;#123;    int h = h">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-22T00:45:49.967Z">
+<meta property="og:updated_time" content="2018-08-24T13:13:59.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【java源码系列】HashMap">
-<meta name="twitter:description" content="java 7的HashMap源码 java 8的HashMap源码 历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 java 8  主要区别 12">
+<meta name="twitter:description" content="java 7的HashMap源码 java 8的HashMap源码  历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 采用的hashTable java 8 采用的  主要区别 12 hashhash值的计算java7 123456789final int hash(Object k) &amp;#123;    int h = h">
 
 
 
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-22 08:45:49" itemprop="dateModified" datetime="2018-08-22T08:45:49+08:00">2018-08-22</time>
+                <time title="修改时间：2018-08-24 21:13:59" itemprop="dateModified" datetime="2018-08-24T21:13:59+08:00">2018-08-24</time>
               
             
           </span>
@@ -552,16 +552,45 @@
       
 
       
-        <p><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 7的HashMap源码</a></p>
-<p><a href="https://github.com/dmlloyd/openjdk/blob/jdk8u/jdk8u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 8的HashMap源码</a></p>
+        <ul>
+<li><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 7的HashMap源码</a></li>
+<li><a href="https://github.com/dmlloyd/openjdk/blob/jdk8u/jdk8u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 8的HashMap源码</a></li>
+</ul>
 <h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><ul>
 <li>java 1.0 中没有HashMap，有<a href="https://github.com/BitMindLab/JDK-1.0.2/blob/master/src/java/util/Hashtable.java" target="_blank" rel="noopener">HashTable</a></li>
 <li>java 1.2 引入HashMap</li>
-<li>java 7</li>
-<li>java 8</li>
+<li>java 7 采用的hashTable</li>
+<li>java 8 采用的</li>
 </ul>
 <p>主要区别</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h1><h2 id="hash值的计算"><a href="#hash值的计算" class="headerlink" title="hash值的计算"></a>hash值的计算</h2><p><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L356" target="_blank" rel="noopener">java7</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> <span class="keyword">int</span> <span class="title">hash</span><span class="params">(Object k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> h = hashSeed;</span><br><span class="line">    <span class="keyword">if</span> (<span class="number">0</span> != h &amp;&amp; k <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">        <span class="keyword">return</span> sun.misc.Hashing.stringHash32((String) k); <span class="comment">// 麻蛋</span></span><br><span class="line">    &#125;</span><br><span class="line">    h ^= k.hashCode();  <span class="comment">// 按位异或</span></span><br><span class="line">    h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);  <span class="comment">// “扰动函数”。Java 8中这步已经简化了，只做一次16位右位移异或混合，而不是四次，但原理是不变的。</span></span><br><span class="line">    <span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>); <span class="comment">// &gt;&gt;&gt; 无符号右移运算符</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基础知识:</p>
+<ol>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p> 无符号右移运算符<br>左移的规则：丢弃高位，0补低位<br>右移的规则：丢弃低位，高位的空位补符号位，即正数补零，负数补1<br>1.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<p>右移的偏移量20，12，7，4是怎么来的呢？因为Java中对象的哈希值都是32位的，所以这几个数应该<br>就是把高位与低位做异或运算，</p>
+<h2 id="bucket"><a href="#bucket" class="headerlink" title="bucket"></a>bucket</h2><p><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L374" target="_blank" rel="noopener">https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L374</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index = hashCode(key) &amp; (capacity‐<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="get-put"><a href="#get-put" class="headerlink" title="get put"></a>get put</h2><p><strong><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L457" target="_blank" rel="noopener">get</a></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">getEntry</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key);</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</span><br><span class="line">         e != <span class="keyword">null</span>;</span><br><span class="line">         e = e.next) &#123;</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">            ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L486" target="_blank" rel="noopener">put</a></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (table == EMPTY_TABLE) &#123;</span><br><span class="line">        inflateTable(threshold);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">    <span class="keyword">int</span> hash = hash(key);</span><br><span class="line">    <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[i]; e != <span class="keyword">null</span>; e = e.next) &#123;</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            e.value = value;</span><br><span class="line">            e.recordAccess(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    modCount++;</span><br><span class="line">    addEntry(hash, key, value, i);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//  默认的平衡因子为0.75。过高的因子会降低存储空间但是查找的时间就会增加。</span></span><br><span class="line"><span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br><span class="line"><span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;</span><br><span class="line"><span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;</span><br><span class="line"></span><br><span class="line">映射到<span class="number">0</span>,capacity-<span class="number">1</span>之间(类似mod)</span><br></pre></td></tr></table></figure>
+<h2 id="java-8"><a href="#java-8" class="headerlink" title="java 8"></a>java 8</h2><h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><ul>
+<li>为什么容量必须为2的指数倍（默认为16）？</li>
+<li>hash值的计算？</li>
+<li>hashSeed的影响？</li>
+<li>NUll keys always map to hash 0, thus index 0？怎么处理？为什么</li>
+</ul>
 
       
     </div>
@@ -617,8 +646,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/eae469b0/" rel="prev" title="文本分类 - 综述">
-                文本分类 - 综述 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/eab986ce/" rel="prev" title="【java源码系列】准备篇">
+                【java源码系列】准备篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -700,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">161</span>
+                    <span class="site-state-item-count">172</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -967,7 +996,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">127</span>
+                      
+                    
+                    <span class="site-state-item-count">128</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1298,7 +1329,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#历史"><span class="nav-number">1.</span> <span class="nav-text">历史</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#历史"><span class="nav-number">1.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hash"><span class="nav-number">2.</span> <span class="nav-text">hash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hash值的计算"><span class="nav-number">2.1.</span> <span class="nav-text">hash值的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bucket"><span class="nav-number">2.2.</span> <span class="nav-text">bucket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#get-put"><span class="nav-number">2.3.</span> <span class="nav-text">get put</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">2.4.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-8"><span class="nav-number">2.5.</span> <span class="nav-text">java 8</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FAQ"><span class="nav-number">3.</span> <span class="nav-text">FAQ</span></a></li></ol></div>
             
 
           </div>
