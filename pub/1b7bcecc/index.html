@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 采用的hashTable java 8 采用的  hash流程  对key计算hashcode 将hashcode映射到有限bucket空间 在相应的bucket内，存储或查询相应的key  计算hashcodejava7 123456789final int hash(Obje">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T01:44:57.549Z">
+<meta property="og:updated_time" content="2018-08-25T01:58:23.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【java源码系列】HashMap">
 <meta name="twitter:description" content="历史 java 1.0 中没有HashMap，有HashTable java 1.2 引入HashMap java 7 采用的hashTable java 8 采用的  hash流程  对key计算hashcode 将hashcode映射到有限bucket空间 在相应的bucket内，存储或查询相应的key  计算hashcodejava7 123456789final int hash(Obje">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-25 09:44:57" itemprop="dateModified" datetime="2018-08-25T09:44:57+08:00">2018-08-25</time>
+                <time title="修改时间：2018-08-25 09:58:23" itemprop="dateModified" datetime="2018-08-25T09:58:23+08:00">2018-08-25</time>
               
             
           </span>
@@ -570,33 +570,40 @@
 <ol>
 <li><code>hashSeed</code> 随机数的种子，详见..</li>
 <li><code>^</code> 按位异或。作用:</li>
-<li><code>&gt;&gt;&gt;</code>  无符号右移运算符<br>左移的规则：丢弃高位，0补低位<br>右移的规则：丢弃低位，高位的空位补符号位，即正数补零，负数补1<br>1.</li>
+<li><code>&gt;&gt;&gt;</code>  无符号右移运算符<br>左移的规则：丢弃高位，0补低位<br>右移的规则：丢弃低位，高位的空位补符号位，即正数补零，负数补1</li>
 </ol>
 <p>右移的偏移量20，12，7，4是怎么来的呢？因为Java中对象的哈希值都是32位的，所以这几个数应该<br>就是把高位与低位做异或运算，</p>
-<h2 id="分配hashcode到bucket"><a href="#分配hashcode到bucket" class="headerlink" title="分配hashcode到bucket"></a>分配hashcode到bucket</h2><p>hashcode的取值空间太大，不能作为直接存储地址。因此要把hashcode分配到一定数量的bucket中，取值[0, capacity‐1]。</p>
+<h2 id="分配hashcode到bucket"><a href="#分配hashcode到bucket" class="headerlink" title="分配hashcode到bucket"></a>分配hashcode到bucket</h2><p>hashcode的取值空间太大，不能作为直接存储地址。因此要把hashcode分配到一定数量的bucket中，取值<code>[0, capacity‐1]</code>。</p>
 <p>为了使每个key都能在冲突最小的情况下映射到[0,capacity)，通常有两种做法：</p>
 <ol>
 <li>capacity为素数，<code>index = hashCode(key) mod capacity</code></li>
 <li>capacity为2的倍数，<code>index = hashCode(key) &amp; (capacity‐1)</code></li>
 </ol>
 <p><strong><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L374" target="_blank" rel="noopener">java7中</a></strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index = hashCode(key) &amp; (capacity‐<span class="number">1</span>); <span class="comment">// 映射到0,capacity-1之间(类似mod)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// 16</span></span><br><span class="line">index = hashCode(key) &amp; (capacity‐<span class="number">1</span>); <span class="comment">// 映射到0,capacity-1之间(类似mod)</span></span><br></pre></td></tr></table></figure>
 <h2 id="存储或查询-get-put"><a href="#存储或查询-get-put" class="headerlink" title="存储或查询 (get put)"></a>存储或查询 (get put)</h2><p><strong><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L457" target="_blank" rel="noopener">java7的get</a></strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">getEntry</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key);</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</span><br><span class="line">         e != <span class="keyword">null</span>;</span><br><span class="line">         e = e.next) &#123;</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">            ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">            <span class="keyword">return</span> e;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L486" target="_blank" rel="noopener">java7的put</a></strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (table == EMPTY_TABLE) &#123;</span><br><span class="line">        inflateTable(threshold);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">    <span class="keyword">int</span> hash = hash(key);</span><br><span class="line">    <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[i]; e != <span class="keyword">null</span>; e = e.next) &#123;</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            e.value = value;</span><br><span class="line">            e.recordAccess(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    modCount++;</span><br><span class="line">    addEntry(hash, key, value, i);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="rehash"><a href="#rehash" class="headerlink" title="rehash"></a>rehash</h2><p><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L572" target="_blank" rel="noopener">https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L572</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">    Entry[] oldTable = table;</span><br><span class="line">    <span class="keyword">int</span> oldCapacity = oldTable.length;</span><br><span class="line">    <span class="keyword">if</span> (oldCapacity == MAXIMUM_CAPACITY) &#123;</span><br><span class="line">        threshold = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity];</span><br><span class="line">    transfer(newTable, initHashSeedAsNeeded(newCapacity));</span><br><span class="line">    table = newTable;</span><br><span class="line">    threshold = (<span class="keyword">int</span>)Math.min(newCapacity * loadFactor, MAXIMUM_CAPACITY + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Transfers all entries from current table to newTable.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">(Entry[] newTable, <span class="keyword">boolean</span> rehash)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> newCapacity = newTable.length;</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e : table) &#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">null</span> != e) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            <span class="keyword">if</span> (rehash) &#123;</span><br><span class="line">                e.hash = <span class="keyword">null</span> == e.key ? <span class="number">0</span> : hash(e.key);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> i = indexFor(e.hash, newCapacity);</span><br><span class="line">            e.next = newTable[i];</span><br><span class="line">            newTable[i] = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="rehash"><a href="#rehash" class="headerlink" title="rehash"></a>rehash</h2><p><strong>[java7的rehash]</strong>(<a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L572" target="_blank" rel="noopener">https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java#L572</a>)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">resize</span><span class="params">(<span class="keyword">int</span> newCapacity)</span> </span>&#123;</span><br><span class="line">    Entry[] newTable = <span class="keyword">new</span> Entry[newCapacity]; <span class="comment">// 创建新的entry array</span></span><br><span class="line">    transfer(newTable, initHashSeedAsNeeded(newCapacity));</span><br><span class="line">    table = newTable;</span><br><span class="line">    threshold = (<span class="keyword">int</span>)Math.min(newCapacity * loadFactor, MAXIMUM_CAPACITY + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Transfers all entries from current table to newTable.</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">transfer</span><span class="params">(Entry[] newTable, <span class="keyword">boolean</span> rehash)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> newCapacity = newTable.length;</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e : table) &#123;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">null</span> != e) &#123;</span><br><span class="line">            Entry&lt;K,V&gt; next = e.next;</span><br><span class="line">            <span class="keyword">if</span> (rehash) &#123;</span><br><span class="line">                e.hash = <span class="keyword">null</span> == e.key ? <span class="number">0</span> : hash(e.key);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> i = indexFor(e.hash, newCapacity);</span><br><span class="line">            e.next = newTable[i];</span><br><span class="line">            newTable[i] = e;</span><br><span class="line">            e = next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>复杂度？</p>
+<p>一致性？</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//  默认的平衡因子为0.75。过高的因子会降低存储空间但是查找的时间就会增加。</span></span><br><span class="line"><span class="keyword">int</span> DEFAULT_INITIAL_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br><span class="line"><span class="keyword">int</span> MAXIMUM_CAPACITY = <span class="number">1</span> &lt;&lt; <span class="number">30</span>;   <span class="comment">// 哈希表容量（也就是buckets或slots大小）</span></span><br><span class="line"><span class="keyword">float</span> DEFAULT_LOAD_FACTOR = <span class="number">0.75f</span>;</span><br></pre></td></tr></table></figure>
+<p>NUll keys always map to hash 0, thus index 0</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><a href="https://github.com/dmlloyd/openjdk/blob/jdk7u/jdk7u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 7 源码</a></li>
 <li><a href="https://github.com/dmlloyd/openjdk/blob/jdk8u/jdk8u/jdk/src/share/classes/java/util/HashMap.java" target="_blank" rel="noopener">java 8 源码</a></li>
 </ul>
 <h1 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h1><ul>
 <li>为什么容量必须为2的指数倍（默认为16）？</li>
-<li>hash值的计算？</li>
+<li>超容后，reshash的复杂度是多少？怎样降低复杂度？怎样保证一致性？</li>
+<li>容量超过<code>Integer.MAX_VALUE</code>怎么办？</li>
+<li>hashcode的计算？</li>
 <li>hashSeed的影响？</li>
-<li>NUll keys always map to hash 0, thus index 0？怎么处理？为什么</li>
+<li>Null key的处理？为什么</li>
+<li>并发的影响？见</li>
+<li>如何做到key的排序？见</li>
 </ul>
 <blockquote>
 <p>答案在文中寻找</p>
@@ -687,8 +694,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/7c29b6b9/" rel="next" title="机器学习中的正则化约束 - 结构风险">
-                <i class="fa fa-chevron-left"></i> 机器学习中的正则化约束 - 结构风险
+              <a href="/pub/eab986ce/" rel="next" title="【java源码系列】导读">
+                <i class="fa fa-chevron-left"></i> 【java源码系列】导读
               </a>
             
           </div>
@@ -697,8 +704,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/eae469b0/" rel="prev" title="文本分类 - 综述">
-                文本分类 - 综述 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/27351887/" rel="prev" title="【数据分析篇】aspect-level 数据分析">
+                【数据分析篇】aspect-level 数据分析 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1049,7 +1056,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">128</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
