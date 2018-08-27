@@ -117,18 +117,18 @@
 
 
 
-  <meta name="description" content="见知乎">
+  <meta name="description" content="简介在统计领域，有两种突出但对立的思想学派：贝叶斯学派（Bayesian）和经典学派（也称频率学派，Frequency）。他们之间最重要的区别就是如何看待未知模型或者变量，即对参数的理解不同。  贝叶斯方法: 将未知参数$\theta$看做已知分布的随机变量(先验分布) 经典方法: 认为未知参数$\theta$是确定的(非随机)，而取值未知；是未知常数，而不是随机变量。  贝叶斯方法主要是想将统计">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贝叶斯学派 VS 频率学派">
 <meta property="og:url" content="https://blog.eson.org/pub/ed02138c/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="见知乎">
+<meta property="og:description" content="简介在统计领域，有两种突出但对立的思想学派：贝叶斯学派（Bayesian）和经典学派（也称频率学派，Frequency）。他们之间最重要的区别就是如何看待未知模型或者变量，即对参数的理解不同。  贝叶斯方法: 将未知参数$\theta$看做已知分布的随机变量(先验分布) 经典方法: 认为未知参数$\theta$是确定的(非随机)，而取值未知；是未知常数，而不是随机变量。  贝叶斯方法主要是想将统计">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T01:59:07.395Z">
+<meta property="og:updated_time" content="2018-08-27T08:35:56.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贝叶斯学派 VS 频率学派">
-<meta name="twitter:description" content="见知乎">
+<meta name="twitter:description" content="简介在统计领域，有两种突出但对立的思想学派：贝叶斯学派（Bayesian）和经典学派（也称频率学派，Frequency）。他们之间最重要的区别就是如何看待未知模型或者变量，即对参数的理解不同。  贝叶斯方法: 将未知参数$\theta$看做已知分布的随机变量(先验分布) 经典方法: 认为未知参数$\theta$是确定的(非随机)，而取值未知；是未知常数，而不是随机变量。  贝叶斯方法主要是想将统计">
 
 
 
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2018-06-21 11:58:14" itemprop="dateCreated datePublished" datetime="2018-06-21T11:58:14+08:00">2018-06-21</time>
+              <time title="创建时间：2018-08-26 21:19:04" itemprop="dateCreated datePublished" datetime="2018-08-26T21:19:04+08:00">2018-08-26</time>
             
 
             
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-25 09:59:07" itemprop="dateModified" datetime="2018-08-25T09:59:07+08:00">2018-08-25</time>
+                <time title="修改时间：2018-08-27 16:35:56" itemprop="dateModified" datetime="2018-08-27T16:35:56+08:00">2018-08-27</time>
               
             
           </span>
@@ -517,7 +517,39 @@
       
 
       
-        <p>见知乎</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在统计领域，有两种突出但对立的思想学派：贝叶斯学派（Bayesian）和经典学派（也称频率学派，Frequency）。<br>他们之间最重要的区别就是<strong>如何看待未知模型或者变量</strong>，即<strong>对参数的理解不同</strong>。</p>
+<ul>
+<li>贝叶斯方法: 将未知参数$\theta$看做已知分布的随机变量(<strong>先验分布</strong>)</li>
+<li>经典方法: 认为未知参数$\theta$是确定的(非随机)，而取值未知；是未知常数，而不是随机变量。</li>
+</ul>
+<p>贝叶斯方法主要是想将统计领域拉回到概率论的王国里，使得每个问题都只有唯一的答案。<br>特别地，当人们欲对未知模型进行推断时，贝叶斯方法将该模型看成是随机地从已知的一类模型中选出来的。<br>处理方法是引入一个随机变量$\Theta$来刻画该模型，然后构造一个先验概率分布$p<em>{\Theta}(\theta)$。<br>在已知数据x的情况下，人们原则上使用贝叶斯公式来推导后验概率分布$p</em>{\Theta x}(\theta x)$。<br>这样就抓住了x能提供关于$\theta$的所有信息。</p>
+<p>相反，经典统计方法将未知参数$\theta$视为常数，但是未知就需要估计。<br>然后经典统计的目标就是提出参数$\theata$的估计方法，且保证具有一些性质。<br>经典方法处理的不是一个概率模型，而是有多个待选的概率模型，每个标记为$\theata$的一个可能值。<br>比如矩估计和MLE会得到不同的参数$\theta$，这些就是不同的模型。</p>
+<h2 id="学派大战"><a href="#学派大战" class="headerlink" title="学派大战"></a>学派大战</h2><p>两个学派的争论已经持续一个世纪了，经常争论的是哲学思想。<br>在两派的争论过程中，每派都构造一些例子来说明对方学派的方法有时得到不合理的，或者不吸引人的结论。</p>
+<p>我们简短地回顾两个学派争论的观点。</p>
+<p>假设我们要通过噪声实验的手段来测量一个物理常数，比如电子的质量。<br>经典统计学家认为电子的质量尽管未知，但也只是一个常数，所以不能把它看成随机变量。<br>而贝叶斯统计学家却给它一个先验分布，来反映人们对电子质量的已有知识。<br>比如，如果我们已经<strong>从历史实验中获知电子质量的大概范围</strong>，则可以将先验分布集中在那个范围中。</p>
+<blockquote>
+<p>我觉得贝叶斯靠谱啊，贝叶斯考虑了历史性、全局性（历史实验中电子质量的分布，或者人的先验知识），以及参数的相关性（体现在先验分布的协方差）。<br>而频率学派讲究让数据说话，在数据中挖掘信息。只局限于单个样本（或所有观测样本），孤立的看问题。</p>
+</blockquote>
+<p>经典学派统计学家经常返回这种挑选一个特定先验的随意性。<br>贝叶斯统计学家反驳说，任何统计推断往往隐含着一些先验。<br>进一步地，在某些例子中，先验分布如果是某个特殊选定的分布，经典方法实质上是与贝叶斯方法等价的。<br>通过将所有的假设都以先验的形式放在一起，贝叶斯统计学家主张将这些假设公开的，并认为它们是经得起推敲的。</p>
+<p>最后，从实际的角度考虑。在许多情况下，贝叶斯方法在计算方面很棘手，比如需要计算多维的积分。<br>另一方面，随着快速计算逐渐为人们所用，贝叶斯统计学派的大量最新研究成果就集中在如何使贝叶斯方法具有可行性上。</p>
+<h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><p>学界一般认为，Bayesian 视角的优势在于能解释一些传统统计不能解释的问题，而劣势在于<strong>先验这个概念太主观</strong>；而现在真正让Bayesian 起飞的，是十多二十年前它和MCMC结合以后方法。</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>一般的统计推断，也有对应的Bayesian 推断；有一般的假设检验，也有对应的Bayesian 检验</p>
+<h2 id="PLSA-VS-LDA"><a href="#PLSA-VS-LDA" class="headerlink" title="PLSA VS LDA"></a>PLSA VS LDA</h2><ul>
+<li>PLSA中认为，一个文档的主题分布是常数</li>
+<li>LDA认为，一个文档的主题分布是服从dirichlet分布的随机变量</li>
+</ul>
+<h2 id="高斯的参数估计"><a href="#高斯的参数估计" class="headerlink" title="高斯的参数估计"></a>高斯的参数估计</h2><p>-</p>
+<h1 id="贝叶斯方法"><a href="#贝叶斯方法" class="headerlink" title="贝叶斯方法"></a>贝叶斯方法</h1><p>先验，一般是</p>
+<h2 id="先验分布的选择"><a href="#先验分布的选择" class="headerlink" title="先验分布的选择"></a>先验分布的选择</h2><p>如果先验选择某分布的共轭，那么后验就一定会和先验的分布类型一样，而类型一样的优势在于，极大化简运算。<br>这就是为什么LDA中会选择 Dirichlet 和 Multinomial，因为前者是后者的共轭先验。<br>GMM之所以要从Bayesian 考虑，是因为将数据的来源视为未知变量，从而再从条件概率考虑并用EM算法求解。</p>
+<h1 id="经典方法"><a href="#经典方法" class="headerlink" title="经典方法"></a>经典方法</h1><h1 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h1><h3 id="贝叶斯方法的先验分布形式是否太局限？"><a href="#贝叶斯方法的先验分布形式是否太局限？" class="headerlink" title="贝叶斯方法的先验分布形式是否太局限？"></a>贝叶斯方法的先验分布形式是否太局限？</h3><p>形式是比较局限，一般用常见的简单分布。但是作为参数的先验，简单的分布基本够用了。</p>
+<p>如果觉得不够用，可以采用对简单分布的变换，构造复杂分布。</p>
+<h3 id="参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差-不确定性-？"><a href="#参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差-不确定性-？" class="headerlink" title="参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差(不确定性)？"></a>参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差(不确定性)？</h3><h3 id="贝叶斯方法-与过拟合"><a href="#贝叶斯方法-与过拟合" class="headerlink" title="贝叶斯方法 与过拟合"></a>贝叶斯方法 与过拟合</h3><p>Bayesian 和防止过拟合没有本质联系，Frequency 实用（潜台词Bayesian 没那么实用）与否也未必是两者的区别。就拿Bayesian Lasso 来说，其结果是后验分布的 mode——而 mode 并非总是0——所以确实没有 Lasso 的变量选择能力，但如果多考虑一步，比如 估计出的Bayesian 区间是否含0等等从而进行取舍，依然可以实现将估计压缩到0的目标。</p>
+<h3 id="这两个学派跟波粒二象性的关系？"><a href="#这两个学派跟波粒二象性的关系？" class="headerlink" title="这两个学派跟波粒二象性的关系？"></a>这两个学派跟波粒二象性的关系？</h3><p>波 - 概率<br>粒 - 常数</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="">概率导论 - 第8章</a></li>
+<li><a href="https://www.zhihu.com/question/20587681" target="_blank" rel="noopener">贝叶斯学派与频率学派有何不同？ | 知乎</a></li>
+<li><a href="https://www.zhihu.com/question/55819120" target="_blank" rel="noopener">贝叶斯概率、贝叶斯推断以及模型之间的关系？ | 知乎</a></li>
+</ul>
 
       
     </div>
@@ -563,8 +595,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/cd9c7906/" rel="next" title="自然语言处理 - 从规则到统计">
-                <i class="fa fa-chevron-left"></i> 自然语言处理 - 从规则到统计
+              <a href="/pub/d007d6bc/" rel="next" title="参数估计">
+                <i class="fa fa-chevron-left"></i> 参数估计
               </a>
             
           </div>
@@ -572,10 +604,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/pub/92ba39c3/" rel="prev" title="马尔科夫模型">
-                马尔科夫模型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,8 +655,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -922,11 +959,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">133</span>
+                    <span class="site-state-item-count">131</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1253,6 +1286,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#学派大战"><span class="nav-number">1.1.</span> <span class="nav-text">学派大战</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#summary"><span class="nav-number">2.</span> <span class="nav-text">summary</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实例"><span class="nav-number">3.</span> <span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PLSA-VS-LDA"><span class="nav-number">3.1.</span> <span class="nav-text">PLSA VS LDA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯的参数估计"><span class="nav-number">3.2.</span> <span class="nav-text">高斯的参数估计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#贝叶斯方法"><span class="nav-number">4.</span> <span class="nav-text">贝叶斯方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先验分布的选择"><span class="nav-number">4.1.</span> <span class="nav-text">先验分布的选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#经典方法"><span class="nav-number">5.</span> <span class="nav-text">经典方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#疑问"><span class="nav-number">6.</span> <span class="nav-text">疑问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#贝叶斯方法的先验分布形式是否太局限？"><span class="nav-number">6.0.1.</span> <span class="nav-text">贝叶斯方法的先验分布形式是否太局限？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差-不确定性-？"><span class="nav-number">6.0.2.</span> <span class="nav-text">参数theta确是一个常数，而且假设经典方法能够准确学习该参数的情况下。再用贝叶斯方法是不是多此一举，徒增误差(不确定性)？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#贝叶斯方法-与过拟合"><span class="nav-number">6.0.3.</span> <span class="nav-text">贝叶斯方法 与过拟合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#这两个学派跟波粒二象性的关系？"><span class="nav-number">6.0.4.</span> <span class="nav-text">这两个学派跟波粒二象性的关系？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1860,6 +1909,30 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
