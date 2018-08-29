@@ -125,18 +125,18 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20dataflow.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20FFN.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
-<meta property="og:updated_time" content="2018-08-28T07:38:01.319Z">
+<meta property="og:updated_time" content="2018-08-29T05:21:49.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
-<meta name="twitter:image" content="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20dataflow.gif">
 
 
 
@@ -423,7 +423,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-28 15:38:01" itemprop="dateModified" datetime="2018-08-28T15:38:01+08:00">2018-08-28</time>
+                <time title="修改时间：2018-08-29 13:21:49" itemprop="dateModified" datetime="2018-08-29T13:21:49+08:00">2018-08-29</time>
               
             
           </span>
@@ -533,13 +533,18 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在2017年5月Facebook发布了<code>ConvSeq2Seq</code>模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做<code>Transformer</code>，用以来实现机器翻译。它<strong>抛弃了传统的CNN、RNN，只采用attention</strong>，取得了很好的效果，激起了工业界和学术界的广泛讨论。</p>
-<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的模型架构有RNN、CNN。trick方面，常见的是position-encoding</p>
-<p>见 related work</p>
-<p><img alt="transformer" title="transformer - data flow" src="https://3.bp.blogspot.com/-aZ3zvPiCoXM/WaiKQO7KRnI/AAAAAAAAB_8/7a1CYjp40nUg4lKpW7covGZJQAySxlg8QCLcBGAs/s640/transform20fps.gif"></p>
+<h1 id="背景，motivation"><a href="#背景，motivation" class="headerlink" title="背景，motivation"></a>背景，motivation</h1><h2 id="如何获取context信息"><a href="#如何获取context信息" class="headerlink" title="如何获取context信息"></a>如何获取context信息</h2><p>常用的模型架构有RNN、CNN（见 related work）。<br>trick方面，常见的是position-encoding</p>
+<div title="获取context信息的各种架构：RNN、CNN、Self Attention" style="display:inline;"><image height="130px" style="margin: 20px;" src="/images/raw/NN - Context - CNN.png"><image height="130px" style="margin: 20px;" src="/images/raw/NN - Context - Self Attention.png"></image></image></div>
+
+
+
+
 <h3 id="transformer横空出世"><a href="#transformer横空出世" class="headerlink" title="transformer横空出世"></a>transformer横空出世</h3><p>Transformer避开了recurrence，只用attention，便可以刻画出输入和输出的依赖关系。</p>
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
-<h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><h2 id="对attention的抽象"><a href="#对attention的抽象" class="headerlink" title="对attention的抽象"></a>对attention的抽象</h2><p>对attention的抽象 q k v</p>
+<p><img alt="transformer" title="transformer - data flow" src="/images/raw/NN - transformer - dataflow.gif"></p>
+<h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><p><img></p>
+<h2 id="对attention的抽象"><a href="#对attention的抽象" class="headerlink" title="对attention的抽象"></a>对attention的抽象</h2><p>对attention的抽象 q k v</p>
 <p><img width="150px" alt="Scaled Dot Product Attention" title="Scaled Dot Product Attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
 <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
 <script type="math/tex; mode=display">x = {-b \pm \sqrt{b^2-4ac} \over 2a}.</script><p>前面给出的是一般化的框架形式的描述，事实上Google给出的方案是很具体的。首先，它先把Attention的定义给了出来：</p>
@@ -810,7 +815,7 @@ attention-based BOW，这个模型也不错哎。
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">174</span>
+                    <span class="site-state-item-count">175</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

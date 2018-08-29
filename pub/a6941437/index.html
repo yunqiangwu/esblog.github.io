@@ -127,7 +127,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
 <meta property="og:image" content="https://jhui.github.io/assets/rnn/lstm.png">
-<meta property="og:updated_time" content="2018-08-28T07:38:01.474Z">
+<meta property="og:updated_time" content="2018-08-29T03:55:53.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
 <meta name="twitter:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-28 15:38:01" itemprop="dateModified" datetime="2018-08-28T15:38:01+08:00">2018-08-28</time>
+                <time title="修改时间：2018-08-29 11:55:53" itemprop="dateModified" datetime="2018-08-29T11:55:53+08:00">2018-08-29</time>
               
             
           </span>
@@ -575,10 +575,7 @@
 </ul>
 <h1 id="LSTM的设计思想"><a href="#LSTM的设计思想" class="headerlink" title="LSTM的设计思想"></a>LSTM的设计思想</h1><p>LSTM的核心：cell + gate。<br>用于解决传统RNN中的梯度消失问题 (Gradient Vanish)</p>
 <h2 id="关于gate"><a href="#关于gate" class="headerlink" title="关于gate"></a>关于gate</h2><!-- 备用图片 http://www.solidswiki.com/images/3/34/Gate_valves.gif -->
-<div style="display:inline;">
-<image width="130px" style="margin: 20px;" src="/images/raw/NN - LSTM gate - colah.png">
-<image width="300px" style="margin: 20px;" src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif">
-</image></image></div>
+<div style="display:inline;"><image width="130px" style="margin: 20px;" src="/images/raw/NN - LSTM gate - colah.png"><image width="300px" style="margin: 20px;" src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif"></image></image></div>
 
 <p>gate，即阀门、开关。取值范围[0,1]，0表示关闭，1表示通行</p>
 <p>使用一个合适激活函数，它的梯度在一个合理的范围。LSTM使用gate function，有选择的让一部分信息通过。gate是由一个sigmoid单元和一个逐点乘积操作组成，sigmoid单元输出1或0，用来判断通过还是阻止，然后训练这些gate的组合。所以，<strong>当gate是打开的（梯度接近于1），梯度就不会vanish。并且sigmoid不超过1，那么梯度也不会explode</strong>。</p>
@@ -600,7 +597,13 @@
 </ul>
 <p>LSTM将这两个角色拆分为 $h_t$和$C$，这样LSTM中的隐状态实际上就是$C$了，$h_t$作为<code>output</code>。通过这样的设计，输出层只利用$h_t$的信息，而不直接利用内部cell的值 $C$。</p>
 <p><img width="50%" src="https://jhui.github.io/assets/rnn/lstm.png"></p>
+<p>x和h_t-1做一个拼接，过sigmoide得到forget-gate。<br>forget-gate作用在c_t-1上。</p>
 <p><strong>为什么要设计cell？这样抽象的意义？</strong></p>
+<p>LSTM中c和h的区别: 仅仅是一个输出门的区别(c没过输出门)。</p>
+<ul>
+<li>c与x拼接送入forget gate呢？</li>
+<li>forget作用在h上呢？</li>
+</ul>
 <p><a href="https://zhuanlan.zhihu.com/p/28919765" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28919765</a></p>
 <h2 id="关于激活函数"><a href="#关于激活函数" class="headerlink" title="关于激活函数"></a>关于激活函数</h2><h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><p>sigmoid之类的大量用在rnn的门也并非是概率解释的问题。而是理想门函数是阶跃函数，但其本身不可导，所以soft成sigmoid是一种折中。而且rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿，因为门的作用本身就是通过与不通过，他希望的就是激活值大量集中在0/1附近而不是其他的连续值。</p>
 <p>为什么rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿？不影响梯度消失？</p>
@@ -739,8 +742,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/855d5922/" rel="next" title="微信网页版 聊天原理">
-                <i class="fa fa-chevron-left"></i> 微信网页版 聊天原理
+              <a href="/pub/5f589e78/" rel="next" title="关于websocket">
+                <i class="fa fa-chevron-left"></i> 关于websocket
               </a>
             
           </div>
@@ -832,7 +835,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">174</span>
+                    <span class="site-state-item-count">175</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
