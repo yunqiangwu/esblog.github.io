@@ -126,13 +126,16 @@
 <meta property="og:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20dataflow.gif">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20Attention%20-%20Encoder-Decoder%20Attention.png">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20Attention%20-%20Encoder%20Self-Attention.png">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20Attention%20-%20MaskedDecoder%20Self-Attention.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20scaled%20dot%20product%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20multi%20head%20attention.jpg">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20FFN.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
-<meta property="og:updated_time" content="2018-08-29T05:21:49.458Z">
+<meta property="og:updated_time" content="2018-08-29T05:25:40.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
@@ -423,7 +426,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-29 13:21:49" itemprop="dateModified" datetime="2018-08-29T13:21:49+08:00">2018-08-29</time>
+                <time title="修改时间：2018-08-29 13:25:40" itemprop="dateModified" datetime="2018-08-29T13:25:40+08:00">2018-08-29</time>
               
             
           </span>
@@ -543,7 +546,7 @@
 <p>对比RNN的决策步骤太长问题，transformer可<strong>单步决策</strong>。通过一层self-attention，bank能够直接attend到river上。</p>
 <p>ConvS2S是线性时间复杂度，ByteNet是log时间复杂度。而Transformer则是常数时间复杂度(前提是the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention)。</p>
 <p><img alt="transformer" title="transformer - data flow" src="/images/raw/NN - transformer - dataflow.gif"></p>
-<h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><p><img></p>
+<h1 id="核心点-创新点-亮点-trick"><a href="#核心点-创新点-亮点-trick" class="headerlink" title="核心点 创新点 亮点 trick"></a>核心点 创新点 亮点 trick</h1><p><img src="/images/raw/NN - Attention - Encoder-Decoder Attention.png"><br><img src="/images/raw/NN - Attention - Encoder Self-Attention.png"><br><img src="/images/raw/NN - Attention - MaskedDecoder Self-Attention.png"></p>
 <h2 id="对attention的抽象"><a href="#对attention的抽象" class="headerlink" title="对attention的抽象"></a>对attention的抽象</h2><p>对attention的抽象 q k v</p>
 <p><img width="150px" alt="Scaled Dot Product Attention" title="Scaled Dot Product Attention" src="/images/raw/NN - transformer - scaled dot product attention.jpg"></p>
 <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are</p>
@@ -732,8 +735,8 @@ attention-based BOW，这个模型也不错哎。
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/6aa77778/" rel="prev" title="hexo中如何支持公式 mathjax">
-                hexo中如何支持公式 mathjax <i class="fa fa-chevron-right"></i>
+              <a href="/pub/7e199c30/" rel="prev" title="推荐系统架构">
+                推荐系统架构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1100,7 +1103,11 @@ attention-based BOW，这个模型也不错哎。
                     
                       
                     
-                    <span class="site-state-item-count">136</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">138</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
