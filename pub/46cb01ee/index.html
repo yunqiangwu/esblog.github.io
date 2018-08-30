@@ -127,7 +127,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20var%20-%20GRU%20with%20Equation%20-%20colah.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/">
-<meta property="og:updated_time" content="2018-08-30T03:09:48.659Z">
+<meta property="og:updated_time" content="2018-08-30T03:12:53.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RNN的变种，以及提高RNN训练速度的多种方法">
 <meta name="twitter:description" content="最受欢迎的两个循环单元是长短期记忆（LSTM）和门控循环单元（GRU），两者都可以将先前的记忆存储在隐藏状态，并使用门控机制来确定应该在何种程度将先前的记忆应与当前的输入结合。但是，由于其循环的结构，RNN不能并行计算。因此，训练RNN需要花费大量时间，这限制了学术研究和工业应用。 为了解决这个问题，一些学者尝试在NLP领域使用卷积神经网络（CNN）来代替RNN。但是，CNN无法获得序列的顺序信息">
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-30 11:09:48" itemprop="dateModified" datetime="2018-08-30T11:09:48+08:00">2018-08-30</time>
+                <time title="修改时间：2018-08-30 11:12:53" itemprop="dateModified" datetime="2018-08-30T11:12:53+08:00">2018-08-30</time>
               
             
           </span>
@@ -541,8 +541,9 @@
 
 <p><img title="GRU" src="/images/raw/NN - LSTM var - GRU with Equation - colah.png"></p>
 <p><img title="SRU" src="/images/raw/"></p>
-<h2 id="加速策略"><a href="#加速策略" class="headerlink" title="加速策略"></a>加速策略</h2><ul>
+<h2 id="针对LSTM结构的加速策略"><a href="#针对LSTM结构的加速策略" class="headerlink" title="针对LSTM结构的加速策略"></a>针对LSTM结构的加速策略</h2><ul>
 <li>参数简化 GRU</li>
+<li>input gate和forget gate合并：SRU</li>
 <li>分割成多个子序列来实现并行化  SRNN。它在不改变循环单元的情况下，能够比标准RNN快得多<br>-</li>
 </ul>
 <h2 id="TOD"><a href="#TOD" class="headerlink" title="TOD"></a>TOD</h2><p>SRU+slice。有必要吗？貌似没必要了。SRU中计算</p>
@@ -684,7 +685,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">177</span>
+                    <span class="site-state-item-count">176</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1310,7 +1311,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加速策略"><span class="nav-number">2.</span> <span class="nav-text">加速策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TOD"><span class="nav-number">3.</span> <span class="nav-text">TOD</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#针对LSTM结构的加速策略"><span class="nav-number">2.</span> <span class="nav-text">针对LSTM结构的加速策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TOD"><span class="nav-number">3.</span> <span class="nav-text">TOD</span></a></li></ol></div>
             
 
           </div>
