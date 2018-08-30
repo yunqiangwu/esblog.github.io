@@ -127,7 +127,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
 <meta property="og:image" content="https://jhui.github.io/assets/rnn/lstm.png">
-<meta property="og:updated_time" content="2018-08-29T05:22:16.067Z">
+<meta property="og:updated_time" content="2018-08-30T02:28:29.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
 <meta name="twitter:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
@@ -418,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-29 13:22:16" itemprop="dateModified" datetime="2018-08-29T13:22:16+08:00">2018-08-29</time>
+                <time title="修改时间：2018-08-30 10:28:29" itemprop="dateModified" datetime="2018-08-30T10:28:29+08:00">2018-08-30</time>
               
             
           </span>
@@ -546,7 +546,7 @@
 </ul>
 <p>cell: memory_cell</p>
 <h2 id="关于梯度消失问题"><a href="#关于梯度消失问题" class="headerlink" title="关于梯度消失问题"></a>关于梯度消失问题</h2><h3 id="梯度消失问题—直观解释"><a href="#梯度消失问题—直观解释" class="headerlink" title="梯度消失问题—直观解释"></a>梯度消失问题—直观解释</h3><!-- In theory, RNNs are absolutely capable of handling “long-term dependencies.” -->
-<image title="d" src="/images/raw/NN - RNN - vanish gradient problem - alex.png" width="70%">
+<image title="传统RNN的梯度消失问题" src="/images/raw/NN - RNN - vanish gradient problem - alex.png" width="70%">
 
 <p>传统RNN中存在的梯度消失。<br><!-- conventional RNN: 1. The sensitivity of the input valus decays overtime 2. The network forgets the previous input--></p>
 <h3 id="梯度消失-—-产生的原因"><a href="#梯度消失-—-产生的原因" class="headerlink" title="梯度消失 — 产生的原因"></a>梯度消失 — 产生的原因</h3><p>本质原因就是因为<strong>矩阵高次幂</strong>导致的</p>
@@ -565,6 +565,7 @@
 <!-- https://www.cc.gatech.edu/~san37/img/dl/grad_lstm.png -->
 <p><image title="the preservation over time of gradient information by LSTM" width="70%" src="/images/raw/NN - LSTM - preservation of gradient - alex.png"><br><!-- LSTM: 1. The cell remember the input as long as it wants 2. The output can be used anytime it wants--></image></p>
 <p>上面这个例子中，数据从实心1向后传递。通过gate的配合，成功在节点4和6输出该数据。<strong>数据流(梯度)不会因long-term传输而消失</strong>，有效解决RNN的梯度消失问题。即<strong>梯度保持</strong></p>
+<p>用数学来表达，就是f=1,i=0，那么就状态保持(完整)。f=0，i=1就状态遗忘(后面也LSTM的变种，采用i=1-f)。</p>
 <ul>
 <li>当gate是关闭的，那么就会阻止对当前信息的改变，这样以前的依赖信息就会被学到。</li>
 <li>当gate是打开的时候，并不是完全替换之前的信息，而是在之前信息和现在信息之间做加权平均。所以，无论网络的深度有多深，输入序列有多长，只要gate是打开的，网络都会记住这些信息。</li>
@@ -599,12 +600,13 @@
 <p><img width="50%" src="https://jhui.github.io/assets/rnn/lstm.png"></p>
 <p>x和h_t-1做一个拼接，过sigmoide得到forget-gate。<br>forget-gate作用在c_t-1上。</p>
 <p><strong>为什么要设计cell？这样抽象的意义？</strong></p>
-<p>LSTM中c和h的区别: 仅仅是一个输出门的区别(c没过输出门)。</p>
+<p>LSTM中c和h的区别: 仅仅是一个输出门的区别(c没过输出门，h_t-1作为上一时刻的输出，要过输出门)。</p>
 <ul>
 <li>c与x拼接送入forget gate呢？</li>
 <li>forget作用在h上呢？</li>
 </ul>
 <p><a href="https://zhuanlan.zhihu.com/p/28919765" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28919765</a></p>
+<p><strong>GRU中合并了cell state和和hidden state</strong></p>
 <h2 id="关于激活函数"><a href="#关于激活函数" class="headerlink" title="关于激活函数"></a>关于激活函数</h2><h3 id="sigmoid"><a href="#sigmoid" class="headerlink" title="sigmoid"></a>sigmoid</h3><p>sigmoid之类的大量用在rnn的门也并非是概率解释的问题。而是理想门函数是阶跃函数，但其本身不可导，所以soft成sigmoid是一种折中。而且rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿，因为门的作用本身就是通过与不通过，他希望的就是激活值大量集中在0/1附近而不是其他的连续值。</p>
 <p>为什么rnn中sigmoid陷入饱和区本身也是一件无所谓的事儿？不影响梯度消失？</p>
 <h3 id="tanh"><a href="#tanh" class="headerlink" title="tanh"></a>tanh</h3><p>为什么用tanh不用ReLU？</p>
@@ -742,8 +744,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/d66c7262/" rel="next" title="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
-                <i class="fa fa-chevron-left"></i> 【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)
+              <a href="/pub/c79f2f90/" rel="next" title="GRU简介 & 源码实现">
+                <i class="fa fa-chevron-left"></i> GRU简介 & 源码实现
               </a>
             
           </div>
@@ -752,8 +754,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/ac890a3f/" rel="prev" title="矢量图的制作">
-                矢量图的制作 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/d66c7262/" rel="prev" title="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
+                【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -835,7 +837,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">175</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

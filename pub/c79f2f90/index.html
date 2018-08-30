@@ -117,18 +117,20 @@
 
 
 
-  <meta name="description" content="简介应用实例 百度的Deep speech2  GRU的实现源码GRU-tensorflow1234567891011121314151617181920def call(self, inputs, state):  &quot;&quot;&quot;Gated recurrent unit (GRU) with nunits cells.&quot;&quot;&quot;  gate_inputs = math_ops.matmul(      ar">
+  <meta name="description" content="简介 LSTM 计算较为复杂，参数也非常多，难以训练。GRU（Gated Recurrent Units）应运而生。 在 GRU 中，大幅简化了 LSTM 结构：  新增 reset gate，即图中的 r 开关； 将输入门和遗忘门合并为“update gate”，即图中的 z 开关； 将细胞状态 C 和隐藏状态 m 合并为 h； 省掉了输出门；   应用实例 百度的Deep speech2  G">
 <meta name="keywords" content="gru,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GRU简介 &amp; 源码实现">
 <meta property="og:url" content="https://blog.eson.org/pub/c79f2f90/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="简介应用实例 百度的Deep speech2  GRU的实现源码GRU-tensorflow1234567891011121314151617181920def call(self, inputs, state):  &quot;&quot;&quot;Gated recurrent unit (GRU) with nunits cells.&quot;&quot;&quot;  gate_inputs = math_ops.matmul(      ar">
+<meta property="og:description" content="简介 LSTM 计算较为复杂，参数也非常多，难以训练。GRU（Gated Recurrent Units）应运而生。 在 GRU 中，大幅简化了 LSTM 结构：  新增 reset gate，即图中的 r 开关； 将输入门和遗忘门合并为“update gate”，即图中的 z 开关； 将细胞状态 C 和隐藏状态 m 合并为 h； 省掉了输出门；   应用实例 百度的Deep speech2  G">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-29T05:22:16.048Z">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20var%20-%20GRU%20with%20Equation%20-%20colah.png">
+<meta property="og:updated_time" content="2018-08-30T02:28:29.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GRU简介 &amp; 源码实现">
-<meta name="twitter:description" content="简介应用实例 百度的Deep speech2  GRU的实现源码GRU-tensorflow1234567891011121314151617181920def call(self, inputs, state):  &quot;&quot;&quot;Gated recurrent unit (GRU) with nunits cells.&quot;&quot;&quot;  gate_inputs = math_ops.matmul(      ar">
+<meta name="twitter:description" content="简介 LSTM 计算较为复杂，参数也非常多，难以训练。GRU（Gated Recurrent Units）应运而生。 在 GRU 中，大幅简化了 LSTM 结构：  新增 reset gate，即图中的 r 开关； 将输入门和遗忘门合并为“update gate”，即图中的 z 开关； 将细胞状态 C 和隐藏状态 m 合并为 h； 省掉了输出门；   应用实例 百度的Deep speech2  G">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20var%20-%20GRU%20with%20Equation%20-%20colah.png">
 
 
 
@@ -415,7 +417,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-29 13:22:16" itemprop="dateModified" datetime="2018-08-29T13:22:16+08:00">2018-08-29</time>
+                <time title="修改时间：2018-08-30 10:28:29" itemprop="dateModified" datetime="2018-08-30T10:28:29+08:00">2018-08-30</time>
               
             
           </span>
@@ -531,11 +533,20 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h1 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h1><ul>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p> LSTM 计算较为复杂，参数也非常多，难以训练。GRU（Gated Recurrent Units）应运而生。</p>
+<p>在 GRU 中，大幅简化了 LSTM 结构：</p>
+<ul>
+<li>新增 reset gate，即图中的 r 开关；</li>
+<li>将输入门和遗忘门合并为“update gate”，即图中的 z 开关；</li>
+<li>将细胞状态 C 和隐藏状态 m 合并为 h；</li>
+<li>省掉了输出门；</li>
+</ul>
+<p><img src="/images/raw/NN - LSTM var - GRU with Equation - colah.png"></p>
+<h1 id="应用实例"><a href="#应用实例" class="headerlink" title="应用实例"></a>应用实例</h1><ul>
 <li>百度的Deep speech2</li>
 </ul>
 <h1 id="GRU的实现源码"><a href="#GRU的实现源码" class="headerlink" title="GRU的实现源码"></a>GRU的实现源码</h1><h2 id="GRU-tensorflow"><a href="#GRU-tensorflow" class="headerlink" title="GRU-tensorflow"></a>GRU-tensorflow</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">call</span><span class="params">(self, inputs, state)</span>:</span></span><br><span class="line">  <span class="string">"""Gated recurrent unit (GRU) with nunits cells."""</span></span><br><span class="line"></span><br><span class="line">  gate_inputs = math_ops.matmul(</span><br><span class="line">      array_ops.concat([inputs, state], <span class="number">1</span>), self._gate_kernel)</span><br><span class="line">  gate_inputs = nn_ops.bias_add(gate_inputs, self._gate_bias)</span><br><span class="line"></span><br><span class="line">  value = math_ops.sigmoid(gate_inputs)</span><br><span class="line">  r, u = array_ops.split(value=value, num_or_size_splits=<span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  r_state = r * state</span><br><span class="line"></span><br><span class="line">  candidate = math_ops.matmul(</span><br><span class="line">      array_ops.concat([inputs, r_state], <span class="number">1</span>), self._candidate_kernel)</span><br><span class="line">  candidate = nn_ops.bias_add(candidate, self._candidate_bias)</span><br><span class="line"></span><br><span class="line">  c = self._activation(candidate)</span><br><span class="line">  new_h = u * state + (<span class="number">1</span> - u) * c</span><br><span class="line">  <span class="keyword">return</span> new_h, new_h</span><br></pre></td></tr></table></figure>
-<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<h2 id="pytorch"><a href="#pytorch" class="headerlink" title="pytorch"></a>pytorch</h2><h1 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><a href="http://colah.github.io/posts/2015-08-Understanding-LSTMs/" target="_blank" rel="noopener">Understanding LSTM Networks | colah</a></li>
 <li><a href="https://arxiv.org/abs/1412.3555" target="_blank" rel="noopener">Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling</a></li>
 <li><a href="https://towardsdatascience.com/lecture-evolution-from-vanilla-rnn-to-gru-lstms-58688f1da83a" target="_blank" rel="noopener">Evolution: from vanilla RNN to GRU &amp; LSTMs</a></li>
@@ -615,8 +626,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/d66c7262/" rel="prev" title="【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN)">
-                【深度学习-模型系列】递归神经网络 RNN (从HMM到RNN) <i class="fa fa-chevron-right"></i>
+              <a href="/pub/a6941437/" rel="prev" title="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
+                【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -698,7 +709,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">175</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1324,7 +1335,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用实例"><span class="nav-number">2.</span> <span class="nav-text">应用实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GRU的实现源码"><span class="nav-number">3.</span> <span class="nav-text">GRU的实现源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GRU-tensorflow"><span class="nav-number">3.1.</span> <span class="nav-text">GRU-tensorflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch"><span class="nav-number">3.2.</span> <span class="nav-text">pytorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用实例"><span class="nav-number">2.</span> <span class="nav-text">应用实例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GRU的实现源码"><span class="nav-number">3.</span> <span class="nav-text">GRU的实现源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GRU-tensorflow"><span class="nav-number">3.1.</span> <span class="nav-text">GRU-tensorflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorch"><span class="nav-number">3.2.</span> <span class="nav-text">pytorch</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺陷"><span class="nav-number">4.</span> <span class="nav-text">缺陷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

@@ -135,7 +135,7 @@
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%201.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%202.png">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20transformer%20-%20attention%20visualization%203.png">
-<meta property="og:updated_time" content="2018-08-29T05:25:40.206Z">
+<meta property="og:updated_time" content="2018-08-30T02:28:29.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【机器翻译】transformer">
 <meta name="twitter:description" content="简介在2017年5月Facebook发布了ConvSeq2Seq模型吊打了GNMT一个月之后，Google发出了最强有力的反击，发表了一篇论文Attention is all you need，文中提出了一种新的架构叫做Transformer，用以来实现机器翻译。它抛弃了传统的CNN、RNN，只采用attention，取得了很好的效果，激起了工业界和学术界的广泛讨论。 背景，motivation如">
@@ -426,7 +426,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-29 13:25:40" itemprop="dateModified" datetime="2018-08-29T13:25:40+08:00">2018-08-29</time>
+                <time title="修改时间：2018-08-30 10:28:29" itemprop="dateModified" datetime="2018-08-30T10:28:29+08:00">2018-08-30</time>
               
             
           </span>
@@ -569,7 +569,13 @@
 </ul>
 <p>将输入向量切成8份，这每一<br>份可以看成一个local partial，然后再分别attnetion最终再concat成一个context向量。如果将本文multi-head attention的V输入切成八份后的<br>向量类比关注不同local paritial的卷积核的话，我们可以看到CNN和这里multi-head attention异曲同工</p>
 <p><strong>优势</strong>：能在encode的时候并行化，(convS2S同样可以，但是transformer只用attention）</p>
+<ul>
+<li>Multiple attention layers (heads) in parallel</li>
+<li>Each head uses different linear transformations.</li>
+<li>Different heads can learn different relationships.</li>
+</ul>
 <p>TODO： 加图</p>
+<h2 id="Multi-Head-Attention遗漏了什么？"><a href="#Multi-Head-Attention遗漏了什么？" class="headerlink" title="Multi-Head Attention遗漏了什么？"></a>Multi-Head Attention遗漏了什么？</h2><p>位置信息</p>
 <h2 id="FFN层：positionwise-fully-connected-feed-forward-network"><a href="#FFN层：positionwise-fully-connected-feed-forward-network" class="headerlink" title="FFN层：positionwise fully connected feed-forward network"></a>FFN层：positionwise fully connected feed-forward network</h2><p><img width="150px" title="position wise FFN" src="/images/raw/NN - transformer - FFN.png"></p>
 <p><strong>疑问</strong>：</p>
 <ol>
@@ -725,8 +731,8 @@ attention-based BOW，这个模型也不错哎。
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c47c5082/" rel="next" title="深度学习中的注意力机制 原理 及 代码">
-                <i class="fa fa-chevron-left"></i> 深度学习中的注意力机制 原理 及 代码
+              <a href="/pub/75bd2e9b/" rel="next" title="【读图识政治】中国最高领导人">
+                <i class="fa fa-chevron-left"></i> 【读图识政治】中国最高领导人
               </a>
             
           </div>
@@ -735,8 +741,8 @@ attention-based BOW，这个模型也不错哎。
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/7e199c30/" rel="prev" title="推荐系统架构">
-                推荐系统架构 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/c47c5082/" rel="prev" title="深度学习中的注意力机制 原理 及 代码">
+                深度学习中的注意力机制 原理 及 代码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -818,7 +824,7 @@ attention-based BOW，这个模型也不错哎。
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">175</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1444,7 +1450,7 @@ attention-based BOW，这个模型也不错哎。
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.1.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.3.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.4.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">5.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">6.1.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#维度设计"><span class="nav-number">7.</span> <span class="nav-text">维度设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数量-amp-计算量"><span class="nav-number">8.</span> <span class="nav-text">参数量 &amp; 计算量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">9.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺陷"><span class="nav-number">10.</span> <span class="nav-text">缺陷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ss"><span class="nav-number">10.1.</span> <span class="nav-text">ss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">11.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景，motivation"><span class="nav-number">2.</span> <span class="nav-text">背景，motivation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何获取context信息"><span class="nav-number">2.1.</span> <span class="nav-text">如何获取context信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#transformer横空出世"><span class="nav-number">2.1.1.</span> <span class="nav-text">transformer横空出世</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心点-创新点-亮点-trick"><span class="nav-number">3.</span> <span class="nav-text">核心点 创新点 亮点 trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#对attention的抽象"><span class="nav-number">3.1.</span> <span class="nav-text">对attention的抽象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Head-Attention遗漏了什么？"><span class="nav-number">3.3.</span> <span class="nav-text">Multi-Head Attention遗漏了什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FFN层：positionwise-fully-connected-feed-forward-network"><span class="nav-number">3.4.</span> <span class="nav-text">FFN层：positionwise fully connected feed-forward network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Positional-Encoding"><span class="nav-number">3.5.</span> <span class="nav-text">Positional Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#trick"><span class="nav-number">4.</span> <span class="nav-text">trick</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#residual-connection"><span class="nav-number">4.1.</span> <span class="nav-text">residual connection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#layer-normalization"><span class="nav-number">4.2.</span> <span class="nav-text">layer normalization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Result"><span class="nav-number">5.</span> <span class="nav-text">Result</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">#</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">6.1.</span> <span class="nav-text">可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#维度设计"><span class="nav-number">7.</span> <span class="nav-text">维度设计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参数量-amp-计算量"><span class="nav-number">8.</span> <span class="nav-text">参数量 &amp; 计算量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">9.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缺陷"><span class="nav-number">10.</span> <span class="nav-text">缺陷</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ss"><span class="nav-number">10.1.</span> <span class="nav-text">ss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">11.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
