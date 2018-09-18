@@ -125,13 +125,15 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20gate%20-%20colah.png">
+<meta property="og:image" content="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif">
 <meta property="og:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
 <meta property="og:image" content="https://jhui.github.io/assets/rnn/lstm.png">
-<meta property="og:updated_time" content="2018-09-18T02:23:16.672Z">
+<meta property="og:updated_time" content="2018-09-18T02:35:09.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【深度学习-模型系列】长短期记忆 LSTM （从RNN到LSTM）">
 <meta name="twitter:description" content="传统方法 Historyerror signals “flowing backwards in time” tend to either blow up or vanish。 bp算法中为什么会产生梯度消失？ | 知乎 LSTMLSTM网络是RNN的一种，专门设计用于解决long-term dependency/memory问题，1997年由 Hochreiter &amp;amp; Schmidhub">
-<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20-%20cell%20forget%20-%20colah.png">
+<meta name="twitter:image" content="https://blog.eson.org/images/raw/NN%20-%20LSTM%20gate%20-%20colah.png">
 
 
 
@@ -418,7 +420,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-09-18 10:23:16" itemprop="dateModified" datetime="2018-09-18T10:23:16+08:00">2018-09-18</time>
+                <time title="修改时间：2018-09-18 10:35:09" itemprop="dateModified" datetime="2018-09-18T10:35:09+08:00">2018-09-18</time>
               
             
           </span>
@@ -576,7 +578,9 @@
 </ul>
 <h1 id="LSTM的设计思想"><a href="#LSTM的设计思想" class="headerlink" title="LSTM的设计思想"></a>LSTM的设计思想</h1><p>LSTM的核心：cell + gate。<br>用于解决传统RNN中的梯度消失问题 (Gradient Vanish)</p>
 <h2 id="关于gate"><a href="#关于gate" class="headerlink" title="关于gate"></a>关于gate</h2><!-- 备用图片 http://www.solidswiki.com/images/3/34/Gate_valves.gif -->
-<div style="display:inline;"><image width="130px" style="margin: 20px;" src="/images/raw/NN - LSTM gate - colah.png"><image width="300px" style="margin: 20px;" src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif"></image></image></div>
+<table border="1"><colgroup><col width="130px"><col width="300px"></colgroup><tbody valign="top"><tr><td><img src="/images/raw/NN - LSTM gate - colah.png"></td><td><img src="https://i.makeagif.com/media/7-27-2015/OLkiOf.gif"></td></tr></tbody></table>
+
+
 
 <p>gate，即阀门、开关。取值范围[0,1]，0表示关闭，1表示通行</p>
 <p>使用一个合适激活函数，它的梯度在一个合理的范围。LSTM使用gate function，有选择的让一部分信息通过。gate是由一个sigmoid单元和一个逐点乘积操作组成，sigmoid单元输出1或0，用来判断通过还是阻止，然后训练这些gate的组合。所以，<strong>当gate是打开的（梯度接近于1），梯度就不会vanish。并且sigmoid不超过1，那么梯度也不会explode</strong>。</p>
@@ -744,8 +748,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c79f2f90/" rel="next" title="GRU简介 & 源码实现">
-                <i class="fa fa-chevron-left"></i> GRU简介 & 源码实现
+              <a href="/pub/5f589e78/" rel="next" title="关于websocket">
+                <i class="fa fa-chevron-left"></i> 关于websocket
               </a>
             
           </div>
