@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="ESON">
 <meta property="og:description" content="docker 客户端12$ ls -lh /usr/bin/docker-rwxr-xr-x 1 root root 37M Apr 26 15:18 /usr/bin/docker 默认所有用户都能够执行docker命令，但是执行其他命令，会出现权限问题。 docker 服务12$ docker imagesGot permission denied while trying to connec">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-30T03:10:17.303Z">
+<meta property="og:updated_time" content="2018-09-18T02:23:16.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Docker系列】docker中的权限">
 <meta name="twitter:description" content="docker 客户端12$ ls -lh /usr/bin/docker-rwxr-xr-x 1 root root 37M Apr 26 15:18 /usr/bin/docker 默认所有用户都能够执行docker命令，但是执行其他命令，会出现权限问题。 docker 服务12$ docker imagesGot permission denied while trying to connec">
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-30 11:10:17" itemprop="dateModified" datetime="2018-08-30T11:10:17+08:00">2018-08-30</time>
+                <time title="修改时间：2018-09-18 10:23:16" itemprop="dateModified" datetime="2018-09-18T10:23:16+08:00">2018-09-18</time>
               
             
           </span>
@@ -523,6 +523,9 @@
 <p>执行查询镜像命令，报错。因为该用户不在docker用户组。而只有docker用户组才有权限访问docker server。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/run/</span><br><span class="line">$ ls -lh | grep docker</span><br><span class="line">drwx------  9 root  root    200 Jul  7 11:03 docker</span><br><span class="line">-rw-r--r--  1 root  root      4 Jul  6 14:33 docker.pid</span><br><span class="line">srw-rw----  1 root  docker    0 Jul  6 14:32 docker.sock   <span class="comment"># docker server</span></span><br></pre></td></tr></table></figure>
 <p>docker.sock属于docker用户组。</p>
+<p>01:57:47<br>08:06:28</p>
+<p>6</p>
+<p>360+22+5=</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/group | grep docker</span><br><span class="line">docker:x:999:song.xu01</span><br></pre></td></tr></table></figure>
 <h2 id="添加权限"><a href="#添加权限" class="headerlink" title="添加权限"></a>添加权限</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ usermod -aG docker 用户名 <span class="comment"># 添加到docker用户组</span></span><br></pre></td></tr></table></figure>
 
@@ -604,8 +607,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/bb3d8549/" rel="next" title="【Docker系列】Docker的存储">
-                <i class="fa fa-chevron-left"></i> 【Docker系列】Docker的存储
+              <a href="/pub/c5a74607/" rel="next" title="从wmt竞赛看机器翻译史">
+                <i class="fa fa-chevron-left"></i> 从wmt竞赛看机器翻译史
               </a>
             
           </div>
@@ -697,7 +700,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">176</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -986,7 +989,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">138</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">143</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>

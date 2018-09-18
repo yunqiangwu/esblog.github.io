@@ -117,25 +117,25 @@
 
 
 
-  <meta name="description" content="Object.java有7个native方法。 private static native void registerNatives(); protected native Object clone() throws CloneNotSupportedException; public final native Class&amp;lt;?&amp;gt; getClass(); public native in">
-<meta name="keywords" content="java">
+  <meta name="description" content="名词 术语 交易: 简单地说，交易指把⽐特币从⼀个地址转到另⼀个地址。更准确地说，⼀笔“交易”指⼀个经过签名运算的，表达价值转移的数据结构。每⼀笔“交易”都经过⽐特币⽹络传输，由矿⼯节点收集并封包⾄区块中，永久保存在区块链某处。 交易验证: 被验证成功的交易放入本地内存交易池中（Local Memory Tx Pool，交易池是存储在本地内存中，并不是存储在硬盘里，因此不同节点的两池内容可能有很大">
+<meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java系列 - object">
-<meta property="og:url" content="https://blog.eson.org/pub/1b34e5ea/index.html">
+<meta property="og:title" content="【比特币源码】交易">
+<meta property="og:url" content="https://blog.eson.org/pub/fb455505/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="Object.java有7个native方法。 private static native void registerNatives(); protected native Object clone() throws CloneNotSupportedException; public final native Class&amp;lt;?&amp;gt; getClass(); public native in">
+<meta property="og:description" content="名词 术语 交易: 简单地说，交易指把⽐特币从⼀个地址转到另⼀个地址。更准确地说，⼀笔“交易”指⼀个经过签名运算的，表达价值转移的数据结构。每⼀笔“交易”都经过⽐特币⽹络传输，由矿⼯节点收集并封包⾄区块中，永久保存在区块链某处。 交易验证: 被验证成功的交易放入本地内存交易池中（Local Memory Tx Pool，交易池是存储在本地内存中，并不是存储在硬盘里，因此不同节点的两池内容可能有很大">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-30T03:10:17.417Z">
+<meta property="og:updated_time" content="2018-09-18T02:23:16.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java系列 - object">
-<meta name="twitter:description" content="Object.java有7个native方法。 private static native void registerNatives(); protected native Object clone() throws CloneNotSupportedException; public final native Class&amp;lt;?&amp;gt; getClass(); public native in">
+<meta name="twitter:title" content="【比特币源码】交易">
+<meta name="twitter:description" content="名词 术语 交易: 简单地说，交易指把⽐特币从⼀个地址转到另⼀个地址。更准确地说，⼀笔“交易”指⼀个经过签名运算的，表达价值转移的数据结构。每⼀笔“交易”都经过⽐特币⽹络传输，由矿⼯节点收集并封包⾄区块中，永久保存在区块链某处。 交易验证: 被验证成功的交易放入本地内存交易池中（Local Memory Tx Pool，交易池是存储在本地内存中，并不是存储在硬盘里，因此不同节点的两池内容可能有很大">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.eson.org/pub/1b34e5ea/"/>
+  <link rel="canonical" href="https://blog.eson.org/pub/fb455505/"/>
 
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>java系列 - object | ESON</title>
+  <title>【比特币源码】交易 | ESON</title>
   
 
 
@@ -360,7 +360,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/1b34e5ea/">
+    <link itemprop="mainEntityOfPage" href="https://blog.eson.org/pub/fb455505/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ESON">
@@ -377,7 +377,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">java系列 - object
+          <h2 class="post-title" itemprop="name headline">【比特币源码】交易
               
             
           </h2>
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2017-02-02 00:00:00" itemprop="dateCreated datePublished" datetime="2017-02-02T00:00:00+08:00">2017-02-02</time>
+              <time title="创建时间：2018-09-01 17:40:53" itemprop="dateCreated datePublished" datetime="2018-09-01T17:40:53+08:00">2018-09-01</time>
             
 
             
@@ -415,7 +415,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-08-30 11:10:17" itemprop="dateModified" datetime="2018-08-30T11:10:17+08:00">2018-08-30</time>
+                <time title="修改时间：2018-09-18 10:23:16" itemprop="dateModified" datetime="2018-09-18T10:23:16+08:00">2018-09-18</time>
               
             
           </span>
@@ -430,56 +430,49 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/" itemprop="url" rel="index"><span itemprop="name">-block-chain</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/" itemprop="url" rel="index"><span itemprop="name">programing</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/" itemprop="url" rel="index"><span itemprop="name">虚拟货币</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/币种/" itemprop="url" rel="index"><span itemprop="name">币种</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/币种/比特币-BTC/" itemprop="url" rel="index"><span itemprop="name">比特币-BTC</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/" itemprop="url" rel="index"><span itemprop="name">jdk</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/币种/比特币-BTC/源码/" itemprop="url" rel="index"><span itemprop="name">源码</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/jvm/" itemprop="url" rel="index"><span itemprop="name">jvm</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/币种/比特币-BTC/源码/基本的数据结构/" itemprop="url" rel="index"><span itemprop="name">基本的数据结构</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/jvm/jvmGo-md/" itemprop="url" rel="index"><span itemprop="name">jvmGo.md</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/java/jdk/jvm/jvmGo-md/native/" itemprop="url" rel="index"><span itemprop="name">native</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/block-chain/虚拟货币/币种/比特币-BTC/源码/基本的数据结构/primitive/" itemprop="url" rel="index"><span itemprop="name">primitive</span></a></span>
 
                 
                 
@@ -494,8 +487,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/pub/1b34e5ea/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/1b34e5ea/" itemprop="commentsCount"></span>
+                <a href="/pub/fb455505/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/pub/fb455505/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -559,108 +552,41 @@
       
 
       
-        <h2 id="Object-java"><a href="#Object-java" class="headerlink" title="Object.java"></a>Object.java</h2><h3 id="有7个native方法。"><a href="#有7个native方法。" class="headerlink" title="有7个native方法。"></a>有7个native方法。</h3><ul>
-<li>private static native void registerNatives();</li>
-<li>protected native Object clone() throws CloneNotSupportedException;</li>
-<li>public final native Class&lt;?&gt; getClass();</li>
-<li>public native int hashCode();</li>
-<li>public final native void notify();</li>
-<li>public final native void notifyAll();</li>
-<li>public final native void wait(long timeout) throws InterruptedException;</li>
+        <h1 id="名词-术语"><a href="#名词-术语" class="headerlink" title="名词 术语"></a>名词 术语</h1><ul>
+<li><strong>交易</strong>: 简单地说，交易指把⽐特币从⼀个地址转到另⼀个地址。更准确地说，⼀笔“交易”指⼀个经过签名运算的，表达价值转移的<br>数据结构。每⼀笔“交易”都经过⽐特币⽹络传输，由矿⼯节点收集并封包⾄区块中，永久保存在区块链某处。</li>
+<li><strong>交易验证</strong>: 被验证成功的交易放入本地内存交易池中（Local Memory Tx Pool，交易池是存储在本地内存中，并不是存储在硬盘里，因此不同节点的两池内容可能有很大差别。原则是，要保证任何在<strong>本地内存交易池中的交易均是未确认的</strong>。</li>
+<li><strong>交易确认</strong>: 当⼀项交易被区块收录时，我们可以说它有⼀次确认。矿⼯们在此区块之后每再产⽣⼀个区块，此项交易的确认数就再加⼀。当确认数达到六及以上时，通常认为这笔交易⽐较安全并难以逆转。<ul>
+<li>确认数+1什么意思？</li>
+</ul>
+</li>
+<li><strong>交易权重</strong>: 挨个打包进入到区块体中；优先处理权重最高的交易；偶尔会出现提示：”当前网路交易拥堵，建议提高交易费用”。正是因为按照优先级处理，所以在网络交易拥堵的时候，有可能造成<strong>低优先级的交易“永远”不会被打包</strong>。交易的权重大小取决于三个因素：1）交易创建时间越早；2）交易UTXO大小越大；3）交易费用越高，则权重越大。</li>
+<li><strong>⼯作量证明</strong>: ⼯作量证明指通过有效计算得到的⼀⼩块数据。具体到⽐特币，矿⼯必须要在满⾜全⽹⽬标难度的情况下求解SHA256算法</li>
 </ul>
 <ul>
-<li>但是构造函数是怎样实现的呢？</li>
+<li><strong>难度</strong>: 整个⽹络会通过调整“难度”这个变量来控制⽣成⼯作量证明所需要的计算⼒。难度怎样调整的，见。。</li>
+<li><strong>难度⽬标</strong>: 使整个⽹络的计算⼒⼤致每10分钟产⽣⼀个区块所需要的难度数值即为难度⽬标。</li>
+<li><strong>难度调整</strong>: 整个⽹络每产⽣2,106个区块后会根据之前2,106个区块的算⼒进⾏难度调整。</li>
 </ul>
-<h2 id="java-lang-Object-go"><a href="#java-lang-Object-go" class="headerlink" title="java/lang/Object.go"></a>java/lang/Object.go</h2><p>cao，还是给我个c的实现吧，靠靠靠</p>
-<pre><code>package lang
+<p>#</p>
+<p>⽐特币交易是⽐特币系统中最重要的部分。根据⽐特币系统的设计原理，<strong>系统中任何其他的部分都是为了确保⽐特币交易可<br>以被⽣成、能在⽐特币⽹络中得以传播和通过验证，并最终添加⼊全球⽐特币交易总账簿</strong>（⽐特币区块链）。⽐特币交易的<br>本质是数据结构，这些数据结构中含有⽐特币交易参与者价值转移的相关信息。⽐特币区块链是全球复式记账总账簿，每个⽐特币交易都是在⽐特币区块链上的⼀个公开记录。</p>
+<h1 id="比特币“交易打包”底层原理"><a href="#比特币“交易打包”底层原理" class="headerlink" title="比特币“交易打包”底层原理"></a>比特币“交易打包”底层原理</h1><h2 id="“挖矿”与“交易打包”"><a href="#“挖矿”与“交易打包”" class="headerlink" title="“挖矿”与“交易打包”"></a>“挖矿”与“交易打包”</h2><p>前文我们说到，所谓“挖矿”，就是生成一个最新“区块”的过程，“矿工”在该过程中，是为了获取比特币的奖励（经济驱动）；</p>
+<p>这部分奖励分为两部分：比特币网络系统的CoinBase奖励  和 所打包的所有交易的交易费（交易费的作用下文会介绍）；</p>
+<p>那么，交易打包的过程和底层原理是什么呢？下文我们将图文展示整个交易打包的细节；</p>
+<h2 id="“交易打包”过程？"><a href="#“交易打包”过程？" class="headerlink" title="“交易打包”过程？"></a>“交易打包”过程？</h2><p>每个比特币客户端节点自加入比特币网络开始，无时不刻不在做着创造新区块的操作；</p>
+<p>而创造新区块的过程，即是打包每一笔“比特币交易”的过程；</p>
+<p>下图是站在“比特币客户端节点”的角度，来描述一次区块生成过程中的交易打包过程。</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p><a href="https://github.com/bitcoin/bitcoin/blob/0.17/src/primitives/transaction.h#L264" target="_blank" rel="noopener">primitives/transaction.h</a><br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** The basic transaction that is broadcasted on the network and contained in</span></span><br><span class="line"><span class="comment"> * blocks.  A transaction can contain multiple inputs and outputs.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CTransaction</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 以下变量采用常量，为了避免无意的改动</span></span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CTxIn&gt; vin;</span><br><span class="line">    <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CTxOut&gt; vout;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int32_t</span> nVersion;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">uint32_t</span> nLockTime;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">COutPoint</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    uint256 hash;</span><br><span class="line">    <span class="keyword">uint32_t</span> n;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/** An input of a transaction.  It contains the location of the previous</span></span><br><span class="line"><span class="comment"> * transaction's output that it claims and a signature that matches the</span></span><br><span class="line"><span class="comment"> * output's public key.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CTxIn</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    COutPoint prevout;</span><br><span class="line">    CScript scriptSig;</span><br><span class="line">    <span class="keyword">uint32_t</span> nSequence;</span><br><span class="line">    CScriptWitness scriptWitness; <span class="comment">//! Only serialized through CTransaction</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">uint32_t</span> SEQUENCE_FINAL = <span class="number">0xffffffff</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">uint32_t</span> SEQUENCE_LOCKTIME_DISABLE_FLAG = (<span class="number">1</span> &lt;&lt; <span class="number">31</span>);</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">uint32_t</span> SEQUENCE_LOCKTIME_TYPE_FLAG = (<span class="number">1</span> &lt;&lt; <span class="number">22</span>);</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">uint32_t</span> SEQUENCE_LOCKTIME_MASK = <span class="number">0x0000ffff</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> SEQUENCE_LOCKTIME_GRANULARITY = <span class="number">9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** An output of a transaction.  It contains the public key that the next input</span></span><br><span class="line"><span class="comment"> * must be able to sign with to claim it.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CTxOut</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CAmount nValue;</span><br><span class="line">    CScript scriptPubKey</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可变交易是干嘛用的？交易还能撤销？更改？回退？</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">CMutableTransaction</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CTxIn&gt; vin;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">vector</span>&lt;CTxOut&gt; vout;</span><br><span class="line">    <span class="keyword">int32_t</span> nVersion;</span><br><span class="line">    <span class="keyword">uint32_t</span> nLockTime;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────┐</span><br><span class="line">│Tx: 12af...e85d                              │</span><br><span class="line">├─────────────────────┬───────────────────────┤</span><br><span class="line">│TxIn                 │TxOut                  │</span><br><span class="line">├─────────────┬───────┼──────┬────────────────┤</span><br><span class="line">│prev hash    │index  │btc   │pkScript        │</span><br><span class="line">├─────────────┼───────┼──────┼────────────────┤</span><br><span class="line">│0000...0000  │ffff   │12.5  │OP_DUP c58a...  │</span><br><span class="line">├─────────────┼───────┼──────┼────────────────┤</span><br><span class="line">│2016...a3c5  │3      │0.15  │OP_DUP a1b2...  │</span><br><span class="line">├─────────────┼───────┼──────┼────────────────┤</span><br><span class="line">│2015...b6d8  │1      │0.08  │OP_DUP c3d4...  │</span><br><span class="line">└─────────────┴───────┴──────┴────────────────┘</span><br></pre></td></tr></table></figure>
+<p>除了第一笔交易是矿工的挖矿所得外，每一笔交易都拥有一个或多个输入（TxIn），以及一个或多个输出（TxOut）。</p>
+<p>第一笔矿工挖矿的收入交易通常被称为Coinbase，它没有输入，所以TxIn的Hash总是被标记为<code>00000000...0000</code><br>其他的交易，任何一个TxIn都会唯一追溯到区块链上在本区块之前的某个交易Hash，以及索引。</p>
+<p>通过交易Hash和索引（从0开始），即可唯一确定一个未花费的交易输出——UTXO（Unspent Transaction Output）。<br>这样，每一个Tx Input都和之前的某个Tx Output关联了起来。</p>
+<h2 id="交易的输出和输⼊"><a href="#交易的输出和输⼊" class="headerlink" title="交易的输出和输⼊"></a>交易的输出和输⼊</h2><p>⽐特币交易的基本单位是未经使⽤的⼀个交易输出，简称UTX。UTXO是不能再分割、被所有者锁住或记录于区块链中的并<br>被整个⽹络识别成货币单位的⼀定量的⽐特币货币</p>
+<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<li>《精通比特币》</li>
+<li><a href="https://www.liaoxuefeng.com/article/001482718603696a6b6eb2bebc74211ab967146a952ae0c000" target="_blank" rel="noopener">深入理解比特币交易的脚本</a></li>
+<li><a href="https://www.jianshu.com/p/ec7ee2bb1697" target="_blank" rel="noopener">比特币“交易打包”底层原理与区块链“分叉”</a></li>
+</ul>
 
-import (
-    &quot;unsafe&quot;
-
-    &quot;github.com/zxh0/jvm.go/jvmgo/rtda&quot;
-    &quot;github.com/zxh0/jvm.go/jvmgo/rtda/heap&quot;
-)
-
-func init() {
-    _object(clone, &quot;clone&quot;, &quot;()Ljava/lang/Object;&quot;)
-    _object(getClass, &quot;getClass&quot;, &quot;()Ljava/lang/Class;&quot;)
-    _object(hashCode, &quot;hashCode&quot;, &quot;()I&quot;)
-    _object(notifyAll, &quot;notifyAll&quot;, &quot;()V&quot;)
-    _object(wait, &quot;wait&quot;, &quot;(J)V&quot;)
-}
-
-func _object(method func(frame *rtda.Frame), name, desc string) {
-    heap.RegisterNativeMethod(&quot;java/lang/Object&quot;, name, desc, method)
-}
-
-// protected native Object clone() throws CloneNotSupportedException;
-// ()Ljava/lang/Object;
-func clone(frame *rtda.Frame) {
-    vars := frame.LocalVars()
-    this := vars.GetThis()
-
-    // todo
-    stack := frame.OperandStack()
-    stack.PushRef(this.Clone())
-}
-
-// public final native Class&lt;?&gt; getClass();
-// ()Ljava/lang/Class;
-func getClass(frame *rtda.Frame) {
-    vars := frame.LocalVars()
-    this := vars.GetThis()
-
-    class := this.Class().JClass()
-    stack := frame.OperandStack()
-    stack.PushRef(class)
-}
-
-// public native int hashCode();
-// ()I
-func hashCode(frame *rtda.Frame) {
-    vars := frame.LocalVars()
-    this := vars.GetThis()
-
-    hash := int32(uintptr(unsafe.Pointer(this)))
-    stack := frame.OperandStack()
-    stack.PushInt(hash)
-}
-
-// public final native void notify();
-
-// public final native void notifyAll();
-// ()V
-func notifyAll(frame *rtda.Frame) {
-    vars := frame.LocalVars()
-    this := vars.GetThis()
-
-    thread := frame.Thread()
-    monitor := this.Monitor()
-    if !monitor.HasOwner(thread) {
-        // todo
-        panic(&quot;IllegalMonitorStateException&quot;)
-    }
-
-    monitor.NotifyAll()
-}
-
-// public final native void wait(long timeout) throws InterruptedException;
-// (J)V
-func wait(frame *rtda.Frame) {
-    vars := frame.LocalVars()
-    this := vars.GetThis()
-    // timeout := vars.GetLong(1) // todo
-
-    thread := frame.Thread()
-    monitor := this.Monitor()
-    if !monitor.HasOwner(thread) {
-        // todo
-        panic(&quot;IllegalMonitorStateException&quot;)
-    }
-
-    monitor.Wait()
-}
-</code></pre>
       
     </div>
 
@@ -685,7 +611,7 @@ func wait(frame *rtda.Frame) {
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/1b34e5ea/" title="java系列 - object">https://blog.eson.org/pub/1b34e5ea/</a>
+    <a href="https://blog.eson.org/pub/fb455505/" title="【比特币源码】交易">https://blog.eson.org/pub/fb455505/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -705,8 +631,8 @@ func wait(frame *rtda.Frame) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/8748fd7b/" rel="next" title="【java源码系列】Map">
-                <i class="fa fa-chevron-left"></i> 【java源码系列】Map
+              <a href="/pub/fefe3ccb/" rel="next" title="逻辑斯谛回归与最⼤熵模型">
+                <i class="fa fa-chevron-left"></i> 逻辑斯谛回归与最⼤熵模型
               </a>
             
           </div>
@@ -715,8 +641,8 @@ func wait(frame *rtda.Frame) {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/pub/718175b8/" rel="prev" title="java系列 - class文件">
-                java系列 - class文件 <i class="fa fa-chevron-right"></i>
+              <a href="/pub/0/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -798,7 +724,7 @@ func wait(frame *rtda.Frame) {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">176</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1087,7 +1013,17 @@ func wait(frame *rtda.Frame) {
                     
                       
                     
-                    <span class="site-state-item-count">138</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">143</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1424,7 +1360,7 @@ func wait(frame *rtda.Frame) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-java"><span class="nav-number">1.</span> <span class="nav-text">Object.java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有7个native方法。"><span class="nav-number">1.1.</span> <span class="nav-text">有7个native方法。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-Object-go"><span class="nav-number">2.</span> <span class="nav-text">java/lang/Object.go</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#名词-术语"><span class="nav-number">1.</span> <span class="nav-text">名词 术语</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#比特币“交易打包”底层原理"><span class="nav-number">2.</span> <span class="nav-text">比特币“交易打包”底层原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#“挖矿”与“交易打包”"><span class="nav-number">2.1.</span> <span class="nav-text">“挖矿”与“交易打包”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“交易打包”过程？"><span class="nav-number">2.2.</span> <span class="nav-text">“交易打包”过程？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#源码"><span class="nav-number">3.</span> <span class="nav-text">源码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#交易的输出和输⼊"><span class="nav-number">3.1.</span> <span class="nav-text">交易的输出和输⼊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
