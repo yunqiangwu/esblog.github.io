@@ -117,22 +117,22 @@
 
 
 
-  <meta name="description" content="背景知识栈是向低地址扩展的数据结构，是一块连续的内存的区域。 这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址">
+  <meta name="description" content="背景知识 栈: 是向低地址扩展的数据结构，是一块连续的内存区域。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 由系统自动分配，速度较快。但程序员是无法控制的   堆：是向高地址扩展的数据结构，是不连续的内存区域。">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python c java 的变量，堆、栈">
+<meta property="og:title" content="python c java 的变量、堆、栈">
 <meta property="og:url" content="https://blog.eson.org/pub/ab933edd/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="背景知识栈是向低地址扩展的数据结构，是一块连续的内存的区域。 这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址">
+<meta property="og:description" content="背景知识 栈: 是向低地址扩展的数据结构，是一块连续的内存区域。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 由系统自动分配，速度较快。但程序员是无法控制的   堆：是向高地址扩展的数据结构，是不连续的内存区域。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a1box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/b2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
-<meta property="og:updated_time" content="2018-09-19T06:11:09.392Z">
+<meta property="og:updated_time" content="2018-09-19T06:40:09.169Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python c java 的变量，堆、栈">
-<meta name="twitter:description" content="背景知识栈是向低地址扩展的数据结构，是一块连续的内存的区域。 这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址">
+<meta name="twitter:title" content="python c java 的变量、堆、栈">
+<meta name="twitter:description" content="背景知识 栈: 是向低地址扩展的数据结构，是一块连续的内存区域。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 由系统自动分配，速度较快。但程序员是无法控制的   堆：是向高地址扩展的数据结构，是不连续的内存区域。">
 <meta name="twitter:image" content="http://www.omahapython.org/IdiomaticPython_files/a1box.png">
 
 
@@ -150,7 +150,7 @@
   };
 </script>
 
-  <title>python c java 的变量，堆、栈 | ESON</title>
+  <title>python c java 的变量、堆、栈 | ESON</title>
   
 
 
@@ -382,7 +382,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">python c java 的变量，堆、栈
+          <h2 class="post-title" itemprop="name headline">python c java 的变量、堆、栈
               
             
           </h2>
@@ -420,7 +420,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-09-19 14:11:09" itemprop="dateModified" datetime="2018-09-19T14:11:09+08:00">2018-09-19</time>
+                <time title="修改时间：2018-09-19 14:40:09" itemprop="dateModified" datetime="2018-09-19T14:40:09+08:00">2018-09-19</time>
               
             
           </span>
@@ -536,11 +536,15 @@
       
 
       
-        <h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><p>栈是向低地址扩展的数据结构，是一块连续的内存的区域。 这句话的意思是栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。</p>
-<p>堆：堆是向高地址扩展的数据结构，是不连续的内存区域。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</p>
-<ul>
-<li>栈由系统自动分配，速度较快。但程序员是无法控制的 。</li>
+        <h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><ul>
+<li><strong>栈</strong>: 是向<code>低地址扩展</code>的数据结构，是一块<code>连续的内存区域</code>。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。<ul>
+<li>由系统自动分配，速度较快。但程序员是无法控制的</li>
+</ul>
+</li>
+<li><strong>堆</strong>：是向<code>高地址扩展</code>的数据结构，是<code>不连续的内存区域</code>。这是由于系统是用链表来存储的空闲内存地址的，自然是不连续的，而链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。<ul>
 <li>堆是由 new 分配的内存，一般速度比较慢，而且容易产生内存碎片 , 不过用起来最方便 。</li>
+</ul>
+</li>
 </ul>
 <h1 id="other-languages-have-“variables”"><a href="#other-languages-have-“variables”" class="headerlink" title="other languages have “variables”"></a>other languages have “variables”</h1><p>计算机内存就像是很多盒子的集合体，每个盒子都有地址。<br>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
 <table border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int a = 1;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a1box.png"></td></tr></tbody></table>
@@ -564,7 +568,7 @@
 <li>执行 <code>int a = 1</code> 即把数值<code>1</code>放入<code>a</code>对应的盒子</li>
 <li>执行 <code>a = 2</code> 替换了<code>a</code>盒子里的内容</li>
 </ol>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=import%20java.util.*%3B%0Apublic%20class%20YourClassNameHere%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20int%20a%20%3D%201%3B%0A%20%20%20%20%20%20a%20%3D%202%3B%0A%20%20%20%20%20%20Integer%20b%20%3D%201%3B%0A%20%20%20%20%20%20b%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20c%20%3D%201%3B%0A%20%20%20%20%20%20List%3CInteger%3E%20myList%20%3D%20new%20ArrayList%3CInteger%3E%28%29%3B%0A%20%20%20%20%20%20myList.add%281%29%3B%0A%20%20%20%20%20%20myList.add%2820%29%3B%0A%20%20%20%20%20%20myList.add%281000%29%3B%0A%20%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=11&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20%20Integer%20p%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20r%20%3D%20p%3B%0A%20%20%20%20%20%20p%20%3D%20q%3B%0A%20%20%20%20%20%20q%20%3D%20r%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%85%B3%E4%BA%8E%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20Integer%20p2%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q2%20%3D%201000%3B%20//%20%E8%B6%85%E5%87%BA%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20me2%20%3D%20%22me%22%3B%20//%20String%20%E5%B8%B8%E9%87%8F%0A%20%20%20%20%20%20%0A%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=17&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 <ul>
 <li>运行 <code>int a = 1</code>，存储在栈中还是堆中？栈中吧？</li>
@@ -616,7 +620,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/ab933edd/" title="python c java 的变量，堆、栈">https://blog.eson.org/pub/ab933edd/</a>
+    <a href="https://blog.eson.org/pub/ab933edd/" title="python c java 的变量、堆、栈">https://blog.eson.org/pub/ab933edd/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
