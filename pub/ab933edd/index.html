@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/b2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
-<meta property="og:updated_time" content="2018-09-19T06:40:09.169Z">
+<meta property="og:updated_time" content="2018-09-19T08:11:16.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python c java 的变量、堆、栈">
 <meta name="twitter:description" content="背景知识 栈: 是向低地址扩展的数据结构，是一块连续的内存区域。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 由系统自动分配，速度较快。但程序员是无法控制的   堆：是向高地址扩展的数据结构，是不连续的内存区域。">
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2018-09-18 09:20:34" itemprop="dateCreated datePublished" datetime="2018-09-18T09:20:34+08:00">2018-09-18</time>
+              <time title="创建时间：2018-09-16 00:00:00" itemprop="dateCreated datePublished" datetime="2018-09-16T00:00:00+08:00">2018-09-16</time>
             
 
             
@@ -420,7 +420,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-09-19 14:40:09" itemprop="dateModified" datetime="2018-09-19T14:40:09+08:00">2018-09-19</time>
+                <time title="修改时间：2018-09-19 16:11:16" itemprop="dateModified" datetime="2018-09-19T16:11:16+08:00">2018-09-19</time>
               
             
           </span>
@@ -547,17 +547,17 @@
 </li>
 </ul>
 <h1 id="other-languages-have-“variables”"><a href="#other-languages-have-“variables”" class="headerlink" title="other languages have “variables”"></a>other languages have “variables”</h1><p>计算机内存就像是很多盒子的集合体，每个盒子都有地址。<br>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
-<table border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int a = 1;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a1box.png"></td></tr></tbody></table>
+<table width="auto" border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int a = 1;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a1box.png"></td></tr></tbody></table>
 
 
 
 
 
 
-<table border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>a = 2;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
+<table width="auto" border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>a = 2;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
 
 <p>只是替换了盒子里的内容。</p>
-<table border="1"><colgroup><col width="120"><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int b = a;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/b2box.png"></td><td><img alt="a2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
+<table width="auto" border="1"><colgroup><col width="120"><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int b = a;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/b2box.png"></td><td><img alt="a2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
 
 <h2 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h2><iframe width="800" height="350" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=int%20main%28%29%20%7B%0A%20%20int%20a%20%3D%201%3B%0A%20%20a%20%3D%202%3B%0A%20%20int%20balance%5B%5D%20%3D%20%7B1,%202,%203%7D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&curInstr=3&origin=opt-frontend.js&py=cpp&rawInputLstJSON=%5B%5D"> </iframe>
 
@@ -568,7 +568,7 @@
 <li>执行 <code>int a = 1</code> 即把数值<code>1</code>放入<code>a</code>对应的盒子</li>
 <li>执行 <code>a = 2</code> 替换了<code>a</code>盒子里的内容</li>
 </ol>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20%20Integer%20p%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20r%20%3D%20p%3B%0A%20%20%20%20%20%20p%20%3D%20q%3B%0A%20%20%20%20%20%20q%20%3D%20r%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%85%B3%E4%BA%8E%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20Integer%20p2%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q2%20%3D%201000%3B%20//%20%E8%B6%85%E5%87%BA%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20me2%20%3D%20%22me%22%3B%20//%20String%20%E5%B8%B8%E9%87%8F%0A%20%20%20%20%20%20%0A%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=17&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="700" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20%20Integer%20p%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20r%20%3D%20p%3B%0A%20%20%20%20%20%20p%20%3D%20q%3B%0A%20%20%20%20%20%20q%20%3D%20r%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%85%B3%E4%BA%8E%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20Integer%20p2%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q2%20%3D%201000%3B%20//%20%E8%B6%85%E5%87%BA%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20me2%20%3D%20%22me%22%3B%20//%20String%20%E5%B8%B8%E9%87%8F%0A%20%20%20%20%20%20%0A%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=17&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 <ul>
 <li>运行 <code>int a = 1</code>，存储在栈中还是堆中？栈中吧？</li>
@@ -640,8 +640,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/fb455505/" rel="next" title="【比特币源码】交易 transaction">
-                <i class="fa fa-chevron-left"></i> 【比特币源码】交易 transaction
+              <a href="/pub/c6654282/" rel="next" title="递归">
+                <i class="fa fa-chevron-left"></i> 递归
               </a>
             
           </div>
@@ -649,10 +649,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/pub/0/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -733,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">184</span>
+                    <span class="site-state-item-count">177</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1032,11 +1028,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">145</span>
+                    <span class="site-state-item-count">143</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
