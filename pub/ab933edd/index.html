@@ -117,22 +117,22 @@
 
 
 
-  <meta name="description" content="other languages have “variables”在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C    Java    java中为什么是frames和objects？为什么不是stack heap？ python has “names”     注意，python中是fra">
+  <meta name="description" content="other languages have “variables”计算机内存就像是很多盒子的集合体，每个盒子都有地址。在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C/C++      运行时，首先系统为整个函数栈预分配空间，栈上存储该函数的局部变量。即变量a对应固定的盒子(地址)。 执行 i">
 <meta name="keywords" content="机器学习, 计算机视觉, 深度学习, 自然语言处理, ESON">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 变量">
+<meta property="og:title" content="python c java 的变量">
 <meta property="og:url" content="https://blog.eson.org/pub/ab933edd/index.html">
 <meta property="og:site_name" content="ESON">
-<meta property="og:description" content="other languages have “variables”在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C    Java    java中为什么是frames和objects？为什么不是stack heap？ python has “names”     注意，python中是fra">
+<meta property="og:description" content="other languages have “variables”计算机内存就像是很多盒子的集合体，每个盒子都有地址。在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C/C++      运行时，首先系统为整个函数栈预分配空间，栈上存储该函数的局部变量。即变量a对应固定的盒子(地址)。 执行 i">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a1box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/b2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
-<meta property="og:updated_time" content="2018-09-18T02:39:43.052Z">
+<meta property="og:updated_time" content="2018-09-19T04:48:28.894Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python 变量">
-<meta name="twitter:description" content="other languages have “variables”在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C    Java    java中为什么是frames和objects？为什么不是stack heap？ python has “names”     注意，python中是fra">
+<meta name="twitter:title" content="python c java 的变量">
+<meta name="twitter:description" content="other languages have “variables”计算机内存就像是很多盒子的集合体，每个盒子都有地址。在很多语言中，给变量赋值可以理解成把value放入盒子，比如： int a = 1;  a = 2;只是替换了盒子里的内容。  int b = a;   C/C++      运行时，首先系统为整个函数栈预分配空间，栈上存储该函数的局部变量。即变量a对应固定的盒子(地址)。 执行 i">
 <meta name="twitter:image" content="http://www.omahapython.org/IdiomaticPython_files/a1box.png">
 
 
@@ -150,7 +150,7 @@
   };
 </script>
 
-  <title>python 变量 | ESON</title>
+  <title>python c java 的变量 | ESON</title>
   
 
 
@@ -382,7 +382,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">python 变量
+          <h2 class="post-title" itemprop="name headline">python c java 的变量
               
             
           </h2>
@@ -405,12 +405,22 @@
                 
               
 
-              <time title="创建时间：2018-09-18 09:20:34 / 修改时间：10:39:43" itemprop="dateCreated datePublished" datetime="2018-09-18T09:20:34+08:00">2018-09-18</time>
+              <time title="创建时间：2018-09-18 09:20:34" itemprop="dateCreated datePublished" datetime="2018-09-18T09:20:34+08:00">2018-09-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                <time title="修改时间：2018-09-19 12:48:28" itemprop="dateModified" datetime="2018-09-19T12:48:28+08:00">2018-09-19</time>
               
             
           </span>
@@ -526,27 +536,46 @@
       
 
       
-        <h1 id="other-languages-have-“variables”"><a href="#other-languages-have-“variables”" class="headerlink" title="other languages have “variables”"></a>other languages have “variables”</h1><p>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
+        <h1 id="other-languages-have-“variables”"><a href="#other-languages-have-“variables”" class="headerlink" title="other languages have “variables”"></a>other languages have “variables”</h1><p>计算机内存就像是很多盒子的集合体，每个盒子都有地址。<br>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
 <p><code>int a = 1;</code></p>
 <p><img src="http://www.omahapython.org/IdiomaticPython_files/a1box.png"></p>
 <p><code>a = 2;</code><br>只是替换了盒子里的内容。</p>
 <p><img src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></p>
 <p><code>int b = a;</code></p>
-<table border="1"><colgroup><col width="33%"><col width="33%"></colgroup><tbody valign="top"><tr><td><img alt="b2box.png" class="incremental first last" src="http://www.omahapython.org/IdiomaticPython_files/b2box.png"></td><td><img alt="a2box.png" class="incremental first last" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
+<table border="1"><colgroup><col width="50%"><col width="50%"></colgroup><tbody><tr><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/b2box.png"></td><td><img alt="a2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a2box.png"></td></tr></tbody></table>
 
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=int%20main%28%29%20%7B%0A%20%20int%20a%20%3D%201%3B%0A%20%20a%20%3D%202%3B%0A%20%20int%20balance%5B%5D%20%3D%20%7B1,%202,%203%7D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&curInstr=3&origin=opt-frontend.js&py=cpp&rawInputLstJSON=%5B%5D"> </iframe>
+<h2 id="C-C"><a href="#C-C" class="headerlink" title="C/C++"></a>C/C++</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=int%20main%28%29%20%7B%0A%20%20int%20a%20%3D%201%3B%0A%20%20a%20%3D%202%3B%0A%20%20int%20balance%5B%5D%20%3D%20%7B1,%202,%203%7D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&curInstr=3&origin=opt-frontend.js&py=cpp&rawInputLstJSON=%5B%5D"> </iframe>
 
 
+<!-- 1. 编译器， 从静态存储区域分配内存，包括全局变量， static 变量等 -->
+<ol>
+<li>运行时，首先系统为整个函数栈预分配空间，栈上存储该函数的局部变量。即变量<code>a</code>对应固定的盒子(地址)。</li>
+<li>执行 <code>int a = 1</code> 即把数值<code>1</code>放入<code>a</code>对应的盒子</li>
+<li>执行 <code>a = 2</code> 替换了<code>a</code>盒子里的内容</li>
+</ol>
 <h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=import%20java.util.*%3B%0Apublic%20class%20YourClassNameHere%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20int%20a%20%3D%201%3B%0A%20%20%20%20%20%20a%20%3D%202%3B%0A%20%20%20%20%20%20List%3CInteger%3E%20myList%20%3D%20new%20ArrayList%3CInteger%3E%28%29%3B%0A%20%20%20%20%20%20myList.add%281%29%3B%0A%20%20%20%20%20%20myList.add%282%29%3B%0A%20%20%20%20%20%20myList.add%283%29%3B%0A%20%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=8&heapPrimitives=nevernest&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
+<ul>
+<li>运行 <code>int a = 1</code>，存储在栈中还是堆中？栈中吧？</li>
+<li>运行 <code>Integer b = 1</code>，存储在栈中还是堆中？貌似有个Integer池，预分配好的。</li>
+<li>运行 <code>Integer c = 1000</code>，存储在栈中还是堆中？会new 一个Integer Object，在堆中</li>
+<li>运行 <code>a = 2</code>，</li>
+</ul>
+<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><ul>
+<li>java不预分配函数栈空间吗？</li>
+<li>java中为什么是frames和objects？为什么不是stack heap？</li>
+<li>java中的原始类型，与class类型</li>
+</ul>
+<h1 id="python-has-“names”"><a href="#python-has-“names”" class="headerlink" title="python has “names”"></a>python has “names”</h1><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=a%20%3D%201%0Aa%20%3D%202%0AmyList%20%3D%20%5B1,2,3%5D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=3&heapPrimitives=nevernest&origin=opt-frontend.js&py=2&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
-<p>java中为什么是frames和objects？为什么不是stack heap？</p>
-<h1 id="python-has-“names”"><a href="#python-has-“names”" class="headerlink" title="python has “names”"></a>python has “names”</h1><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=int%20main%28%29%20%7B%0A%20%20int%20a%20%3D%201%3B%0A%20%20a%20%3D%202%3B%0A%20%20double%20balance%5B%5D%20%3D%20%7B1000.0,%202.0,%203.4,%207.0,%2050.0%7D%3B%0A%20%20return%200%3B%0A%7D&codeDivHeight=400&codeDivWidth=350&curInstr=3&origin=opt-frontend.js&py=cpp&rawInputLstJSON=%5B%5D"> </iframe>
 
-
-
-<p>注意，python中是frame的概念，不是stack。</p>
-<p>why？</p>
+<ul>
+<li>python中一切皆对象，a=1，的Int对象是存储在栈中还是堆中？</li>
+</ul>
+<p>这里看不出</p>
+<h2 id="疑问-1"><a href="#疑问-1" class="headerlink" title="疑问"></a>疑问</h2><ul>
+<li>python中是frame的概念，不是stack。why？</li>
+</ul>
 <h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
 <li>code like a pythonista: idiomatic python</li>
 <li><a href="http://pythontutor.com" target="_blank" rel="noopener">http://pythontutor.com</a></li>
@@ -576,7 +605,7 @@
     <strong>本文作者： </strong>ESON</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.eson.org/pub/ab933edd/" title="python 变量">https://blog.eson.org/pub/ab933edd/</a>
+    <a href="https://blog.eson.org/pub/ab933edd/" title="python c java 的变量">https://blog.eson.org/pub/ab933edd/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -596,8 +625,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/fb455505/" rel="next" title="【比特币源码】交易">
-                <i class="fa fa-chevron-left"></i> 【比特币源码】交易
+              <a href="/pub/fb455505/" rel="next" title="【比特币源码】交易 transaction">
+                <i class="fa fa-chevron-left"></i> 【比特币源码】交易 transaction
               </a>
             
           </div>
@@ -605,6 +634,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/0/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -685,7 +718,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">176</span>
+                    <span class="site-state-item-count">184</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1321,7 +1354,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#other-languages-have-“variables”"><span class="nav-number">1.</span> <span class="nav-text">other languages have “variables”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">1.1.</span> <span class="nav-text">C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.2.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-has-“names”"><span class="nav-number">2.</span> <span class="nav-text">python has “names”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">3.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#other-languages-have-“variables”"><span class="nav-number">1.</span> <span class="nav-text">other languages have “variables”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-C"><span class="nav-number">1.1.</span> <span class="nav-text">C/C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">1.2.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问"><span class="nav-number">1.2.1.</span> <span class="nav-text">疑问</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-has-“names”"><span class="nav-number">2.</span> <span class="nav-text">python has “names”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#疑问-1"><span class="nav-number">2.1.</span> <span class="nav-text">疑问</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">3.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
