@@ -129,7 +129,7 @@
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/b2box.png">
 <meta property="og:image" content="http://www.omahapython.org/IdiomaticPython_files/a2box.png">
-<meta property="og:updated_time" content="2018-09-19T08:11:16.953Z">
+<meta property="og:updated_time" content="2018-09-20T01:09:46.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python c java 的变量、堆、栈">
 <meta name="twitter:description" content="背景知识 栈: 是向低地址扩展的数据结构，是一块连续的内存区域。 栈顶的地址和栈的最大容量是系统预先规定好的，在 WINDOWS 下，栈的大小是 2M （也有的说是 1M ，总之是一个编译时就确定的常数），如果申请的空间超过栈的剩余空间时，将提示 overflow 。因此，能从栈获得的空间较小。 由系统自动分配，速度较快。但程序员是无法控制的   堆：是向高地址扩展的数据结构，是不连续的内存区域。">
@@ -420,7 +420,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                <time title="修改时间：2018-09-19 16:11:16" itemprop="dateModified" datetime="2018-09-19T16:11:16+08:00">2018-09-19</time>
+                <time title="修改时间：2018-09-20 09:09:46" itemprop="dateModified" datetime="2018-09-20T09:09:46+08:00">2018-09-20</time>
               
             
           </span>
@@ -450,13 +450,6 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/" itemprop="url" rel="index"><span itemprop="name">lan</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CS/programing/lan/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
 
                 
                 
@@ -546,7 +539,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="other-languages-have-“variables”"><a href="#other-languages-have-“variables”" class="headerlink" title="other languages have “variables”"></a>other languages have “variables”</h1><p>计算机内存就像是很多盒子的集合体，每个盒子都有地址。<br>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
+<h1 id="many-languages-have-“variables”"><a href="#many-languages-have-“variables”" class="headerlink" title="many languages have “variables”"></a>many languages have “variables”</h1><p>计算机内存就像是很多盒子的集合体，每个盒子都有地址。<br>在很多语言中，给变量赋值可以理解成把value放入盒子，比如：</p>
 <table width="auto" border="1"><colgroup><col width="120"><col width="120"></colgroup><tbody><tr><td><code>int a = 1;</code></td><td><img alt="b2box.png" src="http://www.omahapython.org/IdiomaticPython_files/a1box.png"></td></tr></tbody></table>
 
 
@@ -568,7 +561,17 @@
 <li>执行 <code>int a = 1</code> 即把数值<code>1</code>放入<code>a</code>对应的盒子</li>
 <li>执行 <code>a = 2</code> 替换了<code>a</code>盒子里的内容</li>
 </ol>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><iframe width="800" height="700" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20%20Integer%20p%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20r%20%3D%20p%3B%0A%20%20%20%20%20%20p%20%3D%20q%3B%0A%20%20%20%20%20%20q%20%3D%20r%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%85%B3%E4%BA%8E%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20Integer%20p2%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q2%20%3D%201000%3B%20//%20%E8%B6%85%E5%87%BA%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20me2%20%3D%20%22me%22%3B%20//%20String%20%E5%B8%B8%E9%87%8F%0A%20%20%20%20%20%20%0A%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=17&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+<h1 id="python-has-“names”"><a href="#python-has-“names”" class="headerlink" title="python has “names”"></a>python has “names”</h1><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=a%20%3D%201%0Aa%20%3D%202%0AmyList%20%3D%20%5B1,2,3%5D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=3&heapPrimitives=true&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+<ul>
+<li>python中一切皆对象，a=1，的Int对象是存储在栈中还是堆中？</li>
+</ul>
+<p>这里看不出</p>
+<h2 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h2><ul>
+<li>python中是frame的概念，不是stack。why？</li>
+</ul>
+<h1 id="Java-不完全-面向对象"><a href="#Java-不完全-面向对象" class="headerlink" title="Java 不完全 面向对象"></a>Java 不完全 面向对象</h1><iframe width="800" height="700" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Variables%20%7B%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%0A%20%20%20%20%20%20int%20x%20%3D%205%3B%0A%20%20%20%20%20%20int%20y%20%3D%2010%3B%0A%20%20%20%20%20%20int%20t%20%3D%20x%3B%0A%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20y%20%3D%20t%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%8F%98%E9%87%8F%20-%20%E5%AF%B9%E8%B1%A1%0A%20%20%20%20%20%20Integer%20p%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q%20%3D%201000%3B%0A%20%20%20%20%20%20Integer%20r%20%3D%20p%3B%0A%20%20%20%20%20%20p%20%3D%20q%3B%0A%20%20%20%20%20%20q%20%3D%20r%3B%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20//%20%E5%85%B3%E4%BA%8E%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20Integer%20p2%20%3D%205%3B%0A%20%20%20%20%20%20Integer%20q2%20%3D%201000%3B%20//%20%E8%B6%85%E5%87%BA%E5%B8%B8%E9%87%8F%E6%B1%A0%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20String%20me%20%3D%20%22me%22%3B%0A%20%20%20%20%20%20String%20you%20%3D%20%22you%22%3B%0A%20%20%20%20%20%20String%20me2%20%3D%20%22me%22%3B%20//%20String%20%E5%B8%B8%E9%87%8F%0A%20%20%20%20%20%20%0A%20%20%20%7D%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=17&heapPrimitives=true&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
 
 <ul>
 <li>运行 <code>int a = 1</code>，存储在栈中还是堆中？栈中吧？</li>
@@ -576,22 +579,12 @@
 <li>运行 <code>Integer c = 1000</code>，存储在栈中还是堆中？会new 一个Integer Object，在堆中</li>
 <li>运行 <code>a = 2</code>，</li>
 </ul>
-<h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><ul>
+<h3 id="疑问-1"><a href="#疑问-1" class="headerlink" title="疑问"></a>疑问</h3><ul>
 <li>java不预分配函数栈空间吗？</li>
 <li>java中为什么是frames和objects？为什么不是stack heap？</li>
 <li>java中的原始类型，与class类型</li>
 </ul>
-<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><h1 id="python-has-“names”"><a href="#python-has-“names”" class="headerlink" title="python has “names”"></a>python has “names”</h1><iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=a%20%3D%201%0Aa%20%3D%202%0AmyList%20%3D%20%5B1,2,3%5D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=true&curInstr=3&heapPrimitives=true&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
-
-
-<ul>
-<li>python中一切皆对象，a=1，的Int对象是存储在栈中还是堆中？</li>
-</ul>
-<p>这里看不出</p>
-<h2 id="疑问-1"><a href="#疑问-1" class="headerlink" title="疑问"></a>疑问</h2><ul>
-<li>python中是frame的概念，不是stack。why？</li>
-</ul>
-<h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
+<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><h1 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h1><ul>
 <li>code like a pythonista: idiomatic python</li>
 <li><a href="http://pythontutor.com" target="_blank" rel="noopener">http://pythontutor.com</a></li>
 </ul>
@@ -640,8 +633,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/pub/c6654282/" rel="next" title="递归">
-                <i class="fa fa-chevron-left"></i> 递归
+              <a href="/pub/fb455505/" rel="next" title="【比特币源码】交易 transaction">
+                <i class="fa fa-chevron-left"></i> 【比特币源码】交易 transaction
               </a>
             
           </div>
@@ -649,6 +642,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/pub/c6654282/" rel="prev" title="递归">
+                递归 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -729,7 +726,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">177</span>
+                    <span class="site-state-item-count">178</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1028,7 +1025,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">143</span>
+                      
+                    
+                    <span class="site-state-item-count">144</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1365,7 +1364,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景知识"><span class="nav-number">1.</span> <span class="nav-text">背景知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#other-languages-have-“variables”"><span class="nav-number">2.</span> <span class="nav-text">other languages have “variables”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-C"><span class="nav-number">2.1.</span> <span class="nav-text">C/C++</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java"><span class="nav-number">2.2.</span> <span class="nav-text">Java</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问"><span class="nav-number">2.2.1.</span> <span class="nav-text">疑问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript"><span class="nav-number">2.3.</span> <span class="nav-text">javascript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-has-“names”"><span class="nav-number">3.</span> <span class="nav-text">python has “names”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#疑问-1"><span class="nav-number">3.1.</span> <span class="nav-text">疑问</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">4.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#背景知识"><span class="nav-number">1.</span> <span class="nav-text">背景知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#many-languages-have-“variables”"><span class="nav-number">2.</span> <span class="nav-text">many languages have “variables”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-C"><span class="nav-number">2.1.</span> <span class="nav-text">C/C++</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python-has-“names”"><span class="nav-number">3.</span> <span class="nav-text">python has “names”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#疑问"><span class="nav-number">3.1.</span> <span class="nav-text">疑问</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-不完全-面向对象"><span class="nav-number">4.</span> <span class="nav-text">Java 不完全 面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问-1"><span class="nav-number">4.0.1.</span> <span class="nav-text">疑问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript"><span class="nav-number">4.1.</span> <span class="nav-text">javascript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#扩展阅读"><span class="nav-number">5.</span> <span class="nav-text">扩展阅读</span></a></li></ol></div>
             
 
           </div>
